@@ -69,6 +69,34 @@
       </tags>
   </entry>
   <entry>
+    <title>PicGo相册不能显示问题及解决办法</title>
+    <url>/2022/07/30/PicGo%E7%9B%B8%E5%86%8C%E4%B8%8D%E8%83%BD%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
+    <content><![CDATA[<p>我的PicGo图片上传成功了，但是相册区域图片不能正常显示，如下图所示</p>
+<p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/209.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/209.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<div class="story post-story"><h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><h3 id="1-0-重启PicGo应用"><a href="#1-0-重启PicGo应用" class="headerlink" title="1.0 重启PicGo应用"></a>1.0 重启PicGo应用</h3><h3 id="2-0-卸载应用，重新安装"><a href="#2-0-卸载应用，重新安装" class="headerlink" title="2.0 卸载应用，重新安装"></a>2.0 卸载应用，重新安装</h3><h3 id="3-0-打开picgo设置，找到设置Server，把端口号修改成36677"><a href="#3-0-打开picgo设置，找到设置Server，把端口号修改成36677" class="headerlink" title="3.0 打开picgo设置，找到设置Server，把端口号修改成36677"></a>3.0 打开picgo设置，找到设置Server，把端口号修改成36677</h3><p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224030434.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224030434.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224111600.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224111600.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<h3 id="4-0-修改host文件"><a href="#4-0-修改host文件" class="headerlink" title="4.0 修改host文件"></a>4.0 修改host文件</h3><blockquote>
+<p>原因是github屏蔽掉了图片，结局办法就是修改host，我就是用的这个方法解决的</p>
+</blockquote>
+<p>host路径：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">C:\Windows\System32\drivers\etc\hosts</span><br></pre></td></tr></table></figure>
+
+<p>找到host文件，用记事本格式打开，添加代码</p>
+<figure class="highlight plaintext"><figcaption><span>GitHub Start</span></figcaption><table><tr><td class="code"><pre><span class="line">140.82.113.3      github.com</span><br><span class="line">140.82.114.20     gist.github.com</span><br><span class="line">151.101.184.133    assets-cdn.github.com</span><br><span class="line">151.101.184.133    raw.githubusercontent.com</span><br><span class="line">151.101.184.133    gist.githubusercontent.com</span><br><span class="line">151.101.184.133    cloud.githubusercontent.com</span><br><span class="line">151.101.184.133    camo.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars0.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars0.githubusercontent.com</span><br><span class="line">199.232.28.133     avatars1.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars1.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars2.githubusercontent.com</span><br><span class="line">199.232.28.133     avatars2.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars3.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars3.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars4.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars4.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars5.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars5.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars6.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars6.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars7.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars7.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars8.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars8.githubusercontent.com</span><br><span class="line"># GitHub End</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>tip: host文件修改需要管理员权限，可在桌面复制一份，用修改完的文件替换掉原来的文件即可，权限可以自己更改，搞完再改回去</p>
+</blockquote>
+
+</div>]]></content>
+      <categories>
+        <category>PicGo</category>
+      </categories>
+      <tags>
+        <tag>PicGo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>fariy-001</title>
     <url>/2022/07/28/fariy-001/</url>
     <content><![CDATA[<h1 id="精美壁纸"><a href="#精美壁纸" class="headerlink" title="精美壁纸"></a>精美壁纸</h1><p><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F4k%2Fs%2F01%2F210924143942AV-0-lp.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1661603132&t=1f048fc0b2d6b6052d8fa10a0c0c2a66" class="lazyload" data-srcset="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F4k%2Fs%2F01%2F210924143942AV-0-lp.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1661603132&t=1f048fc0b2d6b6052d8fa10a0c0c2a66" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="太空人"></p>
