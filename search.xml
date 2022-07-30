@@ -69,6 +69,67 @@
       </tags>
   </entry>
   <entry>
+    <title>PicGo相册不能显示问题及解决办法</title>
+    <url>/2022/07/30/PicGo%E7%9B%B8%E5%86%8C%E4%B8%8D%E8%83%BD%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
+    <content><![CDATA[<p>我的PicGo图片上传成功了，但是相册区域图片不能正常显示，如下图所示</p>
+<p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/209.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/209.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<div class="story post-story"><h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><h3 id="1-0-重启应用"><a href="#1-0-重启应用" class="headerlink" title="1.0 重启应用"></a>1.0 重启应用</h3><p>退出应用，重新启动，上传的图片能正常显示</p>
+<h3 id="2-0-卸载应用，重新安装"><a href="#2-0-卸载应用，重新安装" class="headerlink" title="2.0 卸载应用，重新安装"></a>2.0 卸载应用，重新安装</h3><p>卸载重装 PicGo，不需要重新配置，之后上传的图片都能正常显示</p>
+<h3 id="3-0-打开picgo设置，找到设置Server，把端口号修改成36677"><a href="#3-0-打开picgo设置，找到设置Server，把端口号修改成36677" class="headerlink" title="3.0 打开picgo设置，找到设置Server，把端口号修改成36677"></a>3.0 打开picgo设置，找到设置Server，把端口号修改成36677</h3><p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224030434.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224030434.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224111600.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224111600.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<h3 id="4-0-修改host文件"><a href="#4-0-修改host文件" class="headerlink" title="4.0 修改host文件"></a>4.0 修改host文件</h3><blockquote>
+<p>原因是github屏蔽掉了图片，结局办法就是修改host，我就是用的这个方法解决的</p>
+</blockquote>
+<p>host路径：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">C:\Windows\System32\drivers\etc\hosts</span><br></pre></td></tr></table></figure>
+
+<p>找到host文件，用记事本格式打开，添加代码</p>
+<figure class="highlight plaintext"><figcaption><span>GitHub Start</span></figcaption><table><tr><td class="code"><pre><span class="line">140.82.113.3      github.com</span><br><span class="line">140.82.114.20     gist.github.com</span><br><span class="line">151.101.184.133    assets-cdn.github.com</span><br><span class="line">151.101.184.133    raw.githubusercontent.com</span><br><span class="line">151.101.184.133    gist.githubusercontent.com</span><br><span class="line">151.101.184.133    cloud.githubusercontent.com</span><br><span class="line">151.101.184.133    camo.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars0.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars0.githubusercontent.com</span><br><span class="line">199.232.28.133     avatars1.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars1.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars2.githubusercontent.com</span><br><span class="line">199.232.28.133     avatars2.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars3.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars3.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars4.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars4.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars5.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars5.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars6.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars6.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars7.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars7.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars8.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars8.githubusercontent.com</span><br><span class="line"># GitHub End</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>tip: host文件修改需要管理员权限，可在桌面复制一份，用修改完的文件替换掉原来的文件即可，权限可以自己更改，搞完再改回去</p>
+</blockquote>
+
+</div>]]></content>
+      <categories>
+        <category>PicGo</category>
+      </categories>
+      <tags>
+        <tag>PicGo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>fariy-001</title>
+    <url>/2022/07/28/fariy-001/</url>
+    <content><![CDATA[<h1 id="精美壁纸"><a href="#精美壁纸" class="headerlink" title="精美壁纸"></a>精美壁纸</h1><p><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F4k%2Fs%2F01%2F210924143942AV-0-lp.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1661603132&t=1f048fc0b2d6b6052d8fa10a0c0c2a66" class="lazyload" data-srcset="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F4k%2Fs%2F01%2F210924143942AV-0-lp.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1661603132&t=1f048fc0b2d6b6052d8fa10a0c0c2a66" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="太空人"></p>
+<p><img src="https://img2.baidu.com/it/u=4041237652,3455375873&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img2.baidu.com/it/u=4041237652,3455375873&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="2022"></p>
+<p><img src="https://img2.baidu.com/it/u=3912953751,2897910146&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img2.baidu.com/it/u=3912953751,2897910146&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="山脉"></p>
+<p><img src="https://img2.baidu.com/it/u=1830973642,518401107&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img2.baidu.com/it/u=1830973642,518401107&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="公路"></p>
+<p><img src="https://img0.baidu.com/it/u=3307765823,1934426814&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img0.baidu.com/it/u=3307765823,1934426814&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="跑车"></p>
+<p><img src="https://img1.baidu.com/it/u=2688422801,1696196797&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=2688422801,1696196797&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="灯塔"></p>
+<p><img src="https://img1.baidu.com/it/u=674567296,600896811&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=674567296,600896811&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="灯塔"></p>
+<p><img src="https://img0.baidu.com/it/u=3440708810,3442918705&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img0.baidu.com/it/u=3440708810,3442918705&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="颠倒时空"></p>
+<p><img src="https://img1.baidu.com/it/u=872134080,2905781283&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=872134080,2905781283&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="大寒"></p>
+<p><img src="https://img1.baidu.com/it/u=1511941592,1801635068&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=1511941592,1801635068&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="粉色"></p>
+<p><img src="https://img1.baidu.com/it/u=2097372425,2422966379&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=2097372425,2422966379&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="珍珠"></p>
+<p><img src="https://img0.baidu.com/it/u=1656587050,3930583270&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img0.baidu.com/it/u=1656587050,3930583270&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="水泡"></p>
+<p><img src="https://img0.baidu.com/it/u=3421760785,1781416260&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img0.baidu.com/it/u=3421760785,1781416260&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="花草日历"></p>
+<p><img src="https://img1.baidu.com/it/u=2643860120,1785013409&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=2643860120,1785013409&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="船舰"></p>
+<p><img src="https://img2.baidu.com/it/u=3547004283,1966895282&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img2.baidu.com/it/u=3547004283,1966895282&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="流体"></p>
+<p><img src="https://img1.baidu.com/it/u=1692648092,2998825096&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=1692648092,2998825096&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="跑车"></p>
+<p><img src="https://img2.baidu.com/it/u=2899977724,4160359019&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img2.baidu.com/it/u=2899977724,4160359019&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="鹤"></p>
+<p><img src="https://img1.baidu.com/it/u=4094397582,1558263522&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=4094397582,1558263522&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="2022"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/TF0LhBDVCfDpcE719pqqickaCX4VwT0usW4PZGYgf43iawIsQ6wGKnSPqP3gQnkTSTkWzp08y0yDcJJWubicMV9SQ/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&wx_co=1" class="lazyload" data-srcset="https://mmbiz.qpic.cn/mmbiz_jpg/TF0LhBDVCfDpcE719pqqickaCX4VwT0usW4PZGYgf43iawIsQ6wGKnSPqP3gQnkTSTkWzp08y0yDcJJWubicMV9SQ/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&wx_co=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="2022"></p>
+
+]]></content>
+      <categories>
+        <category>壁纸</category>
+      </categories>
+      <tags>
+        <tag>fariy</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用github建立图床,picgo和typora上传图片</title>
     <url>/2022/07/29/github-img/</url>
     <content><![CDATA[<p>建立图床必须具备什么条件 </p>
@@ -139,57 +200,25 @@
       </tags>
   </entry>
   <entry>
-    <title>PicGo相册不能显示问题及解决办法</title>
-    <url>/2022/07/30/PicGo%E7%9B%B8%E5%86%8C%E4%B8%8D%E8%83%BD%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
-    <content><![CDATA[<p>我的PicGo图片上传成功了，但是相册区域图片不能正常显示，如下图所示</p>
-<p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/209.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/209.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-<div class="story post-story"><h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><h3 id="1-0-重启应用"><a href="#1-0-重启应用" class="headerlink" title="1.0 重启应用"></a>1.0 重启应用</h3><p>退出应用，重新启动，上传的图片能正常显示</p>
-<h3 id="2-0-卸载应用，重新安装"><a href="#2-0-卸载应用，重新安装" class="headerlink" title="2.0 卸载应用，重新安装"></a>2.0 卸载应用，重新安装</h3><p>卸载重装 PicGo，不需要重新配置，之后上传的图片都能正常显示</p>
-<h3 id="3-0-打开picgo设置，找到设置Server，把端口号修改成36677"><a href="#3-0-打开picgo设置，找到设置Server，把端口号修改成36677" class="headerlink" title="3.0 打开picgo设置，找到设置Server，把端口号修改成36677"></a>3.0 打开picgo设置，找到设置Server，把端口号修改成36677</h3><p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224030434.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224030434.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-<p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224111600.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224111600.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-<h3 id="4-0-修改host文件"><a href="#4-0-修改host文件" class="headerlink" title="4.0 修改host文件"></a>4.0 修改host文件</h3><blockquote>
-<p>原因是github屏蔽掉了图片，结局办法就是修改host，我就是用的这个方法解决的</p>
+    <title>github克隆项目失败</title>
+    <url>/2022/07/29/github%E5%85%8B%E9%9A%86%E9%A1%B9%E7%9B%AE%E5%A4%B1%E8%B4%A5/</url>
+    <content><![CDATA[<div class="story post-story"><h2 id="unable-to-access-‘https-github-com-用户名-仓库名-git-39-SSL-certificate-problem-self问题解决"><a href="#unable-to-access-‘https-github-com-用户名-仓库名-git-39-SSL-certificate-problem-self问题解决" class="headerlink" title="unable to access ‘https://github.com/用户名/仓库名.git/&#39;: SSL certificate problem: self问题解决"></a>unable to access ‘<a href="https://github.com/%E7%94%A8%E6%88%B7%E5%90%8D/%E4%BB%93%E5%BA%93%E5%90%8D.git/&#39;">https://github.com/用户名/仓库名.git/&#39;</a>: SSL certificate problem: self问题解决</h2><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>今天想在github上找个项目玩玩，但是发现clone不下来，百度没有找到解决方案，于是又把git重装了一遍，发现还是不能clone,而且不能push，而且是同样的错误。于是Google了一下找到解决方案</p>
 </blockquote>
-<p>host路径：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">C:\Windows\System32\drivers\etc\hosts</span><br></pre></td></tr></table></figure>
-
-<p>找到host文件，用记事本格式打开，添加代码</p>
-<figure class="highlight plaintext"><figcaption><span>GitHub Start</span></figcaption><table><tr><td class="code"><pre><span class="line">140.82.113.3      github.com</span><br><span class="line">140.82.114.20     gist.github.com</span><br><span class="line">151.101.184.133    assets-cdn.github.com</span><br><span class="line">151.101.184.133    raw.githubusercontent.com</span><br><span class="line">151.101.184.133    gist.githubusercontent.com</span><br><span class="line">151.101.184.133    cloud.githubusercontent.com</span><br><span class="line">151.101.184.133    camo.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars0.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars0.githubusercontent.com</span><br><span class="line">199.232.28.133     avatars1.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars1.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars2.githubusercontent.com</span><br><span class="line">199.232.28.133     avatars2.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars3.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars3.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars4.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars4.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars5.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars5.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars6.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars6.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars7.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars7.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars8.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars8.githubusercontent.com</span><br><span class="line"># GitHub End</span><br></pre></td></tr></table></figure>
-
+</div><div class="story post-story"><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>Git client in Fisheye&#x2F;Crucible server perform verification on the SSL certificate and stop the process if it is unknown.</p>
 <blockquote>
-<p>tip: host文件修改需要管理员权限，可在桌面复制一份，用修改完的文件替换掉原来的文件即可，权限可以自己更改，搞完再改回去</p>
+<p>大概意思是：Fisheye&#x2F;Crucible服务器不能识别git的SSL证书，所以操作停止执行。</p>
 </blockquote>
-
+</div><div class="story post-story"><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><ul>
+<li>在git命令行输入以下命令即可</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global http.sslVerify false</span><br></pre></td></tr></table></figure>
 </div>]]></content>
       <categories>
-        <category>PicGo</category>
+        <category>github</category>
       </categories>
       <tags>
-        <tag>PicGo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>fariy-001</title>
-    <url>/2022/07/28/fariy-001/</url>
-    <content><![CDATA[<h1 id="精美壁纸"><a href="#精美壁纸" class="headerlink" title="精美壁纸"></a>精美壁纸</h1><p><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F4k%2Fs%2F01%2F210924143942AV-0-lp.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1661603132&t=1f048fc0b2d6b6052d8fa10a0c0c2a66" class="lazyload" data-srcset="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F4k%2Fs%2F01%2F210924143942AV-0-lp.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1661603132&t=1f048fc0b2d6b6052d8fa10a0c0c2a66" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="太空人"></p>
-<p><img src="https://img2.baidu.com/it/u=4041237652,3455375873&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img2.baidu.com/it/u=4041237652,3455375873&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="2022"></p>
-<p><img src="https://img2.baidu.com/it/u=3912953751,2897910146&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img2.baidu.com/it/u=3912953751,2897910146&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="山脉"></p>
-<p><img src="https://img2.baidu.com/it/u=1830973642,518401107&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img2.baidu.com/it/u=1830973642,518401107&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="公路"></p>
-<p><img src="https://img0.baidu.com/it/u=3307765823,1934426814&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img0.baidu.com/it/u=3307765823,1934426814&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="跑车"></p>
-<p><img src="https://img1.baidu.com/it/u=2688422801,1696196797&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=2688422801,1696196797&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="灯塔"></p>
-<p><img src="https://img1.baidu.com/it/u=674567296,600896811&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=674567296,600896811&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="灯塔"></p>
-<p><img src="https://img0.baidu.com/it/u=3440708810,3442918705&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img0.baidu.com/it/u=3440708810,3442918705&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="颠倒时空"></p>
-<p><img src="https://img1.baidu.com/it/u=872134080,2905781283&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=872134080,2905781283&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="大寒"></p>
-<p><img src="https://img1.baidu.com/it/u=1511941592,1801635068&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=1511941592,1801635068&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="粉色"></p>
-<p><img src="https://img1.baidu.com/it/u=2097372425,2422966379&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=2097372425,2422966379&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="珍珠"><br><img src="https://img0.baidu.com/it/u=1656587050,3930583270&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img0.baidu.com/it/u=1656587050,3930583270&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="水泡"><br><img src="https://img0.baidu.com/it/u=3421760785,1781416260&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img0.baidu.com/it/u=3421760785,1781416260&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="花草日历"><br><img src="https://img1.baidu.com/it/u=2643860120,1785013409&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=2643860120,1785013409&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="船舰"><br><img src="https://img2.baidu.com/it/u=3547004283,1966895282&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img2.baidu.com/it/u=3547004283,1966895282&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="流体"><br><img src="https://img1.baidu.com/it/u=1692648092,2998825096&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=1692648092,2998825096&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="跑车"><br><img src="https://img2.baidu.com/it/u=2899977724,4160359019&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img2.baidu.com/it/u=2899977724,4160359019&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="鹤"><br><img src="https://img1.baidu.com/it/u=4094397582,1558263522&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=4094397582,1558263522&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="2022"></p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/TF0LhBDVCfDpcE719pqqickaCX4VwT0usW4PZGYgf43iawIsQ6wGKnSPqP3gQnkTSTkWzp08y0yDcJJWubicMV9SQ/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&wx_co=1" class="lazyload" data-srcset="https://mmbiz.qpic.cn/mmbiz_jpg/TF0LhBDVCfDpcE719pqqickaCX4VwT0usW4PZGYgf43iawIsQ6wGKnSPqP3gQnkTSTkWzp08y0yDcJJWubicMV9SQ/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&wx_co=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="2022"></p>
-
-]]></content>
-      <categories>
-        <category>壁纸</category>
-      </categories>
-      <tags>
-        <tag>fariy</tag>
+        <tag>github</tag>
       </tags>
   </entry>
   <entry>
@@ -211,28 +240,6 @@
       </categories>
       <tags>
         <tag>个人</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>github克隆项目失败</title>
-    <url>/2022/07/29/github%E5%85%8B%E9%9A%86%E9%A1%B9%E7%9B%AE%E5%A4%B1%E8%B4%A5/</url>
-    <content><![CDATA[<div class="story post-story"><h2 id="unable-to-access-‘https-github-com-用户名-仓库名-git-39-SSL-certificate-problem-self问题解决"><a href="#unable-to-access-‘https-github-com-用户名-仓库名-git-39-SSL-certificate-problem-self问题解决" class="headerlink" title="unable to access ‘https://github.com/用户名/仓库名.git/&#39;: SSL certificate problem: self问题解决"></a>unable to access ‘<a href="https://github.com/%E7%94%A8%E6%88%B7%E5%90%8D/%E4%BB%93%E5%BA%93%E5%90%8D.git/&#39;">https://github.com/用户名/仓库名.git/&#39;</a>: SSL certificate problem: self问题解决</h2><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>今天想在github上找个项目玩玩，但是发现clone不下来，百度没有找到解决方案，于是又把git重装了一遍，发现还是不能clone,而且不能push，而且是同样的错误。于是Google了一下找到解决方案</p>
-</blockquote>
-</div><div class="story post-story"><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>Git client in Fisheye&#x2F;Crucible server perform verification on the SSL certificate and stop the process if it is unknown.</p>
-<blockquote>
-<p>大概意思是：Fisheye&#x2F;Crucible服务器不能识别git的SSL证书，所以操作停止执行。</p>
-</blockquote>
-</div><div class="story post-story"><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><ul>
-<li>在git命令行输入以下命令即可</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global http.sslVerify false</span><br></pre></td></tr></table></figure>
-</div>]]></content>
-      <categories>
-        <category>github</category>
-      </categories>
-      <tags>
-        <tag>github</tag>
       </tags>
   </entry>
 </search>
