@@ -69,11 +69,83 @@
       </tags>
   </entry>
   <entry>
+    <title>使用github建立图床,picgo和typora上传图片</title>
+    <url>/2022/07/29/github-img/</url>
+    <content><![CDATA[<p>建立图床必须具备什么条件 </p>
+<blockquote>
+<p>首先你需要一个github账号，如果没有的话，请先注册。<br/><br>github官网地址 <a href="https://github.com/">github.com</a>   </p>
+</blockquote>
+<ul>
+<li>一个github账号</li>
+<li>一个公开的仓库</li>
+<li>PicGo 上传图片</li>
+<li>Typora 上传图片</li>
+</ul>
+<h1 id="一、新建仓库"><a href="#一、新建仓库" class="headerlink" title="一、新建仓库"></a>一、新建仓库</h1><div class="story post-story"><h2 id="1-1-创建一个新仓库，用于存放图片。"><a href="#1-1-创建一个新仓库，用于存放图片。" class="headerlink" title="1.1 创建一个新仓库，用于存放图片。"></a>1.1 创建一个新仓库，用于存放图片。</h2><p>填写仓库名称和描述，且仓库必须是public的，否则存储的图片不能正常访问。<img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/200.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/200.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="新建仓库"></p>
+</div><div class="story post-story"><h2 id="1-2-生成一个token，用于picGo访问github"><a href="#1-2-生成一个token，用于picGo访问github" class="headerlink" title="1.2 生成一个token，用于picGo访问github"></a>1.2 生成一个token，用于picGo访问github</h2><p>选择左侧菜单的Developer settings</p>
+<p>之后选择左侧Personal access tokens，再点击Generate new token<br><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/204.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/204.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="生产token的位置"></p>
+<p>填写Note，勾选repo.<br><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/205.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/205.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><br>注意，生成的token只会在这里显示一次，所以记得单独保存下来哦。<br><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/206.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/206.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><br>至此，Github的配置完成。</p>
+<h1 id="二、下载picGo，并进行配置"><a href="#二、下载picGo，并进行配置" class="headerlink" title="二、下载picGo，并进行配置"></a>二、下载picGo，并进行配置</h1></div><div class="story post-story"><h2 id="2-1-下载"><a href="#2-1-下载" class="headerlink" title="2.1 下载"></a>2.1 下载</h2><p>访问picGo下载地址，选择 picGo-Setup-XXX.exe下载软件安装包即可。</p>
+<p>如果安装成功，picGo不能正常使用，则可以用兼容模式启动,或者重启电脑。【此问题因电脑而异,重启电脑能解决百分之九十九的问题。】</p>
+</div><div class="story post-story"><h2 id="2-2-配置"><a href="#2-2-配置" class="headerlink" title="2.2 配置"></a>2.2 配置</h2><p>仓库名：[github用户名]&#x2F;[第一步新建的仓库名称]</p>
+<p>分支：默认master，从2020.10.01开始，github的默认分支名变更为main</p>
+<p>设定token：第一步创建的token</p>
+<p>指定存储路径：可填可不填，如果填写了，图片就会存储在img文件夹下</p>
+<p>设定自定义域名： <code>https://cdn.jsdelivr.net/gh/[github用户名]/[仓库名]@main</code>,注意，此处的分支一定要填写@main，否则默认使用master分支。而现在github创建的默认分支名为main，如果不指定，则会出现图片不能上传的情况。我的是: <code>https://cdn.jsdelivr.net/gh/txw1314/blog-img@main</code><br><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/207.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/207.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="配置picGo"></p>
+</div><div class="story post-story"><h2 id="2-3-插件安装"><a href="#2-3-插件安装" class="headerlink" title="2.3 插件安装"></a>2.3 插件安装</h2><p>点击插件设置右边的图标，进入插件网页，选择表格中的插件名称复制到input输入框,选择插件安装，可显示更多内容<br><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/208.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/208.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="安装插件"></p>
+<p>至此，github+picGo的配置完成，可以在上传区进行图片上传了。</p>
+<p>补充几点</p>
+<blockquote>
+<ol>
+<li>原本github的自定义域名应该是： <code>https://raw.githubusercontent.com/[username]/[仓库名]</code><br>但是使用这种方式访问图片巨慢，所以建议使用jsdelivr作为cdn加速。改变域名即可，不需要任何其他配置。<code>https://cdn.jsdelivr.net/gh/txw1314/blog-img@main</code></li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li>配置完成，可能出现不能上传的情况，请大家耐心检查，也许某一步的配置出现了问题，实在不行就重启电脑，毕竟重启电脑能解决99%的问题。</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li>不止可以用github作为图床，还可以使用国内的码云(gitee)。当然也有收费的七牛、阿里云等等。在安装插件之后会有诸多选项。</li>
+</ol>
+</blockquote>
+<h1 id="三、上传图片"><a href="#三、上传图片" class="headerlink" title="三、上传图片"></a>三、上传图片</h1><p>上面配置完成，下面我们就可以上传图片了。</p>
+</div><div class="story post-story"><h2 id="3-1-上传图片"><a href="#3-1-上传图片" class="headerlink" title="3.1 上传图片"></a>3.1 上传图片</h2><p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730230508076.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730230508076.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="上传图片"></p>
+</div><div class="story post-story"><h2 id="3-2-上传图片完成"><a href="#3-2-上传图片完成" class="headerlink" title="3.2 上传图片完成"></a>3.2 上传图片完成</h2><p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730230548376.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730230548376.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="上传图片完成"></p>
+<p>picGo监听端口设置</p>
+<p>选择“PicGo设置”–&gt;“设置server”</p>
+<blockquote>
+<p>如果监听端口不是36677，则需要修改为36677。否则会出现picGo能正常上传 图片，而typora上传图片失败的情况。<br>如果picGO不能正常上传图片，建议重启电脑，我就是重启了之后就能正常上传图片了，只是图片不会显示缩略图</p>
+</blockquote>
+<h1 id="四-、使用Typora上传图片"><a href="#四-、使用Typora上传图片" class="headerlink" title="四 、使用Typora上传图片"></a>四 、使用Typora上传图片</h1></div><div class="story post-story"><h2 id="4-1-点击Typora文件—偏好设置"><a href="#4-1-点击Typora文件—偏好设置" class="headerlink" title="4.1 点击Typora文件—偏好设置"></a>4.1 点击Typora文件—偏好设置</h2><p>如下图所示，选择图像，勾选右侧选项，上传服务，选择picgo路径，即可配置完成</p>
+<p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730231031969.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730231031969.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220730231031969"></p>
+</div><div class="story post-story"><h2 id="4-2-我们也可以点击验证图片上传选项试一下"><a href="#4-2-我们也可以点击验证图片上传选项试一下" class="headerlink" title="4.2 我们也可以点击验证图片上传选项试一下"></a>4.2 我们也可以点击验证图片上传选项试一下</h2><p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730231355986.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730231355986.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220730231355986"></p>
+</div><div class="story post-story"><h2 id="4-3-验证成功"><a href="#4-3-验证成功" class="headerlink" title="4.3 验证成功"></a>4.3 验证成功</h2><p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730232927677.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730232927677.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220730232927677"></p>
+</div><div class="story post-story"><h2 id="4-4-我的验证失败了，虽然失败了，但是不影响我上传图片，嗯，问题不大，哈哈哈"><a href="#4-4-我的验证失败了，虽然失败了，但是不影响我上传图片，嗯，问题不大，哈哈哈" class="headerlink" title="4.4 我的验证失败了，虽然失败了，但是不影响我上传图片，嗯，问题不大，哈哈哈"></a>4.4 我的验证失败了，虽然失败了，但是不影响我上传图片，嗯，问题不大，哈哈哈</h2><p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730231402492.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730231402492.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220730231402492"></p>
+<p>然后就是在Typora复制文件图片，右键上传图片，稍等一下就会自动完成</p>
+<blockquote>
+<p>tip: 在Typora粘贴图片的时候，个人建议使用Snipaste这个软件，非常方便！</p>
+</blockquote>
+
+</div>]]></content>
+      <categories>
+        <category>github</category>
+      </categories>
+      <tags>
+        <tag>github</tag>
+        <tag>picgo</tag>
+        <tag>typora</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>PicGo相册不能显示问题及解决办法</title>
     <url>/2022/07/30/PicGo%E7%9B%B8%E5%86%8C%E4%B8%8D%E8%83%BD%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
     <content><![CDATA[<p>我的PicGo图片上传成功了，但是相册区域图片不能正常显示，如下图所示</p>
 <p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/209.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/209.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-<div class="story post-story"><h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><h3 id="1-0-重启PicGo应用"><a href="#1-0-重启PicGo应用" class="headerlink" title="1.0 重启PicGo应用"></a>1.0 重启PicGo应用</h3><h3 id="2-0-卸载应用，重新安装"><a href="#2-0-卸载应用，重新安装" class="headerlink" title="2.0 卸载应用，重新安装"></a>2.0 卸载应用，重新安装</h3><h3 id="3-0-打开picgo设置，找到设置Server，把端口号修改成36677"><a href="#3-0-打开picgo设置，找到设置Server，把端口号修改成36677" class="headerlink" title="3.0 打开picgo设置，找到设置Server，把端口号修改成36677"></a>3.0 打开picgo设置，找到设置Server，把端口号修改成36677</h3><p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224030434.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224030434.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<div class="story post-story"><h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><h3 id="1-0-重启应用"><a href="#1-0-重启应用" class="headerlink" title="1.0 重启应用"></a>1.0 重启应用</h3><p>退出应用，重新启动，上传的图片能正常显示</p>
+<h3 id="2-0-卸载应用，重新安装"><a href="#2-0-卸载应用，重新安装" class="headerlink" title="2.0 卸载应用，重新安装"></a>2.0 卸载应用，重新安装</h3><p>卸载重装 PicGo，不需要重新配置，之后上传的图片都能正常显示</p>
+<h3 id="3-0-打开picgo设置，找到设置Server，把端口号修改成36677"><a href="#3-0-打开picgo设置，找到设置Server，把端口号修改成36677" class="headerlink" title="3.0 打开picgo设置，找到设置Server，把端口号修改成36677"></a>3.0 打开picgo设置，找到设置Server，把端口号修改成36677</h3><p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224030434.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224030434.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 <p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224111600.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224111600.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 <h3 id="4-0-修改host文件"><a href="#4-0-修改host文件" class="headerlink" title="4.0 修改host文件"></a>4.0 修改host文件</h3><blockquote>
 <p>原因是github屏蔽掉了图片，结局办法就是修改host，我就是用的这个方法解决的</p>
@@ -121,58 +193,24 @@
       </tags>
   </entry>
   <entry>
-    <title>使用github建立图床</title>
-    <url>/2022/07/29/github-img/</url>
-    <content><![CDATA[<div class="story post-story"><h2 id="tip-建立图床必须具备什么条件"><a href="#tip-建立图床必须具备什么条件" class="headerlink" title="tip: 建立图床必须具备什么条件"></a>tip: 建立图床必须具备什么条件</h2><blockquote>
-<p>首先你需要一个github账号，如果没有的话，请先注册。<br/><br>github官网地址 <a href="https://github.com/">github.com</a>   </p>
-</blockquote>
-<ul>
-<li>一个github账号</li>
-<li>一个公开的仓库</li>
-<li>PicGo软件上传图片</li>
-</ul>
-<h1 id="一、新建仓库"><a href="#一、新建仓库" class="headerlink" title="一、新建仓库"></a>一、新建仓库</h1></div><div class="story post-story"><h2 id="1-1-创建一个新仓库，用于存放图片。"><a href="#1-1-创建一个新仓库，用于存放图片。" class="headerlink" title="1.1 创建一个新仓库，用于存放图片。"></a>1.1 创建一个新仓库，用于存放图片。</h2><p>填写仓库名称和描述，且仓库必须是public的，否则存储的图片不能正常访问。<img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/200.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/200.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="新建仓库"></p>
-</div><div class="story post-story"><h2 id="1-2-生成一个token，用于picGo访问github"><a href="#1-2-生成一个token，用于picGo访问github" class="headerlink" title="1.2 生成一个token，用于picGo访问github"></a>1.2 生成一个token，用于picGo访问github</h2><p>选择左侧菜单的Developer settings</p>
-<p>之后选择左侧Personal access tokens，再点击Generate new token<br><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/204.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/204.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="生产token的位置"></p>
-<p>填写Note，勾选repo.<br><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/205.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/205.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><br>注意，生成的token只会在这里显示一次，所以记得单独保存下来哦。<br><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/206.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/206.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><br>至此，Github的配置完成。</p>
-<h1 id="二、下载picGo，并进行配置"><a href="#二、下载picGo，并进行配置" class="headerlink" title="二、下载picGo，并进行配置"></a>二、下载picGo，并进行配置</h1></div><div class="story post-story"><h2 id="2-1-下载"><a href="#2-1-下载" class="headerlink" title="2.1 下载"></a>2.1 下载</h2><p>访问picGo下载地址，选择 picGo-Setup-XXX.exe下载软件安装包即可。</p>
-<p>如果安装成功，picGo不能正常使用，则可以用兼容模式启动,或者重启电脑。【此问题因电脑而异,重启电脑能解决百分之九十九的问题。】</p>
-</div><div class="story post-story"><h2 id="2-2-配置"><a href="#2-2-配置" class="headerlink" title="2.2 配置"></a>2.2 配置</h2><p>仓库名：[github用户名]&#x2F;[第一步新建的仓库名称]</p>
-<p>分支：默认master，从2020.10.01开始，github的默认分支名变更为main</p>
-<p>设定token：第一步创建的token</p>
-<p>指定存储路径：可填可不填，如果填写了，图片就会存储在img文件夹下</p>
-<p>设定自定义域名： <code>https://cdn.jsdelivr.net/gh/[github用户名]/[仓库名]@main</code>,注意，此处的分支一定要填写@main，否则默认使用master分支。而现在github创建的默认分支名为main，如果不指定，则会出现图片不能上传的情况。我的是: <code>https://cdn.jsdelivr.net/gh/txw1314/blog-img@main</code><br><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/207.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/207.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="配置picGo"></p>
-</div><div class="story post-story"><h2 id="2-3-插件安装"><a href="#2-3-插件安装" class="headerlink" title="2.3 插件安装"></a>2.3 插件安装</h2><p>点击插件设置右边的图标，进入插件网页，选择表格中的插件名称复制到input输入框,选择插件安装，可显示更多内容<br><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/208.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/208.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="安装插件"></p>
-<p>至此，github+picGo的配置完成，可以在上传区进行图片上传了。</p>
-<p>补充几点</p>
-<blockquote>
-<ol>
-<li>原本github的自定义域名应该是： <code>https://raw.githubusercontent.com/[username]/[仓库名]</code><br>但是使用这种方式访问图片巨慢，所以建议使用jsdelivr作为cdn加速。改变域名即可，不需要任何其他配置。<code>https://cdn.jsdelivr.net/gh/txw1314/blog-img@main</code></li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="2">
-<li>配置完成，可能出现不能上传的情况，请大家耐心检查，也许某一步的配置出现了问题，实在不行就重启电脑，毕竟重启电脑能解决99%的问题。</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="3">
-<li>不止可以用github作为图床，还可以使用国内的码云(gitee)。当然也有收费的七牛、阿里云等等。在安装插件之后会有诸多选项。</li>
-</ol>
-</blockquote>
-<h1 id="三、上传图片"><a href="#三、上传图片" class="headerlink" title="三、上传图片"></a>三、上传图片</h1><p>选择PicGo(app)上传图片。<br><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/209.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/209.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="上传图片"></p>
-<p>picGo监听端口设置</p>
-<p>选择“PicGo设置”–&gt;“设置server”</p>
-<blockquote>
-<p>如果监听端口不是36677，则需要修改为36677。否则会出现picGo能正常上传 图片，而typora上传图片失败的情况。<br>如果picGO不能正常上传图片，建议重启电脑，我就是重启了之后就能正常上传图片了，只是图片不会显示缩略图</p>
-</blockquote>
+    <title>Hello World</title>
+    <url>/2022/07/28/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<div class="story post-story"><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
 </div>]]></content>
       <categories>
-        <category>github</category>
+        <category>个人学习</category>
       </categories>
       <tags>
-        <tag>github</tag>
+        <tag>个人</tag>
       </tags>
   </entry>
   <entry>
@@ -195,27 +233,6 @@
       </categories>
       <tags>
         <tag>github</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/07/28/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<div class="story post-story"><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-</div>]]></content>
-      <categories>
-        <category>个人学习</category>
-      </categories>
-      <tags>
-        <tag>个人</tag>
       </tags>
   </entry>
 </search>
