@@ -124,55 +124,6 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo之评论系统——giscus</title>
-    <url>/2022/07/31/hexo/hexo%E4%B9%8B%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94giscus/</url>
-    <content><![CDATA[<p>本篇主要讲的是hexo主题volantis的评论系统相关的giscus</p>
-<h1 id="一、评论系统的选择giscus"><a href="#一、评论系统的选择giscus" class="headerlink" title="一、评论系统的选择giscus"></a>一、评论系统的选择giscus</h1><div class="story post-story"><h2 id="1-1-打开文件-config-volantis-yml，搜索comments评论部分，可以看到这里选择的是giscus"><a href="#1-1-打开文件-config-volantis-yml，搜索comments评论部分，可以看到这里选择的是giscus" class="headerlink" title="1.1 打开文件_config.volantis.yml，搜索comments评论部分，可以看到这里选择的是giscus"></a>1.1 打开文件_config.volantis.yml，搜索comments评论部分，可以看到这里选择的是giscus</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">comments:  </span><br><span class="line">  title: &lt;i class=&#x27;fa-solid fa-comments&#x27;&gt;&lt;/i&gt; 评论</span><br><span class="line">  subtitle:</span><br><span class="line">  service: giscus</span><br><span class="line">  # 可选评论系统 #</span><br></pre></td></tr></table></figure>
-</div><div class="story post-story"><h2 id="1-2-继续搜索giscus，显示需要配置一些repo-x2F-repo-id等参数"><a href="#1-2-继续搜索giscus，显示需要配置一些repo-x2F-repo-id等参数" class="headerlink" title="1.2 继续搜索giscus，显示需要配置一些repo&#x2F;repo-id等参数"></a>1.2 继续搜索giscus，显示需要配置一些repo&#x2F;repo-id等参数</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># giscus</span><br><span class="line"># https://giscus.app</span><br><span class="line"># https://github.com/laymonage/giscus</span><br><span class="line">giscus:</span><br><span class="line">  # 以下配置按照 yml 格式增删填写即可</span><br><span class="line">  repo: txw1314/comment-giscus</span><br><span class="line">  repo-id: R_kgDOHvE8vw</span><br><span class="line">  category: Comments</span><br><span class="line">  category-id: DIC_kwDOHvE8v84CQgFl</span><br><span class="line">  mapping: &quot;title&quot;</span><br><span class="line">  reactions-enabled: &quot;1&quot;</span><br><span class="line">  emit-metadata: &quot;0&quot;</span><br><span class="line">  position: &quot;top&quot;</span><br><span class="line">  loading: &quot;lazy&quot;</span><br><span class="line">  crossorigin: &quot;anonymous&quot;</span><br><span class="line">  lang: &quot;zh-CN&quot;</span><br><span class="line">  # 以上配置按照 yml 格式增删填写即可</span><br></pre></td></tr></table></figure>
-<h1 id="二、如何获取giscus的相关配置"><a href="#二、如何获取giscus的相关配置" class="headerlink" title="二、如何获取giscus的相关配置"></a>二、如何获取giscus的相关配置</h1></div><div class="story post-story"><h2 id="2-1-在github的操作"><a href="#2-1-在github的操作" class="headerlink" title="2.1 在github的操作"></a>2.1 在github的操作</h2><h3 id="2-1-1-新建一个关于评论的仓库"><a href="#2-1-1-新建一个关于评论的仓库" class="headerlink" title="2.1.1 新建一个关于评论的仓库"></a>2.1.1 新建一个关于评论的仓库</h3><p>我这里命名的是comment-giscus,点击Setting</p>
-<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220102126.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220102126.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220102126"></p>
-<h3 id="2-1-2-继续往下滚动到Features，勾选Wikis"><a href="#2-1-2-继续往下滚动到Features，勾选Wikis" class="headerlink" title="2.1.2 继续往下滚动到Features，勾选Wikis"></a>2.1.2 继续往下滚动到Features，勾选Wikis</h3><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220132464.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220132464.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220132464"></p>
-<h3 id="2-1-3-继续滚动，勾选Discussions。"><a href="#2-1-3-继续滚动，勾选Discussions。" class="headerlink" title="2.1.3 继续滚动，勾选Discussions。"></a>2.1.3 继续滚动，勾选Discussions。</h3><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220200017.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220200017.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220200017"></p>
-</div><div class="story post-story"><h2 id="2-2-在GitHub代码库上的讨论页面创建一个类别"><a href="#2-2-在GitHub代码库上的讨论页面创建一个类别" class="headerlink" title="2.2 在GitHub代码库上的讨论页面创建一个类别"></a>2.2 在GitHub代码库上的讨论页面创建一个类别</h2><blockquote>
-<p>比如 “Comments（评论）”——或者选择现有的类别。</p>
-</blockquote>
-<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220348443.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220348443.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220348443"></p>
-<h3 id="2-2-1-如果没有，那就新建类别"><a href="#2-2-1-如果没有，那就新建类别" class="headerlink" title="2.2.1 如果没有，那就新建类别"></a>2.2.1 如果没有，那就新建类别</h3><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220447606.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220447606.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220447606"></p>
-<h3 id="2-2-2-填写title和详情，点击create创建完成"><a href="#2-2-2-填写title和详情，点击create创建完成" class="headerlink" title="2.2.2 填写title和详情，点击create创建完成"></a>2.2.2 填写title和详情，点击create创建完成</h3><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220619536.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220619536.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220619536"></p>
-<h3 id="2-2-3-创建完成，分类里面有了我们新增的分类"><a href="#2-2-3-创建完成，分类里面有了我们新增的分类" class="headerlink" title="2.2.3 创建完成，分类里面有了我们新增的分类"></a>2.2.3 创建完成，分类里面有了我们新增的分类</h3><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220734420.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220734420.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220734420"></p>
-</div><div class="story post-story"><h2 id="2-3-转到-https-github-com-apps-giscus，按照提示操作，并仅授予对选定代码库的访问权限。"><a href="#2-3-转到-https-github-com-apps-giscus，按照提示操作，并仅授予对选定代码库的访问权限。" class="headerlink" title="2.3 转到 https://github.com/apps/giscus，按照提示操作，并仅授予对选定代码库的访问权限。"></a>2.3 转到 <a href="https://github.com/apps/giscus%EF%BC%8C%E6%8C%89%E7%85%A7%E6%8F%90%E7%A4%BA%E6%93%8D%E4%BD%9C%EF%BC%8C%E5%B9%B6%E4%BB%85%E6%8E%88%E4%BA%88%E5%AF%B9%E9%80%89%E5%AE%9A%E4%BB%A3%E7%A0%81%E5%BA%93%E7%9A%84%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E3%80%82">https://github.com/apps/giscus，按照提示操作，并仅授予对选定代码库的访问权限。</a></h2><h3 id="2-3-1-安装giscus"><a href="#2-3-1-安装giscus" class="headerlink" title="2.3.1 安装giscus"></a>2.3.1 安装giscus</h3><blockquote>
-<p>在根目录安装giscus : <code>npm install giscus</code></p>
-</blockquote>
-<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220808104.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220808104.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220808104"></p>
-<h3 id="2-3-2-选择建立的评论仓库"><a href="#2-3-2-选择建立的评论仓库" class="headerlink" title="2.3.2 选择建立的评论仓库"></a>2.3.2 选择建立的评论仓库</h3><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220955798.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220955798.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220955798"></p>
-<h3 id="2-3-3-确认账号密码"><a href="#2-3-3-确认账号密码" class="headerlink" title="2.3.3 确认账号密码"></a>2.3.3 确认账号密码</h3><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221013850.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221013850.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221013850"></p>
-<h3 id="2-3-4-选择完成"><a href="#2-3-4-选择完成" class="headerlink" title="2.3.4 选择完成"></a>2.3.4 选择完成</h3><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221043339.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221043339.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221043339"></p>
-</div><div class="story post-story"><h2 id="2-4-在giscus的操作，我们需要配置giscus的小部件。"><a href="#2-4-在giscus的操作，我们需要配置giscus的小部件。" class="headerlink" title="2.4 在giscus的操作，我们需要配置giscus的小部件。"></a>2.4 在giscus的操作，我们需要配置giscus的小部件。</h2><blockquote>
-<p>打开网页：<a href="https://giscus.app/zh-CN">giscus</a></p>
-</blockquote>
-<h3 id="2-4-1-选择语言和仓库，"><a href="#2-4-1-选择语言和仓库，" class="headerlink" title="2.4.1 选择语言和仓库，"></a>2.4.1 选择语言和仓库，</h3><p>输入之前github创建仓库名称，如用<code>username/reponame</code>，这里包括用户名和仓库名称，</p>
-<blockquote>
-<p>注意&#x2F;前后不能有空格，不能输错，否则下面会提示报错</p>
-</blockquote>
-<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221204482.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221204482.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221204482"></p>
-<h3 id="2-4-2-页面映射关系，这里我选择的是第三个"><a href="#2-4-2-页面映射关系，这里我选择的是第三个" class="headerlink" title="2.4.2 页面映射关系，这里我选择的是第三个"></a>2.4.2 页面映射关系，这里我选择的是第三个</h3><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221317913.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221317913.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221317913"></p>
-<h3 id="2-4-3-然后选择Discussion分类和特性"><a href="#2-4-3-然后选择Discussion分类和特性" class="headerlink" title="2.4.3 然后选择Discussion分类和特性"></a>2.4.3 然后选择Discussion分类和特性</h3><p>分类选择我们上面新建的分类，特性我选择了箭头不两个，也可不选，主题随便选一个就行，不选也没关系这个不影响</p>
-<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221551343.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221551343.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221551343"></p>
-<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221621379.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221621379.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221621379"></p>
-<h3 id="2-4-4-启用giscus"><a href="#2-4-4-启用giscus" class="headerlink" title="2.4.4 启用giscus"></a>2.4.4 启用giscus</h3><p>一切就绪之后，Giscus将根据你的设置生成一个脚本标签，这就是我们想要的giscus的配置信息了。你可以将其粘贴到你的代码中，记得把这个保存下来，不然还要在操作一下这步骤重新生成了</p>
-<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221745879.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221745879.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221745879"></p>
-</div><div class="story post-story"><h2 id="这是最终结果"><a href="#这是最终结果" class="headerlink" title="这是最终结果"></a>这是最终结果</h2><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221831472.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221831472.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221831472"></p>
-
-</div>]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>评论系统</tag>
-        <tag>giscus</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo-博客的安装与部署-01</title>
     <url>/2022/07/28/hexo/Hexo-%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%83%A8%E7%BD%B2-01/</url>
     <content><![CDATA[<div class="story post-story"><h2 id="一-软件环境"><a href="#一-软件环境" class="headerlink" title="一. 软件环境"></a>一. 软件环境</h2><div class="note success"><p>Git</p></div>
@@ -440,6 +391,107 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2022/07/28/study/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<div class="story post-story"><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+</div>]]></content>
+      <categories>
+        <category>个人学习</category>
+      </categories>
+      <tags>
+        <tag>个人</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo之评论系统——giscus</title>
+    <url>/2022/07/31/hexo/hexo%E4%B9%8B%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94giscus/</url>
+    <content><![CDATA[<p>本篇主要讲的是hexo主题volantis的评论系统相关的giscus</p>
+<h1 id="一、评论系统的选择giscus"><a href="#一、评论系统的选择giscus" class="headerlink" title="一、评论系统的选择giscus"></a>一、评论系统的选择giscus</h1><div class="story post-story"><h2 id="1-1-打开文件-config-volantis-yml，搜索comments评论部分，可以看到这里选择的是giscus"><a href="#1-1-打开文件-config-volantis-yml，搜索comments评论部分，可以看到这里选择的是giscus" class="headerlink" title="1.1 打开文件_config.volantis.yml，搜索comments评论部分，可以看到这里选择的是giscus"></a>1.1 打开文件_config.volantis.yml，搜索comments评论部分，可以看到这里选择的是giscus</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">comments:  </span><br><span class="line">  title: &lt;i class=&#x27;fa-solid fa-comments&#x27;&gt;&lt;/i&gt; 评论</span><br><span class="line">  subtitle:</span><br><span class="line">  service: giscus</span><br><span class="line">  # 可选评论系统 #</span><br></pre></td></tr></table></figure>
+</div><div class="story post-story"><h2 id="1-2-继续搜索giscus，显示需要配置一些repo-x2F-repo-id等参数"><a href="#1-2-继续搜索giscus，显示需要配置一些repo-x2F-repo-id等参数" class="headerlink" title="1.2 继续搜索giscus，显示需要配置一些repo&#x2F;repo-id等参数"></a>1.2 继续搜索giscus，显示需要配置一些repo&#x2F;repo-id等参数</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># giscus</span><br><span class="line"># https://giscus.app</span><br><span class="line"># https://github.com/laymonage/giscus</span><br><span class="line">giscus:</span><br><span class="line">  # 以下配置按照 yml 格式增删填写即可</span><br><span class="line">  repo: txw1314/comment-giscus</span><br><span class="line">  repo-id: R_kgDOHvE8vw</span><br><span class="line">  category: Comments</span><br><span class="line">  category-id: DIC_kwDOHvE8v84CQgFl</span><br><span class="line">  mapping: &quot;title&quot;</span><br><span class="line">  reactions-enabled: &quot;1&quot;</span><br><span class="line">  emit-metadata: &quot;0&quot;</span><br><span class="line">  position: &quot;top&quot;</span><br><span class="line">  loading: &quot;lazy&quot;</span><br><span class="line">  crossorigin: &quot;anonymous&quot;</span><br><span class="line">  lang: &quot;zh-CN&quot;</span><br><span class="line">  # 以上配置按照 yml 格式增删填写即可</span><br></pre></td></tr></table></figure>
+<h1 id="二、如何获取giscus的相关配置"><a href="#二、如何获取giscus的相关配置" class="headerlink" title="二、如何获取giscus的相关配置"></a>二、如何获取giscus的相关配置</h1></div><div class="story post-story"><h2 id="2-1-在github的操作"><a href="#2-1-在github的操作" class="headerlink" title="2.1 在github的操作"></a>2.1 在github的操作</h2><h3 id="2-1-1-新建一个关于评论的仓库"><a href="#2-1-1-新建一个关于评论的仓库" class="headerlink" title="2.1.1 新建一个关于评论的仓库"></a>2.1.1 新建一个关于评论的仓库</h3><p>我这里命名的是comment-giscus,点击Setting</p>
+<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220102126.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220102126.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220102126"></p>
+<h3 id="2-1-2-继续往下滚动到Features，勾选Wikis"><a href="#2-1-2-继续往下滚动到Features，勾选Wikis" class="headerlink" title="2.1.2 继续往下滚动到Features，勾选Wikis"></a>2.1.2 继续往下滚动到Features，勾选Wikis</h3><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220132464.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220132464.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220132464"></p>
+<h3 id="2-1-3-继续滚动，勾选Discussions。"><a href="#2-1-3-继续滚动，勾选Discussions。" class="headerlink" title="2.1.3 继续滚动，勾选Discussions。"></a>2.1.3 继续滚动，勾选Discussions。</h3><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220200017.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220200017.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220200017"></p>
+</div><div class="story post-story"><h2 id="2-2-在GitHub代码库上的讨论页面创建一个类别"><a href="#2-2-在GitHub代码库上的讨论页面创建一个类别" class="headerlink" title="2.2 在GitHub代码库上的讨论页面创建一个类别"></a>2.2 在GitHub代码库上的讨论页面创建一个类别</h2><blockquote>
+<p>比如 “Comments（评论）”——或者选择现有的类别。</p>
+</blockquote>
+<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220348443.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220348443.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220348443"></p>
+<h3 id="2-2-1-如果没有，那就新建类别"><a href="#2-2-1-如果没有，那就新建类别" class="headerlink" title="2.2.1 如果没有，那就新建类别"></a>2.2.1 如果没有，那就新建类别</h3><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220447606.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220447606.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220447606"></p>
+<h3 id="2-2-2-填写title和详情，点击create创建完成"><a href="#2-2-2-填写title和详情，点击create创建完成" class="headerlink" title="2.2.2 填写title和详情，点击create创建完成"></a>2.2.2 填写title和详情，点击create创建完成</h3><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220619536.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220619536.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220619536"></p>
+<h3 id="2-2-3-创建完成，分类里面有了我们新增的分类"><a href="#2-2-3-创建完成，分类里面有了我们新增的分类" class="headerlink" title="2.2.3 创建完成，分类里面有了我们新增的分类"></a>2.2.3 创建完成，分类里面有了我们新增的分类</h3><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220734420.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220734420.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220734420"></p>
+</div><div class="story post-story"><h2 id="2-3-转到-https-github-com-apps-giscus，按照提示操作，并仅授予对选定代码库的访问权限。"><a href="#2-3-转到-https-github-com-apps-giscus，按照提示操作，并仅授予对选定代码库的访问权限。" class="headerlink" title="2.3 转到 https://github.com/apps/giscus，按照提示操作，并仅授予对选定代码库的访问权限。"></a>2.3 转到 <a href="https://github.com/apps/giscus%EF%BC%8C%E6%8C%89%E7%85%A7%E6%8F%90%E7%A4%BA%E6%93%8D%E4%BD%9C%EF%BC%8C%E5%B9%B6%E4%BB%85%E6%8E%88%E4%BA%88%E5%AF%B9%E9%80%89%E5%AE%9A%E4%BB%A3%E7%A0%81%E5%BA%93%E7%9A%84%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E3%80%82">https://github.com/apps/giscus，按照提示操作，并仅授予对选定代码库的访问权限。</a></h2><h3 id="2-3-1-安装giscus"><a href="#2-3-1-安装giscus" class="headerlink" title="2.3.1 安装giscus"></a>2.3.1 安装giscus</h3><blockquote>
+<p>在根目录安装giscus : <code>npm install giscus</code></p>
+</blockquote>
+<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220808104.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220808104.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220808104"></p>
+<h3 id="2-3-2-选择建立的评论仓库"><a href="#2-3-2-选择建立的评论仓库" class="headerlink" title="2.3.2 选择建立的评论仓库"></a>2.3.2 选择建立的评论仓库</h3><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220955798.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220955798.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220955798"></p>
+<h3 id="2-3-3-确认账号密码"><a href="#2-3-3-确认账号密码" class="headerlink" title="2.3.3 确认账号密码"></a>2.3.3 确认账号密码</h3><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221013850.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221013850.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221013850"></p>
+<h3 id="2-3-4-选择完成"><a href="#2-3-4-选择完成" class="headerlink" title="2.3.4 选择完成"></a>2.3.4 选择完成</h3><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221043339.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221043339.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221043339"></p>
+</div><div class="story post-story"><h2 id="2-4-在giscus的操作，我们需要配置giscus的小部件。"><a href="#2-4-在giscus的操作，我们需要配置giscus的小部件。" class="headerlink" title="2.4 在giscus的操作，我们需要配置giscus的小部件。"></a>2.4 在giscus的操作，我们需要配置giscus的小部件。</h2><blockquote>
+<p>打开网页：<a href="https://giscus.app/zh-CN">giscus</a></p>
+</blockquote>
+<h3 id="2-4-1-选择语言和仓库，"><a href="#2-4-1-选择语言和仓库，" class="headerlink" title="2.4.1 选择语言和仓库，"></a>2.4.1 选择语言和仓库，</h3><p>输入之前github创建仓库名称，如用<code>username/reponame</code>，这里包括用户名和仓库名称，</p>
+<blockquote>
+<p>注意&#x2F;前后不能有空格，不能输错，否则下面会提示报错</p>
+</blockquote>
+<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221204482.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221204482.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221204482"></p>
+<h3 id="2-4-2-页面映射关系，这里我选择的是第三个"><a href="#2-4-2-页面映射关系，这里我选择的是第三个" class="headerlink" title="2.4.2 页面映射关系，这里我选择的是第三个"></a>2.4.2 页面映射关系，这里我选择的是第三个</h3><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221317913.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221317913.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221317913"></p>
+<h3 id="2-4-3-然后选择Discussion分类和特性"><a href="#2-4-3-然后选择Discussion分类和特性" class="headerlink" title="2.4.3 然后选择Discussion分类和特性"></a>2.4.3 然后选择Discussion分类和特性</h3><p>分类选择我们上面新建的分类，特性我选择了箭头不两个，也可不选，主题随便选一个就行，不选也没关系这个不影响</p>
+<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221551343.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221551343.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221551343"></p>
+<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221621379.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221621379.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221621379"></p>
+<h3 id="2-4-4-启用giscus"><a href="#2-4-4-启用giscus" class="headerlink" title="2.4.4 启用giscus"></a>2.4.4 启用giscus</h3><p>一切就绪之后，Giscus将根据你的设置生成一个脚本标签，这就是我们想要的giscus的配置信息了。你可以将其粘贴到你的代码中，记得把这个保存下来，不然还要在操作一下这步骤重新生成了</p>
+<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221745879.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221745879.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221745879"></p>
+</div><div class="story post-story"><h2 id="这是最终结果"><a href="#这是最终结果" class="headerlink" title="这是最终结果"></a>这是最终结果</h2><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221831472.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221831472.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221831472"></p>
+
+</div>]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>评论系统</tag>
+        <tag>giscus</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo之站点统计——busuanzi</title>
+    <url>/2022/08/01/hexo/hexo%E4%B9%8B%E7%AB%99%E7%82%B9%E7%BB%9F%E8%AE%A1%E2%80%94%E2%80%94busuanzi/</url>
+    <content><![CDATA[<p>本片介绍的是站点信息统计之busuanzi</p>
+<h1 id="一、站点信息"><a href="#一、站点信息" class="headerlink" title="一、站点信息"></a>一、站点信息</h1><div class="story post-story"><h2 id="1-1-在-config-volantis-yml搜索统计-显示有站点统计信息"><a href="#1-1-在-config-volantis-yml搜索统计-显示有站点统计信息" class="headerlink" title="1.1 在_config.volantis.yml搜索统计,显示有站点统计信息"></a>1.1 在_config.volantis.yml搜索<code>统计</code>,显示有站点统计信息</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">visitcounter: # 站点统计访客开启入口在下面⬇</span><br><span class="line">      siteuv:</span><br><span class="line">        enable: true</span><br><span class="line">        text: &#x27;本站访客数：&#x27;</span><br><span class="line">        unit: &#x27;人&#x27;</span><br><span class="line">      sitepv:</span><br><span class="line">        enable: true</span><br><span class="line">        text: &#x27;本站总访问量：&#x27;</span><br><span class="line">        unit: &#x27;次&#x27;</span><br></pre></td></tr></table></figure>
+</div><div class="story post-story"><h2 id="1-2-接下来就是analytics引入busuanzi-这里就需要配置个人的app-id和app-key"><a href="#1-2-接下来就是analytics引入busuanzi-这里就需要配置个人的app-id和app-key" class="headerlink" title="1.2 接下来就是analytics引入busuanzi,这里就需要配置个人的app_id和app_key"></a>1.2 接下来就是analytics引入busuanzi,这里就需要配置个人的app_id和app_key</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 站点统计访客开启入口，引入busuanzi，并配置属于自己的app_id和app_key</span><br><span class="line">analytics:</span><br><span class="line">  busuanzi: volantis-static/libs/busuanzi/js/busuanzi.pure.mini.js </span><br><span class="line">  leancloud: # 请使用自己的 id &amp; key 以防止数据丢失</span><br><span class="line">    app_id: u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI</span><br><span class="line">    app_key: jfHtEKVE24j0IVCGHbvuFClp</span><br><span class="line">    custom_api_server: # 国际版一般不需要写，除非自定义了 API Server</span><br></pre></td></tr></table></figure>
+<h1 id="二、获取busuanzi的配置信息"><a href="#二、获取busuanzi的配置信息" class="headerlink" title="二、获取busuanzi的配置信息"></a>二、获取busuanzi的配置信息</h1></div><div class="story post-story"><h2 id="2-1-打开leancloud官网，注册账号，该认证认证"><a href="#2-1-打开leancloud官网，注册账号，该认证认证" class="headerlink" title="2.1 打开leancloud官网，注册账号，该认证认证"></a>2.1 打开leancloud官网，注册账号，该认证认证</h2><blockquote>
+<p>leancloud官网:<a href="https://www.leancloud.cn/">https://www.leancloud.cn/</a> ,点击免费使用，注册账号</p>
+</blockquote>
+<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801224259281.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801224259281.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="注册账号"></p>
+</div><div class="story post-story"><h2 id="2-2-登录账号注册应用"><a href="#2-2-登录账号注册应用" class="headerlink" title="2.2 登录账号注册应用"></a>2.2 登录账号注册应用</h2><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801224618543.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801224618543.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="注册应用"></p>
+</div><div class="story post-story"><h2 id="2-3-点击应用，选择应用"><a href="#2-3-点击应用，选择应用" class="headerlink" title="2.3 点击应用，选择应用"></a>2.3 点击应用，选择应用</h2><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801224734317.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801224734317.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="选择应用"></p>
+</div><div class="story post-story"><h2 id="2-4-点击设置，应用凭证，右侧就是我们想要的配置信息了"><a href="#2-4-点击设置，应用凭证，右侧就是我们想要的配置信息了" class="headerlink" title="2.4 点击设置，应用凭证，右侧就是我们想要的配置信息了"></a>2.4 点击设置，应用凭证，右侧就是我们想要的配置信息了</h2><blockquote>
+<p>复制保存我们的配置信息，填入指定位置，页面就是有相关信息展示了</p>
+</blockquote>
+<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801225041384.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801225041384.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="获取配置信息"></p>
+<h1 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h1><blockquote>
+<p>tip: 本地运行显示数据有点夸张了，还有点延迟，但是部署之后会显示正常数据</p>
+</blockquote>
+<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801230651942.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801230651942.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="本地运行"></p>
+<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801225311587.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801225311587.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="部署之后"></p>
+
+</div>]]></content>
+      <categories>
+        <category>站点统计</category>
+      </categories>
+      <tags>
+        <tag>busuanzi</tag>
+        <tag>站点统计</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>PicGo相册不能显示问题及解决办法</title>
     <url>/2022/07/30/picgo/PicGo%E7%9B%B8%E5%86%8C%E4%B8%8D%E8%83%BD%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
     <content><![CDATA[<p>我的PicGo图片上传成功了，但是相册区域图片不能正常显示，如下图所示</p>
@@ -467,27 +519,6 @@
       </categories>
       <tags>
         <tag>PicGo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/07/28/study/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<div class="story post-story"><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-</div>]]></content>
-      <categories>
-        <category>个人学习</category>
-      </categories>
-      <tags>
-        <tag>个人</tag>
       </tags>
   </entry>
   <entry>
