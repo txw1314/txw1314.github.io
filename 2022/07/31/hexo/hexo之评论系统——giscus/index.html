@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2022/07/28/hexo-博客的安装与部署-01/"/>
+  <link rel="canonical" href="http://example.com/2022/07/31/hexo/hexo之评论系统——giscus/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -25,27 +25,27 @@
   <!-- Custom Files headBegin begin-->
   
   <!-- Custom Files headBegin end-->
-  <link rel="preload" href="/css/style.c29e89ba.css" as="style">
-  <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
-<link rel="preload" href="https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
-
+    <link rel="shortcut icon" type='image/x-icon' href="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5199/favicon.ico">
+  <link rel="preload" href="/css/style.d1ac915c.css" as="style">
+  
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>Hexo-博客的安装与部署-01 - VanillaYiYi</title>
-  <meta name="keywords" content="Hexo,null">
-  <meta desc name="description" content="软件环境 Git Node.js Clash for Windows(任意加速器，保证能连接到Github),然后Hexo博客初始化,最后我们会将搭建好的Hexo上传到Github - VanillaYiYi - VanillaYiYi">
+  <title>hexo之评论系统——giscus - VanillaYiYi</title>
+  <meta name="keywords" content="评论系统,giscus,VanillaYiYi,博客,分享">
+  <meta desc name="description" content="hexo之评论系统——giscus - VanillaYiYi - VanillaYiYi">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo-博客的安装与部署-01">
-<meta property="og:url" content="http://example.com/2022/07/28/Hexo-%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%83%A8%E7%BD%B2-01/index.html">
+<meta property="og:title" content="hexo之评论系统——giscus">
+<meta property="og:url" content="http://example.com/2022/07/31/hexo/hexo%E4%B9%8B%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94giscus/index.html">
 <meta property="og:site_name" content="VanillaYiYi">
-<meta property="og:description" content="软件环境 Git Node.js Clash for Windows(任意加速器，保证能连接到Github),然后Hexo博客初始化,最后我们会将搭建好的Hexo上传到Github">
+<meta property="og:description" content="hexo之评论系统——giscus">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2022-07-28T11:14:42.000Z">
-<meta property="article:modified_time" content="2022-07-29T12:35:05.513Z">
+<meta property="article:published_time" content="2022-07-30T17:08:28.000Z">
+<meta property="article:modified_time" content="2022-08-01T14:23:09.485Z">
 <meta property="article:author" content="VanillaYiYi">
-<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="评论系统">
+<meta property="article:tag" content="giscus">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -114,7 +114,7 @@ html {
   color: var(--color-text);
   width: 100%;
   height: 100%;
-  font-family: UbuntuMono, "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+  font-family: "Noto Serif SC", Roboto, -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif, Menlo, Monaco, monospace, sans-serif;
   font-size: 16px;
 }
 html >::-webkit-scrollbar {
@@ -525,7 +525,7 @@ button {
   margin-top: 32px;
 }
 .cover-wrapper .cover-body .title {
-  font-family: "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Helvetica, monospace;
+  font-family: MaShanZheng, Roboto, Noto Serif SC, -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif, Helvetica, monospace;
   font-size: 3.125rem;
   line-height: 1.2;
   text-shadow: 0 1px 2px rgba(0,0,0,0.1);
@@ -841,14 +841,14 @@ button {
 }
 @font-face {
   font-family: 'UbuntuMono';
-  src: url("https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf");
+  src: url("");
   font-weight: 'normal';
   font-style: 'normal';
   font-display: swap;
 }
 @font-face {
   font-family: 'Varela Round';
-  src: url("https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/VarelaRound/VarelaRound-Regular.ttf");
+  src: url("");
   font-weight: 'normal';
   font-style: 'normal';
   font-display: swap;
@@ -971,7 +971,7 @@ button {
   line-height: 64px;
   padding: 0 24px;
   font-size: 1.25rem;
-  font-family: "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Helvetica, monospace;
+  font-family: MaShanZheng, Roboto, Noto Serif SC, -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif, Helvetica, monospace;
 }
 .l_header #wrapper .nav-main .title img {
   height: 64px;
@@ -982,7 +982,7 @@ button {
 }
 .l_header .nav-sub .title {
   font-weight: bold;
-  font-family: UbuntuMono, "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+  font-family: "Noto Serif SC", Roboto, -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif, Menlo, Monaco, monospace, sans-serif;
   line-height: 1.2;
   max-height: 64px;
   white-space: normal;
@@ -1677,8 +1677,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.c29e89ba.css" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.c29e89ba.css"></noscript>
+  <link rel="stylesheet" href="/css/style.d1ac915c.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.d1ac915c.css"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -1750,9 +1750,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.GLOBAL_CONFIG ={
     debug: false,
-    cdn: {"js":{"app":"/js/app.af2d54c8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.1aa99ff1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js"},"css":{"style":"/css/style.c29e89ba.css"}},
+    cdn: {"js":{"app":"/js/app.af2d54c8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.1aa99ff1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js"},"css":{"style":"/css/style.d1ac915c.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1659200188835),
+    lastupdate: new Date(1659363807441),
     sidebar: {
       for_page: ["blogger","category","webinfo","qrcode","tagcloud","donate","lastupdate","repos"],
       for_post: ["toc"],
@@ -2173,6 +2173,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
   <!-- import head_end begin -->
+      <link rel="stylesheet" href="https://gcore.jsdelivr.net/gh/sakurasep/main-cdn@2.0/Volantis/Css/roboto.css">
   <!-- import head_end end -->
   <!-- Custom Files headEnd begin-->
   
@@ -2184,7 +2185,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin begin-->
     
     <!-- Custom Files bodyBegin end-->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto floatable show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2455,7 +2456,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
       <div id="none" class='cover-wrapper post dock' style="display: none;">
         
-  <div class='cover-bg lazyload placeholder' data-bg="https://gcore.jsdelivr.net/gh/MHG-LAB/cron@gh-pages/bing/bing.jpg"></div>
+  <div class='cover-bg lazyload placeholder' data-bg="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5199/Wallpaper/20.jpg"></div>
 
 <div class='cover-body'>
   <div class='top'>
@@ -2521,14 +2522,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/28/Hexo-%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%83%A8%E7%BD%B2-01/">
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md floatable article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/31/hexo/hexo%E4%B9%8B%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94giscus/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="VanillaYiYi">
   </span>
   <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
     <meta itemprop="name" content="VanillaYiYi">
-    <meta itemprop="description" content="VanillaYiYi">
+    <meta itemprop="description" content="希望在这里分享我的经验与生活！">
   </span>
   
 
@@ -2543,7 +2544,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        Hexo-博客的安装与部署-01
+        hexo之评论系统——giscus
       </h1>
       <div class='new-meta-box'>
         
@@ -2563,13 +2564,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：1.9k 字</p>
+      <p>字数：655 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：6 分钟</p>
+      <p>时长：2 分钟</p>
     </a>
   </div>
 
@@ -2580,10 +2581,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
   <div class='new-meta-item category'>
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/Hexo%E7%B3%BB%E5%88%97/">Hexo系列</a>
+    <a class="category-link" href="/categories/hexo/">hexo</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/Hexo%E7%B3%BB%E5%88%97/" itemprop="url"><span itemprop="name">Hexo系列</span></a>
+        <a href="/categories/hexo/" itemprop="url"><span itemprop="name">hexo</span></a>
       </span>
     
   </div>
@@ -2592,10 +2593,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-07-28T19:14:42+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-07-31T01:08:28+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2022年7月28日</p>
+    <p>发布于：2022年7月31日</p>
   </a>
 </div>
 
@@ -2610,7 +2611,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <p>
       <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="lc-pv" data-title="Hexo-博客的安装与部署-01" data-path="/2022/07/28/Hexo-%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%83%A8%E7%BD%B2-01/">
+      <span id="lc-pv" data-title="hexo之评论系统——giscus" data-path="/2022/07/31/hexo/hexo%E4%B9%8B%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94giscus/">
         <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
       </span>
       
@@ -2632,62 +2633,42 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 id="一-软件环境"><a href="#一-软件环境" class="headerlink" title="一. 软件环境"></a>一. 软件环境</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Git</span><br><span class="line">Node.js</span><br><span class="line">Clash for Windows(任意加速器，保证能连接到Github)</span><br></pre></td></tr></table></figure>
-<div class="story post-story"><h2 id="1-1-Git官网"><a href="#1-1-Git官网" class="headerlink" title="1.1 Git官网"></a>1.1 Git官网</h2><p>我们会将搭建好的Hexo上传到Github，所以需要Git命令行支持。<br>Git官网页面<a href="1231233332132"></a></p>
-</div><div class="story post-story"><h2 id="1-2-Node-js"><a href="#1-2-Node-js" class="headerlink" title="1.2 Node.js"></a>1.2 Node.js</h2><p>Node官网页面<a href=""></a><br>快捷安装()<br>如果你的网络无法进行下载，请访问以下链接进行下载：<br>Git-密码0625-来自上杉九月的网盘分享<br><a target="_blank" rel="noopener" href="https://cloud.sakurasep.club/s/YdiE">https://cloud.sakurasep.club/s/YdiE</a><br>Node.js-密码0625-来自上杉九月的网盘分享<br><a target="_blank" rel="noopener" href="https://cloud.sakurasep.club/s/jdHB">https://cloud.sakurasep.club/s/jdHB</a></p>
-</div><div class="story post-story"><h2 id="1-3-检查安装是否成功"><a href="#1-3-检查安装是否成功" class="headerlink" title="1.3 检查安装是否成功"></a>1.3 检查安装是否成功</h2><p>打开cmd命令行，输入<code>node -v</code>后显示版本号，即为安装成功<br>在电脑的任意目录点击右键，能够显示Git Bash Here<br>使用这个功能可以更方便的在当前目录启动命令行，当然你也可以使用cmd的cd命令到当前目录</p>
-<h1 id="二-博客本地化部署"><a href="#二-博客本地化部署" class="headerlink" title="二. 博客本地化部署"></a>二. 博客本地化部署</h1></div><div class="story post-story"><h2 id="2-1-更改npm为cnpm源"><a href="#2-1-更改npm为cnpm源" class="headerlink" title="2.1 更改npm为cnpm源"></a>2.1 更改npm为cnpm源</h2><p>国内某些网络环境访问npm会出现问题，建议使用taobao镜像源，能有效减少故障的发生<br>cnpm切换过程<br>使用cnpm -v后正常输出版本号，即为安装成功<br>显示版本号</p>
-</div><div class="story post-story"><h2 id="2-2-安装hexo命令行"><a href="#2-2-安装hexo命令行" class="headerlink" title="2.2 安装hexo命令行"></a>2.2 安装hexo命令行</h2><p>全局安装<code>hexo</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli</span><br><span class="line">or</span><br><span class="line">yarn add hexo-cli</span><br></pre></td></tr></table></figure>
-</div><div class="story post-story"><h2 id="2-3-Hexo博客初始化"><a href="#2-3-Hexo博客初始化" class="headerlink" title="2.3 Hexo博客初始化"></a>2.3 Hexo博客初始化</h2><p>选取一个想要安装Hexo的目录，路径中最好不要含有中文，后续会更好处理<br>此时文件夹内应有初始化文件，不过只要接下来能够成功运行<br>如果初始化出现问题，即在运行hexo init的时候报错(通常是由于网络而出现问题)<br>如果出现网络问题导致无法下载，请访问以下链接获取基础包：<br>Hexo_基础包文件-密码0625-来自上杉九月的网盘分享</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://cloud.sakurasep.club/s/Nouy</span><br></pre></td></tr></table></figure>
-</div><div class="story post-story"><h2 id="2-4-运行博客"><a href="#2-4-运行博客" class="headerlink" title="2.4 运行博客"></a>2.4 运行博客</h2><p>在博客根目录右键打开<code>Git Bash Here</code></p>
-<p>输入以下指令<code>hexo clean</code> 清除已经部署的网页静态文件</p>
-<p><code>hexo g</code> 编译当前博客<br><code>hexo s</code> 启动本地服务器</p>
-<p>出现<code>Hexo is running at http://localhost:4000/ . Press Ctrl+C to stop</code> 并且没有后续的警告语句，说明部署成功，在浏览器中输入localhost:4000查看部署效果。</p>
-<p>如果你的端口4000被占用，可以使用hexo s -p 端口号。然后访问<a href="http://localhost:端口号">http://localhost:端口号</a></p>
-<p>以上，博客的最基本的本地化部署已经完成，接下来的内容是将博客部署到网络进行在线访问。</p>
-<h1 id="三-博客部署到网络"><a href="#三-博客部署到网络" class="headerlink" title="三. 博客部署到网络"></a>三. 博客部署到网络</h1><p>基本介绍一下目前不同部署方式的差别。</p>
-<p><code>Github</code>：微软旗下的开源代码托管平台，国内某些运营商可能无法访问，一般来说还是推荐部署在<code>Github Pages</code>，这也是我本人目前主要用的服务。<br><code>Gitee</code>：虽然是国内的代码托管平台，访问速度可以保证，但是它的<code>Pages</code>页面需要手动更新，并且不能够绑定自定义的域名(如果你想和别的博主交换友链，最好还是要有一个域名。因为一般有域名的博客更有动力维护下去)。</p>
-<p><code>Coding</code>：部署方式很复杂，新版的<code>Coding Pages</code>貌似是和腾讯云挂钩，按量付费，感觉没必要了。</p>
-<p><code>Vercel</code>：是一个静态网页部署平台，好像访问速度要比<code>Github</code>稍微快一些，并且提供修改自定义域名。</p>
-<p>云服务器：访问速度很大程度上取决于你的服务器的带宽，而且现在服务器的价格也不便宜，以后部署其他需要服务器的项目时再使用比较好。</p>
-</div><div class="story post-story"><h2 id="3-1-部署到Github-推荐"><a href="#3-1-部署到Github-推荐" class="headerlink" title="3.1 部署到Github(推荐)"></a>3.1 部署到Github(推荐)</h2><p>作为全球最大同性社交平台，我们主要讲部署到gitHub,其他的自行学习</p>
-<h3 id="3-1-1-创建Github仓库"><a href="#3-1-1-创建Github仓库" class="headerlink" title="3.1.1 创建Github仓库"></a>3.1.1 创建Github仓库</h3><p>注册完成Github账号，新建仓库用于保存上传博客代码。</p>
-<p><code>Tips</code>:试试新建一个仓库名为你<code>Github</code>用户名的仓库</p>
-<p>新建仓库，<code>确保仓库为公开(Public)，并且仓库名与用户名保持一致,</code> 其他设置正常，创建仓库。</p>
-<h3 id="3-1-2-获取与Github的连接（可跳过）"><a href="#3-1-2-获取与Github的连接（可跳过）" class="headerlink" title="3.1.2 获取与Github的连接（可跳过）"></a>3.1.2 获取与Github的连接（可跳过）</h3><p>在任意位置打开<code>Git Bash Here</code>，输入以下指令<code> </code><br>输入第三个命令后只需要连续按下三次回车，就会在C:\Users\用户名.ssh中生成密钥文件</p>
-<p>打开id_rsa.pub，复制文件内容，添加到<code>SSH</code>公钥<br>然后在<code>Git Bash</code>中输入以下命令测试是否连通<code>Github</code></p>
-<h3 id="3-1-3-上传博客到Github"><a href="#3-1-3-上传博客到Github" class="headerlink" title="3.1.3 上传博客到Github"></a>3.1.3 上传博客到Github</h3><p>首先在<code>Git Bash</code>中输入以下命令安装部署插件</p>
-<p>打开根目录下的_config.yml文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">代码</span><br></pre></td></tr></table></figure>
-<p>repo 可以复制此处的链接</p>
-<p>填好后在<code>Git Bash</code>中输入下列命令部署到<code>Github</code>仓库</p>
-<p>此时访问<code>https://Github用户名.github.io</code>即可访问</p>
-<h3 id="3-1-4-绑定自定义域名"><a href="#3-1-4-绑定自定义域名" class="headerlink" title="3.1.4 绑定自定义域名"></a>3.1.4 绑定自定义域名</h3><p>你可以自行选择域名提供商，购买完域名后，在域名解析里设置以下解析记录</p>
-<p>主机记录：设置为@为泛解析，即访问域名为<code>https://域名</code>。如果想要设置为二级域名，请将主机记录设置为想要设置的名称，比如主机记录设置为hexo，即访问域名为<code>https://hexo.域名</code></p>
-<p>记录类型：设置为<code>CNAME</code>，将域名解析到网址。因为<code>Github</code>建议将自定义域名以CNAME解析到Github用户名.github.io</p>
-<p>然后在<code>_config.yml</code>中设置<code>url</code>为你解析的域名<br>最后再博客根目录&#x2F;source下新建CNAME文件</p>
-<p>用于Github识别项目的自定义地址</p>
-</div><div class="story post-story"><h2 id="3-2-部署到Gitee-备用方法"><a href="#3-2-部署到Gitee-备用方法" class="headerlink" title="3.2 部署到Gitee(备用方法)"></a>3.2 部署到Gitee(备用方法)</h2><p>Gitee官网</p>
-<h3 id="3-2-1-创建Gitee仓库"><a href="#3-2-1-创建Gitee仓库" class="headerlink" title="3.2.1 创建Gitee仓库"></a>3.2.1 创建Gitee仓库</h3><p>部署到<code>Gitee</code>与部署到<code>Github</code>的流程相差很小，看一个就行。</p>
-<h3 id="3-2-2-获取与Gitee的连接"><a href="#3-2-2-获取与Gitee的连接" class="headerlink" title="3.2.2 获取与Gitee的连接"></a>3.2.2 获取与Gitee的连接</h3><p>在任意位置打开<code>Git Bash Here</code>，输入以下指令<br>获取<code>SSH</code>公钥</p>
-<p>输入第三个命令后只需要连续按下三次回车，就会在C:\Users\用户名.ssh中生成密钥文件</p>
-<p>用记事本打开<code>id_rsa.pub</code>，复制文件内容，添加到<code>SSH</code>公钥</p>
-<p>然后在<code>Git Bash</code>中输入以下命令测试是否连通<code>Gitee</code></p>
-<p>连接成功</p>
-<h3 id="3-2-3-上传博客到Gitee"><a href="#3-2-3-上传博客到Gitee" class="headerlink" title="3.2.3 上传博客到Gitee"></a>3.2.3 上传博客到Gitee</h3><p>首先在<code>Git Bash</code>中输入以下命令安装部署插件<br>打开根目录下的<code>_config.yml</code>文件最后部分</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/txw1314/txw1314.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<p>repo 后面是仓库链接(我的是：<code>https://github.com/txw1314/txw1314.github.io.git</code>  )</p>
-<p>填好后在<code>Git Bash</code>中输入下列命令部署到<code>Gitee</code>仓库</p>
-<p>在仓库的服务<code>-Gitee Pages</code>进行手动部署</p>
-<p><code>Github Pages</code>会自动使用你仓库的代码进行部署，而<code>Gitee</code>需要你手动更新,详细百度参考</p>
-<p>等待部署结束后，访问<code>Https://Gitee用户名.gitee.io</code>查看部署结果</p>
-</div><div class="story post-story"><h2 id="3-3-部署到Vercel"><a href="#3-3-部署到Vercel" class="headerlink" title="3.3 部署到Vercel"></a>3.3 部署到Vercel</h2><p>请在看过3.1部署到<code>Github</code>后再观看本部分教程,此处不做介绍。</p>
-<p>本篇文章基本讲述了Hexo博客的基本部署，包括了本地化部署测试和上传到Github，Gitee等平台，使用托管平台提供的Page服务进行远程访问。</p>
-<p>本篇教程属于面向与小白的零基础教程系列，如果在安装过程中出现任何问题，你可以在评论区提问，你的提问也是我充实文章的助力！</p>
-<p>关注上杉九月，关注上杉九月谢谢喵！</p>
-<p>Hexo_01-博客的安装与部署<br><a target="_blank" rel="noopener" href="https://blog.sakurasep.site/posts/hexo01/">https://blog.sakurasep.site/posts/hexo01/</a></p>
+    <p>本篇主要讲的是hexo主题volantis的评论系统相关的giscus</p>
+<h1 id="一、评论系统的选择giscus"><a href="#一、评论系统的选择giscus" class="headerlink" title="一、评论系统的选择giscus"></a>一、评论系统的选择giscus</h1><div class="story post-story"><h2 id="1-1-打开文件-config-volantis-yml，搜索comments评论部分，可以看到这里选择的是giscus"><a href="#1-1-打开文件-config-volantis-yml，搜索comments评论部分，可以看到这里选择的是giscus" class="headerlink" title="1.1 打开文件_config.volantis.yml，搜索comments评论部分，可以看到这里选择的是giscus"></a>1.1 打开文件_config.volantis.yml，搜索comments评论部分，可以看到这里选择的是giscus</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">comments:  </span><br><span class="line">  title: &lt;i class=&#x27;fa-solid fa-comments&#x27;&gt;&lt;/i&gt; 评论</span><br><span class="line">  subtitle:</span><br><span class="line">  service: giscus</span><br><span class="line">  # 可选评论系统 #</span><br></pre></td></tr></table></figure>
+<h1 id="1-2-继续搜索giscus，显示需要配置一些repo-x2F-repo-id等参数"><a href="#1-2-继续搜索giscus，显示需要配置一些repo-x2F-repo-id等参数" class="headerlink" title="1.2 继续搜索giscus，显示需要配置一些repo&#x2F;repo-id等参数"></a>1.2 继续搜索giscus，显示需要配置一些repo&#x2F;repo-id等参数</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># giscus</span><br><span class="line"># https://giscus.app</span><br><span class="line"># https://github.com/laymonage/giscus</span><br><span class="line">giscus:</span><br><span class="line">  # 以下配置按照 yml 格式增删填写即可</span><br><span class="line">  repo: txw1314/comment-giscus</span><br><span class="line">  repo-id: R_kgDOHvE8vw</span><br><span class="line">  category: Comments</span><br><span class="line">  category-id: DIC_kwDOHvE8v84CQgFl</span><br><span class="line">  mapping: &quot;title&quot;</span><br><span class="line">  reactions-enabled: &quot;1&quot;</span><br><span class="line">  emit-metadata: &quot;0&quot;</span><br><span class="line">  position: &quot;top&quot;</span><br><span class="line">  loading: &quot;lazy&quot;</span><br><span class="line">  crossorigin: &quot;anonymous&quot;</span><br><span class="line">  lang: &quot;zh-CN&quot;</span><br><span class="line">  # 以上配置按照 yml 格式增删填写即可</span><br></pre></td></tr></table></figure>
+<h1 id="二、如何获取giscus的相关配置"><a href="#二、如何获取giscus的相关配置" class="headerlink" title="二、如何获取giscus的相关配置"></a>二、如何获取giscus的相关配置</h1></div><div class="story post-story"><h2 id="2-1-在github的操作"><a href="#2-1-在github的操作" class="headerlink" title="2.1 在github的操作"></a>2.1 在github的操作</h2><h3 id="2-1-1-新建一个关于评论的仓库"><a href="#2-1-1-新建一个关于评论的仓库" class="headerlink" title="2.1.1 新建一个关于评论的仓库"></a>2.1.1 新建一个关于评论的仓库</h3><p>我这里命名的是comment-giscus,点击Setting</p>
+<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220102126.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220102126.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220102126"></p>
+<h3 id="2-1-2-继续往下滚动到Features，勾选Wikis"><a href="#2-1-2-继续往下滚动到Features，勾选Wikis" class="headerlink" title="2.1.2 继续往下滚动到Features，勾选Wikis"></a>2.1.2 继续往下滚动到Features，勾选Wikis</h3><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220132464.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220132464.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220132464"></p>
+<h3 id="2-1-3-继续滚动，勾选Discussions。"><a href="#2-1-3-继续滚动，勾选Discussions。" class="headerlink" title="2.1.3 继续滚动，勾选Discussions。"></a>2.1.3 继续滚动，勾选Discussions。</h3><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220200017.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220200017.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220200017"></p>
+</div><div class="story post-story"><h2 id="2-2-在GitHub代码库上的讨论页面创建一个类别"><a href="#2-2-在GitHub代码库上的讨论页面创建一个类别" class="headerlink" title="2.2 在GitHub代码库上的讨论页面创建一个类别"></a>2.2 在GitHub代码库上的讨论页面创建一个类别</h2><blockquote>
+<p>比如 “Comments（评论）”——或者选择现有的类别。</p>
+</blockquote>
+<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220348443.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220348443.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220348443"></p>
+<h3 id="2-2-1-如果没有，那就新建类别"><a href="#2-2-1-如果没有，那就新建类别" class="headerlink" title="2.2.1 如果没有，那就新建类别"></a>2.2.1 如果没有，那就新建类别</h3><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220447606.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220447606.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220447606"></p>
+<h3 id="2-2-2-填写title和详情，点击create创建完成"><a href="#2-2-2-填写title和详情，点击create创建完成" class="headerlink" title="2.2.2 填写title和详情，点击create创建完成"></a>2.2.2 填写title和详情，点击create创建完成</h3><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220619536.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220619536.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220619536"></p>
+<h3 id="2-2-3-创建完成，分类里面有了我们新增的分类"><a href="#2-2-3-创建完成，分类里面有了我们新增的分类" class="headerlink" title="2.2.3 创建完成，分类里面有了我们新增的分类"></a>2.2.3 创建完成，分类里面有了我们新增的分类</h3><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220734420.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220734420.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220734420"></p>
+</div><div class="story post-story"><h2 id="2-3-转到-https-github-com-apps-giscus，按照提示操作，并仅授予对选定代码库的访问权限。"><a href="#2-3-转到-https-github-com-apps-giscus，按照提示操作，并仅授予对选定代码库的访问权限。" class="headerlink" title="2.3 转到 https://github.com/apps/giscus，按照提示操作，并仅授予对选定代码库的访问权限。"></a>2.3 转到 <a target="_blank" rel="noopener" href="https://github.com/apps/giscus%EF%BC%8C%E6%8C%89%E7%85%A7%E6%8F%90%E7%A4%BA%E6%93%8D%E4%BD%9C%EF%BC%8C%E5%B9%B6%E4%BB%85%E6%8E%88%E4%BA%88%E5%AF%B9%E9%80%89%E5%AE%9A%E4%BB%A3%E7%A0%81%E5%BA%93%E7%9A%84%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E3%80%82">https://github.com/apps/giscus，按照提示操作，并仅授予对选定代码库的访问权限。</a></h2><h3 id="2-3-1-安装giscus"><a href="#2-3-1-安装giscus" class="headerlink" title="2.3.1 安装giscus"></a>2.3.1 安装giscus</h3><blockquote>
+<p>在根目录安装giscus : <code>npm install giscus</code></p>
+</blockquote>
+<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220808104.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220808104.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220808104"></p>
+<h3 id="2-3-2-选择建立的评论仓库"><a href="#2-3-2-选择建立的评论仓库" class="headerlink" title="2.3.2 选择建立的评论仓库"></a>2.3.2 选择建立的评论仓库</h3><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220955798.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801220955798.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220955798"></p>
+<h3 id="2-3-3-确认账号密码"><a href="#2-3-3-确认账号密码" class="headerlink" title="2.3.3 确认账号密码"></a>2.3.3 确认账号密码</h3><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221013850.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221013850.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221013850"></p>
+<h3 id="2-3-4-选择完成"><a href="#2-3-4-选择完成" class="headerlink" title="2.3.4 选择完成"></a>2.3.4 选择完成</h3><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221043339.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221043339.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221043339"></p>
+</div><div class="story post-story"><h2 id="2-4-在giscus的操作，我们需要配置giscus的小部件。"><a href="#2-4-在giscus的操作，我们需要配置giscus的小部件。" class="headerlink" title="2.4 在giscus的操作，我们需要配置giscus的小部件。"></a>2.4 在giscus的操作，我们需要配置giscus的小部件。</h2><blockquote>
+<p>打开网页：<a target="_blank" rel="noopener" href="https://giscus.app/zh-CN">giscus</a></p>
+</blockquote>
+<h3 id="2-4-1-选择语言和仓库，"><a href="#2-4-1-选择语言和仓库，" class="headerlink" title="2.4.1 选择语言和仓库，"></a>2.4.1 选择语言和仓库，</h3><p>输入之前github创建仓库名称，如用<code>username/reponame</code>，这里包括用户名和仓库名称，</p>
+<blockquote>
+<p>注意&#x2F;前后不能有空格，不能输错，否则下面会提示报错</p>
+</blockquote>
+<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221204482.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221204482.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221204482"></p>
+<h3 id="2-4-2-页面映射关系，这里我选择的是第三个"><a href="#2-4-2-页面映射关系，这里我选择的是第三个" class="headerlink" title="2.4.2 页面映射关系，这里我选择的是第三个"></a>2.4.2 页面映射关系，这里我选择的是第三个</h3><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221317913.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221317913.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221317913"></p>
+<h3 id="2-4-3-然后选择Discussion分类和特性"><a href="#2-4-3-然后选择Discussion分类和特性" class="headerlink" title="2.4.3 然后选择Discussion分类和特性"></a>2.4.3 然后选择Discussion分类和特性</h3><p>分类选择我们上面新建的分类，特性我选择了箭头不两个，也可不选，主题随便选一个就行，不选也没关系这个不影响</p>
+<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221551343.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221551343.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221551343"></p>
+<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221621379.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221621379.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221621379"></p>
+<h3 id="2-4-4-启用giscus"><a href="#2-4-4-启用giscus" class="headerlink" title="2.4.4 启用giscus"></a>2.4.4 启用giscus</h3><p>一切就绪之后，Giscus将根据你的设置生成一个脚本标签，这就是我们想要的giscus的配置信息了。你可以将其粘贴到你的代码中，记得把这个保存下来，不然还要在操作一下这步骤重新生成了</p>
+<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221745879.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221745879.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221745879"></p>
+</div><div class="story post-story"><h2 id="这是最终结果"><a href="#这是最终结果" class="headerlink" title="这是最终结果"></a>这是最终结果</h2><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221831472.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801221831472.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221831472"></p>
 
 </div>
   </div>
@@ -2718,10 +2699,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
   <div class='new-meta-item category'>
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/Hexo%E7%B3%BB%E5%88%97/">Hexo系列</a>
+    <a class="category-link" href="/categories/hexo/">hexo</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/Hexo%E7%B3%BB%E5%88%97/" itemprop="url"><span itemprop="name">Hexo系列</span></a>
+        <a href="/categories/hexo/" itemprop="url"><span itemprop="name">hexo</span></a>
       </span>
     
   </div>
@@ -2732,17 +2713,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Hexo/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>Hexo</p></a></div>
-  <span hidden itemprop="keywords">Hexo</span>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>评论系统</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/giscus/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>giscus</p></a></div>
+  <span hidden itemprop="keywords">评论系统 giscus</span>
 
 
         
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-07-29T20:35:05+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-08-01T22:23:09+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年7月29日</p>
+    <p>更新于：2022年8月1日</p>
   </a>
 </div>
 
@@ -2756,7 +2737,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/07/28/Hexo-%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%83%A8%E7%BD%B2-01/&title=Hexo-博客的安装与部署-01 - VanillaYiYi&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/07/31/hexo/hexo%E4%B9%8B%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94giscus/&title=hexo之评论系统——giscus - VanillaYiYi&summary="
           
           >
           
@@ -2768,7 +2749,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/07/28/Hexo-%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%83%A8%E7%BD%B2-01/&title=Hexo-博客的安装与部署-01 - VanillaYiYi&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/07/31/hexo/hexo%E4%B9%8B%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94giscus/&title=hexo之评论系统——giscus - VanillaYiYi&summary="
           
           >
           
@@ -2780,7 +2761,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/07/28/Hexo-%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%83%A8%E7%BD%B2-01/&title=Hexo-博客的安装与部署-01 - VanillaYiYi&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/07/31/hexo/hexo%E4%B9%8B%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94giscus/&title=hexo之评论系统——giscus - VanillaYiYi&summary="
           
           >
           
@@ -2813,35 +2794,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/07/28/fariy-001/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>fariy-001</p>
-          <p class='content'>精美壁纸
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</p>
-        </a>
       
-      
-        <a class='next' href='/2022/07/28/hello-world/'>
-          <p class='title'>Hello World<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any ...</p>
+        <a class='next' href='/2022/07/30/typora/typora%E7%A0%B4%E8%A7%A3%E7%89%88%E5%AE%89%E8%A3%85/'>
+          <p class='title'>typora破解版安装<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>typora收费，对程序猿来说是不可能的，我只会白嫖，今天在小破站看到一个破解版的typora的安装，分享给大家。
+
+我把软件和破解文件放到了自己的阿里云盘分享给大家，附上链接：「typora1...</p>
         </a>
       
     </div>
@@ -2855,9 +2813,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
 
-  <article class="post white-box shadow floatable blur" id="comments">
+  <article class="post white-box floatable" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2022/07/28/Hexo-%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%83%A8%E7%BD%B2-01/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2022/07/31/hexo/hexo%E4%B9%8B%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94giscus/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2899,7 +2857,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-Git%E5%AE%98%E7%BD%91"><span class="toc-text">1.1 Git官网</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-Node-js"><span class="toc-text">1.2 Node.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-%E6%A3%80%E6%9F%A5%E5%AE%89%E8%A3%85%E6%98%AF%E5%90%A6%E6%88%90%E5%8A%9F"><span class="toc-text">1.3 检查安装是否成功</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E6%9B%B4%E6%94%B9npm%E4%B8%BAcnpm%E6%BA%90"><span class="toc-text">2.1 更改npm为cnpm源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E5%AE%89%E8%A3%85hexo%E5%91%BD%E4%BB%A4%E8%A1%8C"><span class="toc-text">2.2 安装hexo命令行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-Hexo%E5%8D%9A%E5%AE%A2%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-text">2.3 Hexo博客初始化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%E8%BF%90%E8%A1%8C%E5%8D%9A%E5%AE%A2"><span class="toc-text">2.4 运行博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%E9%83%A8%E7%BD%B2%E5%88%B0Github-%E6%8E%A8%E8%8D%90"><span class="toc-text">3.1 部署到Github(推荐)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-1-%E5%88%9B%E5%BB%BAGithub%E4%BB%93%E5%BA%93"><span class="toc-text">3.1.1 创建Github仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-2-%E8%8E%B7%E5%8F%96%E4%B8%8EGithub%E7%9A%84%E8%BF%9E%E6%8E%A5%EF%BC%88%E5%8F%AF%E8%B7%B3%E8%BF%87%EF%BC%89"><span class="toc-text">3.1.2 获取与Github的连接（可跳过）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-3-%E4%B8%8A%E4%BC%A0%E5%8D%9A%E5%AE%A2%E5%88%B0Github"><span class="toc-text">3.1.3 上传博客到Github</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-4-%E7%BB%91%E5%AE%9A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D"><span class="toc-text">3.1.4 绑定自定义域名</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-%E9%83%A8%E7%BD%B2%E5%88%B0Gitee-%E5%A4%87%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">3.2 部署到Gitee(备用方法)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-1-%E5%88%9B%E5%BB%BAGitee%E4%BB%93%E5%BA%93"><span class="toc-text">3.2.1 创建Gitee仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-2-%E8%8E%B7%E5%8F%96%E4%B8%8EGitee%E7%9A%84%E8%BF%9E%E6%8E%A5"><span class="toc-text">3.2.2 获取与Gitee的连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-3-%E4%B8%8A%E4%BC%A0%E5%8D%9A%E5%AE%A2%E5%88%B0Gitee"><span class="toc-text">3.2.3 上传博客到Gitee</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-%E9%83%A8%E7%BD%B2%E5%88%B0Vercel"><span class="toc-text">3.3 部署到Vercel</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6-config-volantis-yml%EF%BC%8C%E6%90%9C%E7%B4%A2comments%E8%AF%84%E8%AE%BA%E9%83%A8%E5%88%86%EF%BC%8C%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0%E8%BF%99%E9%87%8C%E9%80%89%E6%8B%A9%E7%9A%84%E6%98%AFgiscus"><span class="toc-text">1.1 打开文件_config.volantis.yml，搜索comments评论部分，可以看到这里选择的是giscus</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E5%9C%A8github%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-text">2.1 在github的操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%85%B3%E4%BA%8E%E8%AF%84%E8%AE%BA%E7%9A%84%E4%BB%93%E5%BA%93"><span class="toc-text">2.1.1 新建一个关于评论的仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2-%E7%BB%A7%E7%BB%AD%E5%BE%80%E4%B8%8B%E6%BB%9A%E5%8A%A8%E5%88%B0Features%EF%BC%8C%E5%8B%BE%E9%80%89Wikis"><span class="toc-text">2.1.2 继续往下滚动到Features，勾选Wikis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3-%E7%BB%A7%E7%BB%AD%E6%BB%9A%E5%8A%A8%EF%BC%8C%E5%8B%BE%E9%80%89Discussions%E3%80%82"><span class="toc-text">2.1.3 继续滚动，勾选Discussions。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E5%9C%A8GitHub%E4%BB%A3%E7%A0%81%E5%BA%93%E4%B8%8A%E7%9A%84%E8%AE%A8%E8%AE%BA%E9%A1%B5%E9%9D%A2%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%B1%BB%E5%88%AB"><span class="toc-text">2.2 在GitHub代码库上的讨论页面创建一个类别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1-%E5%A6%82%E6%9E%9C%E6%B2%A1%E6%9C%89%EF%BC%8C%E9%82%A3%E5%B0%B1%E6%96%B0%E5%BB%BA%E7%B1%BB%E5%88%AB"><span class="toc-text">2.2.1 如果没有，那就新建类别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2-%E5%A1%AB%E5%86%99title%E5%92%8C%E8%AF%A6%E6%83%85%EF%BC%8C%E7%82%B9%E5%87%BBcreate%E5%88%9B%E5%BB%BA%E5%AE%8C%E6%88%90"><span class="toc-text">2.2.2 填写title和详情，点击create创建完成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-3-%E5%88%9B%E5%BB%BA%E5%AE%8C%E6%88%90%EF%BC%8C%E5%88%86%E7%B1%BB%E9%87%8C%E9%9D%A2%E6%9C%89%E4%BA%86%E6%88%91%E4%BB%AC%E6%96%B0%E5%A2%9E%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-text">2.2.3 创建完成，分类里面有了我们新增的分类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%E8%BD%AC%E5%88%B0-https-github-com-apps-giscus%EF%BC%8C%E6%8C%89%E7%85%A7%E6%8F%90%E7%A4%BA%E6%93%8D%E4%BD%9C%EF%BC%8C%E5%B9%B6%E4%BB%85%E6%8E%88%E4%BA%88%E5%AF%B9%E9%80%89%E5%AE%9A%E4%BB%A3%E7%A0%81%E5%BA%93%E7%9A%84%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E3%80%82"><span class="toc-text">2.3 转到 https:&#x2F;&#x2F;github.com&#x2F;apps&#x2F;giscus，按照提示操作，并仅授予对选定代码库的访问权限。</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-1-%E5%AE%89%E8%A3%85giscus"><span class="toc-text">2.3.1 安装giscus</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-2-%E9%80%89%E6%8B%A9%E5%BB%BA%E7%AB%8B%E7%9A%84%E8%AF%84%E8%AE%BA%E4%BB%93%E5%BA%93"><span class="toc-text">2.3.2 选择建立的评论仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-3-%E7%A1%AE%E8%AE%A4%E8%B4%A6%E5%8F%B7%E5%AF%86%E7%A0%81"><span class="toc-text">2.3.3 确认账号密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-4-%E9%80%89%E6%8B%A9%E5%AE%8C%E6%88%90"><span class="toc-text">2.3.4 选择完成</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%E5%9C%A8giscus%E7%9A%84%E6%93%8D%E4%BD%9C%EF%BC%8C%E6%88%91%E4%BB%AC%E9%9C%80%E8%A6%81%E9%85%8D%E7%BD%AEgiscus%E7%9A%84%E5%B0%8F%E9%83%A8%E4%BB%B6%E3%80%82"><span class="toc-text">2.4 在giscus的操作，我们需要配置giscus的小部件。</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-1-%E9%80%89%E6%8B%A9%E8%AF%AD%E8%A8%80%E5%92%8C%E4%BB%93%E5%BA%93%EF%BC%8C"><span class="toc-text">2.4.1 选择语言和仓库，</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-2-%E9%A1%B5%E9%9D%A2%E6%98%A0%E5%B0%84%E5%85%B3%E7%B3%BB%EF%BC%8C%E8%BF%99%E9%87%8C%E6%88%91%E9%80%89%E6%8B%A9%E7%9A%84%E6%98%AF%E7%AC%AC%E4%B8%89%E4%B8%AA"><span class="toc-text">2.4.2 页面映射关系，这里我选择的是第三个</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-3-%E7%84%B6%E5%90%8E%E9%80%89%E6%8B%A9Discussion%E5%88%86%E7%B1%BB%E5%92%8C%E7%89%B9%E6%80%A7"><span class="toc-text">2.4.3 然后选择Discussion分类和特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-4-%E5%90%AF%E7%94%A8giscus"><span class="toc-text">2.4.4 启用giscus</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%99%E6%98%AF%E6%9C%80%E7%BB%88%E7%BB%93%E6%9E%9C"><span class="toc-text">这是最终结果</span></a></li></ol>
     </div>
   </section>
 
@@ -4439,7 +4397,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"VanillaYiYi","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"VanillaYiYi","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"VanillaYiYi"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"VanillaYiYi"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/Hexo系列/","name":"Hexo系列"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/07/28/Hexo-博客的安装与部署-01/","name":"Hexo-博客的安装与部署-01"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"VanillaYiYi","url":"http://example.com/","keywords":null,"description":"VanillaYiYi","author":{"@type":"Person","name":"VanillaYiYi","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"VanillaYiYi"},"publisher":{"@type":"Organization","name":"VanillaYiYi","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Hexo-博客的安装与部署-01","description":"软件环境 Git Node.js Clash for Windows(任意加速器，保证能连接到Github),然后Hexo博客初始化,最后我们会将搭建好的Hexo上传到Github","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/07/28/Hexo-%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%83%A8%E7%BD%B2-01/"},"author":{"@type":"Person","name":"VanillaYiYi","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"VanillaYiYi","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/07/28/Hexo-%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%83%A8%E7%BD%B2-01/","wordCount":0,"datePublished":"2022-07-28T11:14:42.000Z","dateModified":"2022-07-29T12:35:05.513Z","articleSection":"Hexo系列","keywords":"Hexo","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"VanillaYiYi","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"VanillaYiYi","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"希望在这里分享我的经验与生活！"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"VanillaYiYi"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/hexo/","name":"hexo"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/07/31/hexo/hexo之评论系统——giscus/","name":"hexo之评论系统——giscus"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"VanillaYiYi","url":"http://example.com/","keywords":"VanillaYiYi,博客,分享","description":"希望在这里分享我的经验与生活！","author":{"@type":"Person","name":"VanillaYiYi","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"希望在这里分享我的经验与生活！"},"publisher":{"@type":"Organization","name":"VanillaYiYi","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"hexo之评论系统——giscus","description":"hexo之评论系统——giscus","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/07/31/hexo/hexo%E4%B9%8B%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94giscus/"},"author":{"@type":"Person","name":"VanillaYiYi","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"VanillaYiYi","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/07/31/hexo/hexo%E4%B9%8B%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94giscus/","wordCount":0,"datePublished":"2022-07-30T17:08:28.000Z","dateModified":"2022-08-01T14:23:09.485Z","articleSection":"hexo","keywords":"评论系统,giscus","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
