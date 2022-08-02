@@ -31,37 +31,6 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo之站点统计——busuanzi</title>
-    <url>/2022/08/01/hexo/hexo%E4%B9%8B%E7%AB%99%E7%82%B9%E7%BB%9F%E8%AE%A1%E2%80%94%E2%80%94busuanzi/</url>
-    <content><![CDATA[<p>本片介绍的是站点信息统计之busuanzi</p>
-<h1 id="一、站点信息"><a href="#一、站点信息" class="headerlink" title="一、站点信息"></a>一、站点信息</h1><div class="story post-story"><h2 id="1-1-在-config-volantis-yml搜索统计-显示有站点统计信息"><a href="#1-1-在-config-volantis-yml搜索统计-显示有站点统计信息" class="headerlink" title="1.1 在_config.volantis.yml搜索统计,显示有站点统计信息"></a>1.1 在_config.volantis.yml搜索<code>统计</code>,显示有站点统计信息</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">visitcounter: # 站点统计访客开启入口在下面⬇</span><br><span class="line">      siteuv:</span><br><span class="line">        enable: true</span><br><span class="line">        text: &#x27;本站访客数：&#x27;</span><br><span class="line">        unit: &#x27;人&#x27;</span><br><span class="line">      sitepv:</span><br><span class="line">        enable: true</span><br><span class="line">        text: &#x27;本站总访问量：&#x27;</span><br><span class="line">        unit: &#x27;次&#x27;</span><br></pre></td></tr></table></figure>
-</div><div class="story post-story"><h2 id="1-2-接下来就是analytics引入busuanzi-这里就需要配置个人的app-id和app-key"><a href="#1-2-接下来就是analytics引入busuanzi-这里就需要配置个人的app-id和app-key" class="headerlink" title="1.2 接下来就是analytics引入busuanzi,这里就需要配置个人的app_id和app_key"></a>1.2 接下来就是analytics引入busuanzi,这里就需要配置个人的app_id和app_key</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 站点统计访客开启入口，引入busuanzi，并配置属于自己的app_id和app_key</span><br><span class="line">analytics:</span><br><span class="line">  busuanzi: volantis-static/libs/busuanzi/js/busuanzi.pure.mini.js </span><br><span class="line">  leancloud: # 请使用自己的 id &amp; key 以防止数据丢失</span><br><span class="line">    app_id: u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI</span><br><span class="line">    app_key: jfHtEKVE24j0IVCGHbvuFClp</span><br><span class="line">    custom_api_server: # 国际版一般不需要写，除非自定义了 API Server</span><br></pre></td></tr></table></figure>
-<h1 id="二、获取busuanzi的配置信息"><a href="#二、获取busuanzi的配置信息" class="headerlink" title="二、获取busuanzi的配置信息"></a>二、获取busuanzi的配置信息</h1></div><div class="story post-story"><h2 id="2-1-打开leancloud官网，注册账号，该认证认证"><a href="#2-1-打开leancloud官网，注册账号，该认证认证" class="headerlink" title="2.1 打开leancloud官网，注册账号，该认证认证"></a>2.1 打开leancloud官网，注册账号，该认证认证</h2><blockquote>
-<p>leancloud官网:<a href="https://www.leancloud.cn/">https://www.leancloud.cn/</a> ,点击免费使用，注册账号</p>
-</blockquote>
-<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801224259281.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801224259281.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="注册账号"></p>
-</div><div class="story post-story"><h2 id="2-2-登录账号注册应用"><a href="#2-2-登录账号注册应用" class="headerlink" title="2.2 登录账号注册应用"></a>2.2 登录账号注册应用</h2><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801224618543.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801224618543.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="注册应用"></p>
-</div><div class="story post-story"><h2 id="2-3-点击应用，选择应用"><a href="#2-3-点击应用，选择应用" class="headerlink" title="2.3 点击应用，选择应用"></a>2.3 点击应用，选择应用</h2><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801224734317.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801224734317.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="选择应用"></p>
-</div><div class="story post-story"><h2 id="2-4-点击设置，应用凭证，右侧就是我们想要的配置信息了"><a href="#2-4-点击设置，应用凭证，右侧就是我们想要的配置信息了" class="headerlink" title="2.4 点击设置，应用凭证，右侧就是我们想要的配置信息了"></a>2.4 点击设置，应用凭证，右侧就是我们想要的配置信息了</h2><blockquote>
-<p>复制保存我们的配置信息，填入指定位置，页面就是有相关信息展示了</p>
-</blockquote>
-<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801225041384.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801225041384.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="获取配置信息"></p>
-<h1 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h1><blockquote>
-<p>tip: 本地运行显示数据有点夸张了，还有点延迟，但是部署之后会显示正常数据</p>
-</blockquote>
-<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801230651942.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801230651942.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="本地运行"></p>
-<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801225311587.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801225311587.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="部署之后"></p>
-
-</div>]]></content>
-      <categories>
-        <category>Hexo系列</category>
-      </categories>
-      <tags>
-        <tag>busuanzi</tag>
-        <tag>站点统计</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>使用github建立图床,picgo和typora上传图片</title>
     <url>/2022/07/29/github/github-img/</url>
     <content><![CDATA[<p>建立图床必须具备什么条件 </p>
@@ -151,57 +120,6 @@
       </categories>
       <tags>
         <tag>github</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/07/28/study/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<div class="story post-story"><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-</div>]]></content>
-      <categories>
-        <category>个人学习</category>
-      </categories>
-      <tags>
-        <tag>个人</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>PicGo相册不能显示问题及解决办法</title>
-    <url>/2022/07/30/picgo/PicGo%E7%9B%B8%E5%86%8C%E4%B8%8D%E8%83%BD%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
-    <content><![CDATA[<p>我的PicGo图片上传成功了，但是相册区域图片不能正常显示，如下图所示</p>
-<p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/209.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/209.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-<div class="story post-story"><h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><h3 id="1-0-重启应用"><a href="#1-0-重启应用" class="headerlink" title="1.0 重启应用"></a>1.0 重启应用</h3><p>退出应用，重新启动，上传的图片能正常显示</p>
-<h3 id="2-0-卸载应用，重新安装"><a href="#2-0-卸载应用，重新安装" class="headerlink" title="2.0 卸载应用，重新安装"></a>2.0 卸载应用，重新安装</h3><p>卸载重装 PicGo，不需要重新配置，之后上传的图片都能正常显示</p>
-<h3 id="3-0-打开picgo设置，找到设置Server，把端口号修改成36677"><a href="#3-0-打开picgo设置，找到设置Server，把端口号修改成36677" class="headerlink" title="3.0 打开picgo设置，找到设置Server，把端口号修改成36677"></a>3.0 打开picgo设置，找到设置Server，把端口号修改成36677</h3><p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224030434.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224030434.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-<p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224111600.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224111600.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-<h3 id="4-0-修改host文件"><a href="#4-0-修改host文件" class="headerlink" title="4.0 修改host文件"></a>4.0 修改host文件</h3><blockquote>
-<p>原因是github屏蔽掉了图片，结局办法就是修改host，我就是用的这个方法解决的</p>
-</blockquote>
-<p>host路径：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">C:\Windows\System32\drivers\etc\hosts</span><br></pre></td></tr></table></figure>
-
-<p>找到host文件，用记事本格式打开，添加代码</p>
-<figure class="highlight plaintext"><figcaption><span>GitHub Start</span></figcaption><table><tr><td class="code"><pre><span class="line">140.82.113.3      github.com</span><br><span class="line">140.82.114.20     gist.github.com</span><br><span class="line">151.101.184.133    assets-cdn.github.com</span><br><span class="line">151.101.184.133    raw.githubusercontent.com</span><br><span class="line">151.101.184.133    gist.githubusercontent.com</span><br><span class="line">151.101.184.133    cloud.githubusercontent.com</span><br><span class="line">151.101.184.133    camo.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars0.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars0.githubusercontent.com</span><br><span class="line">199.232.28.133     avatars1.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars1.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars2.githubusercontent.com</span><br><span class="line">199.232.28.133     avatars2.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars3.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars3.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars4.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars4.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars5.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars5.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars6.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars6.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars7.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars7.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars8.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars8.githubusercontent.com</span><br><span class="line"># GitHub End</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>tip: host文件修改需要管理员权限，可在桌面复制一份，用修改完的文件替换掉原来的文件即可，权限可以自己更改，搞完再改回去</p>
-</blockquote>
-
-</div>]]></content>
-      <categories>
-        <category>PicGo</category>
-      </categories>
-      <tags>
-        <tag>PicGo</tag>
       </tags>
   </entry>
   <entry>
@@ -472,23 +390,34 @@
       </tags>
   </entry>
   <entry>
-    <title>typora破解版安装</title>
-    <url>/2022/07/30/typora/typora%E7%A0%B4%E8%A7%A3%E7%89%88%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<p>typora收费，对程序猿来说是不可能的，我只会白嫖，今天在小破站看到一个破解版的typora的安装，分享给大家。</p>
-<blockquote>
-<p>我把软件和破解文件放到了自己的阿里云盘分享给大家，附上链接：「typora1.3.8」等文件 <a href="https://www.aliyundrive.com/s/WLHNPidNYrL">https://www.aliyundrive.com/s/WLHNPidNYrL</a> </p>
+    <title>hexo之站点统计——busuanzi</title>
+    <url>/2022/08/01/hexo/hexo%E4%B9%8B%E7%AB%99%E7%82%B9%E7%BB%9F%E8%AE%A1%E2%80%94%E2%80%94busuanzi/</url>
+    <content><![CDATA[<p>本片介绍的是站点信息统计之busuanzi</p>
+<h1 id="一、站点信息"><a href="#一、站点信息" class="headerlink" title="一、站点信息"></a>一、站点信息</h1><div class="story post-story"><h2 id="1-1-在-config-volantis-yml搜索统计-显示有站点统计信息"><a href="#1-1-在-config-volantis-yml搜索统计-显示有站点统计信息" class="headerlink" title="1.1 在_config.volantis.yml搜索统计,显示有站点统计信息"></a>1.1 在_config.volantis.yml搜索<code>统计</code>,显示有站点统计信息</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">visitcounter: # 站点统计访客开启入口在下面⬇</span><br><span class="line">      siteuv:</span><br><span class="line">        enable: true</span><br><span class="line">        text: &#x27;本站访客数：&#x27;</span><br><span class="line">        unit: &#x27;人&#x27;</span><br><span class="line">      sitepv:</span><br><span class="line">        enable: true</span><br><span class="line">        text: &#x27;本站总访问量：&#x27;</span><br><span class="line">        unit: &#x27;次&#x27;</span><br></pre></td></tr></table></figure>
+</div><div class="story post-story"><h2 id="1-2-接下来就是analytics引入busuanzi-这里就需要配置个人的app-id和app-key"><a href="#1-2-接下来就是analytics引入busuanzi-这里就需要配置个人的app-id和app-key" class="headerlink" title="1.2 接下来就是analytics引入busuanzi,这里就需要配置个人的app_id和app_key"></a>1.2 接下来就是analytics引入busuanzi,这里就需要配置个人的app_id和app_key</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 站点统计访客开启入口，引入busuanzi，并配置属于自己的app_id和app_key</span><br><span class="line">analytics:</span><br><span class="line">  busuanzi: volantis-static/libs/busuanzi/js/busuanzi.pure.mini.js </span><br><span class="line">  leancloud: # 请使用自己的 id &amp; key 以防止数据丢失</span><br><span class="line">    app_id: u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI</span><br><span class="line">    app_key: jfHtEKVE24j0IVCGHbvuFClp</span><br><span class="line">    custom_api_server: # 国际版一般不需要写，除非自定义了 API Server</span><br></pre></td></tr></table></figure>
+<h1 id="二、获取busuanzi的配置信息"><a href="#二、获取busuanzi的配置信息" class="headerlink" title="二、获取busuanzi的配置信息"></a>二、获取busuanzi的配置信息</h1></div><div class="story post-story"><h2 id="2-1-打开leancloud官网，注册账号，该认证认证"><a href="#2-1-打开leancloud官网，注册账号，该认证认证" class="headerlink" title="2.1 打开leancloud官网，注册账号，该认证认证"></a>2.1 打开leancloud官网，注册账号，该认证认证</h2><blockquote>
+<p>leancloud官网:<a href="https://www.leancloud.cn/">https://www.leancloud.cn/</a> ,点击免费使用，注册账号</p>
 </blockquote>
-<h1 id="1-1-下载完之后，选择安装包正常安装即可"><a href="#1-1-下载完之后，选择安装包正常安装即可" class="headerlink" title="1.1 下载完之后，选择安装包正常安装即可"></a>1.1 下载完之后，选择安装包正常安装即可</h1><p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220731000444283.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220731000444283.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-<h1 id="1-2-打开破解插件，复制文件。桌面typora图标右键打开文件所在位置，粘贴复制的破解文件，替换即可，此时已经破解完成了"><a href="#1-2-打开破解插件，复制文件。桌面typora图标右键打开文件所在位置，粘贴复制的破解文件，替换即可，此时已经破解完成了" class="headerlink" title="1.2 打开破解插件，复制文件。桌面typora图标右键打开文件所在位置，粘贴复制的破解文件，替换即可，此时已经破解完成了"></a>1.2 打开破解插件，复制文件。桌面typora图标右键打开文件所在位置，粘贴复制的破解文件，替换即可，此时已经破解完成了</h1><p>打开typora，点击帮助—我的许可证，将看到破解好的typora，是不是特别简单，我也是惊艳到了。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220731000852072.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220731000852072.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801224259281.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801224259281.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="注册账号"></p>
+</div><div class="story post-story"><h2 id="2-2-登录账号注册应用"><a href="#2-2-登录账号注册应用" class="headerlink" title="2.2 登录账号注册应用"></a>2.2 登录账号注册应用</h2><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801224618543.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801224618543.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="注册应用"></p>
+</div><div class="story post-story"><h2 id="2-3-点击应用，选择应用"><a href="#2-3-点击应用，选择应用" class="headerlink" title="2.3 点击应用，选择应用"></a>2.3 点击应用，选择应用</h2><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801224734317.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801224734317.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="选择应用"></p>
+</div><div class="story post-story"><h2 id="2-4-点击设置，应用凭证，右侧就是我们想要的配置信息了"><a href="#2-4-点击设置，应用凭证，右侧就是我们想要的配置信息了" class="headerlink" title="2.4 点击设置，应用凭证，右侧就是我们想要的配置信息了"></a>2.4 点击设置，应用凭证，右侧就是我们想要的配置信息了</h2><blockquote>
+<p>复制保存我们的配置信息，填入指定位置，页面就是有相关信息展示了</p>
+</blockquote>
+<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801225041384.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801225041384.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="获取配置信息"></p>
+<h1 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h1><blockquote>
+<p>tip: 本地运行显示数据有点夸张了，还有点延迟，但是部署之后会显示正常数据</p>
+</blockquote>
+<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801230651942.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801230651942.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="本地运行"></p>
+<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801225311587.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801225311587.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="部署之后"></p>
 
-]]></content>
+</div>]]></content>
       <categories>
-        <category>typora</category>
+        <category>Hexo系列</category>
       </categories>
       <tags>
-        <tag>typora</tag>
-        <tag>破解版</tag>
+        <tag>busuanzi</tag>
+        <tag>站点统计</tag>
       </tags>
   </entry>
   <entry>
@@ -592,6 +521,77 @@
       <tags>
         <tag>评论系统</tag>
         <tag>twikoo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PicGo相册不能显示问题及解决办法</title>
+    <url>/2022/07/30/picgo/PicGo%E7%9B%B8%E5%86%8C%E4%B8%8D%E8%83%BD%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
+    <content><![CDATA[<p>我的PicGo图片上传成功了，但是相册区域图片不能正常显示，如下图所示</p>
+<p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/209.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/209.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<div class="story post-story"><h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><h3 id="1-0-重启应用"><a href="#1-0-重启应用" class="headerlink" title="1.0 重启应用"></a>1.0 重启应用</h3><p>退出应用，重新启动，上传的图片能正常显示</p>
+<h3 id="2-0-卸载应用，重新安装"><a href="#2-0-卸载应用，重新安装" class="headerlink" title="2.0 卸载应用，重新安装"></a>2.0 卸载应用，重新安装</h3><p>卸载重装 PicGo，不需要重新配置，之后上传的图片都能正常显示</p>
+<h3 id="3-0-打开picgo设置，找到设置Server，把端口号修改成36677"><a href="#3-0-打开picgo设置，找到设置Server，把端口号修改成36677" class="headerlink" title="3.0 打开picgo设置，找到设置Server，把端口号修改成36677"></a>3.0 打开picgo设置，找到设置Server，把端口号修改成36677</h3><p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224030434.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224030434.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224111600.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224111600.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<h3 id="4-0-修改host文件"><a href="#4-0-修改host文件" class="headerlink" title="4.0 修改host文件"></a>4.0 修改host文件</h3><blockquote>
+<p>原因是github屏蔽掉了图片，结局办法就是修改host，我就是用的这个方法解决的</p>
+</blockquote>
+<p>host路径：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">C:\Windows\System32\drivers\etc\hosts</span><br></pre></td></tr></table></figure>
+
+<p>找到host文件，用记事本格式打开，添加代码</p>
+<figure class="highlight plaintext"><figcaption><span>GitHub Start</span></figcaption><table><tr><td class="code"><pre><span class="line">140.82.113.3      github.com</span><br><span class="line">140.82.114.20     gist.github.com</span><br><span class="line">151.101.184.133    assets-cdn.github.com</span><br><span class="line">151.101.184.133    raw.githubusercontent.com</span><br><span class="line">151.101.184.133    gist.githubusercontent.com</span><br><span class="line">151.101.184.133    cloud.githubusercontent.com</span><br><span class="line">151.101.184.133    camo.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars0.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars0.githubusercontent.com</span><br><span class="line">199.232.28.133     avatars1.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars1.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars2.githubusercontent.com</span><br><span class="line">199.232.28.133     avatars2.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars3.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars3.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars4.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars4.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars5.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars5.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars6.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars6.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars7.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars7.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars8.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars8.githubusercontent.com</span><br><span class="line"># GitHub End</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>tip: host文件修改需要管理员权限，可在桌面复制一份，用修改完的文件替换掉原来的文件即可，权限可以自己更改，搞完再改回去</p>
+</blockquote>
+
+</div>]]></content>
+      <categories>
+        <category>PicGo</category>
+      </categories>
+      <tags>
+        <tag>PicGo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/07/28/study/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<div class="story post-story"><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+</div>]]></content>
+      <categories>
+        <category>个人学习</category>
+      </categories>
+      <tags>
+        <tag>个人</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>typora破解版安装</title>
+    <url>/2022/07/30/typora/typora%E7%A0%B4%E8%A7%A3%E7%89%88%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<p>typora收费，对程序猿来说是不可能的，我只会白嫖，今天在小破站看到一个破解版的typora的安装，分享给大家。</p>
+<blockquote>
+<p>我把软件和破解文件放到了自己的阿里云盘分享给大家，附上链接：「typora1.3.8」等文件 <a href="https://www.aliyundrive.com/s/WLHNPidNYrL">https://www.aliyundrive.com/s/WLHNPidNYrL</a> </p>
+</blockquote>
+<h1 id="1-1-下载完之后，选择安装包正常安装即可"><a href="#1-1-下载完之后，选择安装包正常安装即可" class="headerlink" title="1.1 下载完之后，选择安装包正常安装即可"></a>1.1 下载完之后，选择安装包正常安装即可</h1><p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220731000444283.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220731000444283.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<h1 id="1-2-打开破解插件，复制文件。桌面typora图标右键打开文件所在位置，粘贴复制的破解文件，替换即可，此时已经破解完成了"><a href="#1-2-打开破解插件，复制文件。桌面typora图标右键打开文件所在位置，粘贴复制的破解文件，替换即可，此时已经破解完成了" class="headerlink" title="1.2 打开破解插件，复制文件。桌面typora图标右键打开文件所在位置，粘贴复制的破解文件，替换即可，此时已经破解完成了"></a>1.2 打开破解插件，复制文件。桌面typora图标右键打开文件所在位置，粘贴复制的破解文件，替换即可，此时已经破解完成了</h1><p>打开typora，点击帮助—我的许可证，将看到破解好的typora，是不是特别简单，我也是惊艳到了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220731000852072.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220731000852072.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+
+]]></content>
+      <categories>
+        <category>typora</category>
+      </categories>
+      <tags>
+        <tag>typora</tag>
+        <tag>破解版</tag>
       </tags>
   </entry>
 </search>
