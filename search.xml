@@ -15,28 +15,6 @@
       </tags>
   </entry>
   <entry>
-    <title>git删除远程分支后，本地同步问题</title>
-    <url>/2022/11/01/git%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF%E5%90%8E%EF%BC%8C%E6%9C%AC%E5%9C%B0%E5%90%8C%E6%AD%A5%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>项目里不小心把本地分支给提交到了远程，而且名字还起错了，在删除远程分支后，发现</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
-
-<p>时，那个被删除的分支已经看不到，应该是被删除，然而在</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git branch -a </span><br></pre></td></tr></table></figure>
-
-<p>后，居然还能看到那个被删除的远程分支，求过某娘后，发现应该是本地未能同步的原因。<br>解决方法只有一行命令</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git fetch -p</span><br></pre></td></tr></table></figure>
-
-
-<p>然后再看，果然没了。。。</p>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>git提交规范</title>
     <url>/2022/11/02/git%E6%8F%90%E4%BA%A4%E8%A7%84%E8%8C%83/</url>
     <content><![CDATA[<h3 id="1-windows-全局安装commitizennode模块"><a href="#1-windows-全局安装commitizennode模块" class="headerlink" title="1.windows 全局安装commitizennode模块"></a>1.windows 全局安装commitizennode模块</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g commitizen@4.2.4</span><br></pre></td></tr></table></figure>
@@ -67,6 +45,28 @@
 <h4 id="执行git-cz："><a href="#执行git-cz：" class="headerlink" title="执行git cz："></a>执行git cz：<img src="https://img-blog.csdnimg.cn/20201101213713533.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Zlc2ZzZWZncw==,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20201101213713533.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Zlc2ZzZWZncw==,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></h4><h4 id="选择一个fix作为测试："><a href="#选择一个fix作为测试：" class="headerlink" title="选择一个fix作为测试："></a>选择一个fix作为测试：<img src="https://img-blog.csdnimg.cn/20201101214146886.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Zlc2ZzZWZncw==,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20201101214146886.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Zlc2ZzZWZncw==,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></h4><p>翻译下意思就是说：<br>1.选择你要提交更改的类型<br>2.这个提交变化的范围（你的提交改动了哪些内容的意思）<br>3.写一篇简短的的描述，严谨的描述下这次的变化<br>4.提供下详细的变更描述<br>5.这个提交有破坏性的变化吗？<br>6.这个变化会影响一些开放的issue吗？</p>
 <p>查看一下结果</p>
 <p><img src="https://img-blog.csdnimg.cn/20201101215345448.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Zlc2ZzZWZncw==,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20201101215345448.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Zlc2ZzZWZncw==,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git删除远程分支后，本地同步问题</title>
+    <url>/2022/11/01/git%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF%E5%90%8E%EF%BC%8C%E6%9C%AC%E5%9C%B0%E5%90%8C%E6%AD%A5%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>项目里不小心把本地分支给提交到了远程，而且名字还起错了，在删除远程分支后，发现</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
+
+<p>时，那个被删除的分支已经看不到，应该是被删除，然而在</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git branch -a </span><br></pre></td></tr></table></figure>
+
+<p>后，居然还能看到那个被删除的远程分支，求过某娘后，发现应该是本地未能同步的原因。<br>解决方法只有一行命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git fetch -p</span><br></pre></td></tr></table></figure>
+
+
+<p>然后再看，果然没了。。。</p>
 ]]></content>
       <categories>
         <category>前端</category>
@@ -1909,130 +1909,6 @@ methodsToPatch.<span class="hljs-title function_">forEach</span>(<span class="hl
       </tags>
   </entry>
   <entry>
-    <title>关于.eslintrc.js的一些检查配置</title>
-    <url>/2022/10/22/%E5%85%B3%E4%BA%8E-eslintrc-js%E7%9A%84%E4%B8%80%E4%BA%9B%E6%A3%80%E6%9F%A5%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<h1 id="关于-eslintrc-js的一些检查配置"><a href="#关于-eslintrc-js的一些检查配置" class="headerlink" title="关于.eslintrc.js的一些检查配置"></a>关于.eslintrc.js的一些检查配置</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  root: true,</span><br><span class="line">  env: &#123;</span><br><span class="line">    node: true</span><br><span class="line">  &#125;,</span><br><span class="line">  extends: [&quot;plugin:vue/essential&quot;, &quot;@vue/prettier&quot;],</span><br><span class="line">  rules: &#123;</span><br><span class="line">    &quot;no-console&quot;: process.env.NODE_ENV === &quot;production&quot; ? &quot;error&quot; : &quot;off&quot;,</span><br><span class="line">    &quot;no-debugger&quot;: process.env.NODE_ENV === &quot;production&quot; ? &quot;error&quot; : &quot;off&quot;,</span><br><span class="line">    &quot;prettier/prettier&quot;: [</span><br><span class="line">      &quot;error&quot;,</span><br><span class="line">      &#123;</span><br><span class="line">        // tab缩进大小,默认为2</span><br><span class="line">        &quot;tabWidth&quot;: 2,</span><br><span class="line">        // 使用tab缩进，默认false</span><br><span class="line">        &quot;useTabs&quot;: false,</span><br><span class="line">        // 使用分号, 默认true</span><br><span class="line">        &quot;semi&quot;: false,</span><br><span class="line">        // 使用单引号, 默认false(在jsx中配置无效, 默认都是双引号)</span><br><span class="line">        &quot;singleQuote&quot;: true,</span><br><span class="line">        // 行尾逗号,默认none,可选 none|es5|all</span><br><span class="line">        // es5 包括es5中的数组、对象</span><br><span class="line">        // all 包括函数对象等所有可选</span><br><span class="line">        &quot;trailingComma&quot;: &#x27;none&#x27;,</span><br><span class="line">        // 对象中的空格 默认true</span><br><span class="line">        // true: &#123; foo: bar &#125;</span><br><span class="line">        // false: &#123;foo: bar&#125;</span><br><span class="line">        &quot;bracketSpacing&quot;: true,</span><br><span class="line">        // JSX标签闭合位置 默认false</span><br><span class="line">        // false: &lt;div</span><br><span class="line">        //          className=&quot;&quot;</span><br><span class="line">        //          style=&#123;&#123;&#125;&#125;</span><br><span class="line">        //       &gt;</span><br><span class="line">        // true: &lt;div</span><br><span class="line">        //          className=&quot;&quot;</span><br><span class="line">        //          style=&#123;&#123;&#125;&#125; &gt;</span><br><span class="line">        &quot;jsxBracketSameLine&quot;: false,</span><br><span class="line">        // 箭头函数参数括号 默认avoid 可选 avoid| always</span><br><span class="line">        // avoid 能省略括号的时候就省略 例如x =&gt; x</span><br><span class="line">        // always 总是有括号</span><br><span class="line">        &quot;arrowParens&quot;: &#x27;always&#x27;</span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line">    &quot;no-alert&quot;: 0, //禁止使用alert confirm prompt</span><br><span class="line">    &quot;no-array-constructor&quot;: 2, //禁止使用数组构造器</span><br><span class="line">    &quot;no-bitwise&quot;: 0, //禁止使用按位运算符</span><br><span class="line">    &quot;no-caller&quot;: 1, //禁止使用arguments.caller或arguments.callee</span><br><span class="line">    &quot;no-catch-shadow&quot;: 2, //禁止catch子句参数与外部作用域变量同名</span><br><span class="line">    &quot;no-class-assign&quot;: 2, //禁止给类赋值</span><br><span class="line">    &quot;no-cond-assign&quot;: 2, //禁止在条件表达式中使用赋值语句</span><br><span class="line">    &quot;no-console&quot;: 0, //禁止使用console</span><br><span class="line">    &quot;no-const-assign&quot;: 2, //禁止修改const声明的变量</span><br><span class="line">    &quot;no-constant-condition&quot;: 2, //禁止在条件中使用常量表达式 if(true) if(1)</span><br><span class="line">    &quot;no-continue&quot;: 0, //禁止使用continue</span><br><span class="line">    &quot;no-control-regex&quot;: 2, //禁止在正则表达式中使用控制字符</span><br><span class="line">    &quot;no-debugger&quot;: 2, //禁止使用debugger</span><br><span class="line">    &quot;no-delete-var&quot;: 2, //不能对var声明的变量使用delete操作符</span><br><span class="line">    &quot;no-div-regex&quot;: 1, //不能使用看起来像除法的正则表达式/=foo/</span><br><span class="line">    &quot;no-dupe-keys&quot;: 2, //在创建对象字面量时不允许键重复 &#123;a:1,a:1&#125;</span><br><span class="line">    &quot;no-dupe-args&quot;: 2, //函数参数不能重复</span><br><span class="line">    &quot;no-duplicate-case&quot;: 2, //switch中的case标签不能重复</span><br><span class="line">    &quot;no-else-return&quot;: 2, //如果if语句里面有return,后面不能跟else语句</span><br><span class="line">    &quot;no-empty&quot;: 2, //块语句中的内容不能为空</span><br><span class="line">    &quot;no-empty-character-class&quot;: 2, //正则表达式中的[]内容不能为空</span><br><span class="line">    &quot;no-empty-label&quot;: 0, //禁止使用空label</span><br><span class="line">    &quot;no-eq-null&quot;: 2, //禁止对null使用==或!=运算符</span><br><span class="line">    &quot;no-eval&quot;: 1, //禁止使用eval</span><br><span class="line">    &quot;no-ex-assign&quot;: 2, //禁止给catch语句中的异常参数赋值</span><br><span class="line">    &quot;no-extend-native&quot;: 2, //禁止扩展native对象</span><br><span class="line">    &quot;no-extra-bind&quot;: 2, //禁止不必要的函数绑定</span><br><span class="line">    &quot;no-extra-boolean-cast&quot;: 2, //禁止不必要的bool转换</span><br><span class="line">    &quot;no-extra-parens&quot;: 2, //禁止非必要的括号</span><br><span class="line">    &quot;no-extra-semi&quot;: 2, //禁止多余的冒号</span><br><span class="line">    &quot;no-fallthrough&quot;: 1, //禁止switch穿透</span><br><span class="line">    &quot;no-floating-decimal&quot;: 2, //禁止省略浮点数中的0 .5 3.</span><br><span class="line">    &quot;no-func-assign&quot;: 2, //禁止重复的函数声明</span><br><span class="line">    &quot;no-implicit-coercion&quot;: 1, //禁止隐式转换</span><br><span class="line">    &quot;no-implied-eval&quot;: 2, //禁止使用隐式eval</span><br><span class="line">    &quot;no-inline-comments&quot;: 0, //禁止行内备注</span><br><span class="line">    &quot;no-inner-declarations&quot;: [2, &quot;functions&quot;], //禁止在块语句中使用声明（变量或函数）</span><br><span class="line">    &quot;no-invalid-regexp&quot;: 2, //禁止无效的正则表达式</span><br><span class="line">    &quot;no-invalid-this&quot;: 2, //禁止无效的this，只能用在构造器，类，对象字面量</span><br><span class="line">    &quot;no-irregular-whitespace&quot;: 2, //不能有不规则的空格</span><br><span class="line">    &quot;no-iterator&quot;: 2, //禁止使用__iterator__ 属性</span><br><span class="line">    &quot;no-label-var&quot;: 2, //label名不能与var声明的变量名相同</span><br><span class="line">    &quot;no-labels&quot;: 2, //禁止标签声明</span><br><span class="line">    &quot;no-lone-blocks&quot;: 2, //禁止不必要的嵌套块</span><br><span class="line">    &quot;no-lonely-if&quot;: 2, //禁止else语句内只有if语句</span><br><span class="line">    &quot;no-loop-func&quot;: 1, //禁止在循环中使用函数（如果没有引用外部变量不形成闭包就可以）</span><br><span class="line">    &quot;no-mixed-requires&quot;: [0, false], //声明时不能混用声明类型</span><br><span class="line">    &quot;no-mixed-spaces-and-tabs&quot;: [2, false], //禁止混用tab和空格</span><br><span class="line">    &quot;linebreak-style&quot;: [0, &quot;windows&quot;], //换行风格</span><br><span class="line">    &quot;no-multi-spaces&quot;: 1, //不能用多余的空格</span><br><span class="line">    &quot;no-multi-str&quot;: 2, //字符串不能用\换行</span><br><span class="line">    &quot;no-multiple-empty-lines&quot;: [1, &#123;</span><br><span class="line">      &quot;max&quot;: 2</span><br><span class="line">    &#125;], //空行最多不能超过2行</span><br><span class="line">    &quot;no-native-reassign&quot;: 2, //不能重写native对象</span><br><span class="line">    &quot;no-negated-in-lhs&quot;: 2, //in 操作符的左边不能有!</span><br><span class="line">    &quot;no-nested-ternary&quot;: 0, //禁止使用嵌套的三目运算</span><br><span class="line">    &quot;no-new&quot;: 1, //禁止在使用new构造一个实例后不赋值</span><br><span class="line">    &quot;no-new-func&quot;: 1, //禁止使用new Function</span><br><span class="line">    &quot;no-new-object&quot;: 2, //禁止使用new Object()</span><br><span class="line">    &quot;no-new-require&quot;: 2, //禁止使用new require</span><br><span class="line">    &quot;no-new-wrappers&quot;: 2, //禁止使用new创建包装实例，new String new Boolean new Number</span><br><span class="line">    &quot;no-obj-calls&quot;: 2, //不能调用内置的全局对象，比如Math() JSON()</span><br><span class="line">    &quot;no-octal&quot;: 2, //禁止使用八进制数字</span><br><span class="line">    &quot;no-octal-escape&quot;: 2, //禁止使用八进制转义序列</span><br><span class="line">    &quot;no-param-reassign&quot;: 2, //禁止给参数重新赋值</span><br><span class="line">    &quot;no-path-concat&quot;: 0, //node中不能使用__dirname或__filename做路径拼接</span><br><span class="line">    &quot;no-plusplus&quot;: 0, //禁止使用++，--</span><br><span class="line">    &quot;no-process-env&quot;: 0, //禁止使用process.env</span><br><span class="line">    &quot;no-process-exit&quot;: 0, //禁止使用process.exit()</span><br><span class="line">    &quot;no-proto&quot;: 2, //禁止使用__proto__属性</span><br><span class="line">    &quot;no-redeclare&quot;: 2, //禁止重复声明变量</span><br><span class="line">    &quot;no-regex-spaces&quot;: 2, //禁止在正则表达式字面量中使用多个空格 /foo bar/</span><br><span class="line">    &quot;no-restricted-modules&quot;: 0, //如果禁用了指定模块，使用就会报错</span><br><span class="line">    &quot;no-return-assign&quot;: 1, //return 语句中不能有赋值表达式</span><br><span class="line">    &quot;no-script-url&quot;: 0, //禁止使用javascript:void(0)</span><br><span class="line">    &quot;no-self-compare&quot;: 2, //不能比较自身</span><br><span class="line">    &quot;no-sequences&quot;: 0, //禁止使用逗号运算符</span><br><span class="line">    &quot;no-shadow&quot;: 2, //外部作用域中的变量不能与它所包含的作用域中的变量或参数同名</span><br><span class="line">    &quot;no-shadow-restricted-names&quot;: 2, //严格模式中规定的限制标识符不能作为声明时的变量名使用</span><br><span class="line">    &quot;no-spaced-func&quot;: 2, //函数调用时 函数名与()之间不能有空格</span><br><span class="line">    &quot;no-sparse-arrays&quot;: 2, //禁止稀疏数组， [1,,2]</span><br><span class="line">    &quot;no-sync&quot;: 0, //nodejs 禁止同步方法</span><br><span class="line">    &quot;no-ternary&quot;: 0, //禁止使用三目运算符</span><br><span class="line">    &quot;no-trailing-spaces&quot;: 1, //一行结束后面不要有空格</span><br><span class="line">    &quot;no-this-before-super&quot;: 0, //在调用super()之前不能使用this或super</span><br><span class="line">    &quot;no-throw-literal&quot;: 2, //禁止抛出字面量错误 throw &quot;error&quot;;</span><br><span class="line">    &quot;no-undef&quot;: 1, //不能有未定义的变量</span><br><span class="line">    &quot;no-undef-init&quot;: 2, //变量初始化时不能直接给它赋值为undefined</span><br><span class="line">    &quot;no-undefined&quot;: 2, //不能使用undefined</span><br><span class="line">    &quot;no-unexpected-multiline&quot;: 2, //避免多行表达式</span><br><span class="line">    &quot;no-underscore-dangle&quot;: 1, //标识符不能以_开头或结尾</span><br><span class="line">    &quot;no-unneeded-ternary&quot;: 2, //禁止不必要的嵌套 var isYes = answer === 1 ? true : false;</span><br><span class="line">    &quot;no-unreachable&quot;: 2, //不能有无法执行的代码</span><br><span class="line">    &quot;no-unused-expressions&quot;: 2, //禁止无用的表达式</span><br><span class="line">    &quot;no-unused-vars&quot;: [2, &#123;</span><br><span class="line">      &quot;vars&quot;: &quot;all&quot;,</span><br><span class="line">      &quot;args&quot;: &quot;after-used&quot;</span><br><span class="line">    &#125;], //不能有声明后未被使用的变量或参数</span><br><span class="line">    &quot;no-use-before-define&quot;: 2, //未定义前不能使用</span><br><span class="line">    &quot;no-useless-call&quot;: 2, //禁止不必要的call和apply</span><br><span class="line">    &quot;no-void&quot;: 2, //禁用void操作符</span><br><span class="line">    &quot;no-var&quot;: 0, //禁用var，用let和const代替</span><br><span class="line">    &quot;no-warning-comments&quot;: [1, &#123;</span><br><span class="line">      &quot;terms&quot;: [&quot;todo&quot;, &quot;fixme&quot;, &quot;xxx&quot;],</span><br><span class="line">      &quot;location&quot;: &quot;start&quot;</span><br><span class="line">    &#125;], //不能有警告备注</span><br><span class="line">    &quot;no-with&quot;: 2, //禁用with</span><br><span class="line"></span><br><span class="line">    &quot;array-bracket-spacing&quot;: [2, &quot;never&quot;], //是否允许非空数组里面有多余的空格</span><br><span class="line">    &quot;arrow-parens&quot;: 0, //箭头函数用小括号括起来</span><br><span class="line">    &quot;arrow-spacing&quot;: 0, //=&gt;的前/后括号</span><br><span class="line">    &quot;accessor-pairs&quot;: 0, //在对象中使用getter/setter</span><br><span class="line">    &quot;block-scoped-var&quot;: 0, //块语句中使用var</span><br><span class="line">    &quot;brace-style&quot;: [1, &quot;1tbs&quot;], //大括号风格</span><br><span class="line">    &quot;callback-return&quot;: 1, //避免多次调用回调什么的</span><br><span class="line">    &quot;camelcase&quot;: 2, //强制驼峰法命名</span><br><span class="line">    &quot;comma-dangle&quot;: [2, &quot;never&quot;], //对象字面量项尾不能有逗号</span><br><span class="line">    &quot;comma-spacing&quot;: 0, //逗号前后的空格</span><br><span class="line">    &quot;comma-style&quot;: [2, &quot;last&quot;], //逗号风格，换行时在行首还是行尾</span><br><span class="line">    &quot;complexity&quot;: [0, 11], //循环复杂度</span><br><span class="line">    &quot;computed-property-spacing&quot;: [0, &quot;never&quot;], //是否允许计算后的键名什么的</span><br><span class="line">    &quot;consistent-return&quot;: 0, //return 后面是否允许省略</span><br><span class="line">    &quot;consistent-this&quot;: [2, &quot;that&quot;], //this别名</span><br><span class="line">    &quot;constructor-super&quot;: 0, //非派生类不能调用super，派生类必须调用super</span><br><span class="line">    &quot;curly&quot;: [2, &quot;all&quot;], //必须使用 if()&#123;&#125; 中的&#123;&#125;</span><br><span class="line">    &quot;default-case&quot;: 0, //switch语句最后必须有default</span><br><span class="line">    &quot;dot-location&quot;: 0, //对象访问符的位置，换行的时候在行首还是行尾</span><br><span class="line">    &quot;dot-notation&quot;: [0, &#123;</span><br><span class="line">      &quot;allowKeywords&quot;: true</span><br><span class="line">    &#125;], //避免不必要的方括号</span><br><span class="line">    &quot;eol-last&quot;: 0, //文件以单一的换行符结束</span><br><span class="line">    &quot;eqeqeq&quot;: 2, //必须使用全等</span><br><span class="line">    &quot;func-names&quot;: 0, //函数表达式必须有名字</span><br><span class="line">    &quot;func-style&quot;: [0, &quot;declaration&quot;], //函数风格，规定只能使用函数声明/函数表达式</span><br><span class="line">    &quot;generator-star-spacing&quot;: 0, //生成器函数*的前后空格</span><br><span class="line">    &quot;guard-for-in&quot;: 0, //for in循环要用if语句过滤</span><br><span class="line">    &quot;handle-callback-err&quot;: 0, //nodejs 处理错误</span><br><span class="line">    &quot;id-length&quot;: 0, //变量名长度</span><br><span class="line">    &quot;indent&quot;: [2, 2], //缩进风格</span><br><span class="line">    &quot;init-declarations&quot;: 0, //声明时必须赋初值</span><br><span class="line">    &quot;key-spacing&quot;: [0, &#123;</span><br><span class="line">      &quot;beforeColon&quot;: false,</span><br><span class="line">      &quot;afterColon&quot;: true</span><br><span class="line">    &#125;], //对象字面量中冒号的前后空格</span><br><span class="line">    &quot;lines-around-comment&quot;: 0, //行前/行后备注</span><br><span class="line">    &quot;max-depth&quot;: [0, 4], //嵌套块深度</span><br><span class="line">    &quot;max-len&quot;: [0, 80, 4], //字符串最大长度</span><br><span class="line">    &quot;max-nested-callbacks&quot;: [0, 2], //回调嵌套深度</span><br><span class="line">    &quot;max-params&quot;: [0, 3], //函数最多只能有3个参数</span><br><span class="line">    &quot;max-statements&quot;: [0, 10], //函数内最多有几个声明</span><br><span class="line">    &quot;new-cap&quot;: 2, //函数名首行大写必须使用new方式调用，首行小写必须用不带new方式调用</span><br><span class="line">    &quot;new-parens&quot;: 2, //new时必须加小括号</span><br><span class="line">    &quot;newline-after-var&quot;: 2, //变量声明后是否需要空一行</span><br><span class="line">    &quot;object-curly-spacing&quot;: [0, &quot;never&quot;], //大括号内是否允许不必要的空格</span><br><span class="line">    &quot;object-shorthand&quot;: 0, //强制对象字面量缩写语法</span><br><span class="line">    &quot;one-var&quot;: 0, //连续声明</span><br><span class="line">    &quot;operator-assignment&quot;: [0, &quot;always&quot;], //赋值运算符 += -=什么的</span><br><span class="line">    &quot;operator-linebreak&quot;: [2, &quot;after&quot;], //换行时运算符在行尾还是行首</span><br><span class="line">    &quot;padded-blocks&quot;: 0, //块语句内行首行尾是否要空行</span><br><span class="line">    &quot;prefer-const&quot;: 0, //首选const</span><br><span class="line">    &quot;prefer-spread&quot;: 0, //首选展开运算</span><br><span class="line">    &quot;prefer-reflect&quot;: 0, //首选Reflect的方法</span><br><span class="line">    &quot;quotes&quot;: [1, &quot;single&quot;], //引号类型 `` &quot;&quot; &#x27;&#x27;</span><br><span class="line">    &quot;quote-props&quot;: [0, &quot;always&quot;], //对象字面量中的属性名是否强制双引号</span><br><span class="line">    &quot;radix&quot;: 2, //parseInt必须指定第二个参数</span><br><span class="line">    &quot;id-match&quot;: 0, //命名检测</span><br><span class="line">    &quot;require-yield&quot;: 0, //生成器函数必须有yield</span><br><span class="line">    &quot;semi&quot;: [0, &quot;always&quot;], //语句强制分号结尾</span><br><span class="line">    &quot;semi-spacing&quot;: [0, &#123;</span><br><span class="line">      &quot;before&quot;: false,</span><br><span class="line">      &quot;after&quot;: true</span><br><span class="line">    &#125;], //分号前后空格</span><br><span class="line">    &quot;sort-vars&quot;: 0, //变量声明时排序</span><br><span class="line">    &quot;space-after-keywords&quot;: [0, &quot;always&quot;], //关键字后面是否要空一格</span><br><span class="line">    &quot;space-before-blocks&quot;: [0, &quot;always&quot;], //不以新行开始的块&#123;前面要不要有空格</span><br><span class="line">    &quot;space-before-function-paren&quot;: [0, &quot;always&quot;], //函数定义时括号前面要不要有空格</span><br><span class="line">    &quot;space-in-parens&quot;: [0, &quot;never&quot;], //小括号里面要不要有空格</span><br><span class="line">    &quot;space-infix-ops&quot;: 0, //中缀操作符周围要不要有空格</span><br><span class="line">    &quot;space-return-throw-case&quot;: 0, //return throw case后面要不要加空格</span><br><span class="line">    &quot;space-unary-ops&quot;: [0, &#123;</span><br><span class="line">      &quot;words&quot;: true,</span><br><span class="line">      &quot;nonwords&quot;: false</span><br><span class="line">    &#125;], //一元运算符的前/后要不要加空格</span><br><span class="line">    &quot;spaced-comment&quot;: 0, //注释风格要不要有空格什么的</span><br><span class="line">    &quot;strict&quot;: 2, //使用严格模式</span><br><span class="line">    &quot;use-isnan&quot;: 2, //禁止比较时使用NaN，只能用isNaN()</span><br><span class="line">    &quot;valid-jsdoc&quot;: 0, //jsdoc规则</span><br><span class="line">    &quot;valid-typeof&quot;: 2, //必须使用合法的typeof的值</span><br><span class="line">    &quot;vars-on-top&quot;: 2, //var必须放在作用域顶部</span><br><span class="line">    &quot;wrap-iife&quot;: [2, &quot;inside&quot;], //立即执行函数表达式的小括号风格</span><br><span class="line">    &quot;wrap-regex&quot;: 0, //正则表达式字面量用小括号包起来</span><br><span class="line">    &quot;yoda&quot;: [2, &quot;never&quot;] //禁止尤达条件</span><br><span class="line">  &#125;,</span><br><span class="line">  parserOptions: &#123;</span><br><span class="line">    parser: &quot;babel-eslint&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>来源于简书：<a href="https://www.jianshu.com/p/7dec56e7c132">https://www.jianshu.com/p/7dec56e7c132</a></p>
-<p>初始时间：2019.04.21 22:56:17</p>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>前端核心工具：yarn、npm、cnpm三者如何优雅的在一起使用</title>
-    <url>/2022/11/01/%E5%89%8D%E7%AB%AF%E6%A0%B8%E5%BF%83%E5%B7%A5%E5%85%B7%EF%BC%9Ayarn%E3%80%81npm%E3%80%81cnpm%E4%B8%89%E8%80%85%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E5%9C%A8%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h4 id="一位用不好包管理器的前端，是一个入门级前端，一个用不好webpack的前端，是一个初级前端"><a href="#一位用不好包管理器的前端，是一个入门级前端，一个用不好webpack的前端，是一个初级前端" class="headerlink" title="一位用不好包管理器的前端，是一个入门级前端，一个用不好webpack的前端，是一个初级前端"></a>一位用不好包管理器的前端，是一个入门级前端，一个用不好<code>webpack</code>的前端，是一个初级前端</h4><h4 id="三个包管理器是可以一起用的，只要你够胆大心细，就没任何问题！"><a href="#三个包管理器是可以一起用的，只要你够胆大心细，就没任何问题！" class="headerlink" title="三个包管理器是可以一起用的，只要你够胆大心细，就没任何问题！"></a>三个包管理器是可以一起用的，只要你够胆大心细，就没任何问题！</h4><ul>
-<li>推荐两篇文章<ul>
-<li><a href="https://segmentfault.com/a/1190000019126657">手写优化版React脚手架</a></li>
-<li><a href="https://segmentfault.com/a/1190000019207033">手写Vue的脚手架</a></li>
-<li><a href="https://segmentfault.com/a/1190000018827395">前端性能优化不完全手册</a></li>
-</ul>
-</li>
-</ul>
-<h4 id="在javeScript编写中-我们尽量不要定义全局变量，封装函数尽量不要有副作用-因为全部变量的查询时间会比局部变量的查询慢-更是考虑在Node的环境中无法被垃圾回收的问题"><a href="#在javeScript编写中-我们尽量不要定义全局变量，封装函数尽量不要有副作用-因为全部变量的查询时间会比局部变量的查询慢-更是考虑在Node的环境中无法被垃圾回收的问题" class="headerlink" title="在javeScript编写中,我们尽量不要定义全局变量，封装函数尽量不要有副作用,因为全部变量的查询时间会比局部变量的查询慢,更是考虑在Node的环境中无法被垃圾回收的问题"></a>在<code>javeScript</code>编写中,我们尽量不要定义全局变量，封装函数尽量不要有副作用,因为全部变量的查询时间会比局部变量的查询慢,更是考虑在Node的环境中无法被垃圾回收的问题</h4><h4 id="老规矩-先看原理"><a href="#老规矩-先看原理" class="headerlink" title="老规矩 先看原理"></a>老规矩 先看原理</h4><h4 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h4><ul>
-<li><code>npm</code> 是<code> Node.js</code> 能够如此成功的主要原因之一。<code>npm</code> 团队做了很多的工作，以确保 npm 保持向后兼容，并在不同的环境中保持一致。</li>
-<li>npm是围绕着 语义版本控制（semver）的思想而设计。</li>
-<li>给定一个版本号：主版本号.次版本号.补丁版本号， 以下这三种情况需要增加相应的版本号：</li>
-<li>主版本号： 当API发生改变，并与之前的版本不兼容的时候</li>
-<li>次版本号： 当增加了功能，但是向后兼容的时候</li>
-<li>补丁版本号：当做了向后兼容的缺陷修复的时候</li>
-<li><code>npm 2</code> 会安装每一个包所依赖的所有依赖项。如果我们有这么一个项目，它依赖项目A，项目A依赖项目B，项目B依赖项目C，那么依赖树将如下所示：</li>
-</ul>
-<p><img src="https://segmentfault.com/img/bVbs8T7?w=815&h=162" class="lazyload" data-srcset="https://segmentfault.com/img/bVbs8T7?w=815&h=162" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="clipboard.png"></p>
-<ul>
-<li>这个结构可能会很长。这对于基于Unix的操作系统来说只不过是一个小烦恼，但对于Windows来说却是个破坏性的东西，因为有很多程序无法处理超过260个字符的文件路径名。</li>
-<li><code>npm 3</code>采用了扁平依赖关系树来解决这个问题，所以我们的3个项目结构现在看起来如下所示：</li>
-</ul>
-<p>存了已经下载的每个版本的压缩包。本地缓存的内容可以通过npm cache ls命令进行查看。本地缓存的设计有助于减少安装时间。<br><img src="https://segmentfault.com/img/bVbs8Uf?w=627&h=115" class="lazyload" data-srcset="https://segmentfault.com/img/bVbs8Uf?w=627&h=115" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="clipboard.png"></p>
-<ul>
-<li>这样，一个原来很长的文件路径名就从<code>./node_modules/package-A/node_modules/package-B/node-modules/some-file-name-in-package-c.js</code>变成了<code>/node_modules/some-file-name-in-package-c.js</code>。</li>
-<li>这种方法的缺点是，<code>npm</code>必须首先遍历所有的项目依赖关系，然后再决定如何生成扁平的node_modules目录结构。npm必须为所有使用到的模块构建一个完整的依赖关系树，这是一个耗时的操作，是npm安装速度慢的一个很重要的原因。</li>
-<li>想当然的以为每次运行<code>npm install</code>命令时，<code>NPM</code>都得从互联网上下载所有内容。</li>
-<li>但是，<code>npm</code>是有本地缓存的，它保存了已经下载的每个版本的压缩包。本地缓存的内容可以通过<code>npm cache ls</code>命令进行查看。本地缓存的设计有助于减少安装时间。</li>
-</ul>
-<h4 id="cnpm"><a href="#cnpm" class="headerlink" title="cnpm"></a>cnpm</h4><ul>
-<li><code>cnpm</code>跟<code>npm</code>用法完全一致，只是在执行命令时将<code>npm</code>改为<code>cnpm</code>。</li>
-<li><code>npm</code>安装插件是从国外服务器下载，受网络影响大，可能出现异常，如果npm的服务器在中国就好了，于是淘宝团队干了这事。来自官网：“这是一个完整 <code>npmjs.org </code>镜像，你可以用此代替官方版本(只读)，同步频率目前为 10分钟 一次以保证尽量与官方服务同步。”</li>
-<li>官方地址：<code>http://npm.taobao.org</code></li>
-<li>安装：<code> npm install -g cnpm --registry=https://registry.npm.taobao.org</code></li>
-</ul>
-<h4 id="Yarn"><a href="#Yarn" class="headerlink" title="Yarn"></a>Yarn</h4><ul>
-<li><code>Yarn</code>一开始的主要目标是解决上一节中描述的由于语义版本控制而导致的npm安装的不确定性问题。虽然可以使用<code>npm shrinkwrap</code>来实现可预测的依赖关系树，但它并不是默认选项，而是取决于所有的开发人员知道并且启用这个选项。</li>
-<li><code>Yarn</code>采取了不同的做法。每个yarn安装都会生成一个类似于npm-shrinkwrap.json的yarn.lock文件，而且它是默认创建的。除了常规信息之外，<code>yarn.lock</code>文件还包含要安装的内容的校验和，以确保使用的库的版本相同。</li>
-<li>yarn是经过重新设计的崭新的npm客户端，它能让开发人员并行处理所有必须的操作，并添加了一些其他改进。</li>
-<li>运行速度得到了显著的提升，整个安装时间也变得更少</li>
-<li>像npm一样，yarn使用本地缓存。**<code>与npm不同的是，yarn无需互联网连接就能安装本地缓存的依赖项，它提供了离线模式</code>**。</li>
-<li>允许合并项目中使用到的所有的包的许可证</li>
-<li>通常情况下不建议通过npm进行安装。npm安装是非确定性的，程序包没有签名，并且npm除了做了基本的SHA1哈希之外不执行任何完整性检查，这给安装系统程序带来了安全风险。(作者曾经在一个上百个依赖包的项目中使用<code>npm</code>丢包过，代价非常大，泪水不自觉掉下来)</li>
-</ul>
-<blockquote>
-<p>首先看一次非常失败的包下载 竟然是从全局读取的资源(不配置<code>webpack</code>别名是因为就这一个路径这么长)</p>
-</blockquote>
-<p><img src="https://segmentfault.com/img/bVbs8Q1?w=1423&h=274" class="lazyload" data-srcset="https://segmentfault.com/img/bVbs8Q1?w=1423&h=274" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="clipboard.png"></p>
-<blockquote>
-<p>首先我们从原理入手 ，我们使用<code> npm init</code>,<code>yarn init</code>,<code>cnpm init</code> 的时候 发生了什么 ？</p>
-</blockquote>
-<ul>
-<li>生成<code>package.json</code>文件</li>
-<li><code>json</code>文件内部声明初始的版本信息、作者信息等，如果你是需要上传到npm上作为命令行工具，应该配置<code>bin</code>等声明入口字段</li>
-</ul>
-<blockquote>
-<p>那么当我们使用<code>npm i </code>, <code>yarn add </code>,<code>cnpm i </code>操作时候会发生什么 ？</p>
-</blockquote>
-<ul>
-<li>首先会根据你的命令行后缀是否加了 <code>-g </code>或者<code>global</code>判断，下载的包是放在全局的环境，还是当前<code>package.json</code>文件对应的<code>node_module</code>文件夹目录下(这点尤其重要，有人出BUG，就是因为在用<code>npm </code>, <code>cnpm</code>时候没有注明添加的是全局依赖还是本地依赖，导致<code>json</code>文件上没有对应的包名，项目永远起不来)</li>
-<li>然后根据你的指令<code>--save </code>或者<code>-D</code>、<code>--save -dev</code>判断是开发依赖还是线上依赖，其实这点在<code>yarn</code>上没有问题，因为<code>yarn</code>有自己的一套检查包完整性的机制，不会丢包，还会自动判断添加依赖，出<code>bug</code>一般是<code>cnpm</code>和<code>npm</code>，没有明确<code>-g</code>或者<code>--save</code>，<code>npm</code>只有检查程序员签名的机制，没有检查包完整性的机制，也不会自动添加依赖到<code>json</code>文件，那么就会出现丢包的假象，所以建议<strong>主要使用<code>yarn</code></strong></li>
-</ul>
-<h4 id="yarn和npm对比"><a href="#yarn和npm对比" class="headerlink" title="yarn和npm对比"></a><code>yarn</code>和<code>npm</code>对比</h4><p><img src="https://segmentfault.com/img/bVbs8UU?w=701&h=318" class="lazyload" data-srcset="https://segmentfault.com/img/bVbs8UU?w=701&h=318" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="clipboard.png"></p>
-<h4 id="npm的缺点汇总："><a href="#npm的缺点汇总：" class="headerlink" title="npm的缺点汇总："></a><code>npm</code>的缺点汇总：</h4><ul>
-<li>同一个项目，安装的时候无法保持一致性。由于package.json文件中版本号的特点，下面三个版本号在安装的时候代表不同的含义。</li>
-</ul>
-<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;5.0.3&quot;</span>,</span><br><span class="line"><span class="string">&quot;~5.0.3&quot;</span>,</span><br><span class="line"><span class="string">&quot;^5.0.3&quot;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>“5.0.3”表示安装指定的5.0.3版本，“～5.0.3”表示安装5.0.X中最新的版本，“^5.0.3”表示安装5.X.X中最新的版本。这就麻烦了，常常会出现同一个项目，有的同事是OK的，有的同事会由于安装的版本不一致出现<code>bug</code>。</li>
-<li>安装的时候，包会在同一时间下载和安装，中途某个时候，一个包抛出了一个错误，但是npm会继续下载和安装包。因为npm会把所有的日志输出到终端，有关错误包的错误信息就会在一大堆<code>npm</code>打印的警告中丢失掉，并且你甚至永远不会注意到实际发生的错误。</li>
-</ul>
-<h4 id="yarn的优点"><a href="#yarn的优点" class="headerlink" title="yarn的优点"></a><code>yarn</code>的优点</h4><ul>
-<li>速度快 。速度快主要来自以下两个方面：</li>
-<li>并行安装：无论 <code>npm</code> 还是<code>Yarn</code>在执行包的安装时，都会执行一系列任务。<code>npm </code>是按照队列执行每个<code> package</code>，也就是说必须要等到当前<code>package</code>安装完成之后，才能继续后面的安装。而 <code>Yarn</code> 是并行执行所有任务，提高了性能。</li>
-</ul>
-<p>离线模式：**<code>如果之前已经安装过一个软件包，用Yarn再次安装时之间从缓存中获取，就不用像npm那样再从网络下载了</code>。**</p>
-<ul>
-<li>安装版本统一：为了防止拉取到不同的版本，<code>Yarn</code> 有一个锁定文件 <code>(lock file) </code>记录了被确切安装上的模块的版本号。每次只要新增了一个模块，<code>Yarn</code> 就会创建（或更新）yarn.lock 这个文件。这么做就保证了，每一次拉取同一个项目依赖时，使用的都是一样的模块版本。npm 其实也有办法实现处处使用相同版本的 packages，但需要开发者执行 <code>npm shrinkwrap </code>命令。这个命令将会生成一个锁定文件，在执行 <code>npm install </code>的时候，该锁定文件会先被读取，和 Yarn 读取 yarn.lock 文件一个道理。<code>npm</code> 和 <code>Yarn</code> 两者的不同之处在于，<code>Yarn</code> 默认会生成这样的锁定文件，而 npm 要通过 <code>shrinkwrap</code> 命令生成 <code>npm-shrinkwrap.json</code> 文件，只有当这个文件存在的时候，<code>packages</code> 版本信息才会被记录和更新。</li>
-<li>更简洁的输出：<code>npm </code>的输出信息比较冗长。在执行<code> npm install &lt;package&gt;</code> 的时候，命令行里会不断地打印出所有被安装上的依赖。相比之下，Yarn 简洁太多：默认情况下，结合了<code> emoji</code>直观且直接地打印出必要的信息，也提供了一些命令供开发者查询额外的安装信息。</li>
-<li>多注册来源处理：所有的依赖包，不管他被不同的库间接关联引用多少次，安装这个包时，只会从一个注册来源去装，要么是 npm 要么是 bower, 防止出现混乱不一致。</li>
-<li>更好的语义化： <code>yarn</code>改变了一些<code>npm</code>命令的名称，比如 <code>yarn add/remove，</code>感觉上比<code>npm</code>原本的 <code>install/uninstall</code> 要更清晰。</li>
-</ul>
-<blockquote>
-<p>那不是标题党？ 说了<code>yarn</code>这么多优点，我们为什么还要<code>npm</code>呢？</p>
-</blockquote>
-<h4 id="你不用npm-publish-，你怎么上传包到npm-你不用cnpm，是下载不了一些包的"><a href="#你不用npm-publish-，你怎么上传包到npm-你不用cnpm，是下载不了一些包的" class="headerlink" title="你不用npm publish ，你怎么上传包到npm? 你不用cnpm，是下载不了一些包的"></a>你不用<code>npm publish</code> ，你怎么上传包到<code>npm</code>? 你不用<code>cnpm</code>，是下载不了一些包的</h4><blockquote>
-<p>搞清楚三者下载包（依赖）的本质结果：</p>
-</blockquote>
-<ul>
-<li>首先向对应的<code>node_module</code>文件夹下面下载包（如果你非要下到全局，那么再见）</li>
-<li>再然后是<code>json</code>文件中添加对应的依赖字段,确定是线上依赖还是开发依赖</li>
-<li>只要做到这两者 你就下包成功</li>
-<li>总结就是 只要结果 过程管你是啥</li>
-</ul>
-<blockquote>
-<p>使用<code>yarn</code>下载过的包，再使用<code>npm cnpm</code>下载 会重复下载，删除之前的包</p>
-</blockquote>
-<ul>
-<li><code>puppeteer</code>这个包所依赖的<code>mini</code>版谷歌浏览器使用<code>cnpm</code>下载就可以完美解决</li>
-<li><code>prerender-spa-plugin</code>这个包依赖上面的<code>木偶戏 puppeteer</code>这个包，也可以用<code>cnpm</code>下载</li>
-<li>混合使用包管理器切记，不要重复下载依赖，<code>npm cnpm</code>下载依赖，一定要添加注明是什么依赖，是否全局安装</li>
-<li><code>yarn</code>和<code>npm i</code>两者，选择前者，原因在上面有提到，总体来说，<code>yarn</code>是不二选择，但是其他两者也不可缺少，比如<code>electron</code>这个依赖，使用<code>cnpm</code>就可以完美一键安装</li>
-</ul>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-  </entry>
-  <entry>
     <title>前端跨域问题如何解决</title>
     <url>/2022/11/01/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3/</url>
     <content><![CDATA[<h1 id="前端跨域问题如何解决"><a href="#前端跨域问题如何解决" class="headerlink" title="前端跨域问题如何解决"></a>前端跨域问题如何解决</h1><p>咱们做前端的，平时跟后端对接接口那是必须的事情，但是可能很多同学忽略了一个对接过程中可能会发生的问题——跨域，那跨域到底是啥呢？为什么会跨域呢？又怎么才能解决呢？</p>
@@ -2170,22 +2046,128 @@ myWebsocket(&#39;ws://127.0.0.1:8000&#39;, &#123; name: &#39;林三心&#39;, age
       </categories>
   </entry>
   <entry>
-    <title>删除电脑浏览记录</title>
-    <url>/2022/10/15/%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4%E7%94%B5%E8%84%91%E4%B8%8A%E6%9C%80%E8%BF%91%E6%B5%8F%E8%A7%88%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>　　我们在长时间操作电脑的过程中，系统都会记录用户浏览的历史，一天下来电脑可能产生几万条记录,这些记录有些会涉及到个人的隐私，因此许多用户就想要在关闭电脑前将浏览记录进行删除，那么怎么删除电脑最近浏览记录呢？这里小编就来教大家删除电脑上最近浏览记录操作方法。</p>
-<h3 id="具体方法"><a href="#具体方法" class="headerlink" title="具体方法"></a>具体方法</h3><ol>
-<li><p>点击查看，打开资源管理器，点击查看。</p>
-<p><img src="http://img.ujiaoshou.com/upload/images/2022/042202/1845/164889634448114632391.png" class="lazyload" data-srcset="http://img.ujiaoshou.com/upload/images/2022/042202/1845/164889634448114632391.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="怎么删除电脑最近浏览记录_如何删除电脑上最近浏览记录"></p>
-</li>
-<li><p>点击选项，展开菜单后，点击右边的选项。</p>
-<p><img src="http://img.ujiaoshou.com/upload/images/2022/042202/1845/164889634482114553095.png" class="lazyload" data-srcset="http://img.ujiaoshou.com/upload/images/2022/042202/1845/164889634482114553095.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="怎么删除电脑最近浏览记录_如何删除电脑上最近浏览记录"></p>
-</li>
-<li><p>点击清除按钮，找到清除历史记录的选项即可。</p>
-</li>
-</ol>
-<p><img src="http://img.ujiaoshou.com/upload/images/2022/042202/1845/164889634549189784482.png" class="lazyload" data-srcset="http://img.ujiaoshou.com/upload/images/2022/042202/1845/164889634549189784482.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="怎么删除电脑最近浏览记录_如何删除电脑上最近浏览记录"></p>
-<p>以上就是删除电脑上最近浏览记录的操作方法了。</p>
+    <title>关于.eslintrc.js的一些检查配置</title>
+    <url>/2022/10/22/%E5%85%B3%E4%BA%8E-eslintrc-js%E7%9A%84%E4%B8%80%E4%BA%9B%E6%A3%80%E6%9F%A5%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h1 id="关于-eslintrc-js的一些检查配置"><a href="#关于-eslintrc-js的一些检查配置" class="headerlink" title="关于.eslintrc.js的一些检查配置"></a>关于.eslintrc.js的一些检查配置</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  root: true,</span><br><span class="line">  env: &#123;</span><br><span class="line">    node: true</span><br><span class="line">  &#125;,</span><br><span class="line">  extends: [&quot;plugin:vue/essential&quot;, &quot;@vue/prettier&quot;],</span><br><span class="line">  rules: &#123;</span><br><span class="line">    &quot;no-console&quot;: process.env.NODE_ENV === &quot;production&quot; ? &quot;error&quot; : &quot;off&quot;,</span><br><span class="line">    &quot;no-debugger&quot;: process.env.NODE_ENV === &quot;production&quot; ? &quot;error&quot; : &quot;off&quot;,</span><br><span class="line">    &quot;prettier/prettier&quot;: [</span><br><span class="line">      &quot;error&quot;,</span><br><span class="line">      &#123;</span><br><span class="line">        // tab缩进大小,默认为2</span><br><span class="line">        &quot;tabWidth&quot;: 2,</span><br><span class="line">        // 使用tab缩进，默认false</span><br><span class="line">        &quot;useTabs&quot;: false,</span><br><span class="line">        // 使用分号, 默认true</span><br><span class="line">        &quot;semi&quot;: false,</span><br><span class="line">        // 使用单引号, 默认false(在jsx中配置无效, 默认都是双引号)</span><br><span class="line">        &quot;singleQuote&quot;: true,</span><br><span class="line">        // 行尾逗号,默认none,可选 none|es5|all</span><br><span class="line">        // es5 包括es5中的数组、对象</span><br><span class="line">        // all 包括函数对象等所有可选</span><br><span class="line">        &quot;trailingComma&quot;: &#x27;none&#x27;,</span><br><span class="line">        // 对象中的空格 默认true</span><br><span class="line">        // true: &#123; foo: bar &#125;</span><br><span class="line">        // false: &#123;foo: bar&#125;</span><br><span class="line">        &quot;bracketSpacing&quot;: true,</span><br><span class="line">        // JSX标签闭合位置 默认false</span><br><span class="line">        // false: &lt;div</span><br><span class="line">        //          className=&quot;&quot;</span><br><span class="line">        //          style=&#123;&#123;&#125;&#125;</span><br><span class="line">        //       &gt;</span><br><span class="line">        // true: &lt;div</span><br><span class="line">        //          className=&quot;&quot;</span><br><span class="line">        //          style=&#123;&#123;&#125;&#125; &gt;</span><br><span class="line">        &quot;jsxBracketSameLine&quot;: false,</span><br><span class="line">        // 箭头函数参数括号 默认avoid 可选 avoid| always</span><br><span class="line">        // avoid 能省略括号的时候就省略 例如x =&gt; x</span><br><span class="line">        // always 总是有括号</span><br><span class="line">        &quot;arrowParens&quot;: &#x27;always&#x27;</span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line">    &quot;no-alert&quot;: 0, //禁止使用alert confirm prompt</span><br><span class="line">    &quot;no-array-constructor&quot;: 2, //禁止使用数组构造器</span><br><span class="line">    &quot;no-bitwise&quot;: 0, //禁止使用按位运算符</span><br><span class="line">    &quot;no-caller&quot;: 1, //禁止使用arguments.caller或arguments.callee</span><br><span class="line">    &quot;no-catch-shadow&quot;: 2, //禁止catch子句参数与外部作用域变量同名</span><br><span class="line">    &quot;no-class-assign&quot;: 2, //禁止给类赋值</span><br><span class="line">    &quot;no-cond-assign&quot;: 2, //禁止在条件表达式中使用赋值语句</span><br><span class="line">    &quot;no-console&quot;: 0, //禁止使用console</span><br><span class="line">    &quot;no-const-assign&quot;: 2, //禁止修改const声明的变量</span><br><span class="line">    &quot;no-constant-condition&quot;: 2, //禁止在条件中使用常量表达式 if(true) if(1)</span><br><span class="line">    &quot;no-continue&quot;: 0, //禁止使用continue</span><br><span class="line">    &quot;no-control-regex&quot;: 2, //禁止在正则表达式中使用控制字符</span><br><span class="line">    &quot;no-debugger&quot;: 2, //禁止使用debugger</span><br><span class="line">    &quot;no-delete-var&quot;: 2, //不能对var声明的变量使用delete操作符</span><br><span class="line">    &quot;no-div-regex&quot;: 1, //不能使用看起来像除法的正则表达式/=foo/</span><br><span class="line">    &quot;no-dupe-keys&quot;: 2, //在创建对象字面量时不允许键重复 &#123;a:1,a:1&#125;</span><br><span class="line">    &quot;no-dupe-args&quot;: 2, //函数参数不能重复</span><br><span class="line">    &quot;no-duplicate-case&quot;: 2, //switch中的case标签不能重复</span><br><span class="line">    &quot;no-else-return&quot;: 2, //如果if语句里面有return,后面不能跟else语句</span><br><span class="line">    &quot;no-empty&quot;: 2, //块语句中的内容不能为空</span><br><span class="line">    &quot;no-empty-character-class&quot;: 2, //正则表达式中的[]内容不能为空</span><br><span class="line">    &quot;no-empty-label&quot;: 0, //禁止使用空label</span><br><span class="line">    &quot;no-eq-null&quot;: 2, //禁止对null使用==或!=运算符</span><br><span class="line">    &quot;no-eval&quot;: 1, //禁止使用eval</span><br><span class="line">    &quot;no-ex-assign&quot;: 2, //禁止给catch语句中的异常参数赋值</span><br><span class="line">    &quot;no-extend-native&quot;: 2, //禁止扩展native对象</span><br><span class="line">    &quot;no-extra-bind&quot;: 2, //禁止不必要的函数绑定</span><br><span class="line">    &quot;no-extra-boolean-cast&quot;: 2, //禁止不必要的bool转换</span><br><span class="line">    &quot;no-extra-parens&quot;: 2, //禁止非必要的括号</span><br><span class="line">    &quot;no-extra-semi&quot;: 2, //禁止多余的冒号</span><br><span class="line">    &quot;no-fallthrough&quot;: 1, //禁止switch穿透</span><br><span class="line">    &quot;no-floating-decimal&quot;: 2, //禁止省略浮点数中的0 .5 3.</span><br><span class="line">    &quot;no-func-assign&quot;: 2, //禁止重复的函数声明</span><br><span class="line">    &quot;no-implicit-coercion&quot;: 1, //禁止隐式转换</span><br><span class="line">    &quot;no-implied-eval&quot;: 2, //禁止使用隐式eval</span><br><span class="line">    &quot;no-inline-comments&quot;: 0, //禁止行内备注</span><br><span class="line">    &quot;no-inner-declarations&quot;: [2, &quot;functions&quot;], //禁止在块语句中使用声明（变量或函数）</span><br><span class="line">    &quot;no-invalid-regexp&quot;: 2, //禁止无效的正则表达式</span><br><span class="line">    &quot;no-invalid-this&quot;: 2, //禁止无效的this，只能用在构造器，类，对象字面量</span><br><span class="line">    &quot;no-irregular-whitespace&quot;: 2, //不能有不规则的空格</span><br><span class="line">    &quot;no-iterator&quot;: 2, //禁止使用__iterator__ 属性</span><br><span class="line">    &quot;no-label-var&quot;: 2, //label名不能与var声明的变量名相同</span><br><span class="line">    &quot;no-labels&quot;: 2, //禁止标签声明</span><br><span class="line">    &quot;no-lone-blocks&quot;: 2, //禁止不必要的嵌套块</span><br><span class="line">    &quot;no-lonely-if&quot;: 2, //禁止else语句内只有if语句</span><br><span class="line">    &quot;no-loop-func&quot;: 1, //禁止在循环中使用函数（如果没有引用外部变量不形成闭包就可以）</span><br><span class="line">    &quot;no-mixed-requires&quot;: [0, false], //声明时不能混用声明类型</span><br><span class="line">    &quot;no-mixed-spaces-and-tabs&quot;: [2, false], //禁止混用tab和空格</span><br><span class="line">    &quot;linebreak-style&quot;: [0, &quot;windows&quot;], //换行风格</span><br><span class="line">    &quot;no-multi-spaces&quot;: 1, //不能用多余的空格</span><br><span class="line">    &quot;no-multi-str&quot;: 2, //字符串不能用\换行</span><br><span class="line">    &quot;no-multiple-empty-lines&quot;: [1, &#123;</span><br><span class="line">      &quot;max&quot;: 2</span><br><span class="line">    &#125;], //空行最多不能超过2行</span><br><span class="line">    &quot;no-native-reassign&quot;: 2, //不能重写native对象</span><br><span class="line">    &quot;no-negated-in-lhs&quot;: 2, //in 操作符的左边不能有!</span><br><span class="line">    &quot;no-nested-ternary&quot;: 0, //禁止使用嵌套的三目运算</span><br><span class="line">    &quot;no-new&quot;: 1, //禁止在使用new构造一个实例后不赋值</span><br><span class="line">    &quot;no-new-func&quot;: 1, //禁止使用new Function</span><br><span class="line">    &quot;no-new-object&quot;: 2, //禁止使用new Object()</span><br><span class="line">    &quot;no-new-require&quot;: 2, //禁止使用new require</span><br><span class="line">    &quot;no-new-wrappers&quot;: 2, //禁止使用new创建包装实例，new String new Boolean new Number</span><br><span class="line">    &quot;no-obj-calls&quot;: 2, //不能调用内置的全局对象，比如Math() JSON()</span><br><span class="line">    &quot;no-octal&quot;: 2, //禁止使用八进制数字</span><br><span class="line">    &quot;no-octal-escape&quot;: 2, //禁止使用八进制转义序列</span><br><span class="line">    &quot;no-param-reassign&quot;: 2, //禁止给参数重新赋值</span><br><span class="line">    &quot;no-path-concat&quot;: 0, //node中不能使用__dirname或__filename做路径拼接</span><br><span class="line">    &quot;no-plusplus&quot;: 0, //禁止使用++，--</span><br><span class="line">    &quot;no-process-env&quot;: 0, //禁止使用process.env</span><br><span class="line">    &quot;no-process-exit&quot;: 0, //禁止使用process.exit()</span><br><span class="line">    &quot;no-proto&quot;: 2, //禁止使用__proto__属性</span><br><span class="line">    &quot;no-redeclare&quot;: 2, //禁止重复声明变量</span><br><span class="line">    &quot;no-regex-spaces&quot;: 2, //禁止在正则表达式字面量中使用多个空格 /foo bar/</span><br><span class="line">    &quot;no-restricted-modules&quot;: 0, //如果禁用了指定模块，使用就会报错</span><br><span class="line">    &quot;no-return-assign&quot;: 1, //return 语句中不能有赋值表达式</span><br><span class="line">    &quot;no-script-url&quot;: 0, //禁止使用javascript:void(0)</span><br><span class="line">    &quot;no-self-compare&quot;: 2, //不能比较自身</span><br><span class="line">    &quot;no-sequences&quot;: 0, //禁止使用逗号运算符</span><br><span class="line">    &quot;no-shadow&quot;: 2, //外部作用域中的变量不能与它所包含的作用域中的变量或参数同名</span><br><span class="line">    &quot;no-shadow-restricted-names&quot;: 2, //严格模式中规定的限制标识符不能作为声明时的变量名使用</span><br><span class="line">    &quot;no-spaced-func&quot;: 2, //函数调用时 函数名与()之间不能有空格</span><br><span class="line">    &quot;no-sparse-arrays&quot;: 2, //禁止稀疏数组， [1,,2]</span><br><span class="line">    &quot;no-sync&quot;: 0, //nodejs 禁止同步方法</span><br><span class="line">    &quot;no-ternary&quot;: 0, //禁止使用三目运算符</span><br><span class="line">    &quot;no-trailing-spaces&quot;: 1, //一行结束后面不要有空格</span><br><span class="line">    &quot;no-this-before-super&quot;: 0, //在调用super()之前不能使用this或super</span><br><span class="line">    &quot;no-throw-literal&quot;: 2, //禁止抛出字面量错误 throw &quot;error&quot;;</span><br><span class="line">    &quot;no-undef&quot;: 1, //不能有未定义的变量</span><br><span class="line">    &quot;no-undef-init&quot;: 2, //变量初始化时不能直接给它赋值为undefined</span><br><span class="line">    &quot;no-undefined&quot;: 2, //不能使用undefined</span><br><span class="line">    &quot;no-unexpected-multiline&quot;: 2, //避免多行表达式</span><br><span class="line">    &quot;no-underscore-dangle&quot;: 1, //标识符不能以_开头或结尾</span><br><span class="line">    &quot;no-unneeded-ternary&quot;: 2, //禁止不必要的嵌套 var isYes = answer === 1 ? true : false;</span><br><span class="line">    &quot;no-unreachable&quot;: 2, //不能有无法执行的代码</span><br><span class="line">    &quot;no-unused-expressions&quot;: 2, //禁止无用的表达式</span><br><span class="line">    &quot;no-unused-vars&quot;: [2, &#123;</span><br><span class="line">      &quot;vars&quot;: &quot;all&quot;,</span><br><span class="line">      &quot;args&quot;: &quot;after-used&quot;</span><br><span class="line">    &#125;], //不能有声明后未被使用的变量或参数</span><br><span class="line">    &quot;no-use-before-define&quot;: 2, //未定义前不能使用</span><br><span class="line">    &quot;no-useless-call&quot;: 2, //禁止不必要的call和apply</span><br><span class="line">    &quot;no-void&quot;: 2, //禁用void操作符</span><br><span class="line">    &quot;no-var&quot;: 0, //禁用var，用let和const代替</span><br><span class="line">    &quot;no-warning-comments&quot;: [1, &#123;</span><br><span class="line">      &quot;terms&quot;: [&quot;todo&quot;, &quot;fixme&quot;, &quot;xxx&quot;],</span><br><span class="line">      &quot;location&quot;: &quot;start&quot;</span><br><span class="line">    &#125;], //不能有警告备注</span><br><span class="line">    &quot;no-with&quot;: 2, //禁用with</span><br><span class="line"></span><br><span class="line">    &quot;array-bracket-spacing&quot;: [2, &quot;never&quot;], //是否允许非空数组里面有多余的空格</span><br><span class="line">    &quot;arrow-parens&quot;: 0, //箭头函数用小括号括起来</span><br><span class="line">    &quot;arrow-spacing&quot;: 0, //=&gt;的前/后括号</span><br><span class="line">    &quot;accessor-pairs&quot;: 0, //在对象中使用getter/setter</span><br><span class="line">    &quot;block-scoped-var&quot;: 0, //块语句中使用var</span><br><span class="line">    &quot;brace-style&quot;: [1, &quot;1tbs&quot;], //大括号风格</span><br><span class="line">    &quot;callback-return&quot;: 1, //避免多次调用回调什么的</span><br><span class="line">    &quot;camelcase&quot;: 2, //强制驼峰法命名</span><br><span class="line">    &quot;comma-dangle&quot;: [2, &quot;never&quot;], //对象字面量项尾不能有逗号</span><br><span class="line">    &quot;comma-spacing&quot;: 0, //逗号前后的空格</span><br><span class="line">    &quot;comma-style&quot;: [2, &quot;last&quot;], //逗号风格，换行时在行首还是行尾</span><br><span class="line">    &quot;complexity&quot;: [0, 11], //循环复杂度</span><br><span class="line">    &quot;computed-property-spacing&quot;: [0, &quot;never&quot;], //是否允许计算后的键名什么的</span><br><span class="line">    &quot;consistent-return&quot;: 0, //return 后面是否允许省略</span><br><span class="line">    &quot;consistent-this&quot;: [2, &quot;that&quot;], //this别名</span><br><span class="line">    &quot;constructor-super&quot;: 0, //非派生类不能调用super，派生类必须调用super</span><br><span class="line">    &quot;curly&quot;: [2, &quot;all&quot;], //必须使用 if()&#123;&#125; 中的&#123;&#125;</span><br><span class="line">    &quot;default-case&quot;: 0, //switch语句最后必须有default</span><br><span class="line">    &quot;dot-location&quot;: 0, //对象访问符的位置，换行的时候在行首还是行尾</span><br><span class="line">    &quot;dot-notation&quot;: [0, &#123;</span><br><span class="line">      &quot;allowKeywords&quot;: true</span><br><span class="line">    &#125;], //避免不必要的方括号</span><br><span class="line">    &quot;eol-last&quot;: 0, //文件以单一的换行符结束</span><br><span class="line">    &quot;eqeqeq&quot;: 2, //必须使用全等</span><br><span class="line">    &quot;func-names&quot;: 0, //函数表达式必须有名字</span><br><span class="line">    &quot;func-style&quot;: [0, &quot;declaration&quot;], //函数风格，规定只能使用函数声明/函数表达式</span><br><span class="line">    &quot;generator-star-spacing&quot;: 0, //生成器函数*的前后空格</span><br><span class="line">    &quot;guard-for-in&quot;: 0, //for in循环要用if语句过滤</span><br><span class="line">    &quot;handle-callback-err&quot;: 0, //nodejs 处理错误</span><br><span class="line">    &quot;id-length&quot;: 0, //变量名长度</span><br><span class="line">    &quot;indent&quot;: [2, 2], //缩进风格</span><br><span class="line">    &quot;init-declarations&quot;: 0, //声明时必须赋初值</span><br><span class="line">    &quot;key-spacing&quot;: [0, &#123;</span><br><span class="line">      &quot;beforeColon&quot;: false,</span><br><span class="line">      &quot;afterColon&quot;: true</span><br><span class="line">    &#125;], //对象字面量中冒号的前后空格</span><br><span class="line">    &quot;lines-around-comment&quot;: 0, //行前/行后备注</span><br><span class="line">    &quot;max-depth&quot;: [0, 4], //嵌套块深度</span><br><span class="line">    &quot;max-len&quot;: [0, 80, 4], //字符串最大长度</span><br><span class="line">    &quot;max-nested-callbacks&quot;: [0, 2], //回调嵌套深度</span><br><span class="line">    &quot;max-params&quot;: [0, 3], //函数最多只能有3个参数</span><br><span class="line">    &quot;max-statements&quot;: [0, 10], //函数内最多有几个声明</span><br><span class="line">    &quot;new-cap&quot;: 2, //函数名首行大写必须使用new方式调用，首行小写必须用不带new方式调用</span><br><span class="line">    &quot;new-parens&quot;: 2, //new时必须加小括号</span><br><span class="line">    &quot;newline-after-var&quot;: 2, //变量声明后是否需要空一行</span><br><span class="line">    &quot;object-curly-spacing&quot;: [0, &quot;never&quot;], //大括号内是否允许不必要的空格</span><br><span class="line">    &quot;object-shorthand&quot;: 0, //强制对象字面量缩写语法</span><br><span class="line">    &quot;one-var&quot;: 0, //连续声明</span><br><span class="line">    &quot;operator-assignment&quot;: [0, &quot;always&quot;], //赋值运算符 += -=什么的</span><br><span class="line">    &quot;operator-linebreak&quot;: [2, &quot;after&quot;], //换行时运算符在行尾还是行首</span><br><span class="line">    &quot;padded-blocks&quot;: 0, //块语句内行首行尾是否要空行</span><br><span class="line">    &quot;prefer-const&quot;: 0, //首选const</span><br><span class="line">    &quot;prefer-spread&quot;: 0, //首选展开运算</span><br><span class="line">    &quot;prefer-reflect&quot;: 0, //首选Reflect的方法</span><br><span class="line">    &quot;quotes&quot;: [1, &quot;single&quot;], //引号类型 `` &quot;&quot; &#x27;&#x27;</span><br><span class="line">    &quot;quote-props&quot;: [0, &quot;always&quot;], //对象字面量中的属性名是否强制双引号</span><br><span class="line">    &quot;radix&quot;: 2, //parseInt必须指定第二个参数</span><br><span class="line">    &quot;id-match&quot;: 0, //命名检测</span><br><span class="line">    &quot;require-yield&quot;: 0, //生成器函数必须有yield</span><br><span class="line">    &quot;semi&quot;: [0, &quot;always&quot;], //语句强制分号结尾</span><br><span class="line">    &quot;semi-spacing&quot;: [0, &#123;</span><br><span class="line">      &quot;before&quot;: false,</span><br><span class="line">      &quot;after&quot;: true</span><br><span class="line">    &#125;], //分号前后空格</span><br><span class="line">    &quot;sort-vars&quot;: 0, //变量声明时排序</span><br><span class="line">    &quot;space-after-keywords&quot;: [0, &quot;always&quot;], //关键字后面是否要空一格</span><br><span class="line">    &quot;space-before-blocks&quot;: [0, &quot;always&quot;], //不以新行开始的块&#123;前面要不要有空格</span><br><span class="line">    &quot;space-before-function-paren&quot;: [0, &quot;always&quot;], //函数定义时括号前面要不要有空格</span><br><span class="line">    &quot;space-in-parens&quot;: [0, &quot;never&quot;], //小括号里面要不要有空格</span><br><span class="line">    &quot;space-infix-ops&quot;: 0, //中缀操作符周围要不要有空格</span><br><span class="line">    &quot;space-return-throw-case&quot;: 0, //return throw case后面要不要加空格</span><br><span class="line">    &quot;space-unary-ops&quot;: [0, &#123;</span><br><span class="line">      &quot;words&quot;: true,</span><br><span class="line">      &quot;nonwords&quot;: false</span><br><span class="line">    &#125;], //一元运算符的前/后要不要加空格</span><br><span class="line">    &quot;spaced-comment&quot;: 0, //注释风格要不要有空格什么的</span><br><span class="line">    &quot;strict&quot;: 2, //使用严格模式</span><br><span class="line">    &quot;use-isnan&quot;: 2, //禁止比较时使用NaN，只能用isNaN()</span><br><span class="line">    &quot;valid-jsdoc&quot;: 0, //jsdoc规则</span><br><span class="line">    &quot;valid-typeof&quot;: 2, //必须使用合法的typeof的值</span><br><span class="line">    &quot;vars-on-top&quot;: 2, //var必须放在作用域顶部</span><br><span class="line">    &quot;wrap-iife&quot;: [2, &quot;inside&quot;], //立即执行函数表达式的小括号风格</span><br><span class="line">    &quot;wrap-regex&quot;: 0, //正则表达式字面量用小括号包起来</span><br><span class="line">    &quot;yoda&quot;: [2, &quot;never&quot;] //禁止尤达条件</span><br><span class="line">  &#125;,</span><br><span class="line">  parserOptions: &#123;</span><br><span class="line">    parser: &quot;babel-eslint&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>来源于简书：<a href="https://www.jianshu.com/p/7dec56e7c132">https://www.jianshu.com/p/7dec56e7c132</a></p>
+<p>初始时间：2019.04.21 22:56:17</p>
 ]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>前端核心工具：yarn、npm、cnpm三者如何优雅的在一起使用</title>
+    <url>/2022/11/01/%E5%89%8D%E7%AB%AF%E6%A0%B8%E5%BF%83%E5%B7%A5%E5%85%B7%EF%BC%9Ayarn%E3%80%81npm%E3%80%81cnpm%E4%B8%89%E8%80%85%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E5%9C%A8%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h4 id="一位用不好包管理器的前端，是一个入门级前端，一个用不好webpack的前端，是一个初级前端"><a href="#一位用不好包管理器的前端，是一个入门级前端，一个用不好webpack的前端，是一个初级前端" class="headerlink" title="一位用不好包管理器的前端，是一个入门级前端，一个用不好webpack的前端，是一个初级前端"></a>一位用不好包管理器的前端，是一个入门级前端，一个用不好<code>webpack</code>的前端，是一个初级前端</h4><h4 id="三个包管理器是可以一起用的，只要你够胆大心细，就没任何问题！"><a href="#三个包管理器是可以一起用的，只要你够胆大心细，就没任何问题！" class="headerlink" title="三个包管理器是可以一起用的，只要你够胆大心细，就没任何问题！"></a>三个包管理器是可以一起用的，只要你够胆大心细，就没任何问题！</h4><ul>
+<li>推荐两篇文章<ul>
+<li><a href="https://segmentfault.com/a/1190000019126657">手写优化版React脚手架</a></li>
+<li><a href="https://segmentfault.com/a/1190000019207033">手写Vue的脚手架</a></li>
+<li><a href="https://segmentfault.com/a/1190000018827395">前端性能优化不完全手册</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="在javeScript编写中-我们尽量不要定义全局变量，封装函数尽量不要有副作用-因为全部变量的查询时间会比局部变量的查询慢-更是考虑在Node的环境中无法被垃圾回收的问题"><a href="#在javeScript编写中-我们尽量不要定义全局变量，封装函数尽量不要有副作用-因为全部变量的查询时间会比局部变量的查询慢-更是考虑在Node的环境中无法被垃圾回收的问题" class="headerlink" title="在javeScript编写中,我们尽量不要定义全局变量，封装函数尽量不要有副作用,因为全部变量的查询时间会比局部变量的查询慢,更是考虑在Node的环境中无法被垃圾回收的问题"></a>在<code>javeScript</code>编写中,我们尽量不要定义全局变量，封装函数尽量不要有副作用,因为全部变量的查询时间会比局部变量的查询慢,更是考虑在Node的环境中无法被垃圾回收的问题</h4><h4 id="老规矩-先看原理"><a href="#老规矩-先看原理" class="headerlink" title="老规矩 先看原理"></a>老规矩 先看原理</h4><h4 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h4><ul>
+<li><code>npm</code> 是<code> Node.js</code> 能够如此成功的主要原因之一。<code>npm</code> 团队做了很多的工作，以确保 npm 保持向后兼容，并在不同的环境中保持一致。</li>
+<li>npm是围绕着 语义版本控制（semver）的思想而设计。</li>
+<li>给定一个版本号：主版本号.次版本号.补丁版本号， 以下这三种情况需要增加相应的版本号：</li>
+<li>主版本号： 当API发生改变，并与之前的版本不兼容的时候</li>
+<li>次版本号： 当增加了功能，但是向后兼容的时候</li>
+<li>补丁版本号：当做了向后兼容的缺陷修复的时候</li>
+<li><code>npm 2</code> 会安装每一个包所依赖的所有依赖项。如果我们有这么一个项目，它依赖项目A，项目A依赖项目B，项目B依赖项目C，那么依赖树将如下所示：</li>
+</ul>
+<p><img src="https://segmentfault.com/img/bVbs8T7?w=815&h=162" class="lazyload" data-srcset="https://segmentfault.com/img/bVbs8T7?w=815&h=162" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="clipboard.png"></p>
+<ul>
+<li>这个结构可能会很长。这对于基于Unix的操作系统来说只不过是一个小烦恼，但对于Windows来说却是个破坏性的东西，因为有很多程序无法处理超过260个字符的文件路径名。</li>
+<li><code>npm 3</code>采用了扁平依赖关系树来解决这个问题，所以我们的3个项目结构现在看起来如下所示：</li>
+</ul>
+<p>存了已经下载的每个版本的压缩包。本地缓存的内容可以通过npm cache ls命令进行查看。本地缓存的设计有助于减少安装时间。<br><img src="https://segmentfault.com/img/bVbs8Uf?w=627&h=115" class="lazyload" data-srcset="https://segmentfault.com/img/bVbs8Uf?w=627&h=115" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="clipboard.png"></p>
+<ul>
+<li>这样，一个原来很长的文件路径名就从<code>./node_modules/package-A/node_modules/package-B/node-modules/some-file-name-in-package-c.js</code>变成了<code>/node_modules/some-file-name-in-package-c.js</code>。</li>
+<li>这种方法的缺点是，<code>npm</code>必须首先遍历所有的项目依赖关系，然后再决定如何生成扁平的node_modules目录结构。npm必须为所有使用到的模块构建一个完整的依赖关系树，这是一个耗时的操作，是npm安装速度慢的一个很重要的原因。</li>
+<li>想当然的以为每次运行<code>npm install</code>命令时，<code>NPM</code>都得从互联网上下载所有内容。</li>
+<li>但是，<code>npm</code>是有本地缓存的，它保存了已经下载的每个版本的压缩包。本地缓存的内容可以通过<code>npm cache ls</code>命令进行查看。本地缓存的设计有助于减少安装时间。</li>
+</ul>
+<h4 id="cnpm"><a href="#cnpm" class="headerlink" title="cnpm"></a>cnpm</h4><ul>
+<li><code>cnpm</code>跟<code>npm</code>用法完全一致，只是在执行命令时将<code>npm</code>改为<code>cnpm</code>。</li>
+<li><code>npm</code>安装插件是从国外服务器下载，受网络影响大，可能出现异常，如果npm的服务器在中国就好了，于是淘宝团队干了这事。来自官网：“这是一个完整 <code>npmjs.org </code>镜像，你可以用此代替官方版本(只读)，同步频率目前为 10分钟 一次以保证尽量与官方服务同步。”</li>
+<li>官方地址：<code>http://npm.taobao.org</code></li>
+<li>安装：<code> npm install -g cnpm --registry=https://registry.npm.taobao.org</code></li>
+</ul>
+<h4 id="Yarn"><a href="#Yarn" class="headerlink" title="Yarn"></a>Yarn</h4><ul>
+<li><code>Yarn</code>一开始的主要目标是解决上一节中描述的由于语义版本控制而导致的npm安装的不确定性问题。虽然可以使用<code>npm shrinkwrap</code>来实现可预测的依赖关系树，但它并不是默认选项，而是取决于所有的开发人员知道并且启用这个选项。</li>
+<li><code>Yarn</code>采取了不同的做法。每个yarn安装都会生成一个类似于npm-shrinkwrap.json的yarn.lock文件，而且它是默认创建的。除了常规信息之外，<code>yarn.lock</code>文件还包含要安装的内容的校验和，以确保使用的库的版本相同。</li>
+<li>yarn是经过重新设计的崭新的npm客户端，它能让开发人员并行处理所有必须的操作，并添加了一些其他改进。</li>
+<li>运行速度得到了显著的提升，整个安装时间也变得更少</li>
+<li>像npm一样，yarn使用本地缓存。**<code>与npm不同的是，yarn无需互联网连接就能安装本地缓存的依赖项，它提供了离线模式</code>**。</li>
+<li>允许合并项目中使用到的所有的包的许可证</li>
+<li>通常情况下不建议通过npm进行安装。npm安装是非确定性的，程序包没有签名，并且npm除了做了基本的SHA1哈希之外不执行任何完整性检查，这给安装系统程序带来了安全风险。(作者曾经在一个上百个依赖包的项目中使用<code>npm</code>丢包过，代价非常大，泪水不自觉掉下来)</li>
+</ul>
+<blockquote>
+<p>首先看一次非常失败的包下载 竟然是从全局读取的资源(不配置<code>webpack</code>别名是因为就这一个路径这么长)</p>
+</blockquote>
+<p><img src="https://segmentfault.com/img/bVbs8Q1?w=1423&h=274" class="lazyload" data-srcset="https://segmentfault.com/img/bVbs8Q1?w=1423&h=274" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="clipboard.png"></p>
+<blockquote>
+<p>首先我们从原理入手 ，我们使用<code> npm init</code>,<code>yarn init</code>,<code>cnpm init</code> 的时候 发生了什么 ？</p>
+</blockquote>
+<ul>
+<li>生成<code>package.json</code>文件</li>
+<li><code>json</code>文件内部声明初始的版本信息、作者信息等，如果你是需要上传到npm上作为命令行工具，应该配置<code>bin</code>等声明入口字段</li>
+</ul>
+<blockquote>
+<p>那么当我们使用<code>npm i </code>, <code>yarn add </code>,<code>cnpm i </code>操作时候会发生什么 ？</p>
+</blockquote>
+<ul>
+<li>首先会根据你的命令行后缀是否加了 <code>-g </code>或者<code>global</code>判断，下载的包是放在全局的环境，还是当前<code>package.json</code>文件对应的<code>node_module</code>文件夹目录下(这点尤其重要，有人出BUG，就是因为在用<code>npm </code>, <code>cnpm</code>时候没有注明添加的是全局依赖还是本地依赖，导致<code>json</code>文件上没有对应的包名，项目永远起不来)</li>
+<li>然后根据你的指令<code>--save </code>或者<code>-D</code>、<code>--save -dev</code>判断是开发依赖还是线上依赖，其实这点在<code>yarn</code>上没有问题，因为<code>yarn</code>有自己的一套检查包完整性的机制，不会丢包，还会自动判断添加依赖，出<code>bug</code>一般是<code>cnpm</code>和<code>npm</code>，没有明确<code>-g</code>或者<code>--save</code>，<code>npm</code>只有检查程序员签名的机制，没有检查包完整性的机制，也不会自动添加依赖到<code>json</code>文件，那么就会出现丢包的假象，所以建议<strong>主要使用<code>yarn</code></strong></li>
+</ul>
+<h4 id="yarn和npm对比"><a href="#yarn和npm对比" class="headerlink" title="yarn和npm对比"></a><code>yarn</code>和<code>npm</code>对比</h4><p><img src="https://segmentfault.com/img/bVbs8UU?w=701&h=318" class="lazyload" data-srcset="https://segmentfault.com/img/bVbs8UU?w=701&h=318" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="clipboard.png"></p>
+<h4 id="npm的缺点汇总："><a href="#npm的缺点汇总：" class="headerlink" title="npm的缺点汇总："></a><code>npm</code>的缺点汇总：</h4><ul>
+<li>同一个项目，安装的时候无法保持一致性。由于package.json文件中版本号的特点，下面三个版本号在安装的时候代表不同的含义。</li>
+</ul>
+<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;5.0.3&quot;</span>,</span><br><span class="line"><span class="string">&quot;~5.0.3&quot;</span>,</span><br><span class="line"><span class="string">&quot;^5.0.3&quot;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>“5.0.3”表示安装指定的5.0.3版本，“～5.0.3”表示安装5.0.X中最新的版本，“^5.0.3”表示安装5.X.X中最新的版本。这就麻烦了，常常会出现同一个项目，有的同事是OK的，有的同事会由于安装的版本不一致出现<code>bug</code>。</li>
+<li>安装的时候，包会在同一时间下载和安装，中途某个时候，一个包抛出了一个错误，但是npm会继续下载和安装包。因为npm会把所有的日志输出到终端，有关错误包的错误信息就会在一大堆<code>npm</code>打印的警告中丢失掉，并且你甚至永远不会注意到实际发生的错误。</li>
+</ul>
+<h4 id="yarn的优点"><a href="#yarn的优点" class="headerlink" title="yarn的优点"></a><code>yarn</code>的优点</h4><ul>
+<li>速度快 。速度快主要来自以下两个方面：</li>
+<li>并行安装：无论 <code>npm</code> 还是<code>Yarn</code>在执行包的安装时，都会执行一系列任务。<code>npm </code>是按照队列执行每个<code> package</code>，也就是说必须要等到当前<code>package</code>安装完成之后，才能继续后面的安装。而 <code>Yarn</code> 是并行执行所有任务，提高了性能。</li>
+</ul>
+<p>离线模式：**<code>如果之前已经安装过一个软件包，用Yarn再次安装时之间从缓存中获取，就不用像npm那样再从网络下载了</code>。**</p>
+<ul>
+<li>安装版本统一：为了防止拉取到不同的版本，<code>Yarn</code> 有一个锁定文件 <code>(lock file) </code>记录了被确切安装上的模块的版本号。每次只要新增了一个模块，<code>Yarn</code> 就会创建（或更新）yarn.lock 这个文件。这么做就保证了，每一次拉取同一个项目依赖时，使用的都是一样的模块版本。npm 其实也有办法实现处处使用相同版本的 packages，但需要开发者执行 <code>npm shrinkwrap </code>命令。这个命令将会生成一个锁定文件，在执行 <code>npm install </code>的时候，该锁定文件会先被读取，和 Yarn 读取 yarn.lock 文件一个道理。<code>npm</code> 和 <code>Yarn</code> 两者的不同之处在于，<code>Yarn</code> 默认会生成这样的锁定文件，而 npm 要通过 <code>shrinkwrap</code> 命令生成 <code>npm-shrinkwrap.json</code> 文件，只有当这个文件存在的时候，<code>packages</code> 版本信息才会被记录和更新。</li>
+<li>更简洁的输出：<code>npm </code>的输出信息比较冗长。在执行<code> npm install &lt;package&gt;</code> 的时候，命令行里会不断地打印出所有被安装上的依赖。相比之下，Yarn 简洁太多：默认情况下，结合了<code> emoji</code>直观且直接地打印出必要的信息，也提供了一些命令供开发者查询额外的安装信息。</li>
+<li>多注册来源处理：所有的依赖包，不管他被不同的库间接关联引用多少次，安装这个包时，只会从一个注册来源去装，要么是 npm 要么是 bower, 防止出现混乱不一致。</li>
+<li>更好的语义化： <code>yarn</code>改变了一些<code>npm</code>命令的名称，比如 <code>yarn add/remove，</code>感觉上比<code>npm</code>原本的 <code>install/uninstall</code> 要更清晰。</li>
+</ul>
+<blockquote>
+<p>那不是标题党？ 说了<code>yarn</code>这么多优点，我们为什么还要<code>npm</code>呢？</p>
+</blockquote>
+<h4 id="你不用npm-publish-，你怎么上传包到npm-你不用cnpm，是下载不了一些包的"><a href="#你不用npm-publish-，你怎么上传包到npm-你不用cnpm，是下载不了一些包的" class="headerlink" title="你不用npm publish ，你怎么上传包到npm? 你不用cnpm，是下载不了一些包的"></a>你不用<code>npm publish</code> ，你怎么上传包到<code>npm</code>? 你不用<code>cnpm</code>，是下载不了一些包的</h4><blockquote>
+<p>搞清楚三者下载包（依赖）的本质结果：</p>
+</blockquote>
+<ul>
+<li>首先向对应的<code>node_module</code>文件夹下面下载包（如果你非要下到全局，那么再见）</li>
+<li>再然后是<code>json</code>文件中添加对应的依赖字段,确定是线上依赖还是开发依赖</li>
+<li>只要做到这两者 你就下包成功</li>
+<li>总结就是 只要结果 过程管你是啥</li>
+</ul>
+<blockquote>
+<p>使用<code>yarn</code>下载过的包，再使用<code>npm cnpm</code>下载 会重复下载，删除之前的包</p>
+</blockquote>
+<ul>
+<li><code>puppeteer</code>这个包所依赖的<code>mini</code>版谷歌浏览器使用<code>cnpm</code>下载就可以完美解决</li>
+<li><code>prerender-spa-plugin</code>这个包依赖上面的<code>木偶戏 puppeteer</code>这个包，也可以用<code>cnpm</code>下载</li>
+<li>混合使用包管理器切记，不要重复下载依赖，<code>npm cnpm</code>下载依赖，一定要添加注明是什么依赖，是否全局安装</li>
+<li><code>yarn</code>和<code>npm i</code>两者，选择前者，原因在上面有提到，总体来说，<code>yarn</code>是不二选择，但是其他两者也不可缺少，比如<code>electron</code>这个依赖，使用<code>cnpm</code>就可以完美一键安装</li>
+</ul>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
   </entry>
   <entry>
     <title>大合集</title>
@@ -2588,6 +2570,24 @@ myWebsocket(&#39;ws://127.0.0.1:8000&#39;, &#123; name: &#39;林三心&#39;, age
       <tags>
         <tag>合集</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>删除电脑浏览记录</title>
+    <url>/2022/10/15/%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4%E7%94%B5%E8%84%91%E4%B8%8A%E6%9C%80%E8%BF%91%E6%B5%8F%E8%A7%88%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>　　我们在长时间操作电脑的过程中，系统都会记录用户浏览的历史，一天下来电脑可能产生几万条记录,这些记录有些会涉及到个人的隐私，因此许多用户就想要在关闭电脑前将浏览记录进行删除，那么怎么删除电脑最近浏览记录呢？这里小编就来教大家删除电脑上最近浏览记录操作方法。</p>
+<h3 id="具体方法"><a href="#具体方法" class="headerlink" title="具体方法"></a>具体方法</h3><ol>
+<li><p>点击查看，打开资源管理器，点击查看。</p>
+<p><img src="http://img.ujiaoshou.com/upload/images/2022/042202/1845/164889634448114632391.png" class="lazyload" data-srcset="http://img.ujiaoshou.com/upload/images/2022/042202/1845/164889634448114632391.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="怎么删除电脑最近浏览记录_如何删除电脑上最近浏览记录"></p>
+</li>
+<li><p>点击选项，展开菜单后，点击右边的选项。</p>
+<p><img src="http://img.ujiaoshou.com/upload/images/2022/042202/1845/164889634482114553095.png" class="lazyload" data-srcset="http://img.ujiaoshou.com/upload/images/2022/042202/1845/164889634482114553095.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="怎么删除电脑最近浏览记录_如何删除电脑上最近浏览记录"></p>
+</li>
+<li><p>点击清除按钮，找到清除历史记录的选项即可。</p>
+</li>
+</ol>
+<p><img src="http://img.ujiaoshou.com/upload/images/2022/042202/1845/164889634549189784482.png" class="lazyload" data-srcset="http://img.ujiaoshou.com/upload/images/2022/042202/1845/164889634549189784482.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="怎么删除电脑最近浏览记录_如何删除电脑上最近浏览记录"></p>
+<p>以上就是删除电脑上最近浏览记录的操作方法了。</p>
+]]></content>
   </entry>
   <entry>
     <title>如何在Windows下搭建WordPress博客站点</title>
@@ -3050,27 +3050,6 @@ myWebsocket(&#39;ws://127.0.0.1:8000&#39;, &#123; name: &#39;林三心&#39;, age
       </tags>
   </entry>
   <entry>
-    <title>github克隆项目失败</title>
-    <url>/2022/07/29/github/github%E5%85%8B%E9%9A%86%E9%A1%B9%E7%9B%AE%E5%A4%B1%E8%B4%A5/</url>
-    <content><![CDATA[<h2 id="unable-to-access-‘https-github-com-用户名-仓库名-git-39-SSL-certificate-problem-self问题解决"><a href="#unable-to-access-‘https-github-com-用户名-仓库名-git-39-SSL-certificate-problem-self问题解决" class="headerlink" title="unable to access ‘https://github.com/用户名/仓库名.git/&#39;: SSL certificate problem: self问题解决"></a>unable to access ‘<a href="https://github.com/%E7%94%A8%E6%88%B7%E5%90%8D/%E4%BB%93%E5%BA%93%E5%90%8D.git/&#39;">https://github.com/用户名/仓库名.git/&#39;</a>: SSL certificate problem: self问题解决</h2><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>今天想在github上找个项目玩玩，但是发现clone不下来，百度没有找到解决方案，于是又把git重装了一遍，发现还是不能clone,而且不能push，而且是同样的错误。于是Google了一下找到解决方案</p>
-</blockquote>
-<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>Git client in Fisheye&#x2F;Crucible server perform verification on the SSL certificate and stop the process if it is unknown.</p>
-<blockquote>
-<p>大概意思是：Fisheye&#x2F;Crucible服务器不能识别git的SSL证书，所以操作停止执行。</p>
-</blockquote>
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><ul>
-<li>在git命令行输入以下命令即可</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global http.sslVerify false</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>github</category>
-      </categories>
-      <tags>
-        <tag>github</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>使用github建立图床,picgo和typora上传图片</title>
     <url>/2022/07/29/github/github-img/</url>
     <content><![CDATA[<p>建立图床必须具备什么条件 </p>
@@ -3140,6 +3119,27 @@ myWebsocket(&#39;ws://127.0.0.1:8000&#39;, &#123; name: &#39;林三心&#39;, age
       </tags>
   </entry>
   <entry>
+    <title>github克隆项目失败</title>
+    <url>/2022/07/29/github/github%E5%85%8B%E9%9A%86%E9%A1%B9%E7%9B%AE%E5%A4%B1%E8%B4%A5/</url>
+    <content><![CDATA[<h2 id="unable-to-access-‘https-github-com-用户名-仓库名-git-39-SSL-certificate-problem-self问题解决"><a href="#unable-to-access-‘https-github-com-用户名-仓库名-git-39-SSL-certificate-problem-self问题解决" class="headerlink" title="unable to access ‘https://github.com/用户名/仓库名.git/&#39;: SSL certificate problem: self问题解决"></a>unable to access ‘<a href="https://github.com/%E7%94%A8%E6%88%B7%E5%90%8D/%E4%BB%93%E5%BA%93%E5%90%8D.git/&#39;">https://github.com/用户名/仓库名.git/&#39;</a>: SSL certificate problem: self问题解决</h2><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>今天想在github上找个项目玩玩，但是发现clone不下来，百度没有找到解决方案，于是又把git重装了一遍，发现还是不能clone,而且不能push，而且是同样的错误。于是Google了一下找到解决方案</p>
+</blockquote>
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>Git client in Fisheye&#x2F;Crucible server perform verification on the SSL certificate and stop the process if it is unknown.</p>
+<blockquote>
+<p>大概意思是：Fisheye&#x2F;Crucible服务器不能识别git的SSL证书，所以操作停止执行。</p>
+</blockquote>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><ul>
+<li>在git命令行输入以下命令即可</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global http.sslVerify false</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>github</category>
+      </categories>
+      <tags>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>github推送代码失败，提示August13</title>
     <url>/2022/10/02/github/github%E6%8E%A8%E9%80%81%E4%BB%A3%E7%A0%81%E5%A4%B1%E8%B4%A5%EF%BC%8C%E6%8F%90%E7%A4%BAAugust13/</url>
     <content><![CDATA[<p>解决 remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.</p>
@@ -3205,48 +3205,35 @@ h1,h2,h3,h4,h5,h6{
       </tags>
   </entry>
   <entry>
-    <title>PicGo+typora上传图片失败报422的原因及解决方法</title>
-    <url>/2022/08/03/picgo/PicGo+typora%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%A4%B1%E8%B4%A5%E6%8A%A5422%E7%9A%84%E5%8E%9F%E5%9B%A0%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<p>picgo 用 github 作图床，使用 typora 上传图，出现 StatusCodeError: 422 的原因及解决方法</p>
-<h3 id="我在使用过程中-PicGo-出现了-StatusCodeError-422-的错误，上传图片失败。通过百度得知是以下原因造成的"><a href="#我在使用过程中-PicGo-出现了-StatusCodeError-422-的错误，上传图片失败。通过百度得知是以下原因造成的" class="headerlink" title="我在使用过程中 PicGo 出现了 StatusCodeError: 422 的错误，上传图片失败。通过百度得知是以下原因造成的"></a>我在使用过程中 PicGo 出现了 StatusCodeError: 422 的错误，上传图片失败。通过百度得知是以下原因造成的</h3><blockquote>
-<p><strong>PicGo 目前不支持在 gitbub 上上传同名文件，上传同名文件就会报错，即使是两张不同的图片。</strong></p>
+    <title>hexo之站点统计——busuanzi</title>
+    <url>/2022/08/01/hexo/hexo%E4%B9%8B%E7%AB%99%E7%82%B9%E7%BB%9F%E8%AE%A1%E2%80%94%E2%80%94busuanzi/</url>
+    <content><![CDATA[<p>本片介绍的是站点信息统计之 busuanzi</p>
+<h1 id="一、站点信息"><a href="#一、站点信息" class="headerlink" title="一、站点信息"></a>一、站点信息</h1><h2 id="1-1-在-config-volantis-yml-搜索统计-显示有站点统计信息"><a href="#1-1-在-config-volantis-yml-搜索统计-显示有站点统计信息" class="headerlink" title="1.1 在_config.volantis.yml 搜索统计,显示有站点统计信息"></a>1.1 在_config.volantis.yml 搜索<code>统计</code>,显示有站点统计信息</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">visitcounter: # 站点统计访客开启入口在下面⬇</span><br><span class="line">      siteuv:</span><br><span class="line">        enable: true</span><br><span class="line">        text: &#x27;本站访客数：&#x27;</span><br><span class="line">        unit: &#x27;人&#x27;</span><br><span class="line">      sitepv:</span><br><span class="line">        enable: true</span><br><span class="line">        text: &#x27;本站总访问量：&#x27;</span><br><span class="line">        unit: &#x27;次&#x27;</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-2-接下来就是-analytics-引入-busuanzi-这里就需要配置个人的-app-id-和-app-key"><a href="#1-2-接下来就是-analytics-引入-busuanzi-这里就需要配置个人的-app-id-和-app-key" class="headerlink" title="1.2 接下来就是 analytics 引入 busuanzi,这里就需要配置个人的 app_id 和 app_key"></a>1.2 接下来就是 analytics 引入 busuanzi,这里就需要配置个人的 app_id 和 app_key</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 站点统计访客开启入口，引入busuanzi，并配置属于自己的app_id和app_key</span><br><span class="line">analytics:</span><br><span class="line">  busuanzi: volantis-static/libs/busuanzi/js/busuanzi.pure.mini.js</span><br><span class="line">  leancloud: # 请使用自己的 id &amp; key 以防止数据丢失</span><br><span class="line">    app_id: u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI</span><br><span class="line">    app_key: jfHtEKVE24j0IVCGHbvuFClp</span><br><span class="line">    custom_api_server: # 国际版一般不需要写，除非自定义了 API Server</span><br></pre></td></tr></table></figure>
+
+<h1 id="二、获取-busuanzi-的配置信息"><a href="#二、获取-busuanzi-的配置信息" class="headerlink" title="二、获取 busuanzi 的配置信息"></a>二、获取 busuanzi 的配置信息</h1><h2 id="2-1-打开-leancloud-官网，注册账号，该认证认证"><a href="#2-1-打开-leancloud-官网，注册账号，该认证认证" class="headerlink" title="2.1 打开 leancloud 官网，注册账号，该认证认证"></a>2.1 打开 leancloud 官网，注册账号，该认证认证</h2><blockquote>
+<p>leancloud 官网:<a href="https://www.leancloud.cn/">https://www.leancloud.cn/</a> ,点击免费使用，注册账号</p>
 </blockquote>
-<p>解决方式也很简单，Picgo 开启上传时重命名和时间戳重命名就可以结局，或者把 github 里面已经有的同名文件删除，都可以解决这个问题。</p>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224259281.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224259281.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="注册账号"></p>
+<h2 id="2-2-登录账号注册应用"><a href="#2-2-登录账号注册应用" class="headerlink" title="2.2 登录账号注册应用"></a>2.2 登录账号注册应用</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224618543.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224618543.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="注册应用"></p>
+<h2 id="2-3-点击应用，选择应用"><a href="#2-3-点击应用，选择应用" class="headerlink" title="2.3 点击应用，选择应用"></a>2.3 点击应用，选择应用</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224734317.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224734317.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="选择应用"></p>
+<h2 id="2-4-点击设置，应用凭证，右侧就是我们想要的配置信息了"><a href="#2-4-点击设置，应用凭证，右侧就是我们想要的配置信息了" class="headerlink" title="2.4 点击设置，应用凭证，右侧就是我们想要的配置信息了"></a>2.4 点击设置，应用凭证，右侧就是我们想要的配置信息了</h2><blockquote>
+<p>复制保存我们的配置信息，填入指定位置，页面就是有相关信息展示了</p>
+</blockquote>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801225041384.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801225041384.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="获取配置信息"></p>
+<h1 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h1><blockquote>
+<p>tip: 本地运行显示数据有点夸张了，还有点延迟，但是部署之后会显示正常数据</p>
+</blockquote>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801230651942.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801230651942.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="本地运行"></p>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801225311587.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801225311587.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="部署之后"></p>
 ]]></content>
       <categories>
-        <category>PicGo</category>
+        <category>Hexo系列</category>
       </categories>
       <tags>
-        <tag>PicGo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>PicGo相册不能显示问题及解决办法</title>
-    <url>/2022/07/30/picgo/PicGo%E7%9B%B8%E5%86%8C%E4%B8%8D%E8%83%BD%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
-    <content><![CDATA[<p>我的PicGo图片上传成功了，但是相册区域图片不能正常显示，如下图所示</p>
-<p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/209.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/209.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><h3 id="1-0-重启应用"><a href="#1-0-重启应用" class="headerlink" title="1.0 重启应用"></a>1.0 重启应用</h3><p>退出应用，重新启动，上传的图片能正常显示</p>
-<h3 id="2-0-卸载应用，重新安装"><a href="#2-0-卸载应用，重新安装" class="headerlink" title="2.0 卸载应用，重新安装"></a>2.0 卸载应用，重新安装</h3><p>卸载重装 PicGo，不需要重新配置，之后上传的图片都能正常显示</p>
-<h3 id="3-0-打开picgo设置，找到设置Server，把端口号修改成36677"><a href="#3-0-打开picgo设置，找到设置Server，把端口号修改成36677" class="headerlink" title="3.0 打开picgo设置，找到设置Server，把端口号修改成36677"></a>3.0 打开picgo设置，找到设置Server，把端口号修改成36677</h3><p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224030434.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224030434.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-<p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224111600.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224111600.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-<h3 id="4-0-修改host文件"><a href="#4-0-修改host文件" class="headerlink" title="4.0 修改host文件"></a>4.0 修改host文件</h3><blockquote>
-<p>原因是github屏蔽掉了图片，结局办法就是修改host，我就是用的这个方法解决的</p>
-</blockquote>
-<p>host路径：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">C:\Windows\System32\drivers\etc\hosts</span><br></pre></td></tr></table></figure>
-
-<p>找到host文件，用记事本格式打开，添加代码</p>
-<figure class="highlight plaintext"><figcaption><span>GitHub Start</span></figcaption><table><tr><td class="code"><pre><span class="line">140.82.113.3      github.com</span><br><span class="line">140.82.114.20     gist.github.com</span><br><span class="line">151.101.184.133    assets-cdn.github.com</span><br><span class="line">151.101.184.133    raw.githubusercontent.com</span><br><span class="line">151.101.184.133    gist.githubusercontent.com</span><br><span class="line">151.101.184.133    cloud.githubusercontent.com</span><br><span class="line">151.101.184.133    camo.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars0.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars0.githubusercontent.com</span><br><span class="line">199.232.28.133     avatars1.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars1.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars2.githubusercontent.com</span><br><span class="line">199.232.28.133     avatars2.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars3.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars3.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars4.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars4.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars5.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars5.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars6.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars6.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars7.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars7.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars8.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars8.githubusercontent.com</span><br><span class="line"># GitHub End</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>tip: host文件修改需要管理员权限，可在桌面复制一份，用修改完的文件替换掉原来的文件即可，权限可以自己更改，搞完再改回去</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>PicGo</category>
-      </categories>
-      <tags>
-        <tag>PicGo</tag>
+        <tag>busuanzi</tag>
+        <tag>站点统计</tag>
       </tags>
   </entry>
   <entry>
@@ -3516,35 +3503,53 @@ h1,h2,h3,h4,h5,h6{
       </tags>
   </entry>
   <entry>
-    <title>hexo之站点统计——busuanzi</title>
-    <url>/2022/08/01/hexo/hexo%E4%B9%8B%E7%AB%99%E7%82%B9%E7%BB%9F%E8%AE%A1%E2%80%94%E2%80%94busuanzi/</url>
-    <content><![CDATA[<p>本片介绍的是站点信息统计之 busuanzi</p>
-<h1 id="一、站点信息"><a href="#一、站点信息" class="headerlink" title="一、站点信息"></a>一、站点信息</h1><h2 id="1-1-在-config-volantis-yml-搜索统计-显示有站点统计信息"><a href="#1-1-在-config-volantis-yml-搜索统计-显示有站点统计信息" class="headerlink" title="1.1 在_config.volantis.yml 搜索统计,显示有站点统计信息"></a>1.1 在_config.volantis.yml 搜索<code>统计</code>,显示有站点统计信息</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">visitcounter: # 站点统计访客开启入口在下面⬇</span><br><span class="line">      siteuv:</span><br><span class="line">        enable: true</span><br><span class="line">        text: &#x27;本站访客数：&#x27;</span><br><span class="line">        unit: &#x27;人&#x27;</span><br><span class="line">      sitepv:</span><br><span class="line">        enable: true</span><br><span class="line">        text: &#x27;本站总访问量：&#x27;</span><br><span class="line">        unit: &#x27;次&#x27;</span><br></pre></td></tr></table></figure>
+    <title>hexo之评论系统——giscus</title>
+    <url>/2022/07/31/hexo/hexo%E4%B9%8B%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94giscus/</url>
+    <content><![CDATA[<p>本篇主要讲的是 hexo 主题 volantis 的评论系统相关的 giscus</p>
+<h1 id="一、评论系统的选择-giscus"><a href="#一、评论系统的选择-giscus" class="headerlink" title="一、评论系统的选择 giscus"></a>一、评论系统的选择 giscus</h1><h2 id="1-1-打开文件-config-volantis-yml，搜索-comments-评论部分，可以看到这里选择的是-giscus"><a href="#1-1-打开文件-config-volantis-yml，搜索-comments-评论部分，可以看到这里选择的是-giscus" class="headerlink" title="1.1 打开文件_config.volantis.yml，搜索 comments 评论部分，可以看到这里选择的是 giscus"></a>1.1 打开文件_config.volantis.yml，搜索 comments 评论部分，可以看到这里选择的是 giscus</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">comments:</span><br><span class="line">  title: &lt;i class=&#x27;fa-solid fa-comments&#x27;&gt;&lt;/i&gt; 评论</span><br><span class="line">  subtitle:</span><br><span class="line">  service: giscus</span><br><span class="line">  # 可选评论系统 #</span><br></pre></td></tr></table></figure>
 
-<h2 id="1-2-接下来就是-analytics-引入-busuanzi-这里就需要配置个人的-app-id-和-app-key"><a href="#1-2-接下来就是-analytics-引入-busuanzi-这里就需要配置个人的-app-id-和-app-key" class="headerlink" title="1.2 接下来就是 analytics 引入 busuanzi,这里就需要配置个人的 app_id 和 app_key"></a>1.2 接下来就是 analytics 引入 busuanzi,这里就需要配置个人的 app_id 和 app_key</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 站点统计访客开启入口，引入busuanzi，并配置属于自己的app_id和app_key</span><br><span class="line">analytics:</span><br><span class="line">  busuanzi: volantis-static/libs/busuanzi/js/busuanzi.pure.mini.js</span><br><span class="line">  leancloud: # 请使用自己的 id &amp; key 以防止数据丢失</span><br><span class="line">    app_id: u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI</span><br><span class="line">    app_key: jfHtEKVE24j0IVCGHbvuFClp</span><br><span class="line">    custom_api_server: # 国际版一般不需要写，除非自定义了 API Server</span><br></pre></td></tr></table></figure>
+<h2 id="1-2-继续搜索-giscus，显示需要配置一些-repo-x2F-repo-id-等参数"><a href="#1-2-继续搜索-giscus，显示需要配置一些-repo-x2F-repo-id-等参数" class="headerlink" title="1.2 继续搜索 giscus，显示需要配置一些 repo&#x2F;repo-id 等参数"></a>1.2 继续搜索 giscus，显示需要配置一些 repo&#x2F;repo-id 等参数</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># giscus</span><br><span class="line"># https://giscus.app</span><br><span class="line"># https://github.com/laymonage/giscus</span><br><span class="line">giscus:</span><br><span class="line">  # 以下配置按照 yml 格式增删填写即可</span><br><span class="line">  repo: txw1314/comment-giscus</span><br><span class="line">  repo-id: R_kgDOHvE8vw</span><br><span class="line">  category: Comments</span><br><span class="line">  category-id: DIC_kwDOHvE8v84CQgFl</span><br><span class="line">  mapping: &quot;title&quot;</span><br><span class="line">  reactions-enabled: &quot;1&quot;</span><br><span class="line">  emit-metadata: &quot;0&quot;</span><br><span class="line">  position: &quot;top&quot;</span><br><span class="line">  loading: &quot;lazy&quot;</span><br><span class="line">  crossorigin: &quot;anonymous&quot;</span><br><span class="line">  lang: &quot;zh-CN&quot;</span><br><span class="line">  # 以上配置按照 yml 格式增删填写即可</span><br></pre></td></tr></table></figure>
 
-<h1 id="二、获取-busuanzi-的配置信息"><a href="#二、获取-busuanzi-的配置信息" class="headerlink" title="二、获取 busuanzi 的配置信息"></a>二、获取 busuanzi 的配置信息</h1><h2 id="2-1-打开-leancloud-官网，注册账号，该认证认证"><a href="#2-1-打开-leancloud-官网，注册账号，该认证认证" class="headerlink" title="2.1 打开 leancloud 官网，注册账号，该认证认证"></a>2.1 打开 leancloud 官网，注册账号，该认证认证</h2><blockquote>
-<p>leancloud 官网:<a href="https://www.leancloud.cn/">https://www.leancloud.cn/</a> ,点击免费使用，注册账号</p>
+<h1 id="二、如何获取-giscus-的相关配置"><a href="#二、如何获取-giscus-的相关配置" class="headerlink" title="二、如何获取 giscus 的相关配置"></a>二、如何获取 giscus 的相关配置</h1><h2 id="2-1-在-github-的操作"><a href="#2-1-在-github-的操作" class="headerlink" title="2.1 在 github 的操作"></a>2.1 在 github 的操作</h2><h3 id="2-1-1-新建一个关于评论的仓库"><a href="#2-1-1-新建一个关于评论的仓库" class="headerlink" title="2.1.1 新建一个关于评论的仓库"></a>2.1.1 新建一个关于评论的仓库</h3><p>我这里命名的是 comment-giscus,点击 Setting</p>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220102126.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220102126.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220102126"></p>
+<h3 id="2-1-2-继续往下滚动到-Features，勾选-Wikis"><a href="#2-1-2-继续往下滚动到-Features，勾选-Wikis" class="headerlink" title="2.1.2 继续往下滚动到 Features，勾选 Wikis"></a>2.1.2 继续往下滚动到 Features，勾选 Wikis</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220132464.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220132464.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220132464"></p>
+<h3 id="2-1-3-继续滚动，勾选-Discussions。"><a href="#2-1-3-继续滚动，勾选-Discussions。" class="headerlink" title="2.1.3 继续滚动，勾选 Discussions。"></a>2.1.3 继续滚动，勾选 Discussions。</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220200017.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220200017.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220200017"></p>
+<h2 id="2-2-在-GitHub-代码库上的讨论页面创建一个类别"><a href="#2-2-在-GitHub-代码库上的讨论页面创建一个类别" class="headerlink" title="2.2 在 GitHub 代码库上的讨论页面创建一个类别"></a>2.2 在 GitHub 代码库上的讨论页面创建一个类别</h2><blockquote>
+<p>比如 “Comments（评论）”——或者选择现有的类别。</p>
 </blockquote>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224259281.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224259281.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="注册账号"></p>
-<h2 id="2-2-登录账号注册应用"><a href="#2-2-登录账号注册应用" class="headerlink" title="2.2 登录账号注册应用"></a>2.2 登录账号注册应用</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224618543.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224618543.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="注册应用"></p>
-<h2 id="2-3-点击应用，选择应用"><a href="#2-3-点击应用，选择应用" class="headerlink" title="2.3 点击应用，选择应用"></a>2.3 点击应用，选择应用</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224734317.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224734317.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="选择应用"></p>
-<h2 id="2-4-点击设置，应用凭证，右侧就是我们想要的配置信息了"><a href="#2-4-点击设置，应用凭证，右侧就是我们想要的配置信息了" class="headerlink" title="2.4 点击设置，应用凭证，右侧就是我们想要的配置信息了"></a>2.4 点击设置，应用凭证，右侧就是我们想要的配置信息了</h2><blockquote>
-<p>复制保存我们的配置信息，填入指定位置，页面就是有相关信息展示了</p>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220348443.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220348443.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220348443"></p>
+<h3 id="2-2-1-如果没有，那就新建类别"><a href="#2-2-1-如果没有，那就新建类别" class="headerlink" title="2.2.1 如果没有，那就新建类别"></a>2.2.1 如果没有，那就新建类别</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220447606.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220447606.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220447606"></p>
+<h3 id="2-2-2-填写-title-和详情，点击-create-创建完成"><a href="#2-2-2-填写-title-和详情，点击-create-创建完成" class="headerlink" title="2.2.2 填写 title 和详情，点击 create 创建完成"></a>2.2.2 填写 title 和详情，点击 create 创建完成</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220619536.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220619536.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220619536"></p>
+<h3 id="2-2-3-创建完成，分类里面有了我们新增的分类"><a href="#2-2-3-创建完成，分类里面有了我们新增的分类" class="headerlink" title="2.2.3 创建完成，分类里面有了我们新增的分类"></a>2.2.3 创建完成，分类里面有了我们新增的分类</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220734420.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220734420.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220734420"></p>
+<h2 id="2-3-转到-https-github-com-apps-giscus，按照提示操作，并仅授予对选定代码库的访问权限。"><a href="#2-3-转到-https-github-com-apps-giscus，按照提示操作，并仅授予对选定代码库的访问权限。" class="headerlink" title="2.3 转到 https://github.com/apps/giscus，按照提示操作，并仅授予对选定代码库的访问权限。"></a>2.3 转到 <a href="https://github.com/apps/giscus%EF%BC%8C%E6%8C%89%E7%85%A7%E6%8F%90%E7%A4%BA%E6%93%8D%E4%BD%9C%EF%BC%8C%E5%B9%B6%E4%BB%85%E6%8E%88%E4%BA%88%E5%AF%B9%E9%80%89%E5%AE%9A%E4%BB%A3%E7%A0%81%E5%BA%93%E7%9A%84%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E3%80%82">https://github.com/apps/giscus，按照提示操作，并仅授予对选定代码库的访问权限。</a></h2><h3 id="2-3-1-安装-giscus"><a href="#2-3-1-安装-giscus" class="headerlink" title="2.3.1 安装 giscus"></a>2.3.1 安装 giscus</h3><blockquote>
+<p>在根目录安装 giscus : <code>npm install giscus</code></p>
 </blockquote>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801225041384.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801225041384.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="获取配置信息"></p>
-<h1 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h1><blockquote>
-<p>tip: 本地运行显示数据有点夸张了，还有点延迟，但是部署之后会显示正常数据</p>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220808104.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220808104.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220808104"></p>
+<h3 id="2-3-2-选择建立的评论仓库"><a href="#2-3-2-选择建立的评论仓库" class="headerlink" title="2.3.2 选择建立的评论仓库"></a>2.3.2 选择建立的评论仓库</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220955798.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220955798.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220955798"></p>
+<h3 id="2-3-3-确认账号密码"><a href="#2-3-3-确认账号密码" class="headerlink" title="2.3.3 确认账号密码"></a>2.3.3 确认账号密码</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221013850.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221013850.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221013850"></p>
+<h3 id="2-3-4-选择完成"><a href="#2-3-4-选择完成" class="headerlink" title="2.3.4 选择完成"></a>2.3.4 选择完成</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221043339.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221043339.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221043339"></p>
+<h2 id="2-4-在-giscus-的操作，我们需要配置-giscus-的小部件。"><a href="#2-4-在-giscus-的操作，我们需要配置-giscus-的小部件。" class="headerlink" title="2.4 在 giscus 的操作，我们需要配置 giscus 的小部件。"></a>2.4 在 giscus 的操作，我们需要配置 giscus 的小部件。</h2><blockquote>
+<p>打开网页：<a href="https://giscus.app/zh-CN">giscus</a></p>
 </blockquote>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801230651942.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801230651942.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="本地运行"></p>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801225311587.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801225311587.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="部署之后"></p>
+<h3 id="2-4-1-选择语言和仓库，"><a href="#2-4-1-选择语言和仓库，" class="headerlink" title="2.4.1 选择语言和仓库，"></a>2.4.1 选择语言和仓库，</h3><p>输入之前 github 创建仓库名称，如用<code>username/reponame</code>，这里包括用户名和仓库名称，</p>
+<blockquote>
+<p>注意&#x2F;前后不能有空格，不能输错，否则下面会提示报错</p>
+</blockquote>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221204482.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221204482.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221204482"></p>
+<h3 id="2-4-2-页面映射关系，这里我选择的是第三个"><a href="#2-4-2-页面映射关系，这里我选择的是第三个" class="headerlink" title="2.4.2 页面映射关系，这里我选择的是第三个"></a>2.4.2 页面映射关系，这里我选择的是第三个</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221317913.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221317913.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221317913"></p>
+<h3 id="2-4-3-然后选择-Discussion-分类和特性"><a href="#2-4-3-然后选择-Discussion-分类和特性" class="headerlink" title="2.4.3 然后选择 Discussion 分类和特性"></a>2.4.3 然后选择 Discussion 分类和特性</h3><p>分类选择我们上面新建的分类，特性我选择了箭头不两个，也可不选，主题随便选一个就行，不选也没关系这个不影响</p>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221551343.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221551343.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221551343"></p>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221621379.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221621379.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221621379"></p>
+<h3 id="2-4-4-启用-giscus"><a href="#2-4-4-启用-giscus" class="headerlink" title="2.4.4 启用 giscus"></a>2.4.4 启用 giscus</h3><p>一切就绪之后，Giscus 将根据你的设置生成一个脚本标签，这就是我们想要的 giscus 的配置信息了。你可以将其粘贴到你的代码中，记得把这个保存下来，不然还要在操作一下这步骤重新生成了</p>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221745879.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221745879.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221745879"></p>
+<h2 id="这是最终结果"><a href="#这是最终结果" class="headerlink" title="这是最终结果"></a>这是最终结果</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221831472.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221831472.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221831472"></p>
 ]]></content>
       <categories>
         <category>Hexo系列</category>
       </categories>
       <tags>
-        <tag>busuanzi</tag>
-        <tag>站点统计</tag>
+        <tag>评论系统</tag>
+        <tag>giscus</tag>
       </tags>
   </entry>
   <entry>
@@ -3599,56 +3604,6 @@ h1,h2,h3,h4,h5,h6{
       </tags>
   </entry>
   <entry>
-    <title>hexo之评论系统——giscus</title>
-    <url>/2022/07/31/hexo/hexo%E4%B9%8B%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94giscus/</url>
-    <content><![CDATA[<p>本篇主要讲的是 hexo 主题 volantis 的评论系统相关的 giscus</p>
-<h1 id="一、评论系统的选择-giscus"><a href="#一、评论系统的选择-giscus" class="headerlink" title="一、评论系统的选择 giscus"></a>一、评论系统的选择 giscus</h1><h2 id="1-1-打开文件-config-volantis-yml，搜索-comments-评论部分，可以看到这里选择的是-giscus"><a href="#1-1-打开文件-config-volantis-yml，搜索-comments-评论部分，可以看到这里选择的是-giscus" class="headerlink" title="1.1 打开文件_config.volantis.yml，搜索 comments 评论部分，可以看到这里选择的是 giscus"></a>1.1 打开文件_config.volantis.yml，搜索 comments 评论部分，可以看到这里选择的是 giscus</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">comments:</span><br><span class="line">  title: &lt;i class=&#x27;fa-solid fa-comments&#x27;&gt;&lt;/i&gt; 评论</span><br><span class="line">  subtitle:</span><br><span class="line">  service: giscus</span><br><span class="line">  # 可选评论系统 #</span><br></pre></td></tr></table></figure>
-
-<h2 id="1-2-继续搜索-giscus，显示需要配置一些-repo-x2F-repo-id-等参数"><a href="#1-2-继续搜索-giscus，显示需要配置一些-repo-x2F-repo-id-等参数" class="headerlink" title="1.2 继续搜索 giscus，显示需要配置一些 repo&#x2F;repo-id 等参数"></a>1.2 继续搜索 giscus，显示需要配置一些 repo&#x2F;repo-id 等参数</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># giscus</span><br><span class="line"># https://giscus.app</span><br><span class="line"># https://github.com/laymonage/giscus</span><br><span class="line">giscus:</span><br><span class="line">  # 以下配置按照 yml 格式增删填写即可</span><br><span class="line">  repo: txw1314/comment-giscus</span><br><span class="line">  repo-id: R_kgDOHvE8vw</span><br><span class="line">  category: Comments</span><br><span class="line">  category-id: DIC_kwDOHvE8v84CQgFl</span><br><span class="line">  mapping: &quot;title&quot;</span><br><span class="line">  reactions-enabled: &quot;1&quot;</span><br><span class="line">  emit-metadata: &quot;0&quot;</span><br><span class="line">  position: &quot;top&quot;</span><br><span class="line">  loading: &quot;lazy&quot;</span><br><span class="line">  crossorigin: &quot;anonymous&quot;</span><br><span class="line">  lang: &quot;zh-CN&quot;</span><br><span class="line">  # 以上配置按照 yml 格式增删填写即可</span><br></pre></td></tr></table></figure>
-
-<h1 id="二、如何获取-giscus-的相关配置"><a href="#二、如何获取-giscus-的相关配置" class="headerlink" title="二、如何获取 giscus 的相关配置"></a>二、如何获取 giscus 的相关配置</h1><h2 id="2-1-在-github-的操作"><a href="#2-1-在-github-的操作" class="headerlink" title="2.1 在 github 的操作"></a>2.1 在 github 的操作</h2><h3 id="2-1-1-新建一个关于评论的仓库"><a href="#2-1-1-新建一个关于评论的仓库" class="headerlink" title="2.1.1 新建一个关于评论的仓库"></a>2.1.1 新建一个关于评论的仓库</h3><p>我这里命名的是 comment-giscus,点击 Setting</p>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220102126.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220102126.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220102126"></p>
-<h3 id="2-1-2-继续往下滚动到-Features，勾选-Wikis"><a href="#2-1-2-继续往下滚动到-Features，勾选-Wikis" class="headerlink" title="2.1.2 继续往下滚动到 Features，勾选 Wikis"></a>2.1.2 继续往下滚动到 Features，勾选 Wikis</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220132464.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220132464.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220132464"></p>
-<h3 id="2-1-3-继续滚动，勾选-Discussions。"><a href="#2-1-3-继续滚动，勾选-Discussions。" class="headerlink" title="2.1.3 继续滚动，勾选 Discussions。"></a>2.1.3 继续滚动，勾选 Discussions。</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220200017.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220200017.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220200017"></p>
-<h2 id="2-2-在-GitHub-代码库上的讨论页面创建一个类别"><a href="#2-2-在-GitHub-代码库上的讨论页面创建一个类别" class="headerlink" title="2.2 在 GitHub 代码库上的讨论页面创建一个类别"></a>2.2 在 GitHub 代码库上的讨论页面创建一个类别</h2><blockquote>
-<p>比如 “Comments（评论）”——或者选择现有的类别。</p>
-</blockquote>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220348443.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220348443.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220348443"></p>
-<h3 id="2-2-1-如果没有，那就新建类别"><a href="#2-2-1-如果没有，那就新建类别" class="headerlink" title="2.2.1 如果没有，那就新建类别"></a>2.2.1 如果没有，那就新建类别</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220447606.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220447606.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220447606"></p>
-<h3 id="2-2-2-填写-title-和详情，点击-create-创建完成"><a href="#2-2-2-填写-title-和详情，点击-create-创建完成" class="headerlink" title="2.2.2 填写 title 和详情，点击 create 创建完成"></a>2.2.2 填写 title 和详情，点击 create 创建完成</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220619536.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220619536.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220619536"></p>
-<h3 id="2-2-3-创建完成，分类里面有了我们新增的分类"><a href="#2-2-3-创建完成，分类里面有了我们新增的分类" class="headerlink" title="2.2.3 创建完成，分类里面有了我们新增的分类"></a>2.2.3 创建完成，分类里面有了我们新增的分类</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220734420.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220734420.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220734420"></p>
-<h2 id="2-3-转到-https-github-com-apps-giscus，按照提示操作，并仅授予对选定代码库的访问权限。"><a href="#2-3-转到-https-github-com-apps-giscus，按照提示操作，并仅授予对选定代码库的访问权限。" class="headerlink" title="2.3 转到 https://github.com/apps/giscus，按照提示操作，并仅授予对选定代码库的访问权限。"></a>2.3 转到 <a href="https://github.com/apps/giscus%EF%BC%8C%E6%8C%89%E7%85%A7%E6%8F%90%E7%A4%BA%E6%93%8D%E4%BD%9C%EF%BC%8C%E5%B9%B6%E4%BB%85%E6%8E%88%E4%BA%88%E5%AF%B9%E9%80%89%E5%AE%9A%E4%BB%A3%E7%A0%81%E5%BA%93%E7%9A%84%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E3%80%82">https://github.com/apps/giscus，按照提示操作，并仅授予对选定代码库的访问权限。</a></h2><h3 id="2-3-1-安装-giscus"><a href="#2-3-1-安装-giscus" class="headerlink" title="2.3.1 安装 giscus"></a>2.3.1 安装 giscus</h3><blockquote>
-<p>在根目录安装 giscus : <code>npm install giscus</code></p>
-</blockquote>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220808104.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220808104.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220808104"></p>
-<h3 id="2-3-2-选择建立的评论仓库"><a href="#2-3-2-选择建立的评论仓库" class="headerlink" title="2.3.2 选择建立的评论仓库"></a>2.3.2 选择建立的评论仓库</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220955798.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220955798.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220955798"></p>
-<h3 id="2-3-3-确认账号密码"><a href="#2-3-3-确认账号密码" class="headerlink" title="2.3.3 确认账号密码"></a>2.3.3 确认账号密码</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221013850.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221013850.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221013850"></p>
-<h3 id="2-3-4-选择完成"><a href="#2-3-4-选择完成" class="headerlink" title="2.3.4 选择完成"></a>2.3.4 选择完成</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221043339.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221043339.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221043339"></p>
-<h2 id="2-4-在-giscus-的操作，我们需要配置-giscus-的小部件。"><a href="#2-4-在-giscus-的操作，我们需要配置-giscus-的小部件。" class="headerlink" title="2.4 在 giscus 的操作，我们需要配置 giscus 的小部件。"></a>2.4 在 giscus 的操作，我们需要配置 giscus 的小部件。</h2><blockquote>
-<p>打开网页：<a href="https://giscus.app/zh-CN">giscus</a></p>
-</blockquote>
-<h3 id="2-4-1-选择语言和仓库，"><a href="#2-4-1-选择语言和仓库，" class="headerlink" title="2.4.1 选择语言和仓库，"></a>2.4.1 选择语言和仓库，</h3><p>输入之前 github 创建仓库名称，如用<code>username/reponame</code>，这里包括用户名和仓库名称，</p>
-<blockquote>
-<p>注意&#x2F;前后不能有空格，不能输错，否则下面会提示报错</p>
-</blockquote>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221204482.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221204482.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221204482"></p>
-<h3 id="2-4-2-页面映射关系，这里我选择的是第三个"><a href="#2-4-2-页面映射关系，这里我选择的是第三个" class="headerlink" title="2.4.2 页面映射关系，这里我选择的是第三个"></a>2.4.2 页面映射关系，这里我选择的是第三个</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221317913.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221317913.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221317913"></p>
-<h3 id="2-4-3-然后选择-Discussion-分类和特性"><a href="#2-4-3-然后选择-Discussion-分类和特性" class="headerlink" title="2.4.3 然后选择 Discussion 分类和特性"></a>2.4.3 然后选择 Discussion 分类和特性</h3><p>分类选择我们上面新建的分类，特性我选择了箭头不两个，也可不选，主题随便选一个就行，不选也没关系这个不影响</p>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221551343.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221551343.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221551343"></p>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221621379.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221621379.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221621379"></p>
-<h3 id="2-4-4-启用-giscus"><a href="#2-4-4-启用-giscus" class="headerlink" title="2.4.4 启用 giscus"></a>2.4.4 启用 giscus</h3><p>一切就绪之后，Giscus 将根据你的设置生成一个脚本标签，这就是我们想要的 giscus 的配置信息了。你可以将其粘贴到你的代码中，记得把这个保存下来，不然还要在操作一下这步骤重新生成了</p>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221745879.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221745879.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221745879"></p>
-<h2 id="这是最终结果"><a href="#这是最终结果" class="headerlink" title="这是最终结果"></a>这是最终结果</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221831472.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221831472.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221831472"></p>
-]]></content>
-      <categories>
-        <category>Hexo系列</category>
-      </categories>
-      <tags>
-        <tag>评论系统</tag>
-        <tag>giscus</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>使用github Actions自动化部署Hexo</title>
     <url>/2022/08/16/hexo/%E4%BD%BF%E7%94%A8Github%20Actions%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2Hexo/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>使用Github Actions自动化部署之后，可以脱离本地电脑，再也不用担心源码丢失。</p>
@@ -3682,6 +3637,22 @@ h1,h2,h3,h4,h5,h6{
       </tags>
   </entry>
   <entry>
+    <title>PicGo+typora上传图片失败报422的原因及解决方法</title>
+    <url>/2022/08/03/picgo/PicGo+typora%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%A4%B1%E8%B4%A5%E6%8A%A5422%E7%9A%84%E5%8E%9F%E5%9B%A0%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<p>picgo 用 github 作图床，使用 typora 上传图，出现 StatusCodeError: 422 的原因及解决方法</p>
+<h3 id="我在使用过程中-PicGo-出现了-StatusCodeError-422-的错误，上传图片失败。通过百度得知是以下原因造成的"><a href="#我在使用过程中-PicGo-出现了-StatusCodeError-422-的错误，上传图片失败。通过百度得知是以下原因造成的" class="headerlink" title="我在使用过程中 PicGo 出现了 StatusCodeError: 422 的错误，上传图片失败。通过百度得知是以下原因造成的"></a>我在使用过程中 PicGo 出现了 StatusCodeError: 422 的错误，上传图片失败。通过百度得知是以下原因造成的</h3><blockquote>
+<p><strong>PicGo 目前不支持在 gitbub 上上传同名文件，上传同名文件就会报错，即使是两张不同的图片。</strong></p>
+</blockquote>
+<p>解决方式也很简单，Picgo 开启上传时重命名和时间戳重命名就可以结局，或者把 github 里面已经有的同名文件删除，都可以解决这个问题。</p>
+]]></content>
+      <categories>
+        <category>PicGo</category>
+      </categories>
+      <tags>
+        <tag>PicGo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2022/07/28/study/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -3702,6 +3673,35 @@ h1,h2,h3,h4,h5,h6{
       </tags>
   </entry>
   <entry>
+    <title>PicGo相册不能显示问题及解决办法</title>
+    <url>/2022/07/30/picgo/PicGo%E7%9B%B8%E5%86%8C%E4%B8%8D%E8%83%BD%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
+    <content><![CDATA[<p>我的PicGo图片上传成功了，但是相册区域图片不能正常显示，如下图所示</p>
+<p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/209.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/209.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><h3 id="1-0-重启应用"><a href="#1-0-重启应用" class="headerlink" title="1.0 重启应用"></a>1.0 重启应用</h3><p>退出应用，重新启动，上传的图片能正常显示</p>
+<h3 id="2-0-卸载应用，重新安装"><a href="#2-0-卸载应用，重新安装" class="headerlink" title="2.0 卸载应用，重新安装"></a>2.0 卸载应用，重新安装</h3><p>卸载重装 PicGo，不需要重新配置，之后上传的图片都能正常显示</p>
+<h3 id="3-0-打开picgo设置，找到设置Server，把端口号修改成36677"><a href="#3-0-打开picgo设置，找到设置Server，把端口号修改成36677" class="headerlink" title="3.0 打开picgo设置，找到设置Server，把端口号修改成36677"></a>3.0 打开picgo设置，找到设置Server，把端口号修改成36677</h3><p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224030434.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224030434.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224111600.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224111600.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<h3 id="4-0-修改host文件"><a href="#4-0-修改host文件" class="headerlink" title="4.0 修改host文件"></a>4.0 修改host文件</h3><blockquote>
+<p>原因是github屏蔽掉了图片，结局办法就是修改host，我就是用的这个方法解决的</p>
+</blockquote>
+<p>host路径：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">C:\Windows\System32\drivers\etc\hosts</span><br></pre></td></tr></table></figure>
+
+<p>找到host文件，用记事本格式打开，添加代码</p>
+<figure class="highlight plaintext"><figcaption><span>GitHub Start</span></figcaption><table><tr><td class="code"><pre><span class="line">140.82.113.3      github.com</span><br><span class="line">140.82.114.20     gist.github.com</span><br><span class="line">151.101.184.133    assets-cdn.github.com</span><br><span class="line">151.101.184.133    raw.githubusercontent.com</span><br><span class="line">151.101.184.133    gist.githubusercontent.com</span><br><span class="line">151.101.184.133    cloud.githubusercontent.com</span><br><span class="line">151.101.184.133    camo.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars0.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars0.githubusercontent.com</span><br><span class="line">199.232.28.133     avatars1.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars1.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars2.githubusercontent.com</span><br><span class="line">199.232.28.133     avatars2.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars3.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars3.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars4.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars4.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars5.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars5.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars6.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars6.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars7.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars7.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars8.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars8.githubusercontent.com</span><br><span class="line"># GitHub End</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>tip: host文件修改需要管理员权限，可在桌面复制一份，用修改完的文件替换掉原来的文件即可，权限可以自己更改，搞完再改回去</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>PicGo</category>
+      </categories>
+      <tags>
+        <tag>PicGo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>vscode蓝色波浪线消除办法</title>
     <url>/2022/10/02/study/vscode%E8%93%9D%E8%89%B2%E6%B3%A2%E6%B5%AA%E7%BA%BF%E6%B6%88%E9%99%A4%E5%8A%9E%E6%B3%95/</url>
     <content><![CDATA[<h2 id="vscode蓝色波浪线"><a href="#vscode蓝色波浪线" class="headerlink" title="vscode蓝色波浪线"></a>vscode蓝色波浪线</h2><p>不知道什么时候，我的vscode页面单词有蓝色波浪线了，提示：<code>Unknow word</code>，估计是版本更新之后什么配置的问题。这个蓝色波浪线不影响代码编辑和运行，就是看着碍眼，强迫症表示很难受。一直以来我都是点击修复来消除的，无意中看到一个方法，亲测有效特此记录。直接上图，按图步骤操作就行了</p>
@@ -3713,6 +3713,68 @@ h1,h2,h3,h4,h5,h6{
       </categories>
       <tags>
         <tag>vscode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Navicat 15 for MySQL 安装注册激活</title>
+    <url>/2022/08/04/tutorial/Navicat%2015%20for%20MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E6%B3%A8%E5%86%8C%E6%BF%80%E6%B4%BB/</url>
+    <content><![CDATA[<h1 id="Navicat-15-for-MySQL-安装注册激活"><a href="#Navicat-15-for-MySQL-安装注册激活" class="headerlink" title="Navicat 15 for MySQL 安装注册激活"></a>Navicat 15 for MySQL 安装注册激活</h1><p><strong>Navicat 15 for MySQL 安装</strong></p>
+<blockquote>
+<p>下载链接：<a href="https://pan.baidu.com/s/1ckdYJvWbsDXMpOpiie0_ug">https://pan.baidu.com/s/1ckdYJvWbsDXMpOpiie0_ug</a><br>提取码：wzx1</p>
+</blockquote>
+<p>百度网盘下载到指定的文件夹，将下载好的文件解压到当前文件夹</p>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041651795.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041651795.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<h1 id="安装-Navicat-15-for-MySql"><a href="#安装-Navicat-15-for-MySql" class="headerlink" title="安装 Navicat 15 for MySql"></a>安装 Navicat 15 for MySql</h1><h2 id="1-双击安装程序"><a href="#1-双击安装程序" class="headerlink" title="1.双击安装程序"></a>1.双击安装程序</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041651800.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041651800.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<h2 id="2-下一步"><a href="#2-下一步" class="headerlink" title="2.下一步"></a>2.下一步</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041651216.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041651216.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<h2 id="3-勾选我同意，下一步"><a href="#3-勾选我同意，下一步" class="headerlink" title="3.勾选我同意，下一步"></a>3.勾选我同意，下一步</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041651579.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041651579.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<h2 id="4-点击浏览，指定安装路径，也可以默认"><a href="#4-点击浏览，指定安装路径，也可以默认" class="headerlink" title="4.点击浏览，指定安装路径，也可以默认"></a>4.点击浏览，指定安装路径，也可以默认</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041651135.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041651135.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<h2 id="5-下一步"><a href="#5-下一步" class="headerlink" title="5.下一步"></a>5.下一步</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041652920.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041652920.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<h2 id="6-下一步"><a href="#6-下一步" class="headerlink" title="6.下一步"></a>6.下一步</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041652862.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041652862.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<h2 id="7-安装"><a href="#7-安装" class="headerlink" title="7.安装"></a>7.安装</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041652539.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041652539.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<h2 id="8-等待安装，安装好了，点击完成，这样就已经安装好-Navicat-15-for-MySQL"><a href="#8-等待安装，安装好了，点击完成，这样就已经安装好-Navicat-15-for-MySQL" class="headerlink" title="8.等待安装，安装好了，点击完成，这样就已经安装好 Navicat 15 for MySQL"></a>8.等待安装，安装好了，点击完成，这样就已经安装好 Navicat 15 for MySQL</h2><h1 id="Navicat-15-for-MySQL-激活"><a href="#Navicat-15-for-MySQL-激活" class="headerlink" title="Navicat 15 for MySQL 激活"></a>Navicat 15 for MySQL 激活</h1><h2 id="1-将下面文件复制到安装的路径下"><a href="#1-将下面文件复制到安装的路径下" class="headerlink" title="1.将下面文件复制到安装的路径下"></a>1.将下面文件复制到安装的路径下</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041653735.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041653735.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<blockquote>
+<p>复制路径，<strong>一定要复制到安装的路径</strong>，不然在解压的文件里直接激活会报错</p>
+</blockquote>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041653769.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041653769.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<h2 id="2-以管理员身份运行"><a href="#2-以管理员身份运行" class="headerlink" title="2.以管理员身份运行"></a>2.以管理员身份运行</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041654300.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041654300.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<h2 id="3-按照下面内容选择"><a href="#3-按照下面内容选择" class="headerlink" title="3.按照下面内容选择"></a>3.按照下面内容选择</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041654537.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041654537.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<h2 id="4-点击右上角-Patch"><a href="#4-点击右上角-Patch" class="headerlink" title="4.点击右上角 Patch"></a>4.点击右上角 Patch</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041654982.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041654982.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<h2 id="5-点击确认"><a href="#5-点击确认" class="headerlink" title="5.点击确认"></a>5.点击确认</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041654651.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041654651.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<h2 id="6-点击-Gengerate"><a href="#6-点击-Gengerate" class="headerlink" title="6.点击 Gengerate"></a>6.点击 Gengerate</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041654380.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041654380.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<h2 id="7-点击-Copy"><a href="#7-点击-Copy" class="headerlink" title="7.点击 Copy"></a>7.点击 Copy</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041654111.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041654111.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<h2 id="8-点击桌面-Navicat-15-for-MySQL"><a href="#8-点击桌面-Navicat-15-for-MySQL" class="headerlink" title="8.点击桌面 Navicat 15 for MySQL"></a>8.点击桌面 Navicat 15 for MySQL</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041654416.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041654416.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<h2 id="9-点击注册"><a href="#9-点击注册" class="headerlink" title="9.点击注册"></a>9.点击注册</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041655284.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041655284.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<h2 id="10-ctrl-v-把注册码粘贴到这里，点激活"><a href="#10-ctrl-v-把注册码粘贴到这里，点激活" class="headerlink" title="10.ctrl+v 把注册码粘贴到这里，点激活"></a>10.ctrl+v 把注册码粘贴到这里，点激活</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041655265.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041655265.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<h2 id="11-需要手动激活"><a href="#11-需要手动激活" class="headerlink" title="11.需要手动激活"></a>11.需要手动激活</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041655006.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041655006.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<h2 id="12-复制以下请求码"><a href="#12-复制以下请求码" class="headerlink" title="12.复制以下请求码"></a>12.复制以下请求码</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041655032.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041655032.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<h2 id="13-粘贴到破解程序的-Request-Code-，然后点击-Generate"><a href="#13-粘贴到破解程序的-Request-Code-，然后点击-Generate" class="headerlink" title="13.粘贴到破解程序的 Request Code ，然后点击 Generate"></a>13.粘贴到破解程序的 Request Code ，然后点击 Generate</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041655440.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041655440.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<h2 id="14-破解程序会自动把激活码填充上，然后点击-激活，再点击确认"><a href="#14-破解程序会自动把激活码填充上，然后点击-激活，再点击确认" class="headerlink" title="14.破解程序会自动把激活码填充上，然后点击 激活，再点击确认"></a>14.破解程序会自动把激活码填充上，然后点击 激活，再点击确认</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041655880.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041655880.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<p>这个时候已经成功破解了</p>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041655438.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041655438.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+]]></content>
+      <categories>
+        <category>破解软件</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>typora破解版安装</title>
+    <url>/2022/07/30/tutorial/typora%E7%A0%B4%E8%A7%A3%E7%89%88%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<p>typora 收费，对程序猿来说是不可能的，我只会白嫖，今天在小破站看到一个破解版的 typora 的安装，分享给大家。</p>
+<blockquote>
+<p>我把软件和破解文件放到了自己的阿里云盘分享给大家，附上链接：「typora1.3.8」等文件 <a href="https://www.aliyundrive.com/s/WLHNPidNYrL">https://www.aliyundrive.com/s/WLHNPidNYrL</a></p>
+</blockquote>
+<h1 id="1-1-下载完之后，选择安装包正常安装即可"><a href="#1-1-下载完之后，选择安装包正常安装即可" class="headerlink" title="1.1 下载完之后，选择安装包正常安装即可"></a>1.1 下载完之后，选择安装包正常安装即可</h1><p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220731000444283.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220731000444283.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<h1 id="1-2-打开破解插件，复制文件。桌面-typora-图标右键打开文件所在位置，粘贴复制的破解文件，替换即可，此时已经破解完成了"><a href="#1-2-打开破解插件，复制文件。桌面-typora-图标右键打开文件所在位置，粘贴复制的破解文件，替换即可，此时已经破解完成了" class="headerlink" title="1.2 打开破解插件，复制文件。桌面 typora 图标右键打开文件所在位置，粘贴复制的破解文件，替换即可，此时已经破解完成了"></a>1.2 打开破解插件，复制文件。桌面 typora 图标右键打开文件所在位置，粘贴复制的破解文件，替换即可，此时已经破解完成了</h1><p>打开 typora，点击帮助—我的许可证，将看到破解好的 typora，是不是特别简单，我也是惊艳到了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220731000852072.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220731000852072.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+]]></content>
+      <categories>
+        <category>破解软件</category>
+      </categories>
+      <tags>
+        <tag>typora</tag>
       </tags>
   </entry>
   <entry>
@@ -3787,50 +3849,6 @@ h1,h2,h3,h4,h5,h6{
       </tags>
   </entry>
   <entry>
-    <title>Navicat 15 for MySQL 安装注册激活</title>
-    <url>/2022/08/04/tutorial/Navicat%2015%20for%20MySQL%E7%9A%84%E5%AE%89%E8%A3%85%E6%B3%A8%E5%86%8C%E6%BF%80%E6%B4%BB/</url>
-    <content><![CDATA[<h1 id="Navicat-15-for-MySQL-安装注册激活"><a href="#Navicat-15-for-MySQL-安装注册激活" class="headerlink" title="Navicat 15 for MySQL 安装注册激活"></a>Navicat 15 for MySQL 安装注册激活</h1><p><strong>Navicat 15 for MySQL 安装</strong></p>
-<blockquote>
-<p>下载链接：<a href="https://pan.baidu.com/s/1ckdYJvWbsDXMpOpiie0_ug">https://pan.baidu.com/s/1ckdYJvWbsDXMpOpiie0_ug</a><br>提取码：wzx1</p>
-</blockquote>
-<p>百度网盘下载到指定的文件夹，将下载好的文件解压到当前文件夹</p>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041651795.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041651795.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<h1 id="安装-Navicat-15-for-MySql"><a href="#安装-Navicat-15-for-MySql" class="headerlink" title="安装 Navicat 15 for MySql"></a>安装 Navicat 15 for MySql</h1><h2 id="1-双击安装程序"><a href="#1-双击安装程序" class="headerlink" title="1.双击安装程序"></a>1.双击安装程序</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041651800.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041651800.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<h2 id="2-下一步"><a href="#2-下一步" class="headerlink" title="2.下一步"></a>2.下一步</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041651216.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041651216.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<h2 id="3-勾选我同意，下一步"><a href="#3-勾选我同意，下一步" class="headerlink" title="3.勾选我同意，下一步"></a>3.勾选我同意，下一步</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041651579.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041651579.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<h2 id="4-点击浏览，指定安装路径，也可以默认"><a href="#4-点击浏览，指定安装路径，也可以默认" class="headerlink" title="4.点击浏览，指定安装路径，也可以默认"></a>4.点击浏览，指定安装路径，也可以默认</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041651135.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041651135.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<h2 id="5-下一步"><a href="#5-下一步" class="headerlink" title="5.下一步"></a>5.下一步</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041652920.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041652920.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<h2 id="6-下一步"><a href="#6-下一步" class="headerlink" title="6.下一步"></a>6.下一步</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041652862.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041652862.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<h2 id="7-安装"><a href="#7-安装" class="headerlink" title="7.安装"></a>7.安装</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041652539.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041652539.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<h2 id="8-等待安装，安装好了，点击完成，这样就已经安装好-Navicat-15-for-MySQL"><a href="#8-等待安装，安装好了，点击完成，这样就已经安装好-Navicat-15-for-MySQL" class="headerlink" title="8.等待安装，安装好了，点击完成，这样就已经安装好 Navicat 15 for MySQL"></a>8.等待安装，安装好了，点击完成，这样就已经安装好 Navicat 15 for MySQL</h2><h1 id="Navicat-15-for-MySQL-激活"><a href="#Navicat-15-for-MySQL-激活" class="headerlink" title="Navicat 15 for MySQL 激活"></a>Navicat 15 for MySQL 激活</h1><h2 id="1-将下面文件复制到安装的路径下"><a href="#1-将下面文件复制到安装的路径下" class="headerlink" title="1.将下面文件复制到安装的路径下"></a>1.将下面文件复制到安装的路径下</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041653735.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041653735.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<blockquote>
-<p>复制路径，<strong>一定要复制到安装的路径</strong>，不然在解压的文件里直接激活会报错</p>
-</blockquote>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041653769.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041653769.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<h2 id="2-以管理员身份运行"><a href="#2-以管理员身份运行" class="headerlink" title="2.以管理员身份运行"></a>2.以管理员身份运行</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041654300.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041654300.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<h2 id="3-按照下面内容选择"><a href="#3-按照下面内容选择" class="headerlink" title="3.按照下面内容选择"></a>3.按照下面内容选择</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041654537.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041654537.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<h2 id="4-点击右上角-Patch"><a href="#4-点击右上角-Patch" class="headerlink" title="4.点击右上角 Patch"></a>4.点击右上角 Patch</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041654982.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041654982.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<h2 id="5-点击确认"><a href="#5-点击确认" class="headerlink" title="5.点击确认"></a>5.点击确认</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041654651.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041654651.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<h2 id="6-点击-Gengerate"><a href="#6-点击-Gengerate" class="headerlink" title="6.点击 Gengerate"></a>6.点击 Gengerate</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041654380.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041654380.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<h2 id="7-点击-Copy"><a href="#7-点击-Copy" class="headerlink" title="7.点击 Copy"></a>7.点击 Copy</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041654111.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041654111.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<h2 id="8-点击桌面-Navicat-15-for-MySQL"><a href="#8-点击桌面-Navicat-15-for-MySQL" class="headerlink" title="8.点击桌面 Navicat 15 for MySQL"></a>8.点击桌面 Navicat 15 for MySQL</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041654416.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041654416.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<h2 id="9-点击注册"><a href="#9-点击注册" class="headerlink" title="9.点击注册"></a>9.点击注册</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041655284.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041655284.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<h2 id="10-ctrl-v-把注册码粘贴到这里，点激活"><a href="#10-ctrl-v-把注册码粘贴到这里，点激活" class="headerlink" title="10.ctrl+v 把注册码粘贴到这里，点激活"></a>10.ctrl+v 把注册码粘贴到这里，点激活</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041655265.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041655265.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<h2 id="11-需要手动激活"><a href="#11-需要手动激活" class="headerlink" title="11.需要手动激活"></a>11.需要手动激活</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041655006.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041655006.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<h2 id="12-复制以下请求码"><a href="#12-复制以下请求码" class="headerlink" title="12.复制以下请求码"></a>12.复制以下请求码</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041655032.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041655032.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<h2 id="13-粘贴到破解程序的-Request-Code-，然后点击-Generate"><a href="#13-粘贴到破解程序的-Request-Code-，然后点击-Generate" class="headerlink" title="13.粘贴到破解程序的 Request Code ，然后点击 Generate"></a>13.粘贴到破解程序的 Request Code ，然后点击 Generate</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041655440.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041655440.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<h2 id="14-破解程序会自动把激活码填充上，然后点击-激活，再点击确认"><a href="#14-破解程序会自动把激活码填充上，然后点击-激活，再点击确认" class="headerlink" title="14.破解程序会自动把激活码填充上，然后点击 激活，再点击确认"></a>14.破解程序会自动把激活码填充上，然后点击 激活，再点击确认</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041655880.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041655880.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<p>这个时候已经成功破解了</p>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041655438.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208041655438.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-]]></content>
-      <categories>
-        <category>破解软件</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>phpMyAdmin最新下载安装教程</title>
     <url>/2022/08/08/tutorial/phpMyAdmin%E6%9C%80%E6%96%B0%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<p>本篇文章主要为大家详细地介绍了<strong>PHPmyadmin 安装教程</strong>。</p>
@@ -3875,24 +3893,6 @@ h1,h2,h3,h4,h5,h6{
       </categories>
       <tags>
         <tag>phpMyAdmin</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>typora破解版安装</title>
-    <url>/2022/07/30/tutorial/typora%E7%A0%B4%E8%A7%A3%E7%89%88%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<p>typora 收费，对程序猿来说是不可能的，我只会白嫖，今天在小破站看到一个破解版的 typora 的安装，分享给大家。</p>
-<blockquote>
-<p>我把软件和破解文件放到了自己的阿里云盘分享给大家，附上链接：「typora1.3.8」等文件 <a href="https://www.aliyundrive.com/s/WLHNPidNYrL">https://www.aliyundrive.com/s/WLHNPidNYrL</a></p>
-</blockquote>
-<h1 id="1-1-下载完之后，选择安装包正常安装即可"><a href="#1-1-下载完之后，选择安装包正常安装即可" class="headerlink" title="1.1 下载完之后，选择安装包正常安装即可"></a>1.1 下载完之后，选择安装包正常安装即可</h1><p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220731000444283.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220731000444283.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-<h1 id="1-2-打开破解插件，复制文件。桌面-typora-图标右键打开文件所在位置，粘贴复制的破解文件，替换即可，此时已经破解完成了"><a href="#1-2-打开破解插件，复制文件。桌面-typora-图标右键打开文件所在位置，粘贴复制的破解文件，替换即可，此时已经破解完成了" class="headerlink" title="1.2 打开破解插件，复制文件。桌面 typora 图标右键打开文件所在位置，粘贴复制的破解文件，替换即可，此时已经破解完成了"></a>1.2 打开破解插件，复制文件。桌面 typora 图标右键打开文件所在位置，粘贴复制的破解文件，替换即可，此时已经破解完成了</h1><p>打开 typora，点击帮助—我的许可证，将看到破解好的 typora，是不是特别简单，我也是惊艳到了。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220731000852072.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220731000852072.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-]]></content>
-      <categories>
-        <category>破解软件</category>
-      </categories>
-      <tags>
-        <tag>typora</tag>
       </tags>
   </entry>
 </search>
