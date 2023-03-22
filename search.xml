@@ -2994,6 +2994,62 @@ myWebsocket(&#39;ws://127.0.0.1:8000&#39;, &#123; name: &#39;林三心&#39;, age
       </tags>
   </entry>
   <entry>
+    <title>fariy-001</title>
+    <url>/2022/07/28/fairy/fairy-001/</url>
+    <content><![CDATA[<style>
+    #l_main {
+
+      width: calc(100% - 1 * 0px);
+      padding-left: 0px;
+      float: left;
+      -webkit-box-ordinal-group: 2;
+      -moz-box-ordinal-group: 2;
+      -ms-flex-order: 2;
+      -webkit-order: 2;
+      order: 2;
+    }
+    #l_side {
+      
+        display: none;
+    }
+    
+    #post-body {
+        display:flex;
+        flex-wrap: wrap;
+    }
+    #post-body p {
+        width: 48%;
+        margin: 5px;
+    }
+</style>
+
+<h1 id="壁纸"><a href="#壁纸" class="headerlink" title="壁纸"></a>壁纸</h1><p><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F4k%2Fs%2F01%2F210924143942AV-0-lp.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1661603132&t=1f048fc0b2d6b6052d8fa10a0c0c2a66" class="lazyload" data-srcset="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F4k%2Fs%2F01%2F210924143942AV-0-lp.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1661603132&t=1f048fc0b2d6b6052d8fa10a0c0c2a66" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="太空人"></p>
+<p><img src="https://img2.baidu.com/it/u=4041237652,3455375873&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img2.baidu.com/it/u=4041237652,3455375873&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="2022"></p>
+<p><img src="https://img2.baidu.com/it/u=3912953751,2897910146&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img2.baidu.com/it/u=3912953751,2897910146&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="山脉"></p>
+<p><img src="https://img2.baidu.com/it/u=1830973642,518401107&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img2.baidu.com/it/u=1830973642,518401107&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="公路"></p>
+<p><img src="https://img0.baidu.com/it/u=3307765823,1934426814&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img0.baidu.com/it/u=3307765823,1934426814&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="跑车"></p>
+<p><img src="https://img1.baidu.com/it/u=2688422801,1696196797&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=2688422801,1696196797&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="灯塔"></p>
+<p><img src="https://img1.baidu.com/it/u=674567296,600896811&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=674567296,600896811&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="灯塔"></p>
+<p><img src="https://img0.baidu.com/it/u=3440708810,3442918705&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img0.baidu.com/it/u=3440708810,3442918705&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="颠倒时空"></p>
+<p><img src="https://img1.baidu.com/it/u=872134080,2905781283&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=872134080,2905781283&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="大寒"></p>
+<p><img src="https://img1.baidu.com/it/u=1511941592,1801635068&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=1511941592,1801635068&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="粉色"></p>
+<p><img src="https://img1.baidu.com/it/u=2097372425,2422966379&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=2097372425,2422966379&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="珍珠"></p>
+<p><img src="https://img0.baidu.com/it/u=1656587050,3930583270&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img0.baidu.com/it/u=1656587050,3930583270&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="水泡"></p>
+<p><img src="https://img0.baidu.com/it/u=3421760785,1781416260&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img0.baidu.com/it/u=3421760785,1781416260&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="花草日历"></p>
+<p><img src="https://img1.baidu.com/it/u=2643860120,1785013409&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=2643860120,1785013409&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="船舰"></p>
+<p><img src="https://img2.baidu.com/it/u=3547004283,1966895282&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img2.baidu.com/it/u=3547004283,1966895282&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="流体"></p>
+<p><img src="https://img1.baidu.com/it/u=1692648092,2998825096&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=1692648092,2998825096&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="跑车"></p>
+<p><img src="https://img2.baidu.com/it/u=2899977724,4160359019&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img2.baidu.com/it/u=2899977724,4160359019&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="鹤"></p>
+<p><img src="https://img1.baidu.com/it/u=4094397582,1558263522&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=4094397582,1558263522&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="2022"></p>
+]]></content>
+      <categories>
+        <category>壁纸</category>
+      </categories>
+      <tags>
+        <tag>fariy</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用github建立图床,picgo和typora上传图片</title>
     <url>/2022/07/29/github/github-img/</url>
     <content><![CDATA[<p>建立图床必须具备什么条件 </p>
@@ -3146,62 +3202,6 @@ h1,h2,h3,h4,h5,h6{
       </categories>
       <tags>
         <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>fariy-001</title>
-    <url>/2022/07/28/fairy/fairy-001/</url>
-    <content><![CDATA[<style>
-    #l_main {
-
-      width: calc(100% - 1 * 0px);
-      padding-left: 0px;
-      float: left;
-      -webkit-box-ordinal-group: 2;
-      -moz-box-ordinal-group: 2;
-      -ms-flex-order: 2;
-      -webkit-order: 2;
-      order: 2;
-    }
-    #l_side {
-      
-        display: none;
-    }
-    
-    #post-body {
-        display:flex;
-        flex-wrap: wrap;
-    }
-    #post-body p {
-        width: 48%;
-        margin: 5px;
-    }
-</style>
-
-<h1 id="壁纸"><a href="#壁纸" class="headerlink" title="壁纸"></a>壁纸</h1><p><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F4k%2Fs%2F01%2F210924143942AV-0-lp.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1661603132&t=1f048fc0b2d6b6052d8fa10a0c0c2a66" class="lazyload" data-srcset="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F4k%2Fs%2F01%2F210924143942AV-0-lp.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1661603132&t=1f048fc0b2d6b6052d8fa10a0c0c2a66" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="太空人"></p>
-<p><img src="https://img2.baidu.com/it/u=4041237652,3455375873&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img2.baidu.com/it/u=4041237652,3455375873&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="2022"></p>
-<p><img src="https://img2.baidu.com/it/u=3912953751,2897910146&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img2.baidu.com/it/u=3912953751,2897910146&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="山脉"></p>
-<p><img src="https://img2.baidu.com/it/u=1830973642,518401107&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img2.baidu.com/it/u=1830973642,518401107&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="公路"></p>
-<p><img src="https://img0.baidu.com/it/u=3307765823,1934426814&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img0.baidu.com/it/u=3307765823,1934426814&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="跑车"></p>
-<p><img src="https://img1.baidu.com/it/u=2688422801,1696196797&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=2688422801,1696196797&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="灯塔"></p>
-<p><img src="https://img1.baidu.com/it/u=674567296,600896811&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=674567296,600896811&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="灯塔"></p>
-<p><img src="https://img0.baidu.com/it/u=3440708810,3442918705&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img0.baidu.com/it/u=3440708810,3442918705&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="颠倒时空"></p>
-<p><img src="https://img1.baidu.com/it/u=872134080,2905781283&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=872134080,2905781283&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="大寒"></p>
-<p><img src="https://img1.baidu.com/it/u=1511941592,1801635068&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=1511941592,1801635068&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="粉色"></p>
-<p><img src="https://img1.baidu.com/it/u=2097372425,2422966379&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=2097372425,2422966379&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="珍珠"></p>
-<p><img src="https://img0.baidu.com/it/u=1656587050,3930583270&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img0.baidu.com/it/u=1656587050,3930583270&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="水泡"></p>
-<p><img src="https://img0.baidu.com/it/u=3421760785,1781416260&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img0.baidu.com/it/u=3421760785,1781416260&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="花草日历"></p>
-<p><img src="https://img1.baidu.com/it/u=2643860120,1785013409&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=2643860120,1785013409&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="船舰"></p>
-<p><img src="https://img2.baidu.com/it/u=3547004283,1966895282&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img2.baidu.com/it/u=3547004283,1966895282&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="流体"></p>
-<p><img src="https://img1.baidu.com/it/u=1692648092,2998825096&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=1692648092,2998825096&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="跑车"></p>
-<p><img src="https://img2.baidu.com/it/u=2899977724,4160359019&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img2.baidu.com/it/u=2899977724,4160359019&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="鹤"></p>
-<p><img src="https://img1.baidu.com/it/u=4094397582,1558263522&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=4094397582,1558263522&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="2022"></p>
-]]></content>
-      <categories>
-        <category>壁纸</category>
-      </categories>
-      <tags>
-        <tag>fariy</tag>
       </tags>
   </entry>
   <entry>
@@ -3503,56 +3503,6 @@ h1,h2,h3,h4,h5,h6{
       </tags>
   </entry>
   <entry>
-    <title>hexo之评论系统——giscus</title>
-    <url>/2022/07/31/hexo/hexo%E4%B9%8B%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94giscus/</url>
-    <content><![CDATA[<p>本篇主要讲的是 hexo 主题 volantis 的评论系统相关的 giscus</p>
-<h1 id="一、评论系统的选择-giscus"><a href="#一、评论系统的选择-giscus" class="headerlink" title="一、评论系统的选择 giscus"></a>一、评论系统的选择 giscus</h1><h2 id="1-1-打开文件-config-volantis-yml，搜索-comments-评论部分，可以看到这里选择的是-giscus"><a href="#1-1-打开文件-config-volantis-yml，搜索-comments-评论部分，可以看到这里选择的是-giscus" class="headerlink" title="1.1 打开文件_config.volantis.yml，搜索 comments 评论部分，可以看到这里选择的是 giscus"></a>1.1 打开文件_config.volantis.yml，搜索 comments 评论部分，可以看到这里选择的是 giscus</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">comments:</span><br><span class="line">  title: &lt;i class=&#x27;fa-solid fa-comments&#x27;&gt;&lt;/i&gt; 评论</span><br><span class="line">  subtitle:</span><br><span class="line">  service: giscus</span><br><span class="line">  # 可选评论系统 #</span><br></pre></td></tr></table></figure>
-
-<h2 id="1-2-继续搜索-giscus，显示需要配置一些-repo-x2F-repo-id-等参数"><a href="#1-2-继续搜索-giscus，显示需要配置一些-repo-x2F-repo-id-等参数" class="headerlink" title="1.2 继续搜索 giscus，显示需要配置一些 repo&#x2F;repo-id 等参数"></a>1.2 继续搜索 giscus，显示需要配置一些 repo&#x2F;repo-id 等参数</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># giscus</span><br><span class="line"># https://giscus.app</span><br><span class="line"># https://github.com/laymonage/giscus</span><br><span class="line">giscus:</span><br><span class="line">  # 以下配置按照 yml 格式增删填写即可</span><br><span class="line">  repo: txw1314/comment-giscus</span><br><span class="line">  repo-id: R_kgDOHvE8vw</span><br><span class="line">  category: Comments</span><br><span class="line">  category-id: DIC_kwDOHvE8v84CQgFl</span><br><span class="line">  mapping: &quot;title&quot;</span><br><span class="line">  reactions-enabled: &quot;1&quot;</span><br><span class="line">  emit-metadata: &quot;0&quot;</span><br><span class="line">  position: &quot;top&quot;</span><br><span class="line">  loading: &quot;lazy&quot;</span><br><span class="line">  crossorigin: &quot;anonymous&quot;</span><br><span class="line">  lang: &quot;zh-CN&quot;</span><br><span class="line">  # 以上配置按照 yml 格式增删填写即可</span><br></pre></td></tr></table></figure>
-
-<h1 id="二、如何获取-giscus-的相关配置"><a href="#二、如何获取-giscus-的相关配置" class="headerlink" title="二、如何获取 giscus 的相关配置"></a>二、如何获取 giscus 的相关配置</h1><h2 id="2-1-在-github-的操作"><a href="#2-1-在-github-的操作" class="headerlink" title="2.1 在 github 的操作"></a>2.1 在 github 的操作</h2><h3 id="2-1-1-新建一个关于评论的仓库"><a href="#2-1-1-新建一个关于评论的仓库" class="headerlink" title="2.1.1 新建一个关于评论的仓库"></a>2.1.1 新建一个关于评论的仓库</h3><p>我这里命名的是 comment-giscus,点击 Setting</p>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220102126.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220102126.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220102126"></p>
-<h3 id="2-1-2-继续往下滚动到-Features，勾选-Wikis"><a href="#2-1-2-继续往下滚动到-Features，勾选-Wikis" class="headerlink" title="2.1.2 继续往下滚动到 Features，勾选 Wikis"></a>2.1.2 继续往下滚动到 Features，勾选 Wikis</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220132464.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220132464.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220132464"></p>
-<h3 id="2-1-3-继续滚动，勾选-Discussions。"><a href="#2-1-3-继续滚动，勾选-Discussions。" class="headerlink" title="2.1.3 继续滚动，勾选 Discussions。"></a>2.1.3 继续滚动，勾选 Discussions。</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220200017.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220200017.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220200017"></p>
-<h2 id="2-2-在-GitHub-代码库上的讨论页面创建一个类别"><a href="#2-2-在-GitHub-代码库上的讨论页面创建一个类别" class="headerlink" title="2.2 在 GitHub 代码库上的讨论页面创建一个类别"></a>2.2 在 GitHub 代码库上的讨论页面创建一个类别</h2><blockquote>
-<p>比如 “Comments（评论）”——或者选择现有的类别。</p>
-</blockquote>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220348443.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220348443.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220348443"></p>
-<h3 id="2-2-1-如果没有，那就新建类别"><a href="#2-2-1-如果没有，那就新建类别" class="headerlink" title="2.2.1 如果没有，那就新建类别"></a>2.2.1 如果没有，那就新建类别</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220447606.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220447606.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220447606"></p>
-<h3 id="2-2-2-填写-title-和详情，点击-create-创建完成"><a href="#2-2-2-填写-title-和详情，点击-create-创建完成" class="headerlink" title="2.2.2 填写 title 和详情，点击 create 创建完成"></a>2.2.2 填写 title 和详情，点击 create 创建完成</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220619536.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220619536.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220619536"></p>
-<h3 id="2-2-3-创建完成，分类里面有了我们新增的分类"><a href="#2-2-3-创建完成，分类里面有了我们新增的分类" class="headerlink" title="2.2.3 创建完成，分类里面有了我们新增的分类"></a>2.2.3 创建完成，分类里面有了我们新增的分类</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220734420.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220734420.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220734420"></p>
-<h2 id="2-3-转到-https-github-com-apps-giscus，按照提示操作，并仅授予对选定代码库的访问权限。"><a href="#2-3-转到-https-github-com-apps-giscus，按照提示操作，并仅授予对选定代码库的访问权限。" class="headerlink" title="2.3 转到 https://github.com/apps/giscus，按照提示操作，并仅授予对选定代码库的访问权限。"></a>2.3 转到 <a href="https://github.com/apps/giscus%EF%BC%8C%E6%8C%89%E7%85%A7%E6%8F%90%E7%A4%BA%E6%93%8D%E4%BD%9C%EF%BC%8C%E5%B9%B6%E4%BB%85%E6%8E%88%E4%BA%88%E5%AF%B9%E9%80%89%E5%AE%9A%E4%BB%A3%E7%A0%81%E5%BA%93%E7%9A%84%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E3%80%82">https://github.com/apps/giscus，按照提示操作，并仅授予对选定代码库的访问权限。</a></h2><h3 id="2-3-1-安装-giscus"><a href="#2-3-1-安装-giscus" class="headerlink" title="2.3.1 安装 giscus"></a>2.3.1 安装 giscus</h3><blockquote>
-<p>在根目录安装 giscus : <code>npm install giscus</code></p>
-</blockquote>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220808104.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220808104.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220808104"></p>
-<h3 id="2-3-2-选择建立的评论仓库"><a href="#2-3-2-选择建立的评论仓库" class="headerlink" title="2.3.2 选择建立的评论仓库"></a>2.3.2 选择建立的评论仓库</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220955798.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220955798.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220955798"></p>
-<h3 id="2-3-3-确认账号密码"><a href="#2-3-3-确认账号密码" class="headerlink" title="2.3.3 确认账号密码"></a>2.3.3 确认账号密码</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221013850.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221013850.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221013850"></p>
-<h3 id="2-3-4-选择完成"><a href="#2-3-4-选择完成" class="headerlink" title="2.3.4 选择完成"></a>2.3.4 选择完成</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221043339.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221043339.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221043339"></p>
-<h2 id="2-4-在-giscus-的操作，我们需要配置-giscus-的小部件。"><a href="#2-4-在-giscus-的操作，我们需要配置-giscus-的小部件。" class="headerlink" title="2.4 在 giscus 的操作，我们需要配置 giscus 的小部件。"></a>2.4 在 giscus 的操作，我们需要配置 giscus 的小部件。</h2><blockquote>
-<p>打开网页：<a href="https://giscus.app/zh-CN">giscus</a></p>
-</blockquote>
-<h3 id="2-4-1-选择语言和仓库，"><a href="#2-4-1-选择语言和仓库，" class="headerlink" title="2.4.1 选择语言和仓库，"></a>2.4.1 选择语言和仓库，</h3><p>输入之前 github 创建仓库名称，如用<code>username/reponame</code>，这里包括用户名和仓库名称，</p>
-<blockquote>
-<p>注意&#x2F;前后不能有空格，不能输错，否则下面会提示报错</p>
-</blockquote>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221204482.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221204482.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221204482"></p>
-<h3 id="2-4-2-页面映射关系，这里我选择的是第三个"><a href="#2-4-2-页面映射关系，这里我选择的是第三个" class="headerlink" title="2.4.2 页面映射关系，这里我选择的是第三个"></a>2.4.2 页面映射关系，这里我选择的是第三个</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221317913.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221317913.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221317913"></p>
-<h3 id="2-4-3-然后选择-Discussion-分类和特性"><a href="#2-4-3-然后选择-Discussion-分类和特性" class="headerlink" title="2.4.3 然后选择 Discussion 分类和特性"></a>2.4.3 然后选择 Discussion 分类和特性</h3><p>分类选择我们上面新建的分类，特性我选择了箭头不两个，也可不选，主题随便选一个就行，不选也没关系这个不影响</p>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221551343.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221551343.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221551343"></p>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221621379.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221621379.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221621379"></p>
-<h3 id="2-4-4-启用-giscus"><a href="#2-4-4-启用-giscus" class="headerlink" title="2.4.4 启用 giscus"></a>2.4.4 启用 giscus</h3><p>一切就绪之后，Giscus 将根据你的设置生成一个脚本标签，这就是我们想要的 giscus 的配置信息了。你可以将其粘贴到你的代码中，记得把这个保存下来，不然还要在操作一下这步骤重新生成了</p>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221745879.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221745879.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221745879"></p>
-<h2 id="这是最终结果"><a href="#这是最终结果" class="headerlink" title="这是最终结果"></a>这是最终结果</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221831472.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221831472.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221831472"></p>
-]]></content>
-      <categories>
-        <category>Hexo系列</category>
-      </categories>
-      <tags>
-        <tag>评论系统</tag>
-        <tag>giscus</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexo之评论系统——twikoo</title>
     <url>/2022/08/02/hexo/hexo%E4%B9%8B%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94twiko/</url>
     <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>Hexo 博客里面支持的评论系统有：Disqus、Disqusjs、Livere、Gitalk、Valine、Waline、Utterances、Facebook Comments、Twikoo、Giscus，这里面有的评论有的是国外的服务器、有的有广告，本文要讲的 Twikoo 是在 butterfly3.3 之后支持的，它支持邮件提醒、微信提醒等功能，还是非常好用的。</p>
@@ -3604,19 +3554,53 @@ h1,h2,h3,h4,h5,h6{
       </tags>
   </entry>
   <entry>
-    <title>PicGo+typora上传图片失败报422的原因及解决方法</title>
-    <url>/2022/08/03/picgo/PicGo+typora%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%A4%B1%E8%B4%A5%E6%8A%A5422%E7%9A%84%E5%8E%9F%E5%9B%A0%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<p>picgo 用 github 作图床，使用 typora 上传图，出现 StatusCodeError: 422 的原因及解决方法</p>
-<h3 id="我在使用过程中-PicGo-出现了-StatusCodeError-422-的错误，上传图片失败。通过百度得知是以下原因造成的"><a href="#我在使用过程中-PicGo-出现了-StatusCodeError-422-的错误，上传图片失败。通过百度得知是以下原因造成的" class="headerlink" title="我在使用过程中 PicGo 出现了 StatusCodeError: 422 的错误，上传图片失败。通过百度得知是以下原因造成的"></a>我在使用过程中 PicGo 出现了 StatusCodeError: 422 的错误，上传图片失败。通过百度得知是以下原因造成的</h3><blockquote>
-<p><strong>PicGo 目前不支持在 gitbub 上上传同名文件，上传同名文件就会报错，即使是两张不同的图片。</strong></p>
+    <title>hexo之评论系统——giscus</title>
+    <url>/2022/07/31/hexo/hexo%E4%B9%8B%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94giscus/</url>
+    <content><![CDATA[<p>本篇主要讲的是 hexo 主题 volantis 的评论系统相关的 giscus</p>
+<h1 id="一、评论系统的选择-giscus"><a href="#一、评论系统的选择-giscus" class="headerlink" title="一、评论系统的选择 giscus"></a>一、评论系统的选择 giscus</h1><h2 id="1-1-打开文件-config-volantis-yml，搜索-comments-评论部分，可以看到这里选择的是-giscus"><a href="#1-1-打开文件-config-volantis-yml，搜索-comments-评论部分，可以看到这里选择的是-giscus" class="headerlink" title="1.1 打开文件_config.volantis.yml，搜索 comments 评论部分，可以看到这里选择的是 giscus"></a>1.1 打开文件_config.volantis.yml，搜索 comments 评论部分，可以看到这里选择的是 giscus</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">comments:</span><br><span class="line">  title: &lt;i class=&#x27;fa-solid fa-comments&#x27;&gt;&lt;/i&gt; 评论</span><br><span class="line">  subtitle:</span><br><span class="line">  service: giscus</span><br><span class="line">  # 可选评论系统 #</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-2-继续搜索-giscus，显示需要配置一些-repo-x2F-repo-id-等参数"><a href="#1-2-继续搜索-giscus，显示需要配置一些-repo-x2F-repo-id-等参数" class="headerlink" title="1.2 继续搜索 giscus，显示需要配置一些 repo&#x2F;repo-id 等参数"></a>1.2 继续搜索 giscus，显示需要配置一些 repo&#x2F;repo-id 等参数</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># giscus</span><br><span class="line"># https://giscus.app</span><br><span class="line"># https://github.com/laymonage/giscus</span><br><span class="line">giscus:</span><br><span class="line">  # 以下配置按照 yml 格式增删填写即可</span><br><span class="line">  repo: txw1314/comment-giscus</span><br><span class="line">  repo-id: R_kgDOHvE8vw</span><br><span class="line">  category: Comments</span><br><span class="line">  category-id: DIC_kwDOHvE8v84CQgFl</span><br><span class="line">  mapping: &quot;title&quot;</span><br><span class="line">  reactions-enabled: &quot;1&quot;</span><br><span class="line">  emit-metadata: &quot;0&quot;</span><br><span class="line">  position: &quot;top&quot;</span><br><span class="line">  loading: &quot;lazy&quot;</span><br><span class="line">  crossorigin: &quot;anonymous&quot;</span><br><span class="line">  lang: &quot;zh-CN&quot;</span><br><span class="line">  # 以上配置按照 yml 格式增删填写即可</span><br></pre></td></tr></table></figure>
+
+<h1 id="二、如何获取-giscus-的相关配置"><a href="#二、如何获取-giscus-的相关配置" class="headerlink" title="二、如何获取 giscus 的相关配置"></a>二、如何获取 giscus 的相关配置</h1><h2 id="2-1-在-github-的操作"><a href="#2-1-在-github-的操作" class="headerlink" title="2.1 在 github 的操作"></a>2.1 在 github 的操作</h2><h3 id="2-1-1-新建一个关于评论的仓库"><a href="#2-1-1-新建一个关于评论的仓库" class="headerlink" title="2.1.1 新建一个关于评论的仓库"></a>2.1.1 新建一个关于评论的仓库</h3><p>我这里命名的是 comment-giscus,点击 Setting</p>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220102126.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220102126.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220102126"></p>
+<h3 id="2-1-2-继续往下滚动到-Features，勾选-Wikis"><a href="#2-1-2-继续往下滚动到-Features，勾选-Wikis" class="headerlink" title="2.1.2 继续往下滚动到 Features，勾选 Wikis"></a>2.1.2 继续往下滚动到 Features，勾选 Wikis</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220132464.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220132464.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220132464"></p>
+<h3 id="2-1-3-继续滚动，勾选-Discussions。"><a href="#2-1-3-继续滚动，勾选-Discussions。" class="headerlink" title="2.1.3 继续滚动，勾选 Discussions。"></a>2.1.3 继续滚动，勾选 Discussions。</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220200017.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220200017.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220200017"></p>
+<h2 id="2-2-在-GitHub-代码库上的讨论页面创建一个类别"><a href="#2-2-在-GitHub-代码库上的讨论页面创建一个类别" class="headerlink" title="2.2 在 GitHub 代码库上的讨论页面创建一个类别"></a>2.2 在 GitHub 代码库上的讨论页面创建一个类别</h2><blockquote>
+<p>比如 “Comments（评论）”——或者选择现有的类别。</p>
 </blockquote>
-<p>解决方式也很简单，Picgo 开启上传时重命名和时间戳重命名就可以结局，或者把 github 里面已经有的同名文件删除，都可以解决这个问题。</p>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220348443.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220348443.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220348443"></p>
+<h3 id="2-2-1-如果没有，那就新建类别"><a href="#2-2-1-如果没有，那就新建类别" class="headerlink" title="2.2.1 如果没有，那就新建类别"></a>2.2.1 如果没有，那就新建类别</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220447606.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220447606.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220447606"></p>
+<h3 id="2-2-2-填写-title-和详情，点击-create-创建完成"><a href="#2-2-2-填写-title-和详情，点击-create-创建完成" class="headerlink" title="2.2.2 填写 title 和详情，点击 create 创建完成"></a>2.2.2 填写 title 和详情，点击 create 创建完成</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220619536.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220619536.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220619536"></p>
+<h3 id="2-2-3-创建完成，分类里面有了我们新增的分类"><a href="#2-2-3-创建完成，分类里面有了我们新增的分类" class="headerlink" title="2.2.3 创建完成，分类里面有了我们新增的分类"></a>2.2.3 创建完成，分类里面有了我们新增的分类</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220734420.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220734420.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220734420"></p>
+<h2 id="2-3-转到-https-github-com-apps-giscus，按照提示操作，并仅授予对选定代码库的访问权限。"><a href="#2-3-转到-https-github-com-apps-giscus，按照提示操作，并仅授予对选定代码库的访问权限。" class="headerlink" title="2.3 转到 https://github.com/apps/giscus，按照提示操作，并仅授予对选定代码库的访问权限。"></a>2.3 转到 <a href="https://github.com/apps/giscus%EF%BC%8C%E6%8C%89%E7%85%A7%E6%8F%90%E7%A4%BA%E6%93%8D%E4%BD%9C%EF%BC%8C%E5%B9%B6%E4%BB%85%E6%8E%88%E4%BA%88%E5%AF%B9%E9%80%89%E5%AE%9A%E4%BB%A3%E7%A0%81%E5%BA%93%E7%9A%84%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E3%80%82">https://github.com/apps/giscus，按照提示操作，并仅授予对选定代码库的访问权限。</a></h2><h3 id="2-3-1-安装-giscus"><a href="#2-3-1-安装-giscus" class="headerlink" title="2.3.1 安装 giscus"></a>2.3.1 安装 giscus</h3><blockquote>
+<p>在根目录安装 giscus : <code>npm install giscus</code></p>
+</blockquote>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220808104.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220808104.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220808104"></p>
+<h3 id="2-3-2-选择建立的评论仓库"><a href="#2-3-2-选择建立的评论仓库" class="headerlink" title="2.3.2 选择建立的评论仓库"></a>2.3.2 选择建立的评论仓库</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220955798.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801220955798.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801220955798"></p>
+<h3 id="2-3-3-确认账号密码"><a href="#2-3-3-确认账号密码" class="headerlink" title="2.3.3 确认账号密码"></a>2.3.3 确认账号密码</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221013850.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221013850.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221013850"></p>
+<h3 id="2-3-4-选择完成"><a href="#2-3-4-选择完成" class="headerlink" title="2.3.4 选择完成"></a>2.3.4 选择完成</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221043339.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221043339.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221043339"></p>
+<h2 id="2-4-在-giscus-的操作，我们需要配置-giscus-的小部件。"><a href="#2-4-在-giscus-的操作，我们需要配置-giscus-的小部件。" class="headerlink" title="2.4 在 giscus 的操作，我们需要配置 giscus 的小部件。"></a>2.4 在 giscus 的操作，我们需要配置 giscus 的小部件。</h2><blockquote>
+<p>打开网页：<a href="https://giscus.app/zh-CN">giscus</a></p>
+</blockquote>
+<h3 id="2-4-1-选择语言和仓库，"><a href="#2-4-1-选择语言和仓库，" class="headerlink" title="2.4.1 选择语言和仓库，"></a>2.4.1 选择语言和仓库，</h3><p>输入之前 github 创建仓库名称，如用<code>username/reponame</code>，这里包括用户名和仓库名称，</p>
+<blockquote>
+<p>注意&#x2F;前后不能有空格，不能输错，否则下面会提示报错</p>
+</blockquote>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221204482.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221204482.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221204482"></p>
+<h3 id="2-4-2-页面映射关系，这里我选择的是第三个"><a href="#2-4-2-页面映射关系，这里我选择的是第三个" class="headerlink" title="2.4.2 页面映射关系，这里我选择的是第三个"></a>2.4.2 页面映射关系，这里我选择的是第三个</h3><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221317913.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221317913.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221317913"></p>
+<h3 id="2-4-3-然后选择-Discussion-分类和特性"><a href="#2-4-3-然后选择-Discussion-分类和特性" class="headerlink" title="2.4.3 然后选择 Discussion 分类和特性"></a>2.4.3 然后选择 Discussion 分类和特性</h3><p>分类选择我们上面新建的分类，特性我选择了箭头不两个，也可不选，主题随便选一个就行，不选也没关系这个不影响</p>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221551343.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221551343.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221551343"></p>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221621379.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221621379.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221621379"></p>
+<h3 id="2-4-4-启用-giscus"><a href="#2-4-4-启用-giscus" class="headerlink" title="2.4.4 启用 giscus"></a>2.4.4 启用 giscus</h3><p>一切就绪之后，Giscus 将根据你的设置生成一个脚本标签，这就是我们想要的 giscus 的配置信息了。你可以将其粘贴到你的代码中，记得把这个保存下来，不然还要在操作一下这步骤重新生成了</p>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221745879.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221745879.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221745879"></p>
+<h2 id="这是最终结果"><a href="#这是最终结果" class="headerlink" title="这是最终结果"></a>这是最终结果</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221831472.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801221831472.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220801221831472"></p>
 ]]></content>
       <categories>
-        <category>PicGo</category>
+        <category>Hexo系列</category>
       </categories>
       <tags>
-        <tag>PicGo</tag>
+        <tag>评论系统</tag>
+        <tag>giscus</tag>
       </tags>
   </entry>
   <entry>
@@ -3653,6 +3637,22 @@ h1,h2,h3,h4,h5,h6{
       </tags>
   </entry>
   <entry>
+    <title>PicGo+typora上传图片失败报422的原因及解决方法</title>
+    <url>/2022/08/03/picgo/PicGo+typora%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%A4%B1%E8%B4%A5%E6%8A%A5422%E7%9A%84%E5%8E%9F%E5%9B%A0%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<p>picgo 用 github 作图床，使用 typora 上传图，出现 StatusCodeError: 422 的原因及解决方法</p>
+<h3 id="我在使用过程中-PicGo-出现了-StatusCodeError-422-的错误，上传图片失败。通过百度得知是以下原因造成的"><a href="#我在使用过程中-PicGo-出现了-StatusCodeError-422-的错误，上传图片失败。通过百度得知是以下原因造成的" class="headerlink" title="我在使用过程中 PicGo 出现了 StatusCodeError: 422 的错误，上传图片失败。通过百度得知是以下原因造成的"></a>我在使用过程中 PicGo 出现了 StatusCodeError: 422 的错误，上传图片失败。通过百度得知是以下原因造成的</h3><blockquote>
+<p><strong>PicGo 目前不支持在 gitbub 上上传同名文件，上传同名文件就会报错，即使是两张不同的图片。</strong></p>
+</blockquote>
+<p>解决方式也很简单，Picgo 开启上传时重命名和时间戳重命名就可以结局，或者把 github 里面已经有的同名文件删除，都可以解决这个问题。</p>
+]]></content>
+      <categories>
+        <category>PicGo</category>
+      </categories>
+      <tags>
+        <tag>PicGo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>PicGo相册不能显示问题及解决办法</title>
     <url>/2022/07/30/picgo/PicGo%E7%9B%B8%E5%86%8C%E4%B8%8D%E8%83%BD%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
     <content><![CDATA[<p>我的PicGo图片上传成功了，但是相册区域图片不能正常显示，如下图所示</p>
@@ -3682,6 +3682,20 @@ h1,h2,h3,h4,h5,h6{
       </tags>
   </entry>
   <entry>
+    <title>vscode蓝色波浪线消除办法</title>
+    <url>/2022/10/02/study/vscode%E8%93%9D%E8%89%B2%E6%B3%A2%E6%B5%AA%E7%BA%BF%E6%B6%88%E9%99%A4%E5%8A%9E%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="vscode蓝色波浪线"><a href="#vscode蓝色波浪线" class="headerlink" title="vscode蓝色波浪线"></a>vscode蓝色波浪线</h2><p>不知道什么时候，我的vscode页面单词有蓝色波浪线了，提示：<code>Unknow word</code>，估计是版本更新之后什么配置的问题。这个蓝色波浪线不影响代码编辑和运行，就是看着碍眼，强迫症表示很难受。一直以来我都是点击修复来消除的，无意中看到一个方法，亲测有效特此记录。直接上图，按图步骤操作就行了</p>
+<h3 id="1-打开设置，输入code-spell-出现如图所示"><a href="#1-打开设置，输入code-spell-出现如图所示" class="headerlink" title="1.打开设置，输入code spell,出现如图所示"></a>1.打开设置，输入<strong>code spell</strong>,出现如图所示</h3><p><img src="https://img-blog.csdnimg.cn/58490fbb2ff747a3b5ae8028fdcb8a94.png#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/58490fbb2ff747a3b5ae8028fdcb8a94.png#pic_center" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h3 id="2-参看如图所示区域，spell-Enabled前面的勾取消掉即可，左下角的问题描述也全部消失了"><a href="#2-参看如图所示区域，spell-Enabled前面的勾取消掉即可，左下角的问题描述也全部消失了" class="headerlink" title="2.参看如图所示区域，spell:Enabled前面的勾取消掉即可，左下角的问题描述也全部消失了"></a>2.参看如图所示区域，<strong>spell:Enabled前面的勾取消掉</strong>即可，左下角的问题描述也全部消失了</h3><p><img src="https://img-blog.csdnimg.cn/78164b0b8e8e4cb49a8b7edd1abaa2c0.png#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/78164b0b8e8e4cb49a8b7edd1abaa2c0.png#pic_center" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+]]></content>
+      <categories>
+        <category>vscode</category>
+      </categories>
+      <tags>
+        <tag>vscode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2022/07/28/study/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -3699,20 +3713,6 @@ h1,h2,h3,h4,h5,h6{
       </categories>
       <tags>
         <tag>个人</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>vscode蓝色波浪线消除办法</title>
-    <url>/2022/10/02/study/vscode%E8%93%9D%E8%89%B2%E6%B3%A2%E6%B5%AA%E7%BA%BF%E6%B6%88%E9%99%A4%E5%8A%9E%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="vscode蓝色波浪线"><a href="#vscode蓝色波浪线" class="headerlink" title="vscode蓝色波浪线"></a>vscode蓝色波浪线</h2><p>不知道什么时候，我的vscode页面单词有蓝色波浪线了，提示：<code>Unknow word</code>，估计是版本更新之后什么配置的问题。这个蓝色波浪线不影响代码编辑和运行，就是看着碍眼，强迫症表示很难受。一直以来我都是点击修复来消除的，无意中看到一个方法，亲测有效特此记录。直接上图，按图步骤操作就行了</p>
-<h3 id="1-打开设置，输入code-spell-出现如图所示"><a href="#1-打开设置，输入code-spell-出现如图所示" class="headerlink" title="1.打开设置，输入code spell,出现如图所示"></a>1.打开设置，输入<strong>code spell</strong>,出现如图所示</h3><p><img src="https://img-blog.csdnimg.cn/58490fbb2ff747a3b5ae8028fdcb8a94.png#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/58490fbb2ff747a3b5ae8028fdcb8a94.png#pic_center" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
-<h3 id="2-参看如图所示区域，spell-Enabled前面的勾取消掉即可，左下角的问题描述也全部消失了"><a href="#2-参看如图所示区域，spell-Enabled前面的勾取消掉即可，左下角的问题描述也全部消失了" class="headerlink" title="2.参看如图所示区域，spell:Enabled前面的勾取消掉即可，左下角的问题描述也全部消失了"></a>2.参看如图所示区域，<strong>spell:Enabled前面的勾取消掉</strong>即可，左下角的问题描述也全部消失了</h3><p><img src="https://img-blog.csdnimg.cn/78164b0b8e8e4cb49a8b7edd1abaa2c0.png#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/78164b0b8e8e4cb49a8b7edd1abaa2c0.png#pic_center" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
-]]></content>
-      <categories>
-        <category>vscode</category>
-      </categories>
-      <tags>
-        <tag>vscode</tag>
       </tags>
   </entry>
   <entry>
@@ -3757,53 +3757,6 @@ h1,h2,h3,h4,h5,h6{
       </categories>
       <tags>
         <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>phpMyAdmin最新下载安装教程</title>
-    <url>/2022/08/08/tutorial/phpMyAdmin%E6%9C%80%E6%96%B0%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<p>本篇文章主要为大家详细地介绍了<strong>PHPmyadmin 安装教程</strong>。</p>
-<p>PHPmyadmin 是我们在日常项目开发中常用的 MySQL 数据库管理器之一！那么如何快速下载安装好 PHPmyadmin 就是新手朋友们不可或缺的一项技能了，掌握了这个技能后无论你是需要重新搭建开发环境还是后期误删 PHPmyadmin，这些问题都能轻松解决。</p>
-<p>下面我们结合具体的图文信息为大家详细地介绍如何<strong>下载安装 PHPmyadmin</strong>以及<strong>PHPmyadmin 怎么登陆启动</strong>的方法！</p>
-<h2 id="一、下载-PHPmyadmin"><a href="#一、下载-PHPmyadmin" class="headerlink" title="一、下载 PHPmyadmin"></a><strong>一、下载 PHPmyadmin</strong></h2><p>打开 PHP 中文网中的 PHPmyadmin 工具下载链接：<a href="http://www.php.cn/xiazai/gongju/97%EF%BC%8C">http://www.php.cn/xiazai/gongju/97，</a></p>
-<p>点击本地下载，即可下载 PHPmyadmin 压缩包。</p>
-<h2 id="二、更改文件夹名及部分代码"><a href="#二、更改文件夹名及部分代码" class="headerlink" title="二、更改文件夹名及部分代码"></a><strong>二、更改文件夹名及部分代码</strong></h2><p>当我们下载了 PHPmyadmin 文件的压缩包后，将其解压到 c 盘的根目录下。并且把原先的文件夹名称改为 PHPmyadmin。</p>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005749.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005749.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="056a3d7632a8705ec09729b4d35c534.png"></p>
-<p>然后打开这个文件夹，找到 config.sample.inc.php，将其重命名为 config.inc.php。</p>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005315.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005315.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="cd60a47f5de42a9edf47c8f4e73dd8f.png"></p>
-<p>最后打开 config.inc.php 文件，找到这段代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$cfg[&#x27;blowfish_secret&#x27;] = &#x27;&#x27;</span><br></pre></td></tr></table></figure>
-
-<p>将其改为下面这么这段代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$cfg[&#x27;blowfish_secret&#x27;] = &#x27;c4ca4238a0b923820dcc509a6f75849b&#x27;;//一个长字符串密码就行</span><br></pre></td></tr></table></figure>
-
-<p>保存退出即可。</p>
-<h2 id="三、新建一个-phpmyadmin-conf-文件"><a href="#三、新建一个-phpmyadmin-conf-文件" class="headerlink" title="三、新建一个 phpmyadmin.conf 文件"></a><strong>三、</strong>新建一个 phpmyadmin.conf 文件</h2><p>首先我们要找到 PHP 环境中的 Apache 的 conf 文件夹，在里面直接新建一个 phpmyadmin.conf 文件。例如在 PHPstudy 环境下，conf 文件夹所在位置如下图：</p>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005122.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005122.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="b066f5c3fd472af38dd1c2b65e0ad1d.png"></p>
-<p>然后在这个新建的文件里，直接复制粘贴这段代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Alias /phpmyadmin &quot;c:/phpMyAdmin/&quot;</span><br><span class="line">&lt;Directory &quot;c:/phpMyAdmin/&quot;&gt;</span><br><span class="line">Options Indexes FollowSymLinks MultiViews</span><br><span class="line">AllowOverride all</span><br><span class="line">Require all granted</span><br><span class="line">php_admin_value upload_max_filesize 128M</span><br><span class="line">php_admin_value post_max_size 128M</span><br><span class="line">php_admin_value max_execution_time 360</span><br><span class="line">php_admin_value max_input_time 360</span><br><span class="line">&lt;/Directory&gt;</span><br></pre></td></tr></table></figure>
-
-<p>最后保存退出即可。</p>
-<h2 id="四、修改配置文件-httpd-conf"><a href="#四、修改配置文件-httpd-conf" class="headerlink" title="四、修改配置文件 httpd.conf"></a><strong>四、修改配置文件 httpd.conf</strong></h2><p>在 Apache 的 conf 文件夹里找到 httpd.conf 文件，打开文件，在文本末尾处加上这一段代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Include conf/phpmyadmin.conf</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005005.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005005.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="1c992fa891b68dd4aba763962da5b56.png"></p>
-<p>最后重启 Apache 即可。</p>
-<h2 id="五、登录启动-PHPmyadmin"><a href="#五、登录启动-PHPmyadmin" class="headerlink" title="五、登录启动 PHPmyadmin"></a><strong>五、登录启动 PHPmyadmin</strong></h2><p>经过上述四步后，就已经成功安装好了 PHPmyadmin，<strong>那怎样登录 PHPmyadmin？</strong>此时就可以访问这个链接地址：localhost&#x2F;phpmyadmin，或者 127.0.0.1&#x2F;phpmuadmin。<strong>注：链接里的 phpmyadmin 需小写。</strong></p>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005989.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005989.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="899675ce0dd44af512bb0763fc4c629.png"></p>
-<p>出现了 PHPmyadmin 登录界面：</p>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005543.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005543.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="827af5e216d26209744a042f4522924.png"></p>
-<p>一般初始的用户名密码都是 root，点击执行即可成功登陆启动 PHPmyadmin 的管理界面，如下图：</p>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090006977.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090006977.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="1536550810326318.png"></p>
-<p>那么以上文章就是关于 PHPmyadmin 下载安装的具体过程介绍，希望对有需要的朋友有所帮助！</p>
-<p>各位也可以参考对应的视频教程【<a href="http://www.php.cn/code/28299.html">下载安装以及配置线上数据库管理工具 PHPMyAdmin</a>】，此视频解说更加直观、浅显易懂！</p>
-<p>文章来源于：<a href="https://www.php.cn/jishu/mysql/409664.html">https://www.php.cn/jishu/mysql/409664.html</a></p>
-]]></content>
-      <categories>
-        <category>破解软件</category>
-      </categories>
-      <tags>
-        <tag>phpMyAdmin</tag>
       </tags>
   </entry>
   <entry>
@@ -3893,6 +3846,53 @@ h1,h2,h3,h4,h5,h6{
       </categories>
       <tags>
         <tag>typora</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>phpMyAdmin最新下载安装教程</title>
+    <url>/2022/08/08/tutorial/phpMyAdmin%E6%9C%80%E6%96%B0%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<p>本篇文章主要为大家详细地介绍了<strong>PHPmyadmin 安装教程</strong>。</p>
+<p>PHPmyadmin 是我们在日常项目开发中常用的 MySQL 数据库管理器之一！那么如何快速下载安装好 PHPmyadmin 就是新手朋友们不可或缺的一项技能了，掌握了这个技能后无论你是需要重新搭建开发环境还是后期误删 PHPmyadmin，这些问题都能轻松解决。</p>
+<p>下面我们结合具体的图文信息为大家详细地介绍如何<strong>下载安装 PHPmyadmin</strong>以及<strong>PHPmyadmin 怎么登陆启动</strong>的方法！</p>
+<h2 id="一、下载-PHPmyadmin"><a href="#一、下载-PHPmyadmin" class="headerlink" title="一、下载 PHPmyadmin"></a><strong>一、下载 PHPmyadmin</strong></h2><p>打开 PHP 中文网中的 PHPmyadmin 工具下载链接：<a href="http://www.php.cn/xiazai/gongju/97%EF%BC%8C">http://www.php.cn/xiazai/gongju/97，</a></p>
+<p>点击本地下载，即可下载 PHPmyadmin 压缩包。</p>
+<h2 id="二、更改文件夹名及部分代码"><a href="#二、更改文件夹名及部分代码" class="headerlink" title="二、更改文件夹名及部分代码"></a><strong>二、更改文件夹名及部分代码</strong></h2><p>当我们下载了 PHPmyadmin 文件的压缩包后，将其解压到 c 盘的根目录下。并且把原先的文件夹名称改为 PHPmyadmin。</p>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005749.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005749.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="056a3d7632a8705ec09729b4d35c534.png"></p>
+<p>然后打开这个文件夹，找到 config.sample.inc.php，将其重命名为 config.inc.php。</p>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005315.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005315.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="cd60a47f5de42a9edf47c8f4e73dd8f.png"></p>
+<p>最后打开 config.inc.php 文件，找到这段代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$cfg[&#x27;blowfish_secret&#x27;] = &#x27;&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>将其改为下面这么这段代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$cfg[&#x27;blowfish_secret&#x27;] = &#x27;c4ca4238a0b923820dcc509a6f75849b&#x27;;//一个长字符串密码就行</span><br></pre></td></tr></table></figure>
+
+<p>保存退出即可。</p>
+<h2 id="三、新建一个-phpmyadmin-conf-文件"><a href="#三、新建一个-phpmyadmin-conf-文件" class="headerlink" title="三、新建一个 phpmyadmin.conf 文件"></a><strong>三、</strong>新建一个 phpmyadmin.conf 文件</h2><p>首先我们要找到 PHP 环境中的 Apache 的 conf 文件夹，在里面直接新建一个 phpmyadmin.conf 文件。例如在 PHPstudy 环境下，conf 文件夹所在位置如下图：</p>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005122.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005122.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="b066f5c3fd472af38dd1c2b65e0ad1d.png"></p>
+<p>然后在这个新建的文件里，直接复制粘贴这段代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Alias /phpmyadmin &quot;c:/phpMyAdmin/&quot;</span><br><span class="line">&lt;Directory &quot;c:/phpMyAdmin/&quot;&gt;</span><br><span class="line">Options Indexes FollowSymLinks MultiViews</span><br><span class="line">AllowOverride all</span><br><span class="line">Require all granted</span><br><span class="line">php_admin_value upload_max_filesize 128M</span><br><span class="line">php_admin_value post_max_size 128M</span><br><span class="line">php_admin_value max_execution_time 360</span><br><span class="line">php_admin_value max_input_time 360</span><br><span class="line">&lt;/Directory&gt;</span><br></pre></td></tr></table></figure>
+
+<p>最后保存退出即可。</p>
+<h2 id="四、修改配置文件-httpd-conf"><a href="#四、修改配置文件-httpd-conf" class="headerlink" title="四、修改配置文件 httpd.conf"></a><strong>四、修改配置文件 httpd.conf</strong></h2><p>在 Apache 的 conf 文件夹里找到 httpd.conf 文件，打开文件，在文本末尾处加上这一段代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Include conf/phpmyadmin.conf</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005005.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005005.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="1c992fa891b68dd4aba763962da5b56.png"></p>
+<p>最后重启 Apache 即可。</p>
+<h2 id="五、登录启动-PHPmyadmin"><a href="#五、登录启动-PHPmyadmin" class="headerlink" title="五、登录启动 PHPmyadmin"></a><strong>五、登录启动 PHPmyadmin</strong></h2><p>经过上述四步后，就已经成功安装好了 PHPmyadmin，<strong>那怎样登录 PHPmyadmin？</strong>此时就可以访问这个链接地址：localhost&#x2F;phpmyadmin，或者 127.0.0.1&#x2F;phpmuadmin。<strong>注：链接里的 phpmyadmin 需小写。</strong></p>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005989.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005989.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="899675ce0dd44af512bb0763fc4c629.png"></p>
+<p>出现了 PHPmyadmin 登录界面：</p>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005543.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005543.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="827af5e216d26209744a042f4522924.png"></p>
+<p>一般初始的用户名密码都是 root，点击执行即可成功登陆启动 PHPmyadmin 的管理界面，如下图：</p>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090006977.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090006977.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="1536550810326318.png"></p>
+<p>那么以上文章就是关于 PHPmyadmin 下载安装的具体过程介绍，希望对有需要的朋友有所帮助！</p>
+<p>各位也可以参考对应的视频教程【<a href="http://www.php.cn/code/28299.html">下载安装以及配置线上数据库管理工具 PHPMyAdmin</a>】，此视频解说更加直观、浅显易懂！</p>
+<p>文章来源于：<a href="https://www.php.cn/jishu/mysql/409664.html">https://www.php.cn/jishu/mysql/409664.html</a></p>
+]]></content>
+      <categories>
+        <category>破解软件</category>
+      </categories>
+      <tags>
+        <tag>phpMyAdmin</tag>
       </tags>
   </entry>
 </search>
