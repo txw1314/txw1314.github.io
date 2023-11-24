@@ -491,6 +491,120 @@
       </tags>
   </entry>
   <entry>
+    <title>vue项目打包时的优化学习</title>
+    <url>/2022/11/04/vue%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E6%97%B6%E7%9A%84%E4%BC%98%E5%8C%96%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h3 id="1-项目优化"><a href="#1-项目优化" class="headerlink" title="1.项目优化"></a>1.项目优化</h3><h5 id="1-1-项目可优化的内容"><a href="#1-1-项目可优化的内容" class="headerlink" title="1.1 项目可优化的内容"></a>1.1 项目可优化的内容</h5><ul>
+<li>生成打包报告</li>
+<li>第三方库启用 CDN</li>
+<li>Element-ui 组件按需加载</li>
+<li>路由懒加载</li>
+<li>首页内容定制</li>
+</ul>
+<h4 id="1-2-页面顶部进度条效果"><a href="#1-2-页面顶部进度条效果" class="headerlink" title="1.2 页面顶部进度条效果"></a>1.2 页面顶部进度条效果</h4><p>使用 nprogess 第三方库</p>
+<p>在 axios 请求拦截器中触发<br>Nprogress.start()</p>
+<p>在 axios 响应拦截器中触发<br>Nprogress.done()</p>
+<h4 id="1-3-打包时的优化"><a href="#1-3-打包时的优化" class="headerlink" title="1.3 打包时的优化"></a>1.3 打包时的优化</h4><h5 id="1-3-1-清除-console"><a href="#1-3-1-清除-console" class="headerlink" title="1.3.1 清除 console"></a>1.3.1 清除 console</h5><p>使用 babel-plugin-transform-remove-console</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">安装：npm install babel-plugin-transform-<span class="keyword">remove</span>-console --save-dev</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">.babelrc:</span><br><span class="line"><span class="comment">// 全部清除console</span></span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;plugins&quot;</span>: [<span class="string">&quot;transform-remove-console&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="comment">// with options选择性删除</span></span><br><span class="line"></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;plugins&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">[</span><span class="string">&quot;transform-remove-console&quot;</span><span class="punctuation">,</span> <span class="punctuation">&#123;</span> <span class="attr">&quot;exclude&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;error&quot;</span><span class="punctuation">,</span> <span class="string">&quot;warn&quot;</span><span class="punctuation">]</span> <span class="punctuation">&#125;</span><span class="punctuation">]</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="1-3-2-区分开发和生产环境下使用-babel-plugin-transform-remove-console"><a href="#1-3-2-区分开发和生产环境下使用-babel-plugin-transform-remove-console" class="headerlink" title="1.3.2 区分开发和生产环境下使用 babel-plugin-transform-remove-console"></a>1.3.2 区分开发和生产环境下使用 babel-plugin-transform-remove-console</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// babel.config.js文件里</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义一个生产环境的插件数组</span></span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="variable">prodPlugins</span> <span class="operator">=</span> []</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果是生产环境则添加&#x27;transform-remove-console&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (process.env.NODE_ENV === <span class="string">&#x27;production&#x27;</span>) &#123;</span><br><span class="line"></span><br><span class="line">  prodPlugins.push(<span class="string">&#x27;transform-remove-console&#x27;</span>)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">module</span>.<span class="keyword">exports</span> = &#123;</span><br><span class="line"></span><br><span class="line">  presets: [</span><br><span class="line"></span><br><span class="line">    <span class="string">&#x27;@vue/cli-plugin-babel/preset&#x27;</span></span><br><span class="line"></span><br><span class="line">  ],</span><br><span class="line"></span><br><span class="line">  plugins: [</span><br><span class="line"></span><br><span class="line">    [</span><br><span class="line"></span><br><span class="line">      <span class="string">&#x27;component&#x27;</span>,</span><br><span class="line"></span><br><span class="line">      &#123;</span><br><span class="line"></span><br><span class="line">        libraryName: <span class="string">&#x27;element-ui&#x27;</span>,</span><br><span class="line"></span><br><span class="line">        styleLibraryName: <span class="string">&#x27;theme-chalk&#x27;</span></span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">    ],</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将生产环境的数组展开到配置中</span></span><br><span class="line"></span><br><span class="line">    ...prodPlugins</span><br><span class="line"></span><br><span class="line">  ]</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-4-生成打包报告"><a href="#1-4-生成打包报告" class="headerlink" title="1.4 生成打包报告"></a>1.4 生成打包报告</h4><p>打包时，为了直观地发现项目中存在的问题，可以生成打包报告。</p>
+<h5 id="1-4-1-通过命令行参数的形式生成报告"><a href="#1-4-1-通过命令行参数的形式生成报告" class="headerlink" title="1.4.1 通过命令行参数的形式生成报告"></a>1.4.1 通过命令行参数的形式生成报告</h5><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 通过vue-cli的命令选项可以生成打包报告</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// --report选项可以生成report.html以帮助分析报告内容</span></span><br><span class="line"></span><br><span class="line">vue-cli-service build --report</span><br></pre></td></tr></table></figure>
+
+<h5 id="1-4-2-通过可视化的-UI-面板直接查看报告"><a href="#1-4-2-通过可视化的-UI-面板直接查看报告" class="headerlink" title="1.4.2 通过可视化的 UI 面板直接查看报告"></a>1.4.2 通过可视化的 UI 面板直接查看报告</h5><p>通过仪表盘和分析面板可以看到加载速度和依赖项资源大小占比，从而进一步优化。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/24637569-62f27e814bd6fef6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp" class="lazyload" data-srcset="https://upload-images.jianshu.io/upload_images/24637569-62f27e814bd6fef6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<h5 id="1-5-通过-vue-config-js-修改-webpack-的默认配置"><a href="#1-5-通过-vue-config-js-修改-webpack-的默认配置" class="headerlink" title="1.5 通过 vue.config.js 修改 webpack 的默认配置"></a>1.5 通过 vue.config.js 修改 webpack 的默认配置</h5><p>vue-cli3.0+工具生成的项目，默认隐藏了所有 webpack 的配置项，这样做的目的时屏蔽项目中的所有配置，让重心放在项目功能和业务逻辑上，省去配置带了的各种繁琐配置事项。</p>
+<blockquote>
+<p>vue.config.js 官方文档：<a href="https://links.jianshu.com/go?to=https://cli.vuejs.org/zh/config/%23%E5%85%A8%E5%B1%80-cli-%E9%85%8D%E7%BD%AE">vue.config.js 官方文档</a></p>
+</blockquote>
+<h5 id="1-6-为开发模式与发布模式指定不同的打包入口"><a href="#1-6-为开发模式与发布模式指定不同的打包入口" class="headerlink" title="1.6 为开发模式与发布模式指定不同的打包入口"></a>1.6 为开发模式与发布模式指定不同的打包入口</h5><p>默认情况下，vue 项目中的开发模式和发布模式，共同使用哟个打包的入口文件（src&#x2F;main.js）。为了分离开发陌生和发布模式，可以指定不同的打包入口文件。</p>
+<ul>
+<li>开发模式的入口文件为 src&#x2F;main-dev.js</li>
+<li>生产模式的入口文件为 src&#x2F;main-prod.js</li>
+</ul>
+<h6 id="1-6-1-configureWebpack-和-chainWebpack"><a href="#1-6-1-configureWebpack-和-chainWebpack" class="headerlink" title="1.6.1 configureWebpack 和 chainWebpack"></a>1.6.1 configureWebpack 和 chainWebpack</h6><p>在 vue.config.js 中，新增 configureWebpack 和 chainWebpack 节点自定义打包配置。<br>configureWebpack 和 chainWebpack 作用相同。唯一的区别是修改方式不同：<br>① chainWebpack 链式编程形式，来改变 webpack 的默认配置<br>② configureWebpack 通过操作对象的形式，来改变 webpack 的默认配置</p>
+<blockquote>
+<p>参考 vue.config.js 官方文档：<a href="https://links.jianshu.com/go?to=https://cli.vuejs.org/zh/config/%23%E5%85%A8%E5%B1%80-cli-%E9%85%8D%E7%BD%AE">vue.config.js 官方文档</a></p>
+</blockquote>
+<h6 id="1-6-2-通过-chainWebpack-自定义打包入口"><a href="#1-6-2-通过-chainWebpack-自定义打包入口" class="headerlink" title="1.6.2 通过 chainWebpack 自定义打包入口"></a>1.6.2 通过 chainWebpack 自定义打包入口</h6><p>代码示列：</p>
+<figure class="highlight tsx"><table><tr><td class="code"><pre><span class="line"><span class="comment">// vue.config.js</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">chainWebpack</span>: <span class="function">(<span class="params">config</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">//发布模式</span></span><br><span class="line">    config.<span class="title function_">when</span>(process.<span class="property">env</span>.<span class="property">NODE_ENV</span> === <span class="string">&quot;production&quot;</span>, <span class="function">(<span class="params">config</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">//entry找到默认的打包入口，调用clear则是删除默认的打包入口</span></span><br><span class="line">      <span class="comment">//add添加新的打包入口</span></span><br><span class="line">      config.<span class="title function_">entry</span>(<span class="string">&quot;app&quot;</span>).<span class="title function_">clear</span>().<span class="title function_">add</span>(<span class="string">&quot;./src/main-prod.js&quot;</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">//开发模式</span></span><br><span class="line">    config.<span class="title function_">when</span>(process.<span class="property">env</span>.<span class="property">NODE_ENV</span> === <span class="string">&quot;development&quot;</span>, <span class="function">(<span class="params">config</span>) =&gt;</span> &#123;</span><br><span class="line">      config.<span class="title function_">entry</span>(<span class="string">&quot;app&quot;</span>).<span class="title function_">clear</span>().<span class="title function_">add</span>(<span class="string">&quot;./src/main-dev.js&quot;</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h5 id="1-7-通过-extrenals-加载外部-CDN-资源"><a href="#1-7-通过-extrenals-加载外部-CDN-资源" class="headerlink" title="1.7 通过 extrenals 加载外部 CDN 资源"></a>1.7 通过 extrenals 加载外部 CDN 资源</h5><p>默认情况下，通过 import 语法导入的第三方依赖包，最终会被打包合并到同一个文件中，从而导致打包成功后的文件体积过大。<br>解决办法：通过 webpack 的 externals 节点，来配置并加载外部的 CDN 资源，凡是声明在 externals 中的第三方依赖包，都不会被打包。<br><strong>步骤一：声明需要外部 CDN 的项目</strong></p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//使用externals设置排除项</span></span><br><span class="line">config.<span class="keyword">set</span>(<span class="string">&#x27;externals&#x27;</span>,&#123;</span><br><span class="line">  vue:<span class="string">&#x27;Vue&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;vue-router&#x27;</span>:<span class="string">&#x27;VueRouter&#x27;</span>,</span><br><span class="line">  axios:<span class="string">&#x27;axios&#x27;</span>,</span><br><span class="line">  lodash:<span class="string">&#x27;_&#x27;</span>,</span><br><span class="line">  echarts:<span class="string">&#x27;echarts&#x27;</span>,</span><br><span class="line">  nprogress:<span class="string">&#x27;NProgress&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;vue-quill-editor&#x27;</span>:<span class="string">&#x27;VueQuillEditor&#x27;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>步骤二：在 public&#x2F;index.html 文件头部添加 CDN 样式 css 资源</strong></p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- nprogress 的样式表文件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css&quot;</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 富文本编辑器 的样式表文件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.staticfile.org/quill/1.3.4/quill.core.min.css&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.staticfile.org/quill/1.3.4/quill.snow.min.css&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.staticfile.org/quill/1.3.4/quill.bubble.min.css&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>步骤三：在 public&#x2F;index.html 文件头部添加 CDN 样式 js 资源</strong></p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/vue/2.5.22/vue.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/vue-router/3.0.1/vue-router.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/axios/0.18.0/axios.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/lodash.js/4.17.11/lodash.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/echarts/4.1.0/echarts.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 富文本编辑器的 js 文件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/quill/1.3.4/quill.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vue-quill-editor@3.0.4/dist/vue-quill-editor.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="1-8-通过-CDN-优化-ElementUi-的打包"><a href="#1-8-通过-CDN-优化-ElementUi-的打包" class="headerlink" title="1.8 通过 CDN 优化 ElementUi 的打包"></a>1.8 通过 CDN 优化 ElementUi 的打包</h5><p>操作流程如下：<br>① 在 main.js 入口文件，注释掉 element-ui 的加载代码<br>② 在 index.thml 的头部区域中，通过 CDN 加载 element-ui 的 js 和 css 样式</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- element-ui 的样式表文件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.staticfile.org/element-ui/2.8.2/theme-chalk/index.css&quot;</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- element-ui 的 js 文件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/element-ui/2.8.2/index.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="1-9-首页内容定制-按需渲染"><a href="#1-9-首页内容定制-按需渲染" class="headerlink" title="1.9 首页内容定制(按需渲染)"></a>1.9 首页内容定制(按需渲染)</h5><p>开发环境的首页和发布环境的首页展示内容的形式有所不同。<br>如开发环境中使用的是 import 加载第三方包，而发布环境则是使用 CDN，那么首页也需根据环境不同来进行不同的实现。<br>可以通过插件的方式来定制首页内容，打开 vue.config.js，编写代码如下：</p>
+<figure class="highlight tsx"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">    <span class="attr">chainWebpack</span>:<span class="function"><span class="params">config</span>=&gt;</span>&#123;</span><br><span class="line">        config.<span class="title function_">when</span>(process.<span class="property">env</span>.<span class="property">NODE_ENV</span> === <span class="string">&#x27;production&#x27;</span>,<span class="function"><span class="params">config</span>=&gt;</span>&#123;</span><br><span class="line">            ......</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 使用htmlWebpackPlugin插件</span></span><br><span class="line">            config.<span class="title function_">plugin</span>(<span class="string">&#x27;html&#x27;</span>).<span class="title function_">tap</span>(<span class="function"><span class="params">args</span>=&gt;</span>&#123;</span><br><span class="line">                <span class="comment">// 添加参数isProd，通过isProd来判断是否渲染</span></span><br><span class="line">                args[<span class="number">0</span>].<span class="property">isProd</span> = <span class="literal">true</span></span><br><span class="line">                <span class="keyword">return</span> args</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        config.<span class="title function_">when</span>(process.<span class="property">env</span>.<span class="property">NODE_ENV</span> === <span class="string">&#x27;development&#x27;</span>,<span class="function"><span class="params">config</span>=&gt;</span>&#123;</span><br><span class="line">            config.<span class="title function_">entry</span>(<span class="string">&#x27;app&#x27;</span>).<span class="title function_">clear</span>().<span class="title function_">add</span>(<span class="string">&#x27;./src/main-dev.js&#x27;</span>)</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 使用插件</span></span><br><span class="line">            config.<span class="title function_">plugin</span>(<span class="string">&#x27;html&#x27;</span>).<span class="title function_">tap</span>(<span class="function"><span class="params">args</span>=&gt;</span>&#123;</span><br><span class="line">                <span class="comment">// 添加参数isProd</span></span><br><span class="line">                args[<span class="number">0</span>].<span class="property">isProd</span> = <span class="literal">false</span></span><br><span class="line">                <span class="keyword">return</span> args</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后在 public&#x2F;index.html 中使用插件判断是否为发布环境并定制首页内容:</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width,initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;icon&quot;</span> <span class="attr">href</span>=<span class="string">&quot;&lt;%= BASE_URL %&gt;favicon.ico&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>&lt;%= htmlWebpackPlugin.options.isProd ? &#x27;&#x27; : &#x27;dev - &#x27; %&gt;电商后台管理系统<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    &lt;% if(htmlWebpackPlugin.options.isProd)&#123; %&gt;</span><br><span class="line">    <span class="comment">&lt;!-- nprogress 的样式表文件 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css&quot;</span> /&gt;</span></span><br><span class="line">    ........</span><br><span class="line">    <span class="comment">&lt;!-- element-ui 的 js 文件 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/element-ui/2.8.2/index.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    &lt;% &#125; %&gt;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-项目上线"><a href="#2-项目上线" class="headerlink" title="2. 项目上线"></a>2. 项目上线</h4><h5 id="2-1-项目上线相关配置"><a href="#2-1-项目上线相关配置" class="headerlink" title="2.1 项目上线相关配置"></a>2.1 项目上线相关配置</h5><ol>
+<li>通过 nodejs 创建 web 服务器</li>
+<li>开启 gzip 压缩配置</li>
+<li>配置 https 服务</li>
+<li>使用 pm2 管理应用</li>
+</ol>
+<h5 id="2-1-1-通过-node-创建-web-服务器"><a href="#2-1-1-通过-node-创建-web-服务器" class="headerlink" title="2.1.1 通过 node 创建 web 服务器"></a>2.1.1 通过 node 创建 web 服务器</h5><p>创建 node 项目，并安装 express，通过 express 快速下黄健 web 服务器，将打包的 vue 项目，托管为静态资源。<br>代码如下：</p>
+<figure class="highlight tsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&quot;express&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>();</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">use</span>(express.<span class="title function_">static</span>(<span class="string">&quot;./dist&quot;</span>));</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">listen</span>(<span class="number">8998</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;server running at http://127.0.0.1:8998&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h6 id="2-1-2-开启-gzip-配置"><a href="#2-1-2-开启-gzip-配置" class="headerlink" title="2.1.2 开启 gzip 配置"></a>2.1.2 开启 gzip 配置</h6><p>使用 gzip 可以减小文件体积，是传输速度更快。<br>可以通过服务端使用 express 做 gzip，配置如下：</p>
+<figure class="highlight tsx"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 安装compression ：npm i compression -D</span></span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&quot;express&quot;</span>);</span><br><span class="line"><span class="comment">// 导入包</span></span><br><span class="line"><span class="keyword">const</span> compression = <span class="built_in">require</span>(<span class="string">&quot;compression&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>();</span><br><span class="line"><span class="comment">// 启用中间件</span></span><br><span class="line">app.<span class="title function_">use</span>(<span class="title function_">compression</span>());</span><br><span class="line">app.<span class="title function_">use</span>(express.<span class="title function_">static</span>(<span class="string">&quot;./dist&quot;</span>));</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">listen</span>(<span class="number">8998</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;server running at http://127.0.0.1:8998&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h6 id="2-1-3-配置-HTTPS-服务"><a href="#2-1-3-配置-HTTPS-服务" class="headerlink" title="2.1.3 配置 HTTPS 服务"></a>2.1.3 配置 HTTPS 服务</h6><p>配置 https 服务一般是后台进行处理，前端开发人员了解即可。<br>首先，需要申请 SSL 证书，进入<a href="https://links.jianshu.com/go?to=https://freessl.cn">https://freessl.cn</a>官网<br>在后台导入证书，打开今天资料&#x2F;素材，复制素材中的两个文件到 vue_shop_server 中<br>打开 app.js 文件，编写代码导入证书，并开启 https 服务</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&quot;express&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> compression = <span class="built_in">require</span>(<span class="string">&quot;compression&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> https = <span class="built_in">require</span>(<span class="string">&quot;https&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&quot;fs&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>();</span><br><span class="line"><span class="comment">//创建配置对象设置公钥和私钥</span></span><br><span class="line"><span class="keyword">const</span> options = &#123;</span><br><span class="line">  <span class="attr">cert</span>: fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;./full_chain.pem&quot;</span>),</span><br><span class="line">  <span class="attr">key</span>: fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;./private.key&quot;</span>),</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">use</span>(<span class="title function_">compression</span>());</span><br><span class="line">app.<span class="title function_">use</span>(express.<span class="title function_">static</span>(<span class="string">&quot;./dist&quot;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// app.listen(8998,()=&gt;&#123;</span></span><br><span class="line"><span class="comment">//     console.log(&quot;server running at http://127.0.0.1:8998&quot;)</span></span><br><span class="line"><span class="comment">// &#125;)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//启动https服务</span></span><br><span class="line">https.<span class="title function_">createServer</span>(options, app).<span class="title function_">listen</span>(<span class="number">443</span>);</span><br></pre></td></tr></table></figure>
+
+<h6 id="2-1-4-使用-pm2-管理应用"><a href="#2-1-4-使用-pm2-管理应用" class="headerlink" title="2.1.4 使用 pm2 管理应用"></a>2.1.4 使用 pm2 管理应用</h6><p>打开 vue_shop_server 文件夹的终端，输入命令：npm i pm2 -g<br>使用 pm2 启动项目，在终端中输入命令：pm2 start app.js –name 自定义名称<br>查看项目列表命令：pm2 ls<br>重启项目：pm2 restart 自定义名称<br>停止项目：pm2 stop 自定义名称<br>删除项目：pm2 delete 自定义名称</p>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端优化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Win10自带软件卸载方法</title>
+    <url>/2022/10/15/win10%E5%8D%B8%E8%BD%BD%E8%87%AA%E5%B8%A6%E5%BA%94%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="Win10自带软件卸载方法【详细教程】"><a href="#Win10自带软件卸载方法【详细教程】" class="headerlink" title="Win10自带软件卸载方法【详细教程】"></a>Win10自带软件卸载方法【详细教程】</h1><p>Win10自带软件怎么卸载 ?Win10一般都会在系统中预装不少软件，下面为大家带来了 Win10自带软件卸载教程 ，一起来看看。</p>
+<p>　　使用命令卸载Win10内置软件</p>
+<p>　　Win10系统内置的这些应用，可以通过“命令行”方式进行卸载的，支持卸载的应用以及对应的命令如下：</p>
+<p>　　以管理员方式，打开 CMD 运行命名操作框，如，可以先按 Ctrl+X组合件，然后在搜索中，输入 CMD 然后在 命令提示符 中右键，点击以“管理员方式运行”，如下图所示。</p>
+<p>　　打开命令运行窗口后，如果要卸载自带的 XBOX 应用，只要在命名窗口中，粘贴上命名 get-appxpackage <em>Microsoft.XboxApp</em> | remove-appxpackage 然后按下回车键(Enter)确认就可以了。</p>
+<p>　　相关命令</p>
+<p>　　闹钟时钟：get-appxpackage <em>Microsoft.WindowsAlarms</em> | remove-appxpackage</p>
+<p>　　计算机：get-appxpackage <em>Microsoft.WindowsCalculator</em> | remove-appxpackage</p>
+<p>　　相机：get-appxpackage <em>Microsoft.WindowsCamera</em> | remove-appxpackage</p>
+<p>　　Groove音乐：get-appxpackage <em>Microsoft.ZuneMusic</em> | remove-appxpackage</p>
+<p>　　邮件和日历：get-appxpackage <em>microsoft.windowscommunicationsapps</em> | remove-appxpackage</p>
+<p>　　地图：get-appxpackage <em>Microsoft.WindowsMaps</em> | remove-appxpackage</p>
+<p>　　电影和电视：get-appxpackage <em>Microsoft.ZuneVideo</em> | remove-appxpackage</p>
+<p>　　Onenote：get-appxpackage <em>Microsoft.Office.OneNote</em> | remove-appxpackage</p>
+<p>　　人脉：get-appxpackage <em>Microsoft.People</em> | remove-appxpackage</p>
+<p>　　照片：get-appxpackage <em>Microsoft.Windows.Photos</em> | remove-appxpackage</p>
+<p>　　语音录音机：get-appxpackage *Microsoft.WindowsSoundRecorder * | remove-appxpackage</p>
+<p>　　XBOX：get-appxpackage <em>Microsoft.XboxApp</em> | remove-appxpackage</p>
+<p>　　注意事项</p>
+<p>　　这种方法，需要是管理员账户下运行。</p>
+<p>　　以上就是我介绍的 Win10自带软件怎么卸载 Win10自带软件卸载教程 ，希望对你有帮助。</p>
+]]></content>
+      <categories>
+        <category>win10</category>
+      </categories>
+  </entry>
+  <entry>
     <title>vue面试题01</title>
     <url>/2022/11/01/vue%E9%9D%A2%E8%AF%95%E9%A2%9801/</url>
     <content><![CDATA[<p>为了金三银四的跳槽季做准备，并且我是 <code>vue</code> 技术栈的，所以整理了若干个 <code>vue</code> 的面试题。</p>
@@ -1612,120 +1726,6 @@ methodsToPatch.<span class="hljs-title function_">forEach</span>(<span class="hl
       </tags>
   </entry>
   <entry>
-    <title>vue项目打包时的优化学习</title>
-    <url>/2022/11/04/vue%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E6%97%B6%E7%9A%84%E4%BC%98%E5%8C%96%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<h3 id="1-项目优化"><a href="#1-项目优化" class="headerlink" title="1.项目优化"></a>1.项目优化</h3><h5 id="1-1-项目可优化的内容"><a href="#1-1-项目可优化的内容" class="headerlink" title="1.1 项目可优化的内容"></a>1.1 项目可优化的内容</h5><ul>
-<li>生成打包报告</li>
-<li>第三方库启用 CDN</li>
-<li>Element-ui 组件按需加载</li>
-<li>路由懒加载</li>
-<li>首页内容定制</li>
-</ul>
-<h4 id="1-2-页面顶部进度条效果"><a href="#1-2-页面顶部进度条效果" class="headerlink" title="1.2 页面顶部进度条效果"></a>1.2 页面顶部进度条效果</h4><p>使用 nprogess 第三方库</p>
-<p>在 axios 请求拦截器中触发<br>Nprogress.start()</p>
-<p>在 axios 响应拦截器中触发<br>Nprogress.done()</p>
-<h4 id="1-3-打包时的优化"><a href="#1-3-打包时的优化" class="headerlink" title="1.3 打包时的优化"></a>1.3 打包时的优化</h4><h5 id="1-3-1-清除-console"><a href="#1-3-1-清除-console" class="headerlink" title="1.3.1 清除 console"></a>1.3.1 清除 console</h5><p>使用 babel-plugin-transform-remove-console</p>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">安装：npm install babel-plugin-transform-<span class="keyword">remove</span>-console --save-dev</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">.babelrc:</span><br><span class="line"><span class="comment">// 全部清除console</span></span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;plugins&quot;</span>: [<span class="string">&quot;transform-remove-console&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="comment">// with options选择性删除</span></span><br><span class="line"></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;plugins&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">[</span><span class="string">&quot;transform-remove-console&quot;</span><span class="punctuation">,</span> <span class="punctuation">&#123;</span> <span class="attr">&quot;exclude&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;error&quot;</span><span class="punctuation">,</span> <span class="string">&quot;warn&quot;</span><span class="punctuation">]</span> <span class="punctuation">&#125;</span><span class="punctuation">]</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="1-3-2-区分开发和生产环境下使用-babel-plugin-transform-remove-console"><a href="#1-3-2-区分开发和生产环境下使用-babel-plugin-transform-remove-console" class="headerlink" title="1.3.2 区分开发和生产环境下使用 babel-plugin-transform-remove-console"></a>1.3.2 区分开发和生产环境下使用 babel-plugin-transform-remove-console</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// babel.config.js文件里</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义一个生产环境的插件数组</span></span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="variable">prodPlugins</span> <span class="operator">=</span> []</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果是生产环境则添加&#x27;transform-remove-console&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (process.env.NODE_ENV === <span class="string">&#x27;production&#x27;</span>) &#123;</span><br><span class="line"></span><br><span class="line">  prodPlugins.push(<span class="string">&#x27;transform-remove-console&#x27;</span>)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">module</span>.<span class="keyword">exports</span> = &#123;</span><br><span class="line"></span><br><span class="line">  presets: [</span><br><span class="line"></span><br><span class="line">    <span class="string">&#x27;@vue/cli-plugin-babel/preset&#x27;</span></span><br><span class="line"></span><br><span class="line">  ],</span><br><span class="line"></span><br><span class="line">  plugins: [</span><br><span class="line"></span><br><span class="line">    [</span><br><span class="line"></span><br><span class="line">      <span class="string">&#x27;component&#x27;</span>,</span><br><span class="line"></span><br><span class="line">      &#123;</span><br><span class="line"></span><br><span class="line">        libraryName: <span class="string">&#x27;element-ui&#x27;</span>,</span><br><span class="line"></span><br><span class="line">        styleLibraryName: <span class="string">&#x27;theme-chalk&#x27;</span></span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">    ],</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将生产环境的数组展开到配置中</span></span><br><span class="line"></span><br><span class="line">    ...prodPlugins</span><br><span class="line"></span><br><span class="line">  ]</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="1-4-生成打包报告"><a href="#1-4-生成打包报告" class="headerlink" title="1.4 生成打包报告"></a>1.4 生成打包报告</h4><p>打包时，为了直观地发现项目中存在的问题，可以生成打包报告。</p>
-<h5 id="1-4-1-通过命令行参数的形式生成报告"><a href="#1-4-1-通过命令行参数的形式生成报告" class="headerlink" title="1.4.1 通过命令行参数的形式生成报告"></a>1.4.1 通过命令行参数的形式生成报告</h5><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 通过vue-cli的命令选项可以生成打包报告</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// --report选项可以生成report.html以帮助分析报告内容</span></span><br><span class="line"></span><br><span class="line">vue-cli-service build --report</span><br></pre></td></tr></table></figure>
-
-<h5 id="1-4-2-通过可视化的-UI-面板直接查看报告"><a href="#1-4-2-通过可视化的-UI-面板直接查看报告" class="headerlink" title="1.4.2 通过可视化的 UI 面板直接查看报告"></a>1.4.2 通过可视化的 UI 面板直接查看报告</h5><p>通过仪表盘和分析面板可以看到加载速度和依赖项资源大小占比，从而进一步优化。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/24637569-62f27e814bd6fef6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp" class="lazyload" data-srcset="https://upload-images.jianshu.io/upload_images/24637569-62f27e814bd6fef6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<h5 id="1-5-通过-vue-config-js-修改-webpack-的默认配置"><a href="#1-5-通过-vue-config-js-修改-webpack-的默认配置" class="headerlink" title="1.5 通过 vue.config.js 修改 webpack 的默认配置"></a>1.5 通过 vue.config.js 修改 webpack 的默认配置</h5><p>vue-cli3.0+工具生成的项目，默认隐藏了所有 webpack 的配置项，这样做的目的时屏蔽项目中的所有配置，让重心放在项目功能和业务逻辑上，省去配置带了的各种繁琐配置事项。</p>
-<blockquote>
-<p>vue.config.js 官方文档：<a href="https://links.jianshu.com/go?to=https://cli.vuejs.org/zh/config/%23%E5%85%A8%E5%B1%80-cli-%E9%85%8D%E7%BD%AE">vue.config.js 官方文档</a></p>
-</blockquote>
-<h5 id="1-6-为开发模式与发布模式指定不同的打包入口"><a href="#1-6-为开发模式与发布模式指定不同的打包入口" class="headerlink" title="1.6 为开发模式与发布模式指定不同的打包入口"></a>1.6 为开发模式与发布模式指定不同的打包入口</h5><p>默认情况下，vue 项目中的开发模式和发布模式，共同使用哟个打包的入口文件（src&#x2F;main.js）。为了分离开发陌生和发布模式，可以指定不同的打包入口文件。</p>
-<ul>
-<li>开发模式的入口文件为 src&#x2F;main-dev.js</li>
-<li>生产模式的入口文件为 src&#x2F;main-prod.js</li>
-</ul>
-<h6 id="1-6-1-configureWebpack-和-chainWebpack"><a href="#1-6-1-configureWebpack-和-chainWebpack" class="headerlink" title="1.6.1 configureWebpack 和 chainWebpack"></a>1.6.1 configureWebpack 和 chainWebpack</h6><p>在 vue.config.js 中，新增 configureWebpack 和 chainWebpack 节点自定义打包配置。<br>configureWebpack 和 chainWebpack 作用相同。唯一的区别是修改方式不同：<br>① chainWebpack 链式编程形式，来改变 webpack 的默认配置<br>② configureWebpack 通过操作对象的形式，来改变 webpack 的默认配置</p>
-<blockquote>
-<p>参考 vue.config.js 官方文档：<a href="https://links.jianshu.com/go?to=https://cli.vuejs.org/zh/config/%23%E5%85%A8%E5%B1%80-cli-%E9%85%8D%E7%BD%AE">vue.config.js 官方文档</a></p>
-</blockquote>
-<h6 id="1-6-2-通过-chainWebpack-自定义打包入口"><a href="#1-6-2-通过-chainWebpack-自定义打包入口" class="headerlink" title="1.6.2 通过 chainWebpack 自定义打包入口"></a>1.6.2 通过 chainWebpack 自定义打包入口</h6><p>代码示列：</p>
-<figure class="highlight tsx"><table><tr><td class="code"><pre><span class="line"><span class="comment">// vue.config.js</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">chainWebpack</span>: <span class="function">(<span class="params">config</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">//发布模式</span></span><br><span class="line">    config.<span class="title function_">when</span>(process.<span class="property">env</span>.<span class="property">NODE_ENV</span> === <span class="string">&quot;production&quot;</span>, <span class="function">(<span class="params">config</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">//entry找到默认的打包入口，调用clear则是删除默认的打包入口</span></span><br><span class="line">      <span class="comment">//add添加新的打包入口</span></span><br><span class="line">      config.<span class="title function_">entry</span>(<span class="string">&quot;app&quot;</span>).<span class="title function_">clear</span>().<span class="title function_">add</span>(<span class="string">&quot;./src/main-prod.js&quot;</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">//开发模式</span></span><br><span class="line">    config.<span class="title function_">when</span>(process.<span class="property">env</span>.<span class="property">NODE_ENV</span> === <span class="string">&quot;development&quot;</span>, <span class="function">(<span class="params">config</span>) =&gt;</span> &#123;</span><br><span class="line">      config.<span class="title function_">entry</span>(<span class="string">&quot;app&quot;</span>).<span class="title function_">clear</span>().<span class="title function_">add</span>(<span class="string">&quot;./src/main-dev.js&quot;</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h5 id="1-7-通过-extrenals-加载外部-CDN-资源"><a href="#1-7-通过-extrenals-加载外部-CDN-资源" class="headerlink" title="1.7 通过 extrenals 加载外部 CDN 资源"></a>1.7 通过 extrenals 加载外部 CDN 资源</h5><p>默认情况下，通过 import 语法导入的第三方依赖包，最终会被打包合并到同一个文件中，从而导致打包成功后的文件体积过大。<br>解决办法：通过 webpack 的 externals 节点，来配置并加载外部的 CDN 资源，凡是声明在 externals 中的第三方依赖包，都不会被打包。<br><strong>步骤一：声明需要外部 CDN 的项目</strong></p>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//使用externals设置排除项</span></span><br><span class="line">config.<span class="keyword">set</span>(<span class="string">&#x27;externals&#x27;</span>,&#123;</span><br><span class="line">  vue:<span class="string">&#x27;Vue&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;vue-router&#x27;</span>:<span class="string">&#x27;VueRouter&#x27;</span>,</span><br><span class="line">  axios:<span class="string">&#x27;axios&#x27;</span>,</span><br><span class="line">  lodash:<span class="string">&#x27;_&#x27;</span>,</span><br><span class="line">  echarts:<span class="string">&#x27;echarts&#x27;</span>,</span><br><span class="line">  nprogress:<span class="string">&#x27;NProgress&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;vue-quill-editor&#x27;</span>:<span class="string">&#x27;VueQuillEditor&#x27;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p><strong>步骤二：在 public&#x2F;index.html 文件头部添加 CDN 样式 css 资源</strong></p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- nprogress 的样式表文件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css&quot;</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 富文本编辑器 的样式表文件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.staticfile.org/quill/1.3.4/quill.core.min.css&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.staticfile.org/quill/1.3.4/quill.snow.min.css&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.staticfile.org/quill/1.3.4/quill.bubble.min.css&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>步骤三：在 public&#x2F;index.html 文件头部添加 CDN 样式 js 资源</strong></p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/vue/2.5.22/vue.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/vue-router/3.0.1/vue-router.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/axios/0.18.0/axios.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/lodash.js/4.17.11/lodash.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/echarts/4.1.0/echarts.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 富文本编辑器的 js 文件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/quill/1.3.4/quill.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vue-quill-editor@3.0.4/dist/vue-quill-editor.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="1-8-通过-CDN-优化-ElementUi-的打包"><a href="#1-8-通过-CDN-优化-ElementUi-的打包" class="headerlink" title="1.8 通过 CDN 优化 ElementUi 的打包"></a>1.8 通过 CDN 优化 ElementUi 的打包</h5><p>操作流程如下：<br>① 在 main.js 入口文件，注释掉 element-ui 的加载代码<br>② 在 index.thml 的头部区域中，通过 CDN 加载 element-ui 的 js 和 css 样式</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- element-ui 的样式表文件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.staticfile.org/element-ui/2.8.2/theme-chalk/index.css&quot;</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- element-ui 的 js 文件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/element-ui/2.8.2/index.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="1-9-首页内容定制-按需渲染"><a href="#1-9-首页内容定制-按需渲染" class="headerlink" title="1.9 首页内容定制(按需渲染)"></a>1.9 首页内容定制(按需渲染)</h5><p>开发环境的首页和发布环境的首页展示内容的形式有所不同。<br>如开发环境中使用的是 import 加载第三方包，而发布环境则是使用 CDN，那么首页也需根据环境不同来进行不同的实现。<br>可以通过插件的方式来定制首页内容，打开 vue.config.js，编写代码如下：</p>
-<figure class="highlight tsx"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">    <span class="attr">chainWebpack</span>:<span class="function"><span class="params">config</span>=&gt;</span>&#123;</span><br><span class="line">        config.<span class="title function_">when</span>(process.<span class="property">env</span>.<span class="property">NODE_ENV</span> === <span class="string">&#x27;production&#x27;</span>,<span class="function"><span class="params">config</span>=&gt;</span>&#123;</span><br><span class="line">            ......</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 使用htmlWebpackPlugin插件</span></span><br><span class="line">            config.<span class="title function_">plugin</span>(<span class="string">&#x27;html&#x27;</span>).<span class="title function_">tap</span>(<span class="function"><span class="params">args</span>=&gt;</span>&#123;</span><br><span class="line">                <span class="comment">// 添加参数isProd，通过isProd来判断是否渲染</span></span><br><span class="line">                args[<span class="number">0</span>].<span class="property">isProd</span> = <span class="literal">true</span></span><br><span class="line">                <span class="keyword">return</span> args</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        config.<span class="title function_">when</span>(process.<span class="property">env</span>.<span class="property">NODE_ENV</span> === <span class="string">&#x27;development&#x27;</span>,<span class="function"><span class="params">config</span>=&gt;</span>&#123;</span><br><span class="line">            config.<span class="title function_">entry</span>(<span class="string">&#x27;app&#x27;</span>).<span class="title function_">clear</span>().<span class="title function_">add</span>(<span class="string">&#x27;./src/main-dev.js&#x27;</span>)</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 使用插件</span></span><br><span class="line">            config.<span class="title function_">plugin</span>(<span class="string">&#x27;html&#x27;</span>).<span class="title function_">tap</span>(<span class="function"><span class="params">args</span>=&gt;</span>&#123;</span><br><span class="line">                <span class="comment">// 添加参数isProd</span></span><br><span class="line">                args[<span class="number">0</span>].<span class="property">isProd</span> = <span class="literal">false</span></span><br><span class="line">                <span class="keyword">return</span> args</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然后在 public&#x2F;index.html 中使用插件判断是否为发布环境并定制首页内容:</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width,initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;icon&quot;</span> <span class="attr">href</span>=<span class="string">&quot;&lt;%= BASE_URL %&gt;favicon.ico&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>&lt;%= htmlWebpackPlugin.options.isProd ? &#x27;&#x27; : &#x27;dev - &#x27; %&gt;电商后台管理系统<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    &lt;% if(htmlWebpackPlugin.options.isProd)&#123; %&gt;</span><br><span class="line">    <span class="comment">&lt;!-- nprogress 的样式表文件 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css&quot;</span> /&gt;</span></span><br><span class="line">    ........</span><br><span class="line">    <span class="comment">&lt;!-- element-ui 的 js 文件 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/element-ui/2.8.2/index.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    &lt;% &#125; %&gt;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="2-项目上线"><a href="#2-项目上线" class="headerlink" title="2. 项目上线"></a>2. 项目上线</h4><h5 id="2-1-项目上线相关配置"><a href="#2-1-项目上线相关配置" class="headerlink" title="2.1 项目上线相关配置"></a>2.1 项目上线相关配置</h5><ol>
-<li>通过 nodejs 创建 web 服务器</li>
-<li>开启 gzip 压缩配置</li>
-<li>配置 https 服务</li>
-<li>使用 pm2 管理应用</li>
-</ol>
-<h5 id="2-1-1-通过-node-创建-web-服务器"><a href="#2-1-1-通过-node-创建-web-服务器" class="headerlink" title="2.1.1 通过 node 创建 web 服务器"></a>2.1.1 通过 node 创建 web 服务器</h5><p>创建 node 项目，并安装 express，通过 express 快速下黄健 web 服务器，将打包的 vue 项目，托管为静态资源。<br>代码如下：</p>
-<figure class="highlight tsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&quot;express&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>();</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">use</span>(express.<span class="title function_">static</span>(<span class="string">&quot;./dist&quot;</span>));</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">listen</span>(<span class="number">8998</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;server running at http://127.0.0.1:8998&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h6 id="2-1-2-开启-gzip-配置"><a href="#2-1-2-开启-gzip-配置" class="headerlink" title="2.1.2 开启 gzip 配置"></a>2.1.2 开启 gzip 配置</h6><p>使用 gzip 可以减小文件体积，是传输速度更快。<br>可以通过服务端使用 express 做 gzip，配置如下：</p>
-<figure class="highlight tsx"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 安装compression ：npm i compression -D</span></span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&quot;express&quot;</span>);</span><br><span class="line"><span class="comment">// 导入包</span></span><br><span class="line"><span class="keyword">const</span> compression = <span class="built_in">require</span>(<span class="string">&quot;compression&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>();</span><br><span class="line"><span class="comment">// 启用中间件</span></span><br><span class="line">app.<span class="title function_">use</span>(<span class="title function_">compression</span>());</span><br><span class="line">app.<span class="title function_">use</span>(express.<span class="title function_">static</span>(<span class="string">&quot;./dist&quot;</span>));</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">listen</span>(<span class="number">8998</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;server running at http://127.0.0.1:8998&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h6 id="2-1-3-配置-HTTPS-服务"><a href="#2-1-3-配置-HTTPS-服务" class="headerlink" title="2.1.3 配置 HTTPS 服务"></a>2.1.3 配置 HTTPS 服务</h6><p>配置 https 服务一般是后台进行处理，前端开发人员了解即可。<br>首先，需要申请 SSL 证书，进入<a href="https://links.jianshu.com/go?to=https://freessl.cn">https://freessl.cn</a>官网<br>在后台导入证书，打开今天资料&#x2F;素材，复制素材中的两个文件到 vue_shop_server 中<br>打开 app.js 文件，编写代码导入证书，并开启 https 服务</p>
-<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&quot;express&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> compression = <span class="built_in">require</span>(<span class="string">&quot;compression&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> https = <span class="built_in">require</span>(<span class="string">&quot;https&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&quot;fs&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>();</span><br><span class="line"><span class="comment">//创建配置对象设置公钥和私钥</span></span><br><span class="line"><span class="keyword">const</span> options = &#123;</span><br><span class="line">  <span class="attr">cert</span>: fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;./full_chain.pem&quot;</span>),</span><br><span class="line">  <span class="attr">key</span>: fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;./private.key&quot;</span>),</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">use</span>(<span class="title function_">compression</span>());</span><br><span class="line">app.<span class="title function_">use</span>(express.<span class="title function_">static</span>(<span class="string">&quot;./dist&quot;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// app.listen(8998,()=&gt;&#123;</span></span><br><span class="line"><span class="comment">//     console.log(&quot;server running at http://127.0.0.1:8998&quot;)</span></span><br><span class="line"><span class="comment">// &#125;)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//启动https服务</span></span><br><span class="line">https.<span class="title function_">createServer</span>(options, app).<span class="title function_">listen</span>(<span class="number">443</span>);</span><br></pre></td></tr></table></figure>
-
-<h6 id="2-1-4-使用-pm2-管理应用"><a href="#2-1-4-使用-pm2-管理应用" class="headerlink" title="2.1.4 使用 pm2 管理应用"></a>2.1.4 使用 pm2 管理应用</h6><p>打开 vue_shop_server 文件夹的终端，输入命令：npm i pm2 -g<br>使用 pm2 启动项目，在终端中输入命令：pm2 start app.js –name 自定义名称<br>查看项目列表命令：pm2 ls<br>重启项目：pm2 restart 自定义名称<br>停止项目：pm2 stop 自定义名称<br>删除项目：pm2 delete 自定义名称</p>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>前端优化</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Win10自带软件卸载方法</title>
-    <url>/2022/10/15/win10%E5%8D%B8%E8%BD%BD%E8%87%AA%E5%B8%A6%E5%BA%94%E7%94%A8/</url>
-    <content><![CDATA[<h1 id="Win10自带软件卸载方法【详细教程】"><a href="#Win10自带软件卸载方法【详细教程】" class="headerlink" title="Win10自带软件卸载方法【详细教程】"></a>Win10自带软件卸载方法【详细教程】</h1><p>Win10自带软件怎么卸载 ?Win10一般都会在系统中预装不少软件，下面为大家带来了 Win10自带软件卸载教程 ，一起来看看。</p>
-<p>　　使用命令卸载Win10内置软件</p>
-<p>　　Win10系统内置的这些应用，可以通过“命令行”方式进行卸载的，支持卸载的应用以及对应的命令如下：</p>
-<p>　　以管理员方式，打开 CMD 运行命名操作框，如，可以先按 Ctrl+X组合件，然后在搜索中，输入 CMD 然后在 命令提示符 中右键，点击以“管理员方式运行”，如下图所示。</p>
-<p>　　打开命令运行窗口后，如果要卸载自带的 XBOX 应用，只要在命名窗口中，粘贴上命名 get-appxpackage <em>Microsoft.XboxApp</em> | remove-appxpackage 然后按下回车键(Enter)确认就可以了。</p>
-<p>　　相关命令</p>
-<p>　　闹钟时钟：get-appxpackage <em>Microsoft.WindowsAlarms</em> | remove-appxpackage</p>
-<p>　　计算机：get-appxpackage <em>Microsoft.WindowsCalculator</em> | remove-appxpackage</p>
-<p>　　相机：get-appxpackage <em>Microsoft.WindowsCamera</em> | remove-appxpackage</p>
-<p>　　Groove音乐：get-appxpackage <em>Microsoft.ZuneMusic</em> | remove-appxpackage</p>
-<p>　　邮件和日历：get-appxpackage <em>microsoft.windowscommunicationsapps</em> | remove-appxpackage</p>
-<p>　　地图：get-appxpackage <em>Microsoft.WindowsMaps</em> | remove-appxpackage</p>
-<p>　　电影和电视：get-appxpackage <em>Microsoft.ZuneVideo</em> | remove-appxpackage</p>
-<p>　　Onenote：get-appxpackage <em>Microsoft.Office.OneNote</em> | remove-appxpackage</p>
-<p>　　人脉：get-appxpackage <em>Microsoft.People</em> | remove-appxpackage</p>
-<p>　　照片：get-appxpackage <em>Microsoft.Windows.Photos</em> | remove-appxpackage</p>
-<p>　　语音录音机：get-appxpackage *Microsoft.WindowsSoundRecorder * | remove-appxpackage</p>
-<p>　　XBOX：get-appxpackage <em>Microsoft.XboxApp</em> | remove-appxpackage</p>
-<p>　　注意事项</p>
-<p>　　这种方法，需要是管理员账户下运行。</p>
-<p>　　以上就是我介绍的 Win10自带软件怎么卸载 Win10自带软件卸载教程 ，希望对你有帮助。</p>
-]]></content>
-      <categories>
-        <category>win10</category>
-      </categories>
-  </entry>
-  <entry>
     <title>临时邮箱</title>
     <url>/2022/10/27/%E4%B8%B4%E6%97%B6%E9%82%AE%E7%AE%B1/</url>
     <content><![CDATA[<h1 id="临时邮箱"><a href="#临时邮箱" class="headerlink" title="临时邮箱"></a>临时邮箱</h1><p>24小时邮箱：<a href="http://24mail.chacuo.net/">http://24mail.chacuo.net</a><br>60分钟邮箱：<a href="https://www.guerrillamail.com/zh/">https://www.guerrillamail.com/zh/</a><br>10 分钟邮箱：<a href="https://linshiyouxiang.net/">https://linshiyouxiang.net/</a><br>10 分钟邮箱：<a href="http://www.bccto.me/">http://www.bccto.me/</a><br>10 分钟邮箱：<a href="https://temp-mail.org/zh/">https://temp-mail.org/zh/</a><br>10 分钟邮箱：<a href="https://10minutemail.net/?lang=zh-cn">https://10minutemail.net/?lang=zh-cn</a><br>10 分钟邮箱：<a href="http://10minutemail.com/10MinuteMail/index.html">http://10minutemail.com/10MinuteMail/index.html</a><br>10 分钟邮箱：<a href="https://9em.org/">https://9em.org/</a><br>10分钟邮箱：<a href="https://mailtemp.net/">https://mailtemp.net</a><br>10分钟邮箱：<a href="https://email10min.com/">https://email10min.com</a><br>30分钟邮箱： <a href="https://shorttimemail.com/zh-Hans">https://shorttimemail.com/zh-Hans</a><br>60 分钟邮箱：<a href="https://www.moakt.com/zh/mail">https://www.moakt.com/zh/mail</a><br>60 分钟邮箱：<a href="http://www.nowmymail.com/">http://www.nowmymail.com</a><br>60 分钟邮箱：<a href="http://www.incognitomail.com/">http://www.incognitomail.com/</a><br>24 小时邮箱：<a href="http://24mail.chacuo.net/">http://24mail.chacuo.net/</a><br>5日邮箱：<a href="http://www.yopmail.com/zh/">http://www.yopmail.com/zh/</a><br>最多一个月：<a href="http://www.jetable.org/zh/index">http://www.jetable.org/zh/index</a><br>时间不知：<a href="http://www.mailinator.com/">http://www.mailinator.com</a><br>MailDrop：<a href="https://maildrop.cc/">https://maildrop.cc/</a><br>匿名发信：<a href="https://eskiimo.com/">https://eskiimo.com/</a><br>大概24小时：<a href="https://tempmail.altmails.com/">https://tempmail.altmails.com</a><br>小鸟临时邮箱：<a href="http://www.5-mail.com/">http://www.5-mail.com</a><br>10 分钟一次性电子邮件：<a href="https://10minemail.com/zh/">https://10minemail.com/zh/</a><br>10分钟临时一次性电子邮件：<a href="https://www.crazymailing.com/zh/">https://www.crazymailing.com/zh/</a> 如果有想保存的邮件可以转发到真实邮箱<br>一次性臨時電子郵件：<a href="https://www.mohmal.com/zh">https://www.mohmal.com/zh</a><br>EmailonDeck免费临时电子邮件：<a href="https://www.emailondeck.com/zh-cn/">https://www.emailondeck.com/zh-cn/</a><br>TrashSpam - 临时一次性电子邮件：<a href="https://trashspam.com/cn/">https://trashspam.com/cn/</a> 有效期：1天</p>
@@ -1970,143 +1970,6 @@ methodsToPatch.<span class="hljs-title function_">forEach</span>(<span class="hl
 <li>混合使用包管理器切记，不要重复下载依赖，<code>npm cnpm</code>下载依赖，一定要添加注明是什么依赖，是否全局安装</li>
 <li><code>yarn</code>和<code>npm i</code>两者，选择前者，原因在上面有提到，总体来说，<code>yarn</code>是不二选择，但是其他两者也不可缺少，比如<code>electron</code>这个依赖，使用<code>cnpm</code>就可以完美一键安装</li>
 </ul>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>前端跨域问题如何解决</title>
-    <url>/2022/11/01/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3/</url>
-    <content><![CDATA[<h1 id="前端跨域问题如何解决"><a href="#前端跨域问题如何解决" class="headerlink" title="前端跨域问题如何解决"></a>前端跨域问题如何解决</h1><p>咱们做前端的，平时跟后端对接接口那是必须的事情，但是可能很多同学忽略了一个对接过程中可能会发生的问题——跨域，那跨域到底是啥呢？为什么会跨域呢？又怎么才能解决呢？</p>
-<h3 id="为什么跨域？"><a href="#为什么跨域？" class="headerlink" title="为什么跨域？"></a>为什么跨域？</h3><p>为什么会出现跨域问题呢？那就不得不讲浏览器的同源策略了，它规定了协议号-域名-端口号这三者必须都相同才符合同源策略</p>
-<p>如有有一个不相同，就会出现跨域问题，不符合同源策略导致的后果有</p>
-<ul>
-<li><p>1、LocalStorge、SessionStorge、Cookie 等浏览器内存无法跨域访问</p>
-</li>
-<li><p>2、DOM 节点无法跨域操作</p>
-</li>
-<li><p>3、Ajax 请求无法跨域请求</p>
-</li>
-</ul>
-<blockquote>
-<p>注意点：一个 IP 是可以注册多个不同域名的，也就是多个域名可能指向同一个 IP，即使是这样，他们也不符合同源策略</p>
-</blockquote>
-<h3 id="跨域的时机？"><a href="#跨域的时机？" class="headerlink" title="跨域的时机？"></a>跨域的时机？</h3><p>跨域发生在什么时候呢？我考过很多位同学，得到了两种答案</p>
-<ul>
-<li>1、请求一发出就被浏览器的跨域报错拦下来了(大多数人回答)</li>
-<li>2、请求发出去到后端，后端返回数据，在浏览器接收后端数据时被浏览器的跨域报错拦下来<br>那到底是哪种呢？我们可以验证下，咱们先 npm i nodemon -g，然后创建一个 index.js，然后 nodemon index 起一个 node 服务</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.js  http://127.0.0.1:8000</span><br><span class="line"></span><br><span class="line">const http = require(&#x27;http&#x27;);</span><br><span class="line"></span><br><span class="line">const port = 8000;</span><br><span class="line"></span><br><span class="line">http.createServer(function (req, res) &#123;</span><br><span class="line">    const &#123; query &#125; = urllib.parse(req.url, true);</span><br><span class="line">    console.log(query.name)</span><br><span class="line">    console.log(&#x27;到后端喽&#x27;)</span><br><span class="line">    res.end(JSON.stringify(&#x27;林三心&#x27;));</span><br><span class="line">&#125;).listen(port, function () &#123;</span><br><span class="line">    console.log(&#x27;server is listening on port &#x27; + port);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>再创建一个 index.html，用来写前端的请求代码，咱们就写一个简单的 AJAX 请求吧</p>
-<p>&#x2F;&#x2F; index.html <a href="http://127.0.0.1:5500/index.html">http://127.0.0.1:5500/index.html</a></p>
-<script>
-    //步骤一:创建异步对象
-    var ajax = new XMLHttpRequest();
-    //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数
-    ajax.open('get', 'http://127.0.0.1:8000?name=前端过来的林三心');
-    //步骤三:发送请求
-    ajax.send();
-    //步骤四:注册事件 onreadystatechange 状态改变就会调用
-    ajax.onreadystatechange = function () {
-        if (ajax.readyState == 4 && ajax.status == 200) {
-            //步骤五 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的
-            console.log(ajax.responseText);//输入相应的内容
-        }
-    }
-</script>
-
-<p>最终，前端确实是跨域报错了。但这不是结果，我们要想知道是哪一个答案，关键在于看后端的 node 服务那里有没有输出，就一目了然了。所以，答案 2 才是对的。</p>
-<h3 id="同域情况-amp-amp-跨域情况？"><a href="#同域情况-amp-amp-跨域情况？" class="headerlink" title="同域情况 &amp;&amp; 跨域情况？"></a>同域情况 &amp;&amp; 跨域情况？</h3><p>前面提到了同源策略，满足协议号-域名-端口号这三者都相同就是同域，反之就是跨域，会导致跨域报错，下面通过几个例子让大家巩固一下对同域和跨域的认识把！</p>
-<h3 id="解决跨域的方案"><a href="#解决跨域的方案" class="headerlink" title="解决跨域的方案"></a>解决跨域的方案</h3><p>跨域其实是一个很久的问题了，对应的解决方案也有很多，一起接着往下读吧！！！</p>
-<h3 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h3><p>前面咱们说了，因为浏览器同源策略的存在，导致存在跨域问题，那有没有不受跨域问题所束缚的东西呢？其实是有的，以下这三个标签加载资源路径是不受束缚的</p>
-<ul>
-<li>1、script 标签：<script src="加载资源路径"></script></li>
-<li>2、link 标签：<link herf="加载资源路径"></link></li>
-<li>3、img 标签：<img src="加载资源路径" class="lazyload" data-srcset="加载资源路径" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></img><br>而 JSONP 就是利用了 script 的 src 加载不受束缚，从而可以拥有从不同的域拿到数据的能力。但是 JSONP 需要前端后端配合，才能实现最终的跨域获取数据。</li>
-</ul>
-<p>JSONP 通俗点说就是：利用 script 的 src 去发送请求，将一个方法名 callback 传给后端，后端拿到这个方法名，将所需数据，通过字符串拼接成新的字符串 callback(所需数据)，并发送到前端，前端接收到这个字符串之后，就会自动执行方法 callback(所需数据)。</p>
-<p>后端代码</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.js  http://127.0.0.1:8000</span><br><span class="line"></span><br><span class="line">const http = require(&#x27;http&#x27;);</span><br><span class="line">const urllib = require(&#x27;url&#x27;);</span><br><span class="line"></span><br><span class="line">const port = 8000;</span><br><span class="line"></span><br><span class="line">http.createServer(function (req, res) &#123;</span><br><span class="line">    const &#123; query &#125; = urllib.parse(req.url, true);</span><br><span class="line">    if (query &amp;&amp; query.callback) &#123;</span><br><span class="line">        const &#123; name, age, callback &#125; = query</span><br><span class="line">        const person = `$&#123;name&#125;今年$&#123;age&#125;岁啦！！！`</span><br><span class="line">        const str = `$&#123;callback&#125;($&#123;JSON.stringify(person)&#125;)` // 拼成callback(data)</span><br><span class="line">        res.end(str);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        res.end(JSON.stringify(&#x27;没东西啊你&#x27;));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).listen(port, function () &#123;</span><br><span class="line">    console.log(&#x27;server is listening on port &#x27; + port);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="前端代码"><a href="#前端代码" class="headerlink" title="前端代码"></a>前端代码</h4><pre><code>// index.html  http://127.0.0.1:5500/index.html
-
-const jsonp = (url, params, cbName) =&gt; &#123;
-    return new Promise((resolve, reject) =&gt; &#123;
-        const script = document.createElement(&#39;script&#39;)
-        window[cbName] = (data) =&gt; &#123;
-            resolve(data)
-            document.body.removeChild(script)
-        &#125;
-        params = &#123; ...params, callback: cbName &#125;
-        const arr = Object.keys(params).map(key =&gt; `$&#123;key&#125;=$&#123;params[key]&#125;`)
-        script.src = `$&#123;url&#125;?$&#123;arr.join(&#39;&amp;&#39;)&#125;`
-        document.body.appendChild(script)
-    &#125;)
-&#125;
-
-jsonp(&#39;http://127.0.0.1:8000&#39;, &#123; name: &#39;林三心&#39;, age: 23 &#125;, &#39;callback&#39;).then(data =&gt; &#123;
-    console.log(data) // 林三心今年23岁啦！！！
-&#125;)
-</code></pre>
-<blockquote>
-<p>JSONP 的缺点就是，需要前后端配合，并且只支持 get 请求方法</p>
-</blockquote>
-<h3 id="WebSocket"><a href="#WebSocket" class="headerlink" title="WebSocket"></a>WebSocket</h3><p>我理解的 WebSocket 是一种协议(跟 http 同级，都是协议)，并且他可以进行跨域通信。</p>
-<h4 id="后端代码"><a href="#后端代码" class="headerlink" title="后端代码"></a>后端代码</h4><p>先安装 npm i ws</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.js  http://127.0.0.1:8000</span><br><span class="line">const Websocket = require(&#x27;ws&#x27;);</span><br><span class="line"></span><br><span class="line">const port = 8000;</span><br><span class="line">const ws = new Websocket.Server(&#123; port &#125;)</span><br><span class="line">ws.on(&#x27;connection&#x27;, (obj) =&gt; &#123;</span><br><span class="line">    obj.on(&#x27;message&#x27;, (data) =&gt; &#123;</span><br><span class="line">        data = JSON.parse(data.toString())</span><br><span class="line">        const &#123; name, age &#125; = data</span><br><span class="line">        obj.send(`$&#123;name&#125;今年$&#123;age&#125;岁啦！！！`)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="前端代码-1"><a href="#前端代码-1" class="headerlink" title="前端代码"></a>前端代码</h4><pre><code>// index.html  http://127.0.0.1:5500/index.html
-
-function myWebsocket(url, params) &#123;
-    return new Promise((resolve, reject) =&gt; &#123;
-        const socket = new WebSocket(url)
-        socket.onopen = () =&gt; &#123;
-            socket.send(JSON.stringify(params))
-        &#125;
-        socket.onmessage = (e) =&gt; &#123;
-            resolve(e.data)
-        &#125;
-    &#125;)
-&#125;
-myWebsocket(&#39;ws://127.0.0.1:8000&#39;, &#123; name: &#39;林三心&#39;, age: 23 &#125;).then(data =&gt; &#123;
-    console.log(data) // 林三心今年23岁啦！！！
-&#125;)
-</code></pre>
-<h3 id="Cors"><a href="#Cors" class="headerlink" title="Cors"></a>Cors</h3><p>Cors，全称是 Cross-Origin Resource Sharing，意思是跨域资源共享，Cors 一般是由后端来开启的，一旦开启，前端就可以跨域访问后端。</p>
-<p>为什么后端开启 Cors，前端就能跨域请求后端呢？我的理解是：前端跨域访问到后端，后端开启 Cors，发送 Access-Control-Allow-Origin: 域名 字段到前端（其实不止一个），前端浏览器判断 Access-Control-Allow-Origin 的域名如果跟前端域名一样，浏览器就不会实行跨域拦截，从而解决跨域问题。</p>
-<h4 id="后端代码-1"><a href="#后端代码-1" class="headerlink" title="后端代码"></a>后端代码</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.js  http://127.0.0.1:8000</span><br><span class="line"></span><br><span class="line">const http = require(&#x27;http&#x27;);</span><br><span class="line">const urllib = require(&#x27;url&#x27;);</span><br><span class="line"></span><br><span class="line">const port = 8000;</span><br><span class="line"></span><br><span class="line">http.createServer(function (req, res) &#123;</span><br><span class="line">    // 开启Cors</span><br><span class="line">    res.writeHead(200, &#123;</span><br><span class="line">        //设置允许跨域的域名，也可设置*允许所有域名</span><br><span class="line">        &#x27;Access-Control-Allow-Origin&#x27;: &#x27;http://127.0.0.1:5500&#x27;,</span><br><span class="line">        //跨域允许的请求方法，也可设置*允许所有方法</span><br><span class="line">        &quot;Access-Control-Allow-Methods&quot;: &quot;DELETE,PUT,POST,GET,OPTIONS&quot;,</span><br><span class="line">        //允许的header类型</span><br><span class="line">        &#x27;Access-Control-Allow-Headers&#x27;: &#x27;Content-Type&#x27;</span><br><span class="line">    &#125;)</span><br><span class="line">    const &#123; query: &#123; name, age &#125; &#125; = urllib.parse(req.url, true);</span><br><span class="line">    res.end(`$&#123;name&#125;今年$&#123;age&#125;岁啦！！！`);</span><br><span class="line">&#125;).listen(port, function () &#123;</span><br><span class="line">    console.log(&#x27;server is listening on port &#x27; + port);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="前端代码-2"><a href="#前端代码-2" class="headerlink" title="前端代码"></a>前端代码</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.html  http://127.0.0.1:5500/index.html</span><br><span class="line">    //步骤一:创建异步对象</span><br><span class="line">    var ajax = new XMLHttpRequest();</span><br><span class="line">    //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数</span><br><span class="line">    ajax.open(&#x27;get&#x27;, &#x27;http://127.0.0.1:8000?name=林三心&amp;age=23&#x27;);</span><br><span class="line">    //步骤三:发送请求</span><br><span class="line">    ajax.send();</span><br><span class="line">    //步骤四:注册事件 onreadystatechange 状态改变就会调用</span><br><span class="line">    ajax.onreadystatechange = function () &#123;</span><br><span class="line">    if (ajax.readyState == 4 &amp;&amp; ajax.status == 200) &#123;</span><br><span class="line">    //步骤五 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的</span><br><span class="line">    console.log(ajax.responseText);//输入相应的内容</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Node-接口代理"><a href="#Node-接口代理" class="headerlink" title="Node 接口代理"></a>Node 接口代理</h3><p>还是回到同源策略，同源策略它只是浏览器的一个策略而已，它是限制不到后端的，也就是前端-后端会被同源策略限制，但是后端-后端则不会被限制，所以可以通过 Node 接口代理，先访问已设置 Cors 的后端 1，再让后端 1 去访问后端 2 获取数据到后端 1，后端 1 再把数据传到前端</p>
-<h4 id="后端-2-代码"><a href="#后端-2-代码" class="headerlink" title="后端 2 代码"></a>后端 2 代码</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.js  http://127.0.0.1:8000</span><br><span class="line"></span><br><span class="line">const http = require(&#x27;http&#x27;);</span><br><span class="line">const urllib = require(&#x27;url&#x27;);</span><br><span class="line"></span><br><span class="line">const port = 8000;</span><br><span class="line"></span><br><span class="line">http.createServer(function (req, res) &#123;</span><br><span class="line">    console.log(888)</span><br><span class="line">    const &#123; query: &#123; name, age &#125; &#125; = urllib.parse(req.url, true);</span><br><span class="line">    res.end(`$&#123;name&#125;今年$&#123;age&#125;岁啦！！！`)</span><br><span class="line">&#125;).listen(port, function () &#123;</span><br><span class="line">    console.log(&#x27;server is listening on port &#x27; + port);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>创建一个 index2.js，并 nodmeon index2.js</p>
-<h4 id="后端-1-代码"><a href="#后端-1-代码" class="headerlink" title="后端 1 代码"></a>后端 1 代码</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index2.js  http://127.0.0.1:8888</span><br><span class="line"></span><br><span class="line">const http = require(&#x27;http&#x27;);</span><br><span class="line">const urllib = require(&#x27;url&#x27;);</span><br><span class="line">const querystring = require(&#x27;querystring&#x27;);</span><br><span class="line">const port = 8888;</span><br><span class="line"></span><br><span class="line">http.createServer(function (req, res) &#123;</span><br><span class="line">    // 开启Cors</span><br><span class="line">    res.writeHead(200, &#123;</span><br><span class="line">        //设置允许跨域的域名，也可设置*允许所有域名</span><br><span class="line">        &#x27;Access-Control-Allow-Origin&#x27;: &#x27;http://127.0.0.1:5500&#x27;,</span><br><span class="line">        //跨域允许的请求方法，也可设置*允许所有方法</span><br><span class="line">        &quot;Access-Control-Allow-Methods&quot;: &quot;DELETE,PUT,POST,GET,OPTIONS&quot;,</span><br><span class="line">        //允许的header类型</span><br><span class="line">        &#x27;Access-Control-Allow-Headers&#x27;: &#x27;Content-Type&#x27;</span><br><span class="line">    &#125;)</span><br><span class="line">    const &#123; query &#125; = urllib.parse(req.url, true);</span><br><span class="line">    const &#123; methods = &#x27;GET&#x27;, headers &#125; = req</span><br><span class="line">    const proxyReq = http.request(&#123;</span><br><span class="line">        host: &#x27;127.0.0.1&#x27;,</span><br><span class="line">        port: &#x27;8000&#x27;,</span><br><span class="line">        path: `/?$&#123;querystring.stringify(query)&#125;`,</span><br><span class="line">        methods,</span><br><span class="line">        headers</span><br><span class="line">    &#125;, proxyRes =&gt; &#123;</span><br><span class="line">        proxyRes.on(&#x27;data&#x27;, chunk =&gt; &#123;</span><br><span class="line">            console.log(chunk.toString())</span><br><span class="line">            res.end(chunk.toString())</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;).end()</span><br><span class="line">&#125;).listen(port, function () &#123;</span><br><span class="line">    console.log(&#x27;server is listening on port &#x27; + port);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="前端代码-3"><a href="#前端代码-3" class="headerlink" title="前端代码"></a>前端代码</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.html  http://127.0.0.1:5500</span><br><span class="line"></span><br><span class="line">//步骤一:创建异步对象</span><br><span class="line">    var ajax = new XMLHttpRequest();</span><br><span class="line">    //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端</span><br><span class="line">    ajax.open(&#x27;get&#x27;, &#x27;http://127.0.0.1:8888?name=林三心&amp;age=23&#x27;);</span><br><span class="line">    //步骤三:发送请求</span><br><span class="line">    ajax.send();</span><br><span class="line">    //步骤四:注册事件 onreadystatechange 状态改变就会调用</span><br><span class="line">    ajax.onreadystatechange = function () &#123;</span><br><span class="line">        if (ajax.readyState == 4 &amp;&amp; ajax.status == 200) &#123;</span><br><span class="line">            //步骤五 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的</span><br><span class="line">            console.log(ajax.responseText);//输入相应的内容</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h4><p>其实 Nginx 跟 Node 接口代理是一个道理，只不过 Nginx 就不需要我们自己去搭建一个中间服务</p>
-<p>先下载 nginx，然后将 nginx 目录下的 nginx.conf 修改如下:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">        listen 8888;</span><br><span class="line">        server_name  127.0.0.1;</span><br><span class="line"></span><br><span class="line">    location /&#123;</span><br><span class="line">       proxy_pass 127.0.0.1:8000;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>最后通过命令行 nginx -s reload 启动 nginx</p>
-<h4 id="后端代码-2"><a href="#后端代码-2" class="headerlink" title="后端代码"></a>后端代码</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.js  http://127.0.0.1:8000</span><br><span class="line"></span><br><span class="line">const http = require(&#x27;http&#x27;);</span><br><span class="line">const urllib = require(&#x27;url&#x27;);</span><br><span class="line"></span><br><span class="line">const port = 8000;</span><br><span class="line"></span><br><span class="line">http.createServer(function (req, res) &#123;</span><br><span class="line">    const &#123; query: &#123; name, age &#125; &#125; = urllib.parse(req.url, true);</span><br><span class="line">    res.end(`$&#123;name&#125;今年$&#123;age&#125;岁啦！！！`);</span><br><span class="line">&#125;).listen(port, function () &#123;</span><br><span class="line">    console.log(&#x27;server is listening on port &#x27; + port);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h4 id="前端代码-4"><a href="#前端代码-4" class="headerlink" title="前端代码"></a>前端代码</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.html  http://127.0.0.1:5500</span><br><span class="line"></span><br><span class="line">//步骤一:创建异步对象</span><br><span class="line">    var ajax = new XMLHttpRequest();</span><br><span class="line">    //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端</span><br><span class="line">    ajax.open(&#x27;get&#x27;, &#x27;http://127.0.0.1:8888?name=林三心&amp;age=23&#x27;);</span><br><span class="line">    //步骤三:发送请求</span><br><span class="line">    ajax.send();</span><br><span class="line">    //步骤四:注册事件 onreadystatechange 状态改变就会调用</span><br><span class="line">    ajax.onreadystatechange = function () &#123;</span><br><span class="line">        if (ajax.readyState == 4 &amp;&amp; ajax.status == 200) &#123;</span><br><span class="line">            //步骤五 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的</span><br><span class="line">            console.log(ajax.responseText);//输入相应的内容</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="postMessage"><a href="#postMessage" class="headerlink" title="postMessage"></a>postMessage</h3><p>场景：<a href="http://127.0.0.1:5500/index.html%E9%A1%B5%E9%9D%A2%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BA%86iframe%E6%A0%87%E7%AD%BE%E5%86%85%E5%B5%8C%E4%BA%86%E4%B8%80%E4%B8%AAhttp://127.0.0.1:5555/index.html%E7%9A%84%E9%A1%B5%E9%9D%A2">http://127.0.0.1:5500/index.html页面中使用了iframe标签内嵌了一个http://127.0.0.1:5555/index.html的页面</a></p>
-<p>虽然这两个页面存在于一个页面中，但是需要 iframe 标签来嵌套才行，这两个页面之间是无法进行通信的，因为他们端口号不同，根据同源策略，他们之间存在跨域问题</p>
-<p>那应该怎么办呢？使用 postMessage 可以使这两个页面进行通信</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// http:127.0.0.1:5500/index.html</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;iframe src=&quot;http://127.0.0.1:5555/index.html&quot; id=&quot;frame&quot;&gt;&lt;/iframe&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    document.getElementById(&#x27;frame&#x27;).onload = function () &#123;</span><br><span class="line">        this.contentWindow.postMessage(&#123; name: &#x27;林三心&#x27;, age: 23 &#125;, &#x27;http://127.0.0.1:5555&#x27;)</span><br><span class="line">        window.onmessage = function (e) &#123;</span><br><span class="line">            console.log(e.data) // 林三心今年23岁啦！！！</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// http://127.0.0.1:5555/index.html</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">        window.onmessage = function (e) &#123;</span><br><span class="line">            const &#123; data: &#123; name, age &#125;, origin &#125; = e</span><br><span class="line">            e.source.postMessage(`$&#123;name&#125;今年$&#123;age&#125;岁啦！！！`, origin)</span><br><span class="line">        &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="document-domain-amp-amp-iframe"><a href="#document-domain-amp-amp-iframe" class="headerlink" title="document.domain &amp;&amp; iframe"></a>document.domain &amp;&amp; iframe</h3><p>场景：a.sanxin.com&#x2F;index.html 与 b.sanxin.com&#x2F;index.html 之间的通信</p>
-<p>其实上面这两个正常情况下是无法通信的，因为他们的域名不相同，属于跨域通信</p>
-<p>那怎么办呢？其实他们有一个共同点，那就是他们的二级域名都是 sanxin.com，这使得他们可以通过 document.domain &amp;&amp; iframe 的方式来通信</p>
 ]]></content>
       <categories>
         <category>前端</category>
@@ -2515,6 +2378,143 @@ myWebsocket(&#39;ws://127.0.0.1:8000&#39;, &#123; name: &#39;林三心&#39;, age
       </tags>
   </entry>
   <entry>
+    <title>前端跨域问题如何解决</title>
+    <url>/2022/11/01/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3/</url>
+    <content><![CDATA[<h1 id="前端跨域问题如何解决"><a href="#前端跨域问题如何解决" class="headerlink" title="前端跨域问题如何解决"></a>前端跨域问题如何解决</h1><p>咱们做前端的，平时跟后端对接接口那是必须的事情，但是可能很多同学忽略了一个对接过程中可能会发生的问题——跨域，那跨域到底是啥呢？为什么会跨域呢？又怎么才能解决呢？</p>
+<h3 id="为什么跨域？"><a href="#为什么跨域？" class="headerlink" title="为什么跨域？"></a>为什么跨域？</h3><p>为什么会出现跨域问题呢？那就不得不讲浏览器的同源策略了，它规定了协议号-域名-端口号这三者必须都相同才符合同源策略</p>
+<p>如有有一个不相同，就会出现跨域问题，不符合同源策略导致的后果有</p>
+<ul>
+<li><p>1、LocalStorge、SessionStorge、Cookie 等浏览器内存无法跨域访问</p>
+</li>
+<li><p>2、DOM 节点无法跨域操作</p>
+</li>
+<li><p>3、Ajax 请求无法跨域请求</p>
+</li>
+</ul>
+<blockquote>
+<p>注意点：一个 IP 是可以注册多个不同域名的，也就是多个域名可能指向同一个 IP，即使是这样，他们也不符合同源策略</p>
+</blockquote>
+<h3 id="跨域的时机？"><a href="#跨域的时机？" class="headerlink" title="跨域的时机？"></a>跨域的时机？</h3><p>跨域发生在什么时候呢？我考过很多位同学，得到了两种答案</p>
+<ul>
+<li>1、请求一发出就被浏览器的跨域报错拦下来了(大多数人回答)</li>
+<li>2、请求发出去到后端，后端返回数据，在浏览器接收后端数据时被浏览器的跨域报错拦下来<br>那到底是哪种呢？我们可以验证下，咱们先 npm i nodemon -g，然后创建一个 index.js，然后 nodemon index 起一个 node 服务</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.js  http://127.0.0.1:8000</span><br><span class="line"></span><br><span class="line">const http = require(&#x27;http&#x27;);</span><br><span class="line"></span><br><span class="line">const port = 8000;</span><br><span class="line"></span><br><span class="line">http.createServer(function (req, res) &#123;</span><br><span class="line">    const &#123; query &#125; = urllib.parse(req.url, true);</span><br><span class="line">    console.log(query.name)</span><br><span class="line">    console.log(&#x27;到后端喽&#x27;)</span><br><span class="line">    res.end(JSON.stringify(&#x27;林三心&#x27;));</span><br><span class="line">&#125;).listen(port, function () &#123;</span><br><span class="line">    console.log(&#x27;server is listening on port &#x27; + port);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>再创建一个 index.html，用来写前端的请求代码，咱们就写一个简单的 AJAX 请求吧</p>
+<p>&#x2F;&#x2F; index.html <a href="http://127.0.0.1:5500/index.html">http://127.0.0.1:5500/index.html</a></p>
+<script>
+    //步骤一:创建异步对象
+    var ajax = new XMLHttpRequest();
+    //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数
+    ajax.open('get', 'http://127.0.0.1:8000?name=前端过来的林三心');
+    //步骤三:发送请求
+    ajax.send();
+    //步骤四:注册事件 onreadystatechange 状态改变就会调用
+    ajax.onreadystatechange = function () {
+        if (ajax.readyState == 4 && ajax.status == 200) {
+            //步骤五 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的
+            console.log(ajax.responseText);//输入相应的内容
+        }
+    }
+</script>
+
+<p>最终，前端确实是跨域报错了。但这不是结果，我们要想知道是哪一个答案，关键在于看后端的 node 服务那里有没有输出，就一目了然了。所以，答案 2 才是对的。</p>
+<h3 id="同域情况-amp-amp-跨域情况？"><a href="#同域情况-amp-amp-跨域情况？" class="headerlink" title="同域情况 &amp;&amp; 跨域情况？"></a>同域情况 &amp;&amp; 跨域情况？</h3><p>前面提到了同源策略，满足协议号-域名-端口号这三者都相同就是同域，反之就是跨域，会导致跨域报错，下面通过几个例子让大家巩固一下对同域和跨域的认识把！</p>
+<h3 id="解决跨域的方案"><a href="#解决跨域的方案" class="headerlink" title="解决跨域的方案"></a>解决跨域的方案</h3><p>跨域其实是一个很久的问题了，对应的解决方案也有很多，一起接着往下读吧！！！</p>
+<h3 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h3><p>前面咱们说了，因为浏览器同源策略的存在，导致存在跨域问题，那有没有不受跨域问题所束缚的东西呢？其实是有的，以下这三个标签加载资源路径是不受束缚的</p>
+<ul>
+<li>1、script 标签：<script src="加载资源路径"></script></li>
+<li>2、link 标签：<link herf="加载资源路径"></link></li>
+<li>3、img 标签：<img src="加载资源路径" class="lazyload" data-srcset="加载资源路径" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></img><br>而 JSONP 就是利用了 script 的 src 加载不受束缚，从而可以拥有从不同的域拿到数据的能力。但是 JSONP 需要前端后端配合，才能实现最终的跨域获取数据。</li>
+</ul>
+<p>JSONP 通俗点说就是：利用 script 的 src 去发送请求，将一个方法名 callback 传给后端，后端拿到这个方法名，将所需数据，通过字符串拼接成新的字符串 callback(所需数据)，并发送到前端，前端接收到这个字符串之后，就会自动执行方法 callback(所需数据)。</p>
+<p>后端代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.js  http://127.0.0.1:8000</span><br><span class="line"></span><br><span class="line">const http = require(&#x27;http&#x27;);</span><br><span class="line">const urllib = require(&#x27;url&#x27;);</span><br><span class="line"></span><br><span class="line">const port = 8000;</span><br><span class="line"></span><br><span class="line">http.createServer(function (req, res) &#123;</span><br><span class="line">    const &#123; query &#125; = urllib.parse(req.url, true);</span><br><span class="line">    if (query &amp;&amp; query.callback) &#123;</span><br><span class="line">        const &#123; name, age, callback &#125; = query</span><br><span class="line">        const person = `$&#123;name&#125;今年$&#123;age&#125;岁啦！！！`</span><br><span class="line">        const str = `$&#123;callback&#125;($&#123;JSON.stringify(person)&#125;)` // 拼成callback(data)</span><br><span class="line">        res.end(str);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        res.end(JSON.stringify(&#x27;没东西啊你&#x27;));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).listen(port, function () &#123;</span><br><span class="line">    console.log(&#x27;server is listening on port &#x27; + port);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="前端代码"><a href="#前端代码" class="headerlink" title="前端代码"></a>前端代码</h4><pre><code>// index.html  http://127.0.0.1:5500/index.html
+
+const jsonp = (url, params, cbName) =&gt; &#123;
+    return new Promise((resolve, reject) =&gt; &#123;
+        const script = document.createElement(&#39;script&#39;)
+        window[cbName] = (data) =&gt; &#123;
+            resolve(data)
+            document.body.removeChild(script)
+        &#125;
+        params = &#123; ...params, callback: cbName &#125;
+        const arr = Object.keys(params).map(key =&gt; `$&#123;key&#125;=$&#123;params[key]&#125;`)
+        script.src = `$&#123;url&#125;?$&#123;arr.join(&#39;&amp;&#39;)&#125;`
+        document.body.appendChild(script)
+    &#125;)
+&#125;
+
+jsonp(&#39;http://127.0.0.1:8000&#39;, &#123; name: &#39;林三心&#39;, age: 23 &#125;, &#39;callback&#39;).then(data =&gt; &#123;
+    console.log(data) // 林三心今年23岁啦！！！
+&#125;)
+</code></pre>
+<blockquote>
+<p>JSONP 的缺点就是，需要前后端配合，并且只支持 get 请求方法</p>
+</blockquote>
+<h3 id="WebSocket"><a href="#WebSocket" class="headerlink" title="WebSocket"></a>WebSocket</h3><p>我理解的 WebSocket 是一种协议(跟 http 同级，都是协议)，并且他可以进行跨域通信。</p>
+<h4 id="后端代码"><a href="#后端代码" class="headerlink" title="后端代码"></a>后端代码</h4><p>先安装 npm i ws</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.js  http://127.0.0.1:8000</span><br><span class="line">const Websocket = require(&#x27;ws&#x27;);</span><br><span class="line"></span><br><span class="line">const port = 8000;</span><br><span class="line">const ws = new Websocket.Server(&#123; port &#125;)</span><br><span class="line">ws.on(&#x27;connection&#x27;, (obj) =&gt; &#123;</span><br><span class="line">    obj.on(&#x27;message&#x27;, (data) =&gt; &#123;</span><br><span class="line">        data = JSON.parse(data.toString())</span><br><span class="line">        const &#123; name, age &#125; = data</span><br><span class="line">        obj.send(`$&#123;name&#125;今年$&#123;age&#125;岁啦！！！`)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="前端代码-1"><a href="#前端代码-1" class="headerlink" title="前端代码"></a>前端代码</h4><pre><code>// index.html  http://127.0.0.1:5500/index.html
+
+function myWebsocket(url, params) &#123;
+    return new Promise((resolve, reject) =&gt; &#123;
+        const socket = new WebSocket(url)
+        socket.onopen = () =&gt; &#123;
+            socket.send(JSON.stringify(params))
+        &#125;
+        socket.onmessage = (e) =&gt; &#123;
+            resolve(e.data)
+        &#125;
+    &#125;)
+&#125;
+myWebsocket(&#39;ws://127.0.0.1:8000&#39;, &#123; name: &#39;林三心&#39;, age: 23 &#125;).then(data =&gt; &#123;
+    console.log(data) // 林三心今年23岁啦！！！
+&#125;)
+</code></pre>
+<h3 id="Cors"><a href="#Cors" class="headerlink" title="Cors"></a>Cors</h3><p>Cors，全称是 Cross-Origin Resource Sharing，意思是跨域资源共享，Cors 一般是由后端来开启的，一旦开启，前端就可以跨域访问后端。</p>
+<p>为什么后端开启 Cors，前端就能跨域请求后端呢？我的理解是：前端跨域访问到后端，后端开启 Cors，发送 Access-Control-Allow-Origin: 域名 字段到前端（其实不止一个），前端浏览器判断 Access-Control-Allow-Origin 的域名如果跟前端域名一样，浏览器就不会实行跨域拦截，从而解决跨域问题。</p>
+<h4 id="后端代码-1"><a href="#后端代码-1" class="headerlink" title="后端代码"></a>后端代码</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.js  http://127.0.0.1:8000</span><br><span class="line"></span><br><span class="line">const http = require(&#x27;http&#x27;);</span><br><span class="line">const urllib = require(&#x27;url&#x27;);</span><br><span class="line"></span><br><span class="line">const port = 8000;</span><br><span class="line"></span><br><span class="line">http.createServer(function (req, res) &#123;</span><br><span class="line">    // 开启Cors</span><br><span class="line">    res.writeHead(200, &#123;</span><br><span class="line">        //设置允许跨域的域名，也可设置*允许所有域名</span><br><span class="line">        &#x27;Access-Control-Allow-Origin&#x27;: &#x27;http://127.0.0.1:5500&#x27;,</span><br><span class="line">        //跨域允许的请求方法，也可设置*允许所有方法</span><br><span class="line">        &quot;Access-Control-Allow-Methods&quot;: &quot;DELETE,PUT,POST,GET,OPTIONS&quot;,</span><br><span class="line">        //允许的header类型</span><br><span class="line">        &#x27;Access-Control-Allow-Headers&#x27;: &#x27;Content-Type&#x27;</span><br><span class="line">    &#125;)</span><br><span class="line">    const &#123; query: &#123; name, age &#125; &#125; = urllib.parse(req.url, true);</span><br><span class="line">    res.end(`$&#123;name&#125;今年$&#123;age&#125;岁啦！！！`);</span><br><span class="line">&#125;).listen(port, function () &#123;</span><br><span class="line">    console.log(&#x27;server is listening on port &#x27; + port);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="前端代码-2"><a href="#前端代码-2" class="headerlink" title="前端代码"></a>前端代码</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.html  http://127.0.0.1:5500/index.html</span><br><span class="line">    //步骤一:创建异步对象</span><br><span class="line">    var ajax = new XMLHttpRequest();</span><br><span class="line">    //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数</span><br><span class="line">    ajax.open(&#x27;get&#x27;, &#x27;http://127.0.0.1:8000?name=林三心&amp;age=23&#x27;);</span><br><span class="line">    //步骤三:发送请求</span><br><span class="line">    ajax.send();</span><br><span class="line">    //步骤四:注册事件 onreadystatechange 状态改变就会调用</span><br><span class="line">    ajax.onreadystatechange = function () &#123;</span><br><span class="line">    if (ajax.readyState == 4 &amp;&amp; ajax.status == 200) &#123;</span><br><span class="line">    //步骤五 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的</span><br><span class="line">    console.log(ajax.responseText);//输入相应的内容</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Node-接口代理"><a href="#Node-接口代理" class="headerlink" title="Node 接口代理"></a>Node 接口代理</h3><p>还是回到同源策略，同源策略它只是浏览器的一个策略而已，它是限制不到后端的，也就是前端-后端会被同源策略限制，但是后端-后端则不会被限制，所以可以通过 Node 接口代理，先访问已设置 Cors 的后端 1，再让后端 1 去访问后端 2 获取数据到后端 1，后端 1 再把数据传到前端</p>
+<h4 id="后端-2-代码"><a href="#后端-2-代码" class="headerlink" title="后端 2 代码"></a>后端 2 代码</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.js  http://127.0.0.1:8000</span><br><span class="line"></span><br><span class="line">const http = require(&#x27;http&#x27;);</span><br><span class="line">const urllib = require(&#x27;url&#x27;);</span><br><span class="line"></span><br><span class="line">const port = 8000;</span><br><span class="line"></span><br><span class="line">http.createServer(function (req, res) &#123;</span><br><span class="line">    console.log(888)</span><br><span class="line">    const &#123; query: &#123; name, age &#125; &#125; = urllib.parse(req.url, true);</span><br><span class="line">    res.end(`$&#123;name&#125;今年$&#123;age&#125;岁啦！！！`)</span><br><span class="line">&#125;).listen(port, function () &#123;</span><br><span class="line">    console.log(&#x27;server is listening on port &#x27; + port);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>创建一个 index2.js，并 nodmeon index2.js</p>
+<h4 id="后端-1-代码"><a href="#后端-1-代码" class="headerlink" title="后端 1 代码"></a>后端 1 代码</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index2.js  http://127.0.0.1:8888</span><br><span class="line"></span><br><span class="line">const http = require(&#x27;http&#x27;);</span><br><span class="line">const urllib = require(&#x27;url&#x27;);</span><br><span class="line">const querystring = require(&#x27;querystring&#x27;);</span><br><span class="line">const port = 8888;</span><br><span class="line"></span><br><span class="line">http.createServer(function (req, res) &#123;</span><br><span class="line">    // 开启Cors</span><br><span class="line">    res.writeHead(200, &#123;</span><br><span class="line">        //设置允许跨域的域名，也可设置*允许所有域名</span><br><span class="line">        &#x27;Access-Control-Allow-Origin&#x27;: &#x27;http://127.0.0.1:5500&#x27;,</span><br><span class="line">        //跨域允许的请求方法，也可设置*允许所有方法</span><br><span class="line">        &quot;Access-Control-Allow-Methods&quot;: &quot;DELETE,PUT,POST,GET,OPTIONS&quot;,</span><br><span class="line">        //允许的header类型</span><br><span class="line">        &#x27;Access-Control-Allow-Headers&#x27;: &#x27;Content-Type&#x27;</span><br><span class="line">    &#125;)</span><br><span class="line">    const &#123; query &#125; = urllib.parse(req.url, true);</span><br><span class="line">    const &#123; methods = &#x27;GET&#x27;, headers &#125; = req</span><br><span class="line">    const proxyReq = http.request(&#123;</span><br><span class="line">        host: &#x27;127.0.0.1&#x27;,</span><br><span class="line">        port: &#x27;8000&#x27;,</span><br><span class="line">        path: `/?$&#123;querystring.stringify(query)&#125;`,</span><br><span class="line">        methods,</span><br><span class="line">        headers</span><br><span class="line">    &#125;, proxyRes =&gt; &#123;</span><br><span class="line">        proxyRes.on(&#x27;data&#x27;, chunk =&gt; &#123;</span><br><span class="line">            console.log(chunk.toString())</span><br><span class="line">            res.end(chunk.toString())</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;).end()</span><br><span class="line">&#125;).listen(port, function () &#123;</span><br><span class="line">    console.log(&#x27;server is listening on port &#x27; + port);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="前端代码-3"><a href="#前端代码-3" class="headerlink" title="前端代码"></a>前端代码</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.html  http://127.0.0.1:5500</span><br><span class="line"></span><br><span class="line">//步骤一:创建异步对象</span><br><span class="line">    var ajax = new XMLHttpRequest();</span><br><span class="line">    //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端</span><br><span class="line">    ajax.open(&#x27;get&#x27;, &#x27;http://127.0.0.1:8888?name=林三心&amp;age=23&#x27;);</span><br><span class="line">    //步骤三:发送请求</span><br><span class="line">    ajax.send();</span><br><span class="line">    //步骤四:注册事件 onreadystatechange 状态改变就会调用</span><br><span class="line">    ajax.onreadystatechange = function () &#123;</span><br><span class="line">        if (ajax.readyState == 4 &amp;&amp; ajax.status == 200) &#123;</span><br><span class="line">            //步骤五 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的</span><br><span class="line">            console.log(ajax.responseText);//输入相应的内容</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h4><p>其实 Nginx 跟 Node 接口代理是一个道理，只不过 Nginx 就不需要我们自己去搭建一个中间服务</p>
+<p>先下载 nginx，然后将 nginx 目录下的 nginx.conf 修改如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">        listen 8888;</span><br><span class="line">        server_name  127.0.0.1;</span><br><span class="line"></span><br><span class="line">    location /&#123;</span><br><span class="line">       proxy_pass 127.0.0.1:8000;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后通过命令行 nginx -s reload 启动 nginx</p>
+<h4 id="后端代码-2"><a href="#后端代码-2" class="headerlink" title="后端代码"></a>后端代码</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.js  http://127.0.0.1:8000</span><br><span class="line"></span><br><span class="line">const http = require(&#x27;http&#x27;);</span><br><span class="line">const urllib = require(&#x27;url&#x27;);</span><br><span class="line"></span><br><span class="line">const port = 8000;</span><br><span class="line"></span><br><span class="line">http.createServer(function (req, res) &#123;</span><br><span class="line">    const &#123; query: &#123; name, age &#125; &#125; = urllib.parse(req.url, true);</span><br><span class="line">    res.end(`$&#123;name&#125;今年$&#123;age&#125;岁啦！！！`);</span><br><span class="line">&#125;).listen(port, function () &#123;</span><br><span class="line">    console.log(&#x27;server is listening on port &#x27; + port);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="前端代码-4"><a href="#前端代码-4" class="headerlink" title="前端代码"></a>前端代码</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.html  http://127.0.0.1:5500</span><br><span class="line"></span><br><span class="line">//步骤一:创建异步对象</span><br><span class="line">    var ajax = new XMLHttpRequest();</span><br><span class="line">    //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端</span><br><span class="line">    ajax.open(&#x27;get&#x27;, &#x27;http://127.0.0.1:8888?name=林三心&amp;age=23&#x27;);</span><br><span class="line">    //步骤三:发送请求</span><br><span class="line">    ajax.send();</span><br><span class="line">    //步骤四:注册事件 onreadystatechange 状态改变就会调用</span><br><span class="line">    ajax.onreadystatechange = function () &#123;</span><br><span class="line">        if (ajax.readyState == 4 &amp;&amp; ajax.status == 200) &#123;</span><br><span class="line">            //步骤五 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的</span><br><span class="line">            console.log(ajax.responseText);//输入相应的内容</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="postMessage"><a href="#postMessage" class="headerlink" title="postMessage"></a>postMessage</h3><p>场景：<a href="http://127.0.0.1:5500/index.html%E9%A1%B5%E9%9D%A2%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BA%86iframe%E6%A0%87%E7%AD%BE%E5%86%85%E5%B5%8C%E4%BA%86%E4%B8%80%E4%B8%AAhttp://127.0.0.1:5555/index.html%E7%9A%84%E9%A1%B5%E9%9D%A2">http://127.0.0.1:5500/index.html页面中使用了iframe标签内嵌了一个http://127.0.0.1:5555/index.html的页面</a></p>
+<p>虽然这两个页面存在于一个页面中，但是需要 iframe 标签来嵌套才行，这两个页面之间是无法进行通信的，因为他们端口号不同，根据同源策略，他们之间存在跨域问题</p>
+<p>那应该怎么办呢？使用 postMessage 可以使这两个页面进行通信</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// http:127.0.0.1:5500/index.html</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;iframe src=&quot;http://127.0.0.1:5555/index.html&quot; id=&quot;frame&quot;&gt;&lt;/iframe&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    document.getElementById(&#x27;frame&#x27;).onload = function () &#123;</span><br><span class="line">        this.contentWindow.postMessage(&#123; name: &#x27;林三心&#x27;, age: 23 &#125;, &#x27;http://127.0.0.1:5555&#x27;)</span><br><span class="line">        window.onmessage = function (e) &#123;</span><br><span class="line">            console.log(e.data) // 林三心今年23岁啦！！！</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// http://127.0.0.1:5555/index.html</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">        window.onmessage = function (e) &#123;</span><br><span class="line">            const &#123; data: &#123; name, age &#125;, origin &#125; = e</span><br><span class="line">            e.source.postMessage(`$&#123;name&#125;今年$&#123;age&#125;岁啦！！！`, origin)</span><br><span class="line">        &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="document-domain-amp-amp-iframe"><a href="#document-domain-amp-amp-iframe" class="headerlink" title="document.domain &amp;&amp; iframe"></a>document.domain &amp;&amp; iframe</h3><p>场景：a.sanxin.com&#x2F;index.html 与 b.sanxin.com&#x2F;index.html 之间的通信</p>
+<p>其实上面这两个正常情况下是无法通信的，因为他们的域名不相同，属于跨域通信</p>
+<p>那怎么办呢？其实他们有一个共同点，那就是他们的二级域名都是 sanxin.com，这使得他们可以通过 document.domain &amp;&amp; iframe 的方式来通信</p>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+  </entry>
+  <entry>
     <title>删除电脑浏览记录</title>
     <url>/2022/10/15/%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4%E7%94%B5%E8%84%91%E4%B8%8A%E6%9C%80%E8%BF%91%E6%B5%8F%E8%A7%88%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<p>　　我们在长时间操作电脑的过程中，系统都会记录用户浏览的历史，一天下来电脑可能产生几万条记录,这些记录有些会涉及到个人的隐私，因此许多用户就想要在关闭电脑前将浏览记录进行删除，那么怎么删除电脑最近浏览记录呢？这里小编就来教大家删除电脑上最近浏览记录操作方法。</p>
@@ -2778,6 +2778,33 @@ myWebsocket(&#39;ws://127.0.0.1:8000&#39;, &#123; name: &#39;林三心&#39;, age
       </tags>
   </entry>
   <entry>
+    <title>被问到《vue2与vue3的区别》该怎么回答</title>
+    <url>/2023/03/07/%E8%A2%AB%E9%97%AE%E5%88%B0%E3%80%8Avue2%E4%B8%8Evue3%E7%9A%84%E5%8C%BA%E5%88%AB%E3%80%8B%E8%AF%A5%E6%80%8E%E4%B9%88%E5%9B%9E%E7%AD%94/</url>
+    <content><![CDATA[<h2 id="被问到-《vue2-与-vue3-的区别》应该怎么回答"><a href="#被问到-《vue2-与-vue3-的区别》应该怎么回答" class="headerlink" title="被问到 《vue2 与 vue3 的区别》应该怎么回答"></a>被问到 《vue2 与 vue3 的区别》应该怎么回答</h2><p><code>Vue</code> 内部根据功能可以被分为三个大的模块：**响应性 <code>reactivite</code>、运行时 <code>runtime</code>、编辑器 <code>compiler</code>**，以及一些小的功能点。那么要说 <code>vue2</code> 与 <code>vue3</code> 的区别，我们需要从这三个方面加小的功能点进行说起。</p>
+<p>首先先来说 **响应性 <code>reactivite</code>**：</p>
+<p><code>vue2</code> 的响应性主要依赖 <code>Object.defineProperty</code> 进行实现，但是 <code>Object.defineProperty</code> 只能监听 <strong>指定对象的指定属性的 <code>getter</code> 行为和 <code>setter</code> 行为</strong>，那么这样在某些情况下就会出现问题。</p>
+<p>什么问题呢？</p>
+<p>比如说：我们在 <code>data</code> 中声明了一个对象 <code>person</code> ，但是在后期为 <code>person</code> 增加了新的属性，那么这个新的属性就会失去响应性。想要解决这个问题其实也非常的简单，可以通过 <code>Vue.$set</code> 方法来增加 <strong>指定对象指定属性的响应性</strong>。但是这样的一种方式，在 <code>Vue</code> 的自动响应性机制中是不合理。</p>
+<p>所以在 <code>Vue3</code> 中，<code>Vue</code> 引入了反射和代理的概念，所谓反射指的是 <code>Reflect</code>，所谓代理指的是 <code>Proxy</code>。我们可以利用 <code>Proxy</code> 直接代理一个普通对象，得到一个 <code>proxy 实例</code> 的代理对象。在 <code>vue3</code> 中，这个过程通过 <code>reactive</code> 这个方法进行实现。</p>
+<p>但是 <code>proxy</code> 只能实现代理复杂数据类型，所以 <code>vue</code> 额外提供了 <code>ref</code> 方法，用来处理简单数据类型的响应性。<code>ref</code> 本质上并没有进行数据的监听，而是构建了一个 <code>RefImpl</code> 的类，通过 <code>set</code> 和 <code>get</code> 标记了 <code>value</code> 函数，以此来进行的实现。所以 <code>ref</code> 必须要通过 <code>.value</code> 进行触发，之所以要这么做本质是调用 <code>value 方法</code>。</p>
+<p>接下来是**运行时 <code>runtime</code>**：</p>
+<p>所谓的运行时，大多数时候指的是 <code>renderer 渲染器</code>，渲染器本质上是一个对象，内部主要三个方法 <code>render、hydrate、createApp</code> ，其中 <code>render</code> 主要处理渲染逻辑，<code>hydrate</code> 主要处理服务端渲染逻辑，而 <code>createApp</code> 就是创建 <code>vue</code> 实例的方法。</p>
+<p>这里咱们主要来说 <code>render 渲染函数</code>，<code>vue3</code> 中为了保证宿主环境与渲染逻辑的分离，把所有与宿主环境相关的逻辑进行了抽离，通过接口的形式进行传递。这样做的目的其实是为了解绑宿主环境与渲染逻辑，以保证 <code>vue</code> 在非浏览器端的宿主环境下可以正常渲染。</p>
+<p>再往下是 **编辑器 <code>compiler</code>**：</p>
+<p><code>vue</code> 中的 <code>compiler</code> 其实是一个 <code>DSL（特定领域下专用语言编辑器）</code> ，其目的是为了把 <code>template 模板</code> 编译成 <code>render</code> 函数。 逻辑主要是分成了三大步： <code>parse、transform 和 generate</code>。其中 <code>parse</code> 的作用是为了把 <code>template</code> 转化为 <code>AST（抽象语法树）</code>，<code>transform</code> 可以把 <code>AST（抽象语法树）</code> 转化为 <code>JavaScript AST</code>，最后由 <code>generate</code> 把 <code>JavaScript AST</code> 通过转化为 <code>render 函数</code>。转化的过程中会涉及到一些稍微复杂的概念，比如 <strong>有限自动状态机</strong> 这个就不再这里展开说了。</p>
+<p>除此之外，还有一些其他的变化。比如 <code>vue3</code> 新增的 <code>composition API</code>。 <code>composition API</code> 在 <code>vue3.0</code> 和 <code>vue3.2</code> 中会有一些不同的呈现，比如说：最初的 <code>composition API</code> 以 <code>setup</code> 函数作为入口函数， <code>setup</code> 函数必须返回两种类型的值：第一是对象，第二是函数。</p>
+<p>当 <code>setup</code> 函数返回对象时，对象中的数据或方法可以在 <code>template</code> 中被使用。当 <code>setup</code> 函数返回函数时，函数会被作为 <code>render</code> 函数。</p>
+<p>但是这种 <code>setup</code> 函数的形式并不好，因为所有的逻辑都集中在 <code>setup</code> 函数中，很容易出现一个巨大的 <code>setup</code> 函数，我们把它叫做巨石（屎山）函数。所以 <code>vue 3.2</code> 的时候，新增了一个 <code>script setup</code> 的语法糖，尝试解决这个问题。目前来看 <code>script setup</code> 的呈现还是非常不错的。</p>
+<p>除此之外还有一些小的变化，比如 <code>Fragment、Teleport、Suspense</code> 等等，这些就不去说了…</p>
+]]></content>
+      <categories>
+        <category>vue</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>站外神器linktree使用教程</title>
     <url>/2023/11/24/%E7%AB%99%E5%A4%96%E7%A5%9E%E5%99%A8linktree%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<h1 id="TikTok如何导流多个网站？站外神器linktree使用教程"><a href="#TikTok如何导流多个网站？站外神器linktree使用教程" class="headerlink" title="TikTok如何导流多个网站？站外神器linktree使用教程"></a>TikTok如何导流多个网站？站外神器linktree使用教程</h1><p>这篇文章会完全刷新你对<strong>TikTok如何导流多个网站</strong>的认知，全文干货，无废话！</p>
@@ -2832,33 +2859,6 @@ myWebsocket(&#39;ws://127.0.0.1:8000&#39;, &#123; name: &#39;林三心&#39;, age
       </categories>
       <tags>
         <tag>linktree</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>被问到《vue2与vue3的区别》该怎么回答</title>
-    <url>/2023/03/07/%E8%A2%AB%E9%97%AE%E5%88%B0%E3%80%8Avue2%E4%B8%8Evue3%E7%9A%84%E5%8C%BA%E5%88%AB%E3%80%8B%E8%AF%A5%E6%80%8E%E4%B9%88%E5%9B%9E%E7%AD%94/</url>
-    <content><![CDATA[<h2 id="被问到-《vue2-与-vue3-的区别》应该怎么回答"><a href="#被问到-《vue2-与-vue3-的区别》应该怎么回答" class="headerlink" title="被问到 《vue2 与 vue3 的区别》应该怎么回答"></a>被问到 《vue2 与 vue3 的区别》应该怎么回答</h2><p><code>Vue</code> 内部根据功能可以被分为三个大的模块：**响应性 <code>reactivite</code>、运行时 <code>runtime</code>、编辑器 <code>compiler</code>**，以及一些小的功能点。那么要说 <code>vue2</code> 与 <code>vue3</code> 的区别，我们需要从这三个方面加小的功能点进行说起。</p>
-<p>首先先来说 **响应性 <code>reactivite</code>**：</p>
-<p><code>vue2</code> 的响应性主要依赖 <code>Object.defineProperty</code> 进行实现，但是 <code>Object.defineProperty</code> 只能监听 <strong>指定对象的指定属性的 <code>getter</code> 行为和 <code>setter</code> 行为</strong>，那么这样在某些情况下就会出现问题。</p>
-<p>什么问题呢？</p>
-<p>比如说：我们在 <code>data</code> 中声明了一个对象 <code>person</code> ，但是在后期为 <code>person</code> 增加了新的属性，那么这个新的属性就会失去响应性。想要解决这个问题其实也非常的简单，可以通过 <code>Vue.$set</code> 方法来增加 <strong>指定对象指定属性的响应性</strong>。但是这样的一种方式，在 <code>Vue</code> 的自动响应性机制中是不合理。</p>
-<p>所以在 <code>Vue3</code> 中，<code>Vue</code> 引入了反射和代理的概念，所谓反射指的是 <code>Reflect</code>，所谓代理指的是 <code>Proxy</code>。我们可以利用 <code>Proxy</code> 直接代理一个普通对象，得到一个 <code>proxy 实例</code> 的代理对象。在 <code>vue3</code> 中，这个过程通过 <code>reactive</code> 这个方法进行实现。</p>
-<p>但是 <code>proxy</code> 只能实现代理复杂数据类型，所以 <code>vue</code> 额外提供了 <code>ref</code> 方法，用来处理简单数据类型的响应性。<code>ref</code> 本质上并没有进行数据的监听，而是构建了一个 <code>RefImpl</code> 的类，通过 <code>set</code> 和 <code>get</code> 标记了 <code>value</code> 函数，以此来进行的实现。所以 <code>ref</code> 必须要通过 <code>.value</code> 进行触发，之所以要这么做本质是调用 <code>value 方法</code>。</p>
-<p>接下来是**运行时 <code>runtime</code>**：</p>
-<p>所谓的运行时，大多数时候指的是 <code>renderer 渲染器</code>，渲染器本质上是一个对象，内部主要三个方法 <code>render、hydrate、createApp</code> ，其中 <code>render</code> 主要处理渲染逻辑，<code>hydrate</code> 主要处理服务端渲染逻辑，而 <code>createApp</code> 就是创建 <code>vue</code> 实例的方法。</p>
-<p>这里咱们主要来说 <code>render 渲染函数</code>，<code>vue3</code> 中为了保证宿主环境与渲染逻辑的分离，把所有与宿主环境相关的逻辑进行了抽离，通过接口的形式进行传递。这样做的目的其实是为了解绑宿主环境与渲染逻辑，以保证 <code>vue</code> 在非浏览器端的宿主环境下可以正常渲染。</p>
-<p>再往下是 **编辑器 <code>compiler</code>**：</p>
-<p><code>vue</code> 中的 <code>compiler</code> 其实是一个 <code>DSL（特定领域下专用语言编辑器）</code> ，其目的是为了把 <code>template 模板</code> 编译成 <code>render</code> 函数。 逻辑主要是分成了三大步： <code>parse、transform 和 generate</code>。其中 <code>parse</code> 的作用是为了把 <code>template</code> 转化为 <code>AST（抽象语法树）</code>，<code>transform</code> 可以把 <code>AST（抽象语法树）</code> 转化为 <code>JavaScript AST</code>，最后由 <code>generate</code> 把 <code>JavaScript AST</code> 通过转化为 <code>render 函数</code>。转化的过程中会涉及到一些稍微复杂的概念，比如 <strong>有限自动状态机</strong> 这个就不再这里展开说了。</p>
-<p>除此之外，还有一些其他的变化。比如 <code>vue3</code> 新增的 <code>composition API</code>。 <code>composition API</code> 在 <code>vue3.0</code> 和 <code>vue3.2</code> 中会有一些不同的呈现，比如说：最初的 <code>composition API</code> 以 <code>setup</code> 函数作为入口函数， <code>setup</code> 函数必须返回两种类型的值：第一是对象，第二是函数。</p>
-<p>当 <code>setup</code> 函数返回对象时，对象中的数据或方法可以在 <code>template</code> 中被使用。当 <code>setup</code> 函数返回函数时，函数会被作为 <code>render</code> 函数。</p>
-<p>但是这种 <code>setup</code> 函数的形式并不好，因为所有的逻辑都集中在 <code>setup</code> 函数中，很容易出现一个巨大的 <code>setup</code> 函数，我们把它叫做巨石（屎山）函数。所以 <code>vue 3.2</code> 的时候，新增了一个 <code>script setup</code> 的语法糖，尝试解决这个问题。目前来看 <code>script setup</code> 的呈现还是非常不错的。</p>
-<p>除此之外还有一些小的变化，比如 <code>Fragment、Teleport、Suspense</code> 等等，这些就不去说了…</p>
-]]></content>
-      <categories>
-        <category>vue</category>
-      </categories>
-      <tags>
-        <tag>vue</tag>
       </tags>
   </entry>
   <entry>
@@ -2931,62 +2931,6 @@ myWebsocket(&#39;ws://127.0.0.1:8000&#39;, &#123; name: &#39;林三心&#39;, age
       </tags>
   </entry>
   <entry>
-    <title>fariy-001</title>
-    <url>/2022/07/28/fairy/fairy-001/</url>
-    <content><![CDATA[<style>
-    #l_main {
-
-      width: calc(100% - 1 * 0px);
-      padding-left: 0px;
-      float: left;
-      -webkit-box-ordinal-group: 2;
-      -moz-box-ordinal-group: 2;
-      -ms-flex-order: 2;
-      -webkit-order: 2;
-      order: 2;
-    }
-    #l_side {
-      
-        display: none;
-    }
-    
-    #post-body {
-        display:flex;
-        flex-wrap: wrap;
-    }
-    #post-body p {
-        width: 48%;
-        margin: 5px;
-    }
-</style>
-
-<h1 id="壁纸"><a href="#壁纸" class="headerlink" title="壁纸"></a>壁纸</h1><p><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F4k%2Fs%2F01%2F210924143942AV-0-lp.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1661603132&t=1f048fc0b2d6b6052d8fa10a0c0c2a66" class="lazyload" data-srcset="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F4k%2Fs%2F01%2F210924143942AV-0-lp.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1661603132&t=1f048fc0b2d6b6052d8fa10a0c0c2a66" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="太空人"></p>
-<p><img src="https://img2.baidu.com/it/u=4041237652,3455375873&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img2.baidu.com/it/u=4041237652,3455375873&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="2022"></p>
-<p><img src="https://img2.baidu.com/it/u=3912953751,2897910146&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img2.baidu.com/it/u=3912953751,2897910146&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="山脉"></p>
-<p><img src="https://img2.baidu.com/it/u=1830973642,518401107&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img2.baidu.com/it/u=1830973642,518401107&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="公路"></p>
-<p><img src="https://img0.baidu.com/it/u=3307765823,1934426814&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img0.baidu.com/it/u=3307765823,1934426814&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="跑车"></p>
-<p><img src="https://img1.baidu.com/it/u=2688422801,1696196797&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=2688422801,1696196797&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="灯塔"></p>
-<p><img src="https://img1.baidu.com/it/u=674567296,600896811&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=674567296,600896811&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="灯塔"></p>
-<p><img src="https://img0.baidu.com/it/u=3440708810,3442918705&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img0.baidu.com/it/u=3440708810,3442918705&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="颠倒时空"></p>
-<p><img src="https://img1.baidu.com/it/u=872134080,2905781283&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=872134080,2905781283&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="大寒"></p>
-<p><img src="https://img1.baidu.com/it/u=1511941592,1801635068&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=1511941592,1801635068&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="粉色"></p>
-<p><img src="https://img1.baidu.com/it/u=2097372425,2422966379&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=2097372425,2422966379&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="珍珠"></p>
-<p><img src="https://img0.baidu.com/it/u=1656587050,3930583270&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img0.baidu.com/it/u=1656587050,3930583270&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="水泡"></p>
-<p><img src="https://img0.baidu.com/it/u=3421760785,1781416260&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img0.baidu.com/it/u=3421760785,1781416260&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="花草日历"></p>
-<p><img src="https://img1.baidu.com/it/u=2643860120,1785013409&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=2643860120,1785013409&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="船舰"></p>
-<p><img src="https://img2.baidu.com/it/u=3547004283,1966895282&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img2.baidu.com/it/u=3547004283,1966895282&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="流体"></p>
-<p><img src="https://img1.baidu.com/it/u=1692648092,2998825096&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=1692648092,2998825096&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="跑车"></p>
-<p><img src="https://img2.baidu.com/it/u=2899977724,4160359019&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img2.baidu.com/it/u=2899977724,4160359019&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="鹤"></p>
-<p><img src="https://img1.baidu.com/it/u=4094397582,1558263522&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=4094397582,1558263522&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="2022"></p>
-]]></content>
-      <categories>
-        <category>壁纸</category>
-      </categories>
-      <tags>
-        <tag>fariy</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Electron的安装与使用</title>
     <url>/2022/08/04/electron/Electron%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h1 id="Electron-是使用-JavaScript-HTML-和-CSS-构建跨平台的桌面应用"><a href="#Electron-是使用-JavaScript-HTML-和-CSS-构建跨平台的桌面应用" class="headerlink" title="Electron 是使用 JavaScript, HTML 和 CSS 构建跨平台的桌面应用"></a>Electron 是使用 JavaScript, HTML 和 CSS 构建跨平台的桌面应用</h1><p>本文基于 Windows 进行开发的过程，记录下来，以便日后使用，Electron 官网：<a href="https://electronjs.org/docs">https://electronjs.org/docs</a></p>
@@ -3047,6 +2991,62 @@ myWebsocket(&#39;ws://127.0.0.1:8000&#39;, &#123; name: &#39;林三心&#39;, age
       </categories>
       <tags>
         <tag>Electron</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>fariy-001</title>
+    <url>/2022/07/28/fairy/fairy-001/</url>
+    <content><![CDATA[<style>
+    #l_main {
+
+      width: calc(100% - 1 * 0px);
+      padding-left: 0px;
+      float: left;
+      -webkit-box-ordinal-group: 2;
+      -moz-box-ordinal-group: 2;
+      -ms-flex-order: 2;
+      -webkit-order: 2;
+      order: 2;
+    }
+    #l_side {
+      
+        display: none;
+    }
+    
+    #post-body {
+        display:flex;
+        flex-wrap: wrap;
+    }
+    #post-body p {
+        width: 48%;
+        margin: 5px;
+    }
+</style>
+
+<h1 id="壁纸"><a href="#壁纸" class="headerlink" title="壁纸"></a>壁纸</h1><p><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F4k%2Fs%2F01%2F210924143942AV-0-lp.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1661603132&t=1f048fc0b2d6b6052d8fa10a0c0c2a66" class="lazyload" data-srcset="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F4k%2Fs%2F01%2F210924143942AV-0-lp.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1661603132&t=1f048fc0b2d6b6052d8fa10a0c0c2a66" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="太空人"></p>
+<p><img src="https://img2.baidu.com/it/u=4041237652,3455375873&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img2.baidu.com/it/u=4041237652,3455375873&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="2022"></p>
+<p><img src="https://img2.baidu.com/it/u=3912953751,2897910146&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img2.baidu.com/it/u=3912953751,2897910146&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="山脉"></p>
+<p><img src="https://img2.baidu.com/it/u=1830973642,518401107&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img2.baidu.com/it/u=1830973642,518401107&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="公路"></p>
+<p><img src="https://img0.baidu.com/it/u=3307765823,1934426814&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img0.baidu.com/it/u=3307765823,1934426814&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="跑车"></p>
+<p><img src="https://img1.baidu.com/it/u=2688422801,1696196797&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=2688422801,1696196797&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="灯塔"></p>
+<p><img src="https://img1.baidu.com/it/u=674567296,600896811&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=674567296,600896811&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="灯塔"></p>
+<p><img src="https://img0.baidu.com/it/u=3440708810,3442918705&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img0.baidu.com/it/u=3440708810,3442918705&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="颠倒时空"></p>
+<p><img src="https://img1.baidu.com/it/u=872134080,2905781283&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=872134080,2905781283&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="大寒"></p>
+<p><img src="https://img1.baidu.com/it/u=1511941592,1801635068&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=1511941592,1801635068&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="粉色"></p>
+<p><img src="https://img1.baidu.com/it/u=2097372425,2422966379&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=2097372425,2422966379&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="珍珠"></p>
+<p><img src="https://img0.baidu.com/it/u=1656587050,3930583270&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img0.baidu.com/it/u=1656587050,3930583270&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="水泡"></p>
+<p><img src="https://img0.baidu.com/it/u=3421760785,1781416260&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img0.baidu.com/it/u=3421760785,1781416260&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="花草日历"></p>
+<p><img src="https://img1.baidu.com/it/u=2643860120,1785013409&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=2643860120,1785013409&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="船舰"></p>
+<p><img src="https://img2.baidu.com/it/u=3547004283,1966895282&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img2.baidu.com/it/u=3547004283,1966895282&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="流体"></p>
+<p><img src="https://img1.baidu.com/it/u=1692648092,2998825096&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=1692648092,2998825096&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="跑车"></p>
+<p><img src="https://img2.baidu.com/it/u=2899977724,4160359019&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img2.baidu.com/it/u=2899977724,4160359019&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="鹤"></p>
+<p><img src="https://img1.baidu.com/it/u=4094397582,1558263522&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" class="lazyload" data-srcset="https://img1.baidu.com/it/u=4094397582,1558263522&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="2022"></p>
+]]></content>
+      <categories>
+        <category>壁纸</category>
+      </categories>
+      <tags>
+        <tag>fariy</tag>
       </tags>
   </entry>
   <entry>
@@ -3119,30 +3119,6 @@ myWebsocket(&#39;ws://127.0.0.1:8000&#39;, &#123; name: &#39;林三心&#39;, age
       </tags>
   </entry>
   <entry>
-    <title>用git提交新项目到github</title>
-    <url>/2022/08/11/github/%E7%94%A8git%E6%8F%90%E4%BA%A4%E6%96%B0%E9%A1%B9%E7%9B%AE%E5%88%B0github/</url>
-    <content><![CDATA[<h3 id="1、（先进入项目文件夹）通过命令-git-init-把这个目录变成-git-可以管理的仓库"><a href="#1、（先进入项目文件夹）通过命令-git-init-把这个目录变成-git-可以管理的仓库" class="headerlink" title="1、（先进入项目文件夹）通过命令 git init 把这个目录变成 git 可以管理的仓库"></a>1、（先进入项目文件夹）通过命令 git init 把这个目录变成 git 可以管理的仓库</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
-
-<h3 id="2、把文件添加到版本库中，使用命令-git-add-添加到暂存区里面去，不要忘记后面的小数点“-”，意为添加文件夹下的所有文件"><a href="#2、把文件添加到版本库中，使用命令-git-add-添加到暂存区里面去，不要忘记后面的小数点“-”，意为添加文件夹下的所有文件" class="headerlink" title="2、把文件添加到版本库中，使用命令 git add .添加到暂存区里面去，不要忘记后面的小数点“.”，意为添加文件夹下的所有文件"></a>2、把文件添加到版本库中，使用命令 git add .添加到暂存区里面去，不要忘记后面的小数点“.”，意为添加文件夹下的所有文件</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
-
-<h3 id="3、用命令-git-commit-告诉-Git，把文件提交到仓库。引号内为提交说明"><a href="#3、用命令-git-commit-告诉-Git，把文件提交到仓库。引号内为提交说明" class="headerlink" title="3、用命令 git commit 告诉 Git，把文件提交到仓库。引号内为提交说明"></a>3、用命令 git commit 告诉 Git，把文件提交到仓库。引号内为提交说明</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git commit -m &#x27;first commit&#x27;</span><br></pre></td></tr></table></figure>
-
-<h3 id="4、关联到远程库"><a href="#4、关联到远程库" class="headerlink" title="4、关联到远程库"></a>4、关联到远程库</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git remote add origin` 你的远程库地址</span><br><span class="line"></span><br><span class="line">如：git remote add origin https://github.com/githubusername/demo.git`</span><br></pre></td></tr></table></figure>
-
-<h3 id="5、获取远程库与本地同步合并（如果远程库不为空必须做这一步，否则后面的提交会失败）"><a href="#5、获取远程库与本地同步合并（如果远程库不为空必须做这一步，否则后面的提交会失败）" class="headerlink" title="5、获取远程库与本地同步合并（如果远程库不为空必须做这一步，否则后面的提交会失败）"></a>5、获取远程库与本地同步合并（如果远程库不为空必须做这一步，否则后面的提交会失败）</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git pull --rebase origin master</span><br></pre></td></tr></table></figure>
-
-<h3 id="6、把本地库的内容推送到远程，使用-git-push-命令，实际上是把当前分支-master-推送到远程。执行此命令后会要求输入用户名、密码，验证通过后即开始上传。"><a href="#6、把本地库的内容推送到远程，使用-git-push-命令，实际上是把当前分支-master-推送到远程。执行此命令后会要求输入用户名、密码，验证通过后即开始上传。" class="headerlink" title="6、把本地库的内容推送到远程，使用 git push 命令，实际上是把当前分支 master 推送到远程。执行此命令后会要求输入用户名、密码，验证通过后即开始上传。"></a>6、把本地库的内容推送到远程，使用 git push 命令，实际上是把当前分支 master 推送到远程。执行此命令后会要求输入用户名、密码，验证通过后即开始上传。</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-
-<h3 id="7、状态查询命令"><a href="#7、状态查询命令" class="headerlink" title="7、状态查询命令"></a>7、状态查询命令</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>github</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>github克隆项目失败</title>
     <url>/2022/07/29/github/github%E5%85%8B%E9%9A%86%E9%A1%B9%E7%9B%AE%E5%A4%B1%E8%B4%A5/</url>
     <content><![CDATA[<h2 id="unable-to-access-‘https-github-com-用户名-仓库名-git-39-SSL-certificate-problem-self问题解决"><a href="#unable-to-access-‘https-github-com-用户名-仓库名-git-39-SSL-certificate-problem-self问题解决" class="headerlink" title="unable to access ‘https://github.com/用户名/仓库名.git/&#39;: SSL certificate problem: self问题解决"></a>unable to access ‘<a href="https://github.com/%E7%94%A8%E6%88%B7%E5%90%8D/%E4%BB%93%E5%BA%93%E5%90%8D.git/&#39;">https://github.com/用户名/仓库名.git/&#39;</a>: SSL certificate problem: self问题解决</h2><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
@@ -3202,6 +3178,62 @@ h1,h2,h3,h4,h5,h6{
       </categories>
       <tags>
         <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>用git提交新项目到github</title>
+    <url>/2022/08/11/github/%E7%94%A8git%E6%8F%90%E4%BA%A4%E6%96%B0%E9%A1%B9%E7%9B%AE%E5%88%B0github/</url>
+    <content><![CDATA[<h3 id="1、（先进入项目文件夹）通过命令-git-init-把这个目录变成-git-可以管理的仓库"><a href="#1、（先进入项目文件夹）通过命令-git-init-把这个目录变成-git-可以管理的仓库" class="headerlink" title="1、（先进入项目文件夹）通过命令 git init 把这个目录变成 git 可以管理的仓库"></a>1、（先进入项目文件夹）通过命令 git init 把这个目录变成 git 可以管理的仓库</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、把文件添加到版本库中，使用命令-git-add-添加到暂存区里面去，不要忘记后面的小数点“-”，意为添加文件夹下的所有文件"><a href="#2、把文件添加到版本库中，使用命令-git-add-添加到暂存区里面去，不要忘记后面的小数点“-”，意为添加文件夹下的所有文件" class="headerlink" title="2、把文件添加到版本库中，使用命令 git add .添加到暂存区里面去，不要忘记后面的小数点“.”，意为添加文件夹下的所有文件"></a>2、把文件添加到版本库中，使用命令 git add .添加到暂存区里面去，不要忘记后面的小数点“.”，意为添加文件夹下的所有文件</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
+
+<h3 id="3、用命令-git-commit-告诉-Git，把文件提交到仓库。引号内为提交说明"><a href="#3、用命令-git-commit-告诉-Git，把文件提交到仓库。引号内为提交说明" class="headerlink" title="3、用命令 git commit 告诉 Git，把文件提交到仓库。引号内为提交说明"></a>3、用命令 git commit 告诉 Git，把文件提交到仓库。引号内为提交说明</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git commit -m &#x27;first commit&#x27;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4、关联到远程库"><a href="#4、关联到远程库" class="headerlink" title="4、关联到远程库"></a>4、关联到远程库</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git remote add origin` 你的远程库地址</span><br><span class="line"></span><br><span class="line">如：git remote add origin https://github.com/githubusername/demo.git`</span><br></pre></td></tr></table></figure>
+
+<h3 id="5、获取远程库与本地同步合并（如果远程库不为空必须做这一步，否则后面的提交会失败）"><a href="#5、获取远程库与本地同步合并（如果远程库不为空必须做这一步，否则后面的提交会失败）" class="headerlink" title="5、获取远程库与本地同步合并（如果远程库不为空必须做这一步，否则后面的提交会失败）"></a>5、获取远程库与本地同步合并（如果远程库不为空必须做这一步，否则后面的提交会失败）</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git pull --rebase origin master</span><br></pre></td></tr></table></figure>
+
+<h3 id="6、把本地库的内容推送到远程，使用-git-push-命令，实际上是把当前分支-master-推送到远程。执行此命令后会要求输入用户名、密码，验证通过后即开始上传。"><a href="#6、把本地库的内容推送到远程，使用-git-push-命令，实际上是把当前分支-master-推送到远程。执行此命令后会要求输入用户名、密码，验证通过后即开始上传。" class="headerlink" title="6、把本地库的内容推送到远程，使用 git push 命令，实际上是把当前分支 master 推送到远程。执行此命令后会要求输入用户名、密码，验证通过后即开始上传。"></a>6、把本地库的内容推送到远程，使用 git push 命令，实际上是把当前分支 master 推送到远程。执行此命令后会要求输入用户名、密码，验证通过后即开始上传。</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<h3 id="7、状态查询命令"><a href="#7、状态查询命令" class="headerlink" title="7、状态查询命令"></a>7、状态查询命令</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>github</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo之站点统计——busuanzi</title>
+    <url>/2022/08/01/hexo/hexo%E4%B9%8B%E7%AB%99%E7%82%B9%E7%BB%9F%E8%AE%A1%E2%80%94%E2%80%94busuanzi/</url>
+    <content><![CDATA[<p>本片介绍的是站点信息统计之 busuanzi</p>
+<h1 id="一、站点信息"><a href="#一、站点信息" class="headerlink" title="一、站点信息"></a>一、站点信息</h1><h2 id="1-1-在-config-volantis-yml-搜索统计-显示有站点统计信息"><a href="#1-1-在-config-volantis-yml-搜索统计-显示有站点统计信息" class="headerlink" title="1.1 在_config.volantis.yml 搜索统计,显示有站点统计信息"></a>1.1 在_config.volantis.yml 搜索<code>统计</code>,显示有站点统计信息</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">visitcounter: # 站点统计访客开启入口在下面⬇</span><br><span class="line">      siteuv:</span><br><span class="line">        enable: true</span><br><span class="line">        text: &#x27;本站访客数：&#x27;</span><br><span class="line">        unit: &#x27;人&#x27;</span><br><span class="line">      sitepv:</span><br><span class="line">        enable: true</span><br><span class="line">        text: &#x27;本站总访问量：&#x27;</span><br><span class="line">        unit: &#x27;次&#x27;</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-2-接下来就是-analytics-引入-busuanzi-这里就需要配置个人的-app-id-和-app-key"><a href="#1-2-接下来就是-analytics-引入-busuanzi-这里就需要配置个人的-app-id-和-app-key" class="headerlink" title="1.2 接下来就是 analytics 引入 busuanzi,这里就需要配置个人的 app_id 和 app_key"></a>1.2 接下来就是 analytics 引入 busuanzi,这里就需要配置个人的 app_id 和 app_key</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 站点统计访客开启入口，引入busuanzi，并配置属于自己的app_id和app_key</span><br><span class="line">analytics:</span><br><span class="line">  busuanzi: volantis-static/libs/busuanzi/js/busuanzi.pure.mini.js</span><br><span class="line">  leancloud: # 请使用自己的 id &amp; key 以防止数据丢失</span><br><span class="line">    app_id: u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI</span><br><span class="line">    app_key: jfHtEKVE24j0IVCGHbvuFClp</span><br><span class="line">    custom_api_server: # 国际版一般不需要写，除非自定义了 API Server</span><br></pre></td></tr></table></figure>
+
+<h1 id="二、获取-busuanzi-的配置信息"><a href="#二、获取-busuanzi-的配置信息" class="headerlink" title="二、获取 busuanzi 的配置信息"></a>二、获取 busuanzi 的配置信息</h1><h2 id="2-1-打开-leancloud-官网，注册账号，该认证认证"><a href="#2-1-打开-leancloud-官网，注册账号，该认证认证" class="headerlink" title="2.1 打开 leancloud 官网，注册账号，该认证认证"></a>2.1 打开 leancloud 官网，注册账号，该认证认证</h2><blockquote>
+<p>leancloud 官网:<a href="https://www.leancloud.cn/">https://www.leancloud.cn/</a> ,点击免费使用，注册账号</p>
+</blockquote>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224259281.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224259281.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="注册账号"></p>
+<h2 id="2-2-登录账号注册应用"><a href="#2-2-登录账号注册应用" class="headerlink" title="2.2 登录账号注册应用"></a>2.2 登录账号注册应用</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224618543.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224618543.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="注册应用"></p>
+<h2 id="2-3-点击应用，选择应用"><a href="#2-3-点击应用，选择应用" class="headerlink" title="2.3 点击应用，选择应用"></a>2.3 点击应用，选择应用</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224734317.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224734317.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="选择应用"></p>
+<h2 id="2-4-点击设置，应用凭证，右侧就是我们想要的配置信息了"><a href="#2-4-点击设置，应用凭证，右侧就是我们想要的配置信息了" class="headerlink" title="2.4 点击设置，应用凭证，右侧就是我们想要的配置信息了"></a>2.4 点击设置，应用凭证，右侧就是我们想要的配置信息了</h2><blockquote>
+<p>复制保存我们的配置信息，填入指定位置，页面就是有相关信息展示了</p>
+</blockquote>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801225041384.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801225041384.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="获取配置信息"></p>
+<h1 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h1><blockquote>
+<p>tip: 本地运行显示数据有点夸张了，还有点延迟，但是部署之后会显示正常数据</p>
+</blockquote>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801230651942.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801230651942.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="本地运行"></p>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801225311587.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801225311587.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="部署之后"></p>
+]]></content>
+      <categories>
+        <category>Hexo系列</category>
+      </categories>
+      <tags>
+        <tag>busuanzi</tag>
+        <tag>站点统计</tag>
       </tags>
   </entry>
   <entry>
@@ -3569,38 +3601,6 @@ h1,h2,h3,h4,h5,h6{
       <tags>
         <tag>评论系统</tag>
         <tag>twikoo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo之站点统计——busuanzi</title>
-    <url>/2022/08/01/hexo/hexo%E4%B9%8B%E7%AB%99%E7%82%B9%E7%BB%9F%E8%AE%A1%E2%80%94%E2%80%94busuanzi/</url>
-    <content><![CDATA[<p>本片介绍的是站点信息统计之 busuanzi</p>
-<h1 id="一、站点信息"><a href="#一、站点信息" class="headerlink" title="一、站点信息"></a>一、站点信息</h1><h2 id="1-1-在-config-volantis-yml-搜索统计-显示有站点统计信息"><a href="#1-1-在-config-volantis-yml-搜索统计-显示有站点统计信息" class="headerlink" title="1.1 在_config.volantis.yml 搜索统计,显示有站点统计信息"></a>1.1 在_config.volantis.yml 搜索<code>统计</code>,显示有站点统计信息</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">visitcounter: # 站点统计访客开启入口在下面⬇</span><br><span class="line">      siteuv:</span><br><span class="line">        enable: true</span><br><span class="line">        text: &#x27;本站访客数：&#x27;</span><br><span class="line">        unit: &#x27;人&#x27;</span><br><span class="line">      sitepv:</span><br><span class="line">        enable: true</span><br><span class="line">        text: &#x27;本站总访问量：&#x27;</span><br><span class="line">        unit: &#x27;次&#x27;</span><br></pre></td></tr></table></figure>
-
-<h2 id="1-2-接下来就是-analytics-引入-busuanzi-这里就需要配置个人的-app-id-和-app-key"><a href="#1-2-接下来就是-analytics-引入-busuanzi-这里就需要配置个人的-app-id-和-app-key" class="headerlink" title="1.2 接下来就是 analytics 引入 busuanzi,这里就需要配置个人的 app_id 和 app_key"></a>1.2 接下来就是 analytics 引入 busuanzi,这里就需要配置个人的 app_id 和 app_key</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 站点统计访客开启入口，引入busuanzi，并配置属于自己的app_id和app_key</span><br><span class="line">analytics:</span><br><span class="line">  busuanzi: volantis-static/libs/busuanzi/js/busuanzi.pure.mini.js</span><br><span class="line">  leancloud: # 请使用自己的 id &amp; key 以防止数据丢失</span><br><span class="line">    app_id: u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI</span><br><span class="line">    app_key: jfHtEKVE24j0IVCGHbvuFClp</span><br><span class="line">    custom_api_server: # 国际版一般不需要写，除非自定义了 API Server</span><br></pre></td></tr></table></figure>
-
-<h1 id="二、获取-busuanzi-的配置信息"><a href="#二、获取-busuanzi-的配置信息" class="headerlink" title="二、获取 busuanzi 的配置信息"></a>二、获取 busuanzi 的配置信息</h1><h2 id="2-1-打开-leancloud-官网，注册账号，该认证认证"><a href="#2-1-打开-leancloud-官网，注册账号，该认证认证" class="headerlink" title="2.1 打开 leancloud 官网，注册账号，该认证认证"></a>2.1 打开 leancloud 官网，注册账号，该认证认证</h2><blockquote>
-<p>leancloud 官网:<a href="https://www.leancloud.cn/">https://www.leancloud.cn/</a> ,点击免费使用，注册账号</p>
-</blockquote>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224259281.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224259281.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="注册账号"></p>
-<h2 id="2-2-登录账号注册应用"><a href="#2-2-登录账号注册应用" class="headerlink" title="2.2 登录账号注册应用"></a>2.2 登录账号注册应用</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224618543.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224618543.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="注册应用"></p>
-<h2 id="2-3-点击应用，选择应用"><a href="#2-3-点击应用，选择应用" class="headerlink" title="2.3 点击应用，选择应用"></a>2.3 点击应用，选择应用</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224734317.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224734317.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="选择应用"></p>
-<h2 id="2-4-点击设置，应用凭证，右侧就是我们想要的配置信息了"><a href="#2-4-点击设置，应用凭证，右侧就是我们想要的配置信息了" class="headerlink" title="2.4 点击设置，应用凭证，右侧就是我们想要的配置信息了"></a>2.4 点击设置，应用凭证，右侧就是我们想要的配置信息了</h2><blockquote>
-<p>复制保存我们的配置信息，填入指定位置，页面就是有相关信息展示了</p>
-</blockquote>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801225041384.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801225041384.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="获取配置信息"></p>
-<h1 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h1><blockquote>
-<p>tip: 本地运行显示数据有点夸张了，还有点延迟，但是部署之后会显示正常数据</p>
-</blockquote>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801230651942.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801230651942.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="本地运行"></p>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801225311587.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801225311587.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="部署之后"></p>
-]]></content>
-      <categories>
-        <category>Hexo系列</category>
-      </categories>
-      <tags>
-        <tag>busuanzi</tag>
-        <tag>站点统计</tag>
       </tags>
   </entry>
   <entry>
