@@ -546,35 +546,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Win10自带软件卸载方法</title>
-    <url>/2022/10/15/win10%E5%8D%B8%E8%BD%BD%E8%87%AA%E5%B8%A6%E5%BA%94%E7%94%A8/</url>
-    <content><![CDATA[<h1 id="Win10自带软件卸载方法【详细教程】"><a href="#Win10自带软件卸载方法【详细教程】" class="headerlink" title="Win10自带软件卸载方法【详细教程】"></a>Win10自带软件卸载方法【详细教程】</h1><p>Win10自带软件怎么卸载 ?Win10一般都会在系统中预装不少软件，下面为大家带来了 Win10自带软件卸载教程 ，一起来看看。</p>
-<p>　　使用命令卸载Win10内置软件</p>
-<p>　　Win10系统内置的这些应用，可以通过“命令行”方式进行卸载的，支持卸载的应用以及对应的命令如下：</p>
-<p>　　以管理员方式，打开 CMD 运行命名操作框，如，可以先按 Ctrl+X组合件，然后在搜索中，输入 CMD 然后在 命令提示符 中右键，点击以“管理员方式运行”，如下图所示。</p>
-<p>　　打开命令运行窗口后，如果要卸载自带的 XBOX 应用，只要在命名窗口中，粘贴上命名 get-appxpackage <em>Microsoft.XboxApp</em> | remove-appxpackage 然后按下回车键(Enter)确认就可以了。</p>
-<p>　　相关命令</p>
-<p>　　闹钟时钟：get-appxpackage <em>Microsoft.WindowsAlarms</em> | remove-appxpackage</p>
-<p>　　计算机：get-appxpackage <em>Microsoft.WindowsCalculator</em> | remove-appxpackage</p>
-<p>　　相机：get-appxpackage <em>Microsoft.WindowsCamera</em> | remove-appxpackage</p>
-<p>　　Groove音乐：get-appxpackage <em>Microsoft.ZuneMusic</em> | remove-appxpackage</p>
-<p>　　邮件和日历：get-appxpackage <em>microsoft.windowscommunicationsapps</em> | remove-appxpackage</p>
-<p>　　地图：get-appxpackage <em>Microsoft.WindowsMaps</em> | remove-appxpackage</p>
-<p>　　电影和电视：get-appxpackage <em>Microsoft.ZuneVideo</em> | remove-appxpackage</p>
-<p>　　Onenote：get-appxpackage <em>Microsoft.Office.OneNote</em> | remove-appxpackage</p>
-<p>　　人脉：get-appxpackage <em>Microsoft.People</em> | remove-appxpackage</p>
-<p>　　照片：get-appxpackage <em>Microsoft.Windows.Photos</em> | remove-appxpackage</p>
-<p>　　语音录音机：get-appxpackage *Microsoft.WindowsSoundRecorder * | remove-appxpackage</p>
-<p>　　XBOX：get-appxpackage <em>Microsoft.XboxApp</em> | remove-appxpackage</p>
-<p>　　注意事项</p>
-<p>　　这种方法，需要是管理员账户下运行。</p>
-<p>　　以上就是我介绍的 Win10自带软件怎么卸载 Win10自带软件卸载教程 ，希望对你有帮助。</p>
-]]></content>
-      <categories>
-        <category>win10</category>
-      </categories>
-  </entry>
-  <entry>
     <title>vue面试题01</title>
     <url>/2022/11/01/vue%E9%9D%A2%E8%AF%95%E9%A2%9801/</url>
     <content><![CDATA[<p>为了金三银四的跳槽季做准备，并且我是 <code>vue</code> 技术栈的，所以整理了若干个 <code>vue</code> 的面试题。</p>
@@ -1783,6 +1754,35 @@ methodsToPatch.<span class="hljs-title function_">forEach</span>(<span class="hl
       </tags>
   </entry>
   <entry>
+    <title>Win10自带软件卸载方法</title>
+    <url>/2022/10/15/win10%E5%8D%B8%E8%BD%BD%E8%87%AA%E5%B8%A6%E5%BA%94%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="Win10自带软件卸载方法【详细教程】"><a href="#Win10自带软件卸载方法【详细教程】" class="headerlink" title="Win10自带软件卸载方法【详细教程】"></a>Win10自带软件卸载方法【详细教程】</h1><p>Win10自带软件怎么卸载 ?Win10一般都会在系统中预装不少软件，下面为大家带来了 Win10自带软件卸载教程 ，一起来看看。</p>
+<p>　　使用命令卸载Win10内置软件</p>
+<p>　　Win10系统内置的这些应用，可以通过“命令行”方式进行卸载的，支持卸载的应用以及对应的命令如下：</p>
+<p>　　以管理员方式，打开 CMD 运行命名操作框，如，可以先按 Ctrl+X组合件，然后在搜索中，输入 CMD 然后在 命令提示符 中右键，点击以“管理员方式运行”，如下图所示。</p>
+<p>　　打开命令运行窗口后，如果要卸载自带的 XBOX 应用，只要在命名窗口中，粘贴上命名 get-appxpackage <em>Microsoft.XboxApp</em> | remove-appxpackage 然后按下回车键(Enter)确认就可以了。</p>
+<p>　　相关命令</p>
+<p>　　闹钟时钟：get-appxpackage <em>Microsoft.WindowsAlarms</em> | remove-appxpackage</p>
+<p>　　计算机：get-appxpackage <em>Microsoft.WindowsCalculator</em> | remove-appxpackage</p>
+<p>　　相机：get-appxpackage <em>Microsoft.WindowsCamera</em> | remove-appxpackage</p>
+<p>　　Groove音乐：get-appxpackage <em>Microsoft.ZuneMusic</em> | remove-appxpackage</p>
+<p>　　邮件和日历：get-appxpackage <em>microsoft.windowscommunicationsapps</em> | remove-appxpackage</p>
+<p>　　地图：get-appxpackage <em>Microsoft.WindowsMaps</em> | remove-appxpackage</p>
+<p>　　电影和电视：get-appxpackage <em>Microsoft.ZuneVideo</em> | remove-appxpackage</p>
+<p>　　Onenote：get-appxpackage <em>Microsoft.Office.OneNote</em> | remove-appxpackage</p>
+<p>　　人脉：get-appxpackage <em>Microsoft.People</em> | remove-appxpackage</p>
+<p>　　照片：get-appxpackage <em>Microsoft.Windows.Photos</em> | remove-appxpackage</p>
+<p>　　语音录音机：get-appxpackage *Microsoft.WindowsSoundRecorder * | remove-appxpackage</p>
+<p>　　XBOX：get-appxpackage <em>Microsoft.XboxApp</em> | remove-appxpackage</p>
+<p>　　注意事项</p>
+<p>　　这种方法，需要是管理员账户下运行。</p>
+<p>　　以上就是我介绍的 Win10自带软件怎么卸载 Win10自带软件卸载教程 ，希望对你有帮助。</p>
+]]></content>
+      <categories>
+        <category>win10</category>
+      </categories>
+  </entry>
+  <entry>
     <title>临时邮箱</title>
     <url>/2022/10/27/%E4%B8%B4%E6%97%B6%E9%82%AE%E7%AE%B1/</url>
     <content><![CDATA[<h1 id="临时邮箱"><a href="#临时邮箱" class="headerlink" title="临时邮箱"></a>临时邮箱</h1><p>24小时邮箱：<a href="http://24mail.chacuo.net/">http://24mail.chacuo.net</a><br>60分钟邮箱：<a href="https://www.guerrillamail.com/zh/">https://www.guerrillamail.com/zh/</a><br>10 分钟邮箱：<a href="https://linshiyouxiang.net/">https://linshiyouxiang.net/</a><br>10 分钟邮箱：<a href="http://www.bccto.me/">http://www.bccto.me/</a><br>10 分钟邮箱：<a href="https://temp-mail.org/zh/">https://temp-mail.org/zh/</a><br>10 分钟邮箱：<a href="https://10minutemail.net/?lang=zh-cn">https://10minutemail.net/?lang=zh-cn</a><br>10 分钟邮箱：<a href="http://10minutemail.com/10MinuteMail/index.html">http://10minutemail.com/10MinuteMail/index.html</a><br>10 分钟邮箱：<a href="https://9em.org/">https://9em.org/</a><br>10分钟邮箱：<a href="https://mailtemp.net/">https://mailtemp.net</a><br>10分钟邮箱：<a href="https://email10min.com/">https://email10min.com</a><br>30分钟邮箱： <a href="https://shorttimemail.com/zh-Hans">https://shorttimemail.com/zh-Hans</a><br>60 分钟邮箱：<a href="https://www.moakt.com/zh/mail">https://www.moakt.com/zh/mail</a><br>60 分钟邮箱：<a href="http://www.nowmymail.com/">http://www.nowmymail.com</a><br>60 分钟邮箱：<a href="http://www.incognitomail.com/">http://www.incognitomail.com/</a><br>24 小时邮箱：<a href="http://24mail.chacuo.net/">http://24mail.chacuo.net/</a><br>5日邮箱：<a href="http://www.yopmail.com/zh/">http://www.yopmail.com/zh/</a><br>最多一个月：<a href="http://www.jetable.org/zh/index">http://www.jetable.org/zh/index</a><br>时间不知：<a href="http://www.mailinator.com/">http://www.mailinator.com</a><br>MailDrop：<a href="https://maildrop.cc/">https://maildrop.cc/</a><br>匿名发信：<a href="https://eskiimo.com/">https://eskiimo.com/</a><br>大概24小时：<a href="https://tempmail.altmails.com/">https://tempmail.altmails.com</a><br>小鸟临时邮箱：<a href="http://www.5-mail.com/">http://www.5-mail.com</a><br>10 分钟一次性电子邮件：<a href="https://10minemail.com/zh/">https://10minemail.com/zh/</a><br>10分钟临时一次性电子邮件：<a href="https://www.crazymailing.com/zh/">https://www.crazymailing.com/zh/</a> 如果有想保存的邮件可以转发到真实邮箱<br>一次性臨時電子郵件：<a href="https://www.mohmal.com/zh">https://www.mohmal.com/zh</a><br>EmailonDeck免费临时电子邮件：<a href="https://www.emailondeck.com/zh-cn/">https://www.emailondeck.com/zh-cn/</a><br>TrashSpam - 临时一次性电子邮件：<a href="https://trashspam.com/cn/">https://trashspam.com/cn/</a> 有效期：1天</p>
@@ -2027,143 +2027,6 @@ methodsToPatch.<span class="hljs-title function_">forEach</span>(<span class="hl
 <li>混合使用包管理器切记，不要重复下载依赖，<code>npm cnpm</code>下载依赖，一定要添加注明是什么依赖，是否全局安装</li>
 <li><code>yarn</code>和<code>npm i</code>两者，选择前者，原因在上面有提到，总体来说，<code>yarn</code>是不二选择，但是其他两者也不可缺少，比如<code>electron</code>这个依赖，使用<code>cnpm</code>就可以完美一键安装</li>
 </ul>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>前端跨域问题如何解决</title>
-    <url>/2022/11/01/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3/</url>
-    <content><![CDATA[<h1 id="前端跨域问题如何解决"><a href="#前端跨域问题如何解决" class="headerlink" title="前端跨域问题如何解决"></a>前端跨域问题如何解决</h1><p>咱们做前端的，平时跟后端对接接口那是必须的事情，但是可能很多同学忽略了一个对接过程中可能会发生的问题——跨域，那跨域到底是啥呢？为什么会跨域呢？又怎么才能解决呢？</p>
-<h3 id="为什么跨域？"><a href="#为什么跨域？" class="headerlink" title="为什么跨域？"></a>为什么跨域？</h3><p>为什么会出现跨域问题呢？那就不得不讲浏览器的同源策略了，它规定了协议号-域名-端口号这三者必须都相同才符合同源策略</p>
-<p>如有有一个不相同，就会出现跨域问题，不符合同源策略导致的后果有</p>
-<ul>
-<li><p>1、LocalStorge、SessionStorge、Cookie等浏览器内存无法跨域访问</p>
-</li>
-<li><p>2、DOM节点无法跨域操作</p>
-</li>
-<li><p>3、Ajax请求无法跨域请求</p>
-</li>
-</ul>
-<blockquote>
-<p>注意点：一个IP是可以注册多个不同域名的，也就是多个域名可能指向同一个IP，即使是这样，他们也不符合同源策略</p>
-</blockquote>
-<h3 id="跨域的时机？"><a href="#跨域的时机？" class="headerlink" title="跨域的时机？"></a>跨域的时机？</h3><p>跨域发生在什么时候呢？我考过很多位同学，得到了两种答案</p>
-<ul>
-<li>1、请求一发出就被浏览器的跨域报错拦下来了(大多数人回答)</li>
-<li>2、请求发出去到后端，后端返回数据，在浏览器接收后端数据时被浏览器的跨域报错拦下来<br>那到底是哪种呢？我们可以验证下，咱们先npm i nodemon -g，然后创建一个index.js，然后nodemon index起一个node服务</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.js  http://127.0.0.1:8000</span><br><span class="line"></span><br><span class="line">const http = require(&#x27;http&#x27;);</span><br><span class="line"></span><br><span class="line">const port = 8000;</span><br><span class="line"></span><br><span class="line">http.createServer(function (req, res) &#123;</span><br><span class="line">    const &#123; query &#125; = urllib.parse(req.url, true);</span><br><span class="line">    console.log(query.name)</span><br><span class="line">    console.log(&#x27;到后端喽&#x27;)</span><br><span class="line">    res.end(JSON.stringify(&#x27;林三心&#x27;));</span><br><span class="line">&#125;).listen(port, function () &#123;</span><br><span class="line">    console.log(&#x27;server is listening on port &#x27; + port);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>再创建一个index.html，用来写前端的请求代码，咱们就写一个简单的AJAX请求吧</p>
-<p>&#x2F;&#x2F; index.html  <a href="http://127.0.0.1:5500/index.html">http://127.0.0.1:5500/index.html</a></p>
-<script>
-    //步骤一:创建异步对象
-    var ajax = new XMLHttpRequest();
-    //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数
-    ajax.open('get', 'http://127.0.0.1:8000?name=前端过来的林三心');
-    //步骤三:发送请求
-    ajax.send();
-    //步骤四:注册事件 onreadystatechange 状态改变就会调用
-    ajax.onreadystatechange = function () {
-        if (ajax.readyState == 4 && ajax.status == 200) {
-            //步骤五 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的
-            console.log(ajax.responseText);//输入相应的内容
-        }
-    }
-</script>
-
-<p>最终，前端确实是跨域报错了。但这不是结果，我们要想知道是哪一个答案，关键在于看后端的node服务那里有没有输出，就一目了然了。所以，答案2才是对的。</p>
-<h3 id="同域情况-amp-amp-跨域情况？"><a href="#同域情况-amp-amp-跨域情况？" class="headerlink" title="同域情况 &amp;&amp; 跨域情况？"></a>同域情况 &amp;&amp; 跨域情况？</h3><p>前面提到了同源策略，满足协议号-域名-端口号这三者都相同就是同域，反之就是跨域，会导致跨域报错，下面通过几个例子让大家巩固一下对同域和跨域的认识把！</p>
-<h3 id="解决跨域的方案"><a href="#解决跨域的方案" class="headerlink" title="解决跨域的方案"></a>解决跨域的方案</h3><p>跨域其实是一个很久的问题了，对应的解决方案也有很多，一起接着往下读吧！！！</p>
-<h3 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h3><p>前面咱们说了，因为浏览器同源策略的存在，导致存在跨域问题，那有没有不受跨域问题所束缚的东西呢？其实是有的，以下这三个标签加载资源路径是不受束缚的</p>
-<ul>
-<li>1、script标签：<script src="加载资源路径"></script></li>
-<li>2、link标签：<link herf="加载资源路径"></link></li>
-<li>3、img标签：<img src="加载资源路径" class="lazyload" data-srcset="加载资源路径" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></img><br>而JSONP就是利用了script的src加载不受束缚，从而可以拥有从不同的域拿到数据的能力。但是JSONP需要前端后端配合，才能实现最终的跨域获取数据。</li>
-</ul>
-<p>JSONP通俗点说就是：利用script的src去发送请求，将一个方法名callback传给后端，后端拿到这个方法名，将所需数据，通过字符串拼接成新的字符串callback(所需数据)，并发送到前端，前端接收到这个字符串之后，就会自动执行方法callback(所需数据)。</p>
-<p>后端代码</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.js  http://127.0.0.1:8000</span><br><span class="line"></span><br><span class="line">const http = require(&#x27;http&#x27;);</span><br><span class="line">const urllib = require(&#x27;url&#x27;);</span><br><span class="line"></span><br><span class="line">const port = 8000;</span><br><span class="line"></span><br><span class="line">http.createServer(function (req, res) &#123;</span><br><span class="line">    const &#123; query &#125; = urllib.parse(req.url, true);</span><br><span class="line">    if (query &amp;&amp; query.callback) &#123;</span><br><span class="line">        const &#123; name, age, callback &#125; = query</span><br><span class="line">        const person = `$&#123;name&#125;今年$&#123;age&#125;岁啦！！！`</span><br><span class="line">        const str = `$&#123;callback&#125;($&#123;JSON.stringify(person)&#125;)` // 拼成callback(data)</span><br><span class="line">        res.end(str);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        res.end(JSON.stringify(&#x27;没东西啊你&#x27;));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).listen(port, function () &#123;</span><br><span class="line">    console.log(&#x27;server is listening on port &#x27; + port);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="前端代码"><a href="#前端代码" class="headerlink" title="前端代码"></a>前端代码</h4><pre><code>// index.html  http://127.0.0.1:5500/index.html
-
-const jsonp = (url, params, cbName) =&gt; &#123;
-    return new Promise((resolve, reject) =&gt; &#123;
-        const script = document.createElement(&#39;script&#39;)
-        window[cbName] = (data) =&gt; &#123;
-            resolve(data)
-            document.body.removeChild(script)
-        &#125;
-        params = &#123; ...params, callback: cbName &#125;
-        const arr = Object.keys(params).map(key =&gt; `$&#123;key&#125;=$&#123;params[key]&#125;`)
-        script.src = `$&#123;url&#125;?$&#123;arr.join(&#39;&amp;&#39;)&#125;`
-        document.body.appendChild(script)
-    &#125;)
-&#125;
- 
-jsonp(&#39;http://127.0.0.1:8000&#39;, &#123; name: &#39;林三心&#39;, age: 23 &#125;, &#39;callback&#39;).then(data =&gt; &#123;
-    console.log(data) // 林三心今年23岁啦！！！
-&#125;)
-</code></pre>
-<blockquote>
-<p>JSONP的缺点就是，需要前后端配合，并且只支持get请求方法</p>
-</blockquote>
-<h3 id="WebSocket"><a href="#WebSocket" class="headerlink" title="WebSocket"></a>WebSocket</h3><p>我理解的WebSocket是一种协议(跟http同级，都是协议)，并且他可以进行跨域通信。</p>
-<h4 id="后端代码"><a href="#后端代码" class="headerlink" title="后端代码"></a>后端代码</h4><p>先安装npm i ws</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.js  http://127.0.0.1:8000</span><br><span class="line">const Websocket = require(&#x27;ws&#x27;);</span><br><span class="line"></span><br><span class="line">const port = 8000;</span><br><span class="line">const ws = new Websocket.Server(&#123; port &#125;)</span><br><span class="line">ws.on(&#x27;connection&#x27;, (obj) =&gt; &#123;</span><br><span class="line">    obj.on(&#x27;message&#x27;, (data) =&gt; &#123;</span><br><span class="line">        data = JSON.parse(data.toString())</span><br><span class="line">        const &#123; name, age &#125; = data</span><br><span class="line">        obj.send(`$&#123;name&#125;今年$&#123;age&#125;岁啦！！！`)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="前端代码-1"><a href="#前端代码-1" class="headerlink" title="前端代码"></a>前端代码</h4><pre><code>// index.html  http://127.0.0.1:5500/index.html
-
-function myWebsocket(url, params) &#123;
-    return new Promise((resolve, reject) =&gt; &#123;
-        const socket = new WebSocket(url)
-        socket.onopen = () =&gt; &#123;
-            socket.send(JSON.stringify(params))
-        &#125;
-        socket.onmessage = (e) =&gt; &#123;
-            resolve(e.data)
-        &#125;
-    &#125;)
-&#125;
-myWebsocket(&#39;ws://127.0.0.1:8000&#39;, &#123; name: &#39;林三心&#39;, age: 23 &#125;).then(data =&gt; &#123;
-    console.log(data) // 林三心今年23岁啦！！！
-&#125;)
-</code></pre>
-<h3 id="Cors"><a href="#Cors" class="headerlink" title="Cors"></a>Cors</h3><p>Cors，全称是Cross-Origin Resource Sharing，意思是跨域资源共享，Cors一般是由后端来开启的，一旦开启，前端就可以跨域访问后端。</p>
-<p>为什么后端开启Cors，前端就能跨域请求后端呢？我的理解是：前端跨域访问到后端，后端开启Cors，发送Access-Control-Allow-Origin: 域名 字段到前端（其实不止一个），前端浏览器判断Access-Control-Allow-Origin的域名如果跟前端域名一样，浏览器就不会实行跨域拦截，从而解决跨域问题。</p>
-<h4 id="后端代码-1"><a href="#后端代码-1" class="headerlink" title="后端代码"></a>后端代码</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.js  http://127.0.0.1:8000</span><br><span class="line"></span><br><span class="line">const http = require(&#x27;http&#x27;);</span><br><span class="line">const urllib = require(&#x27;url&#x27;);</span><br><span class="line"></span><br><span class="line">const port = 8000;</span><br><span class="line"></span><br><span class="line">http.createServer(function (req, res) &#123;</span><br><span class="line">    // 开启Cors</span><br><span class="line">    res.writeHead(200, &#123;</span><br><span class="line">        //设置允许跨域的域名，也可设置*允许所有域名</span><br><span class="line">        &#x27;Access-Control-Allow-Origin&#x27;: &#x27;http://127.0.0.1:5500&#x27;,</span><br><span class="line">        //跨域允许的请求方法，也可设置*允许所有方法</span><br><span class="line">        &quot;Access-Control-Allow-Methods&quot;: &quot;DELETE,PUT,POST,GET,OPTIONS&quot;,</span><br><span class="line">        //允许的header类型</span><br><span class="line">        &#x27;Access-Control-Allow-Headers&#x27;: &#x27;Content-Type&#x27;</span><br><span class="line">    &#125;)</span><br><span class="line">    const &#123; query: &#123; name, age &#125; &#125; = urllib.parse(req.url, true);</span><br><span class="line">    res.end(`$&#123;name&#125;今年$&#123;age&#125;岁啦！！！`);</span><br><span class="line">&#125;).listen(port, function () &#123;</span><br><span class="line">    console.log(&#x27;server is listening on port &#x27; + port);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="前端代码-2"><a href="#前端代码-2" class="headerlink" title="前端代码"></a>前端代码</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.html  http://127.0.0.1:5500/index.html</span><br><span class="line">    //步骤一:创建异步对象</span><br><span class="line">    var ajax = new XMLHttpRequest();</span><br><span class="line">    //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数</span><br><span class="line">    ajax.open(&#x27;get&#x27;, &#x27;http://127.0.0.1:8000?name=林三心&amp;age=23&#x27;);</span><br><span class="line">    //步骤三:发送请求</span><br><span class="line">    ajax.send();</span><br><span class="line">    //步骤四:注册事件 onreadystatechange 状态改变就会调用</span><br><span class="line">    ajax.onreadystatechange = function () &#123;</span><br><span class="line">    if (ajax.readyState == 4 &amp;&amp; ajax.status == 200) &#123;</span><br><span class="line">    //步骤五 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的</span><br><span class="line">    console.log(ajax.responseText);//输入相应的内容</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Node接口代理"><a href="#Node接口代理" class="headerlink" title="Node接口代理"></a>Node接口代理</h3><p>还是回到同源策略，同源策略它只是浏览器的一个策略而已，它是限制不到后端的，也就是前端-后端会被同源策略限制，但是后端-后端则不会被限制，所以可以通过Node接口代理，先访问已设置Cors的后端1，再让后端1去访问后端2获取数据到后端1，后端1再把数据传到前端</p>
-<h4 id="后端2代码"><a href="#后端2代码" class="headerlink" title="后端2代码"></a>后端2代码</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.js  http://127.0.0.1:8000</span><br><span class="line"></span><br><span class="line">const http = require(&#x27;http&#x27;);</span><br><span class="line">const urllib = require(&#x27;url&#x27;);</span><br><span class="line"></span><br><span class="line">const port = 8000;</span><br><span class="line"></span><br><span class="line">http.createServer(function (req, res) &#123;</span><br><span class="line">    console.log(888)</span><br><span class="line">    const &#123; query: &#123; name, age &#125; &#125; = urllib.parse(req.url, true);</span><br><span class="line">    res.end(`$&#123;name&#125;今年$&#123;age&#125;岁啦！！！`)</span><br><span class="line">&#125;).listen(port, function () &#123;</span><br><span class="line">    console.log(&#x27;server is listening on port &#x27; + port);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>创建一个index2.js，并nodmeon index2.js</p>
-<h4 id="后端1代码"><a href="#后端1代码" class="headerlink" title="后端1代码"></a>后端1代码</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index2.js  http://127.0.0.1:8888</span><br><span class="line"></span><br><span class="line">const http = require(&#x27;http&#x27;);</span><br><span class="line">const urllib = require(&#x27;url&#x27;);</span><br><span class="line">const querystring = require(&#x27;querystring&#x27;);</span><br><span class="line">const port = 8888;</span><br><span class="line"></span><br><span class="line">http.createServer(function (req, res) &#123;</span><br><span class="line">    // 开启Cors</span><br><span class="line">    res.writeHead(200, &#123;</span><br><span class="line">        //设置允许跨域的域名，也可设置*允许所有域名</span><br><span class="line">        &#x27;Access-Control-Allow-Origin&#x27;: &#x27;http://127.0.0.1:5500&#x27;,</span><br><span class="line">        //跨域允许的请求方法，也可设置*允许所有方法</span><br><span class="line">        &quot;Access-Control-Allow-Methods&quot;: &quot;DELETE,PUT,POST,GET,OPTIONS&quot;,</span><br><span class="line">        //允许的header类型</span><br><span class="line">        &#x27;Access-Control-Allow-Headers&#x27;: &#x27;Content-Type&#x27;</span><br><span class="line">    &#125;)</span><br><span class="line">    const &#123; query &#125; = urllib.parse(req.url, true);</span><br><span class="line">    const &#123; methods = &#x27;GET&#x27;, headers &#125; = req</span><br><span class="line">    const proxyReq = http.request(&#123;</span><br><span class="line">        host: &#x27;127.0.0.1&#x27;,</span><br><span class="line">        port: &#x27;8000&#x27;,</span><br><span class="line">        path: `/?$&#123;querystring.stringify(query)&#125;`,</span><br><span class="line">        methods,</span><br><span class="line">        headers</span><br><span class="line">    &#125;, proxyRes =&gt; &#123;</span><br><span class="line">        proxyRes.on(&#x27;data&#x27;, chunk =&gt; &#123;</span><br><span class="line">            console.log(chunk.toString())</span><br><span class="line">            res.end(chunk.toString())</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;).end()</span><br><span class="line">&#125;).listen(port, function () &#123;</span><br><span class="line">    console.log(&#x27;server is listening on port &#x27; + port);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="前端代码-3"><a href="#前端代码-3" class="headerlink" title="前端代码"></a>前端代码</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.html  http://127.0.0.1:5500</span><br><span class="line"></span><br><span class="line">//步骤一:创建异步对象</span><br><span class="line">    var ajax = new XMLHttpRequest();</span><br><span class="line">    //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端</span><br><span class="line">    ajax.open(&#x27;get&#x27;, &#x27;http://127.0.0.1:8888?name=林三心&amp;age=23&#x27;);</span><br><span class="line">    //步骤三:发送请求</span><br><span class="line">    ajax.send();</span><br><span class="line">    //步骤四:注册事件 onreadystatechange 状态改变就会调用</span><br><span class="line">    ajax.onreadystatechange = function () &#123;</span><br><span class="line">        if (ajax.readyState == 4 &amp;&amp; ajax.status == 200) &#123;</span><br><span class="line">            //步骤五 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的</span><br><span class="line">            console.log(ajax.responseText);//输入相应的内容</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h4><p>其实Nginx跟Node接口代理是一个道理，只不过Nginx就不需要我们自己去搭建一个中间服务</p>
-<p>先下载nginx，然后将nginx目录下的nginx.conf修改如下:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">        listen 8888;</span><br><span class="line">        server_name  127.0.0.1;</span><br><span class="line"></span><br><span class="line">    location /&#123;</span><br><span class="line">       proxy_pass 127.0.0.1:8000;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>最后通过命令行nginx -s reload启动nginx</p>
-<h4 id="后端代码-2"><a href="#后端代码-2" class="headerlink" title="后端代码"></a>后端代码</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.js  http://127.0.0.1:8000</span><br><span class="line"></span><br><span class="line">const http = require(&#x27;http&#x27;);</span><br><span class="line">const urllib = require(&#x27;url&#x27;);</span><br><span class="line"></span><br><span class="line">const port = 8000;</span><br><span class="line"></span><br><span class="line">http.createServer(function (req, res) &#123;</span><br><span class="line">    const &#123; query: &#123; name, age &#125; &#125; = urllib.parse(req.url, true);</span><br><span class="line">    res.end(`$&#123;name&#125;今年$&#123;age&#125;岁啦！！！`);</span><br><span class="line">&#125;).listen(port, function () &#123;</span><br><span class="line">    console.log(&#x27;server is listening on port &#x27; + port);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h4 id="前端代码-4"><a href="#前端代码-4" class="headerlink" title="前端代码"></a>前端代码</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.html  http://127.0.0.1:5500</span><br><span class="line"></span><br><span class="line">//步骤一:创建异步对象</span><br><span class="line">    var ajax = new XMLHttpRequest();</span><br><span class="line">    //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端</span><br><span class="line">    ajax.open(&#x27;get&#x27;, &#x27;http://127.0.0.1:8888?name=林三心&amp;age=23&#x27;);</span><br><span class="line">    //步骤三:发送请求</span><br><span class="line">    ajax.send();</span><br><span class="line">    //步骤四:注册事件 onreadystatechange 状态改变就会调用</span><br><span class="line">    ajax.onreadystatechange = function () &#123;</span><br><span class="line">        if (ajax.readyState == 4 &amp;&amp; ajax.status == 200) &#123;</span><br><span class="line">            //步骤五 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的</span><br><span class="line">            console.log(ajax.responseText);//输入相应的内容</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="postMessage"><a href="#postMessage" class="headerlink" title="postMessage"></a>postMessage</h3><p>场景：<a href="http://127.0.0.1:5500/index.html%E9%A1%B5%E9%9D%A2%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BA%86iframe%E6%A0%87%E7%AD%BE%E5%86%85%E5%B5%8C%E4%BA%86%E4%B8%80%E4%B8%AAhttp://127.0.0.1:5555/index.html%E7%9A%84%E9%A1%B5%E9%9D%A2">http://127.0.0.1:5500/index.html页面中使用了iframe标签内嵌了一个http://127.0.0.1:5555/index.html的页面</a></p>
-<p>虽然这两个页面存在于一个页面中，但是需要iframe标签来嵌套才行，这两个页面之间是无法进行通信的，因为他们端口号不同，根据同源策略，他们之间存在跨域问题</p>
-<p>那应该怎么办呢？使用postMessage可以使这两个页面进行通信</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// http:127.0.0.1:5500/index.html</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;iframe src=&quot;http://127.0.0.1:5555/index.html&quot; id=&quot;frame&quot;&gt;&lt;/iframe&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    document.getElementById(&#x27;frame&#x27;).onload = function () &#123;</span><br><span class="line">        this.contentWindow.postMessage(&#123; name: &#x27;林三心&#x27;, age: 23 &#125;, &#x27;http://127.0.0.1:5555&#x27;)</span><br><span class="line">        window.onmessage = function (e) &#123;</span><br><span class="line">            console.log(e.data) // 林三心今年23岁啦！！！</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// http://127.0.0.1:5555/index.html</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">        window.onmessage = function (e) &#123;</span><br><span class="line">            const &#123; data: &#123; name, age &#125;, origin &#125; = e</span><br><span class="line">            e.source.postMessage(`$&#123;name&#125;今年$&#123;age&#125;岁啦！！！`, origin)</span><br><span class="line">        &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="document-domain-amp-amp-iframe"><a href="#document-domain-amp-amp-iframe" class="headerlink" title="document.domain &amp;&amp; iframe"></a>document.domain &amp;&amp; iframe</h3><p>场景：a.sanxin.com&#x2F;index.html 与 b.sanxin.com&#x2F;index.html之间的通信</p>
-<p>其实上面这两个正常情况下是无法通信的，因为他们的域名不相同，属于跨域通信</p>
-<p>那怎么办呢？其实他们有一个共同点，那就是他们的二级域名都是sanxin.com，这使得他们可以通过document.domain &amp;&amp; iframe的方式来通信</p>
 ]]></content>
       <categories>
         <category>前端</category>
@@ -2572,24 +2435,6 @@ myWebsocket(&#39;ws://127.0.0.1:8000&#39;, &#123; name: &#39;林三心&#39;, age
       </tags>
   </entry>
   <entry>
-    <title>删除电脑浏览记录</title>
-    <url>/2022/10/15/%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4%E7%94%B5%E8%84%91%E4%B8%8A%E6%9C%80%E8%BF%91%E6%B5%8F%E8%A7%88%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>　　我们在长时间操作电脑的过程中，系统都会记录用户浏览的历史，一天下来电脑可能产生几万条记录,这些记录有些会涉及到个人的隐私，因此许多用户就想要在关闭电脑前将浏览记录进行删除，那么怎么删除电脑最近浏览记录呢？这里小编就来教大家删除电脑上最近浏览记录操作方法。</p>
-<h3 id="具体方法"><a href="#具体方法" class="headerlink" title="具体方法"></a>具体方法</h3><ol>
-<li><p>点击查看，打开资源管理器，点击查看。</p>
-<p><img src="http://img.ujiaoshou.com/upload/images/2022/042202/1845/164889634448114632391.png" class="lazyload" data-srcset="http://img.ujiaoshou.com/upload/images/2022/042202/1845/164889634448114632391.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="怎么删除电脑最近浏览记录_如何删除电脑上最近浏览记录"></p>
-</li>
-<li><p>点击选项，展开菜单后，点击右边的选项。</p>
-<p><img src="http://img.ujiaoshou.com/upload/images/2022/042202/1845/164889634482114553095.png" class="lazyload" data-srcset="http://img.ujiaoshou.com/upload/images/2022/042202/1845/164889634482114553095.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="怎么删除电脑最近浏览记录_如何删除电脑上最近浏览记录"></p>
-</li>
-<li><p>点击清除按钮，找到清除历史记录的选项即可。</p>
-</li>
-</ol>
-<p><img src="http://img.ujiaoshou.com/upload/images/2022/042202/1845/164889634549189784482.png" class="lazyload" data-srcset="http://img.ujiaoshou.com/upload/images/2022/042202/1845/164889634549189784482.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="怎么删除电脑最近浏览记录_如何删除电脑上最近浏览记录"></p>
-<p>以上就是删除电脑上最近浏览记录的操作方法了。</p>
-]]></content>
-  </entry>
-  <entry>
     <title>如何在Windows下搭建WordPress博客站点</title>
     <url>/2022/10/30/%E5%A6%82%E4%BD%95%E5%9C%A8Windows%E4%B8%8B%E6%90%AD%E5%BB%BAWordPress%E5%8D%9A%E5%AE%A2%E7%AB%99%E7%82%B9/</url>
     <content><![CDATA[<p>[TOC]</p>
@@ -2761,6 +2606,143 @@ myWebsocket(&#39;ws://127.0.0.1:8000&#39;, &#123; name: &#39;林三心&#39;, age
       </tags>
   </entry>
   <entry>
+    <title>前端跨域问题如何解决</title>
+    <url>/2022/11/01/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3/</url>
+    <content><![CDATA[<h1 id="前端跨域问题如何解决"><a href="#前端跨域问题如何解决" class="headerlink" title="前端跨域问题如何解决"></a>前端跨域问题如何解决</h1><p>咱们做前端的，平时跟后端对接接口那是必须的事情，但是可能很多同学忽略了一个对接过程中可能会发生的问题——跨域，那跨域到底是啥呢？为什么会跨域呢？又怎么才能解决呢？</p>
+<h3 id="为什么跨域？"><a href="#为什么跨域？" class="headerlink" title="为什么跨域？"></a>为什么跨域？</h3><p>为什么会出现跨域问题呢？那就不得不讲浏览器的同源策略了，它规定了协议号-域名-端口号这三者必须都相同才符合同源策略</p>
+<p>如有有一个不相同，就会出现跨域问题，不符合同源策略导致的后果有</p>
+<ul>
+<li><p>1、LocalStorge、SessionStorge、Cookie等浏览器内存无法跨域访问</p>
+</li>
+<li><p>2、DOM节点无法跨域操作</p>
+</li>
+<li><p>3、Ajax请求无法跨域请求</p>
+</li>
+</ul>
+<blockquote>
+<p>注意点：一个IP是可以注册多个不同域名的，也就是多个域名可能指向同一个IP，即使是这样，他们也不符合同源策略</p>
+</blockquote>
+<h3 id="跨域的时机？"><a href="#跨域的时机？" class="headerlink" title="跨域的时机？"></a>跨域的时机？</h3><p>跨域发生在什么时候呢？我考过很多位同学，得到了两种答案</p>
+<ul>
+<li>1、请求一发出就被浏览器的跨域报错拦下来了(大多数人回答)</li>
+<li>2、请求发出去到后端，后端返回数据，在浏览器接收后端数据时被浏览器的跨域报错拦下来<br>那到底是哪种呢？我们可以验证下，咱们先npm i nodemon -g，然后创建一个index.js，然后nodemon index起一个node服务</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.js  http://127.0.0.1:8000</span><br><span class="line"></span><br><span class="line">const http = require(&#x27;http&#x27;);</span><br><span class="line"></span><br><span class="line">const port = 8000;</span><br><span class="line"></span><br><span class="line">http.createServer(function (req, res) &#123;</span><br><span class="line">    const &#123; query &#125; = urllib.parse(req.url, true);</span><br><span class="line">    console.log(query.name)</span><br><span class="line">    console.log(&#x27;到后端喽&#x27;)</span><br><span class="line">    res.end(JSON.stringify(&#x27;林三心&#x27;));</span><br><span class="line">&#125;).listen(port, function () &#123;</span><br><span class="line">    console.log(&#x27;server is listening on port &#x27; + port);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>再创建一个index.html，用来写前端的请求代码，咱们就写一个简单的AJAX请求吧</p>
+<p>&#x2F;&#x2F; index.html  <a href="http://127.0.0.1:5500/index.html">http://127.0.0.1:5500/index.html</a></p>
+<script>
+    //步骤一:创建异步对象
+    var ajax = new XMLHttpRequest();
+    //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数
+    ajax.open('get', 'http://127.0.0.1:8000?name=前端过来的林三心');
+    //步骤三:发送请求
+    ajax.send();
+    //步骤四:注册事件 onreadystatechange 状态改变就会调用
+    ajax.onreadystatechange = function () {
+        if (ajax.readyState == 4 && ajax.status == 200) {
+            //步骤五 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的
+            console.log(ajax.responseText);//输入相应的内容
+        }
+    }
+</script>
+
+<p>最终，前端确实是跨域报错了。但这不是结果，我们要想知道是哪一个答案，关键在于看后端的node服务那里有没有输出，就一目了然了。所以，答案2才是对的。</p>
+<h3 id="同域情况-amp-amp-跨域情况？"><a href="#同域情况-amp-amp-跨域情况？" class="headerlink" title="同域情况 &amp;&amp; 跨域情况？"></a>同域情况 &amp;&amp; 跨域情况？</h3><p>前面提到了同源策略，满足协议号-域名-端口号这三者都相同就是同域，反之就是跨域，会导致跨域报错，下面通过几个例子让大家巩固一下对同域和跨域的认识把！</p>
+<h3 id="解决跨域的方案"><a href="#解决跨域的方案" class="headerlink" title="解决跨域的方案"></a>解决跨域的方案</h3><p>跨域其实是一个很久的问题了，对应的解决方案也有很多，一起接着往下读吧！！！</p>
+<h3 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h3><p>前面咱们说了，因为浏览器同源策略的存在，导致存在跨域问题，那有没有不受跨域问题所束缚的东西呢？其实是有的，以下这三个标签加载资源路径是不受束缚的</p>
+<ul>
+<li>1、script标签：<script src="加载资源路径"></script></li>
+<li>2、link标签：<link herf="加载资源路径"></link></li>
+<li>3、img标签：<img src="加载资源路径" class="lazyload" data-srcset="加载资源路径" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></img><br>而JSONP就是利用了script的src加载不受束缚，从而可以拥有从不同的域拿到数据的能力。但是JSONP需要前端后端配合，才能实现最终的跨域获取数据。</li>
+</ul>
+<p>JSONP通俗点说就是：利用script的src去发送请求，将一个方法名callback传给后端，后端拿到这个方法名，将所需数据，通过字符串拼接成新的字符串callback(所需数据)，并发送到前端，前端接收到这个字符串之后，就会自动执行方法callback(所需数据)。</p>
+<p>后端代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.js  http://127.0.0.1:8000</span><br><span class="line"></span><br><span class="line">const http = require(&#x27;http&#x27;);</span><br><span class="line">const urllib = require(&#x27;url&#x27;);</span><br><span class="line"></span><br><span class="line">const port = 8000;</span><br><span class="line"></span><br><span class="line">http.createServer(function (req, res) &#123;</span><br><span class="line">    const &#123; query &#125; = urllib.parse(req.url, true);</span><br><span class="line">    if (query &amp;&amp; query.callback) &#123;</span><br><span class="line">        const &#123; name, age, callback &#125; = query</span><br><span class="line">        const person = `$&#123;name&#125;今年$&#123;age&#125;岁啦！！！`</span><br><span class="line">        const str = `$&#123;callback&#125;($&#123;JSON.stringify(person)&#125;)` // 拼成callback(data)</span><br><span class="line">        res.end(str);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        res.end(JSON.stringify(&#x27;没东西啊你&#x27;));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).listen(port, function () &#123;</span><br><span class="line">    console.log(&#x27;server is listening on port &#x27; + port);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="前端代码"><a href="#前端代码" class="headerlink" title="前端代码"></a>前端代码</h4><pre><code>// index.html  http://127.0.0.1:5500/index.html
+
+const jsonp = (url, params, cbName) =&gt; &#123;
+    return new Promise((resolve, reject) =&gt; &#123;
+        const script = document.createElement(&#39;script&#39;)
+        window[cbName] = (data) =&gt; &#123;
+            resolve(data)
+            document.body.removeChild(script)
+        &#125;
+        params = &#123; ...params, callback: cbName &#125;
+        const arr = Object.keys(params).map(key =&gt; `$&#123;key&#125;=$&#123;params[key]&#125;`)
+        script.src = `$&#123;url&#125;?$&#123;arr.join(&#39;&amp;&#39;)&#125;`
+        document.body.appendChild(script)
+    &#125;)
+&#125;
+ 
+jsonp(&#39;http://127.0.0.1:8000&#39;, &#123; name: &#39;林三心&#39;, age: 23 &#125;, &#39;callback&#39;).then(data =&gt; &#123;
+    console.log(data) // 林三心今年23岁啦！！！
+&#125;)
+</code></pre>
+<blockquote>
+<p>JSONP的缺点就是，需要前后端配合，并且只支持get请求方法</p>
+</blockquote>
+<h3 id="WebSocket"><a href="#WebSocket" class="headerlink" title="WebSocket"></a>WebSocket</h3><p>我理解的WebSocket是一种协议(跟http同级，都是协议)，并且他可以进行跨域通信。</p>
+<h4 id="后端代码"><a href="#后端代码" class="headerlink" title="后端代码"></a>后端代码</h4><p>先安装npm i ws</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.js  http://127.0.0.1:8000</span><br><span class="line">const Websocket = require(&#x27;ws&#x27;);</span><br><span class="line"></span><br><span class="line">const port = 8000;</span><br><span class="line">const ws = new Websocket.Server(&#123; port &#125;)</span><br><span class="line">ws.on(&#x27;connection&#x27;, (obj) =&gt; &#123;</span><br><span class="line">    obj.on(&#x27;message&#x27;, (data) =&gt; &#123;</span><br><span class="line">        data = JSON.parse(data.toString())</span><br><span class="line">        const &#123; name, age &#125; = data</span><br><span class="line">        obj.send(`$&#123;name&#125;今年$&#123;age&#125;岁啦！！！`)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="前端代码-1"><a href="#前端代码-1" class="headerlink" title="前端代码"></a>前端代码</h4><pre><code>// index.html  http://127.0.0.1:5500/index.html
+
+function myWebsocket(url, params) &#123;
+    return new Promise((resolve, reject) =&gt; &#123;
+        const socket = new WebSocket(url)
+        socket.onopen = () =&gt; &#123;
+            socket.send(JSON.stringify(params))
+        &#125;
+        socket.onmessage = (e) =&gt; &#123;
+            resolve(e.data)
+        &#125;
+    &#125;)
+&#125;
+myWebsocket(&#39;ws://127.0.0.1:8000&#39;, &#123; name: &#39;林三心&#39;, age: 23 &#125;).then(data =&gt; &#123;
+    console.log(data) // 林三心今年23岁啦！！！
+&#125;)
+</code></pre>
+<h3 id="Cors"><a href="#Cors" class="headerlink" title="Cors"></a>Cors</h3><p>Cors，全称是Cross-Origin Resource Sharing，意思是跨域资源共享，Cors一般是由后端来开启的，一旦开启，前端就可以跨域访问后端。</p>
+<p>为什么后端开启Cors，前端就能跨域请求后端呢？我的理解是：前端跨域访问到后端，后端开启Cors，发送Access-Control-Allow-Origin: 域名 字段到前端（其实不止一个），前端浏览器判断Access-Control-Allow-Origin的域名如果跟前端域名一样，浏览器就不会实行跨域拦截，从而解决跨域问题。</p>
+<h4 id="后端代码-1"><a href="#后端代码-1" class="headerlink" title="后端代码"></a>后端代码</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.js  http://127.0.0.1:8000</span><br><span class="line"></span><br><span class="line">const http = require(&#x27;http&#x27;);</span><br><span class="line">const urllib = require(&#x27;url&#x27;);</span><br><span class="line"></span><br><span class="line">const port = 8000;</span><br><span class="line"></span><br><span class="line">http.createServer(function (req, res) &#123;</span><br><span class="line">    // 开启Cors</span><br><span class="line">    res.writeHead(200, &#123;</span><br><span class="line">        //设置允许跨域的域名，也可设置*允许所有域名</span><br><span class="line">        &#x27;Access-Control-Allow-Origin&#x27;: &#x27;http://127.0.0.1:5500&#x27;,</span><br><span class="line">        //跨域允许的请求方法，也可设置*允许所有方法</span><br><span class="line">        &quot;Access-Control-Allow-Methods&quot;: &quot;DELETE,PUT,POST,GET,OPTIONS&quot;,</span><br><span class="line">        //允许的header类型</span><br><span class="line">        &#x27;Access-Control-Allow-Headers&#x27;: &#x27;Content-Type&#x27;</span><br><span class="line">    &#125;)</span><br><span class="line">    const &#123; query: &#123; name, age &#125; &#125; = urllib.parse(req.url, true);</span><br><span class="line">    res.end(`$&#123;name&#125;今年$&#123;age&#125;岁啦！！！`);</span><br><span class="line">&#125;).listen(port, function () &#123;</span><br><span class="line">    console.log(&#x27;server is listening on port &#x27; + port);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="前端代码-2"><a href="#前端代码-2" class="headerlink" title="前端代码"></a>前端代码</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.html  http://127.0.0.1:5500/index.html</span><br><span class="line">    //步骤一:创建异步对象</span><br><span class="line">    var ajax = new XMLHttpRequest();</span><br><span class="line">    //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数</span><br><span class="line">    ajax.open(&#x27;get&#x27;, &#x27;http://127.0.0.1:8000?name=林三心&amp;age=23&#x27;);</span><br><span class="line">    //步骤三:发送请求</span><br><span class="line">    ajax.send();</span><br><span class="line">    //步骤四:注册事件 onreadystatechange 状态改变就会调用</span><br><span class="line">    ajax.onreadystatechange = function () &#123;</span><br><span class="line">    if (ajax.readyState == 4 &amp;&amp; ajax.status == 200) &#123;</span><br><span class="line">    //步骤五 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的</span><br><span class="line">    console.log(ajax.responseText);//输入相应的内容</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Node接口代理"><a href="#Node接口代理" class="headerlink" title="Node接口代理"></a>Node接口代理</h3><p>还是回到同源策略，同源策略它只是浏览器的一个策略而已，它是限制不到后端的，也就是前端-后端会被同源策略限制，但是后端-后端则不会被限制，所以可以通过Node接口代理，先访问已设置Cors的后端1，再让后端1去访问后端2获取数据到后端1，后端1再把数据传到前端</p>
+<h4 id="后端2代码"><a href="#后端2代码" class="headerlink" title="后端2代码"></a>后端2代码</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.js  http://127.0.0.1:8000</span><br><span class="line"></span><br><span class="line">const http = require(&#x27;http&#x27;);</span><br><span class="line">const urllib = require(&#x27;url&#x27;);</span><br><span class="line"></span><br><span class="line">const port = 8000;</span><br><span class="line"></span><br><span class="line">http.createServer(function (req, res) &#123;</span><br><span class="line">    console.log(888)</span><br><span class="line">    const &#123; query: &#123; name, age &#125; &#125; = urllib.parse(req.url, true);</span><br><span class="line">    res.end(`$&#123;name&#125;今年$&#123;age&#125;岁啦！！！`)</span><br><span class="line">&#125;).listen(port, function () &#123;</span><br><span class="line">    console.log(&#x27;server is listening on port &#x27; + port);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>创建一个index2.js，并nodmeon index2.js</p>
+<h4 id="后端1代码"><a href="#后端1代码" class="headerlink" title="后端1代码"></a>后端1代码</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index2.js  http://127.0.0.1:8888</span><br><span class="line"></span><br><span class="line">const http = require(&#x27;http&#x27;);</span><br><span class="line">const urllib = require(&#x27;url&#x27;);</span><br><span class="line">const querystring = require(&#x27;querystring&#x27;);</span><br><span class="line">const port = 8888;</span><br><span class="line"></span><br><span class="line">http.createServer(function (req, res) &#123;</span><br><span class="line">    // 开启Cors</span><br><span class="line">    res.writeHead(200, &#123;</span><br><span class="line">        //设置允许跨域的域名，也可设置*允许所有域名</span><br><span class="line">        &#x27;Access-Control-Allow-Origin&#x27;: &#x27;http://127.0.0.1:5500&#x27;,</span><br><span class="line">        //跨域允许的请求方法，也可设置*允许所有方法</span><br><span class="line">        &quot;Access-Control-Allow-Methods&quot;: &quot;DELETE,PUT,POST,GET,OPTIONS&quot;,</span><br><span class="line">        //允许的header类型</span><br><span class="line">        &#x27;Access-Control-Allow-Headers&#x27;: &#x27;Content-Type&#x27;</span><br><span class="line">    &#125;)</span><br><span class="line">    const &#123; query &#125; = urllib.parse(req.url, true);</span><br><span class="line">    const &#123; methods = &#x27;GET&#x27;, headers &#125; = req</span><br><span class="line">    const proxyReq = http.request(&#123;</span><br><span class="line">        host: &#x27;127.0.0.1&#x27;,</span><br><span class="line">        port: &#x27;8000&#x27;,</span><br><span class="line">        path: `/?$&#123;querystring.stringify(query)&#125;`,</span><br><span class="line">        methods,</span><br><span class="line">        headers</span><br><span class="line">    &#125;, proxyRes =&gt; &#123;</span><br><span class="line">        proxyRes.on(&#x27;data&#x27;, chunk =&gt; &#123;</span><br><span class="line">            console.log(chunk.toString())</span><br><span class="line">            res.end(chunk.toString())</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;).end()</span><br><span class="line">&#125;).listen(port, function () &#123;</span><br><span class="line">    console.log(&#x27;server is listening on port &#x27; + port);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="前端代码-3"><a href="#前端代码-3" class="headerlink" title="前端代码"></a>前端代码</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.html  http://127.0.0.1:5500</span><br><span class="line"></span><br><span class="line">//步骤一:创建异步对象</span><br><span class="line">    var ajax = new XMLHttpRequest();</span><br><span class="line">    //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端</span><br><span class="line">    ajax.open(&#x27;get&#x27;, &#x27;http://127.0.0.1:8888?name=林三心&amp;age=23&#x27;);</span><br><span class="line">    //步骤三:发送请求</span><br><span class="line">    ajax.send();</span><br><span class="line">    //步骤四:注册事件 onreadystatechange 状态改变就会调用</span><br><span class="line">    ajax.onreadystatechange = function () &#123;</span><br><span class="line">        if (ajax.readyState == 4 &amp;&amp; ajax.status == 200) &#123;</span><br><span class="line">            //步骤五 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的</span><br><span class="line">            console.log(ajax.responseText);//输入相应的内容</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h4><p>其实Nginx跟Node接口代理是一个道理，只不过Nginx就不需要我们自己去搭建一个中间服务</p>
+<p>先下载nginx，然后将nginx目录下的nginx.conf修改如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">        listen 8888;</span><br><span class="line">        server_name  127.0.0.1;</span><br><span class="line"></span><br><span class="line">    location /&#123;</span><br><span class="line">       proxy_pass 127.0.0.1:8000;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后通过命令行nginx -s reload启动nginx</p>
+<h4 id="后端代码-2"><a href="#后端代码-2" class="headerlink" title="后端代码"></a>后端代码</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.js  http://127.0.0.1:8000</span><br><span class="line"></span><br><span class="line">const http = require(&#x27;http&#x27;);</span><br><span class="line">const urllib = require(&#x27;url&#x27;);</span><br><span class="line"></span><br><span class="line">const port = 8000;</span><br><span class="line"></span><br><span class="line">http.createServer(function (req, res) &#123;</span><br><span class="line">    const &#123; query: &#123; name, age &#125; &#125; = urllib.parse(req.url, true);</span><br><span class="line">    res.end(`$&#123;name&#125;今年$&#123;age&#125;岁啦！！！`);</span><br><span class="line">&#125;).listen(port, function () &#123;</span><br><span class="line">    console.log(&#x27;server is listening on port &#x27; + port);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="前端代码-4"><a href="#前端代码-4" class="headerlink" title="前端代码"></a>前端代码</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// index.html  http://127.0.0.1:5500</span><br><span class="line"></span><br><span class="line">//步骤一:创建异步对象</span><br><span class="line">    var ajax = new XMLHttpRequest();</span><br><span class="line">    //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端</span><br><span class="line">    ajax.open(&#x27;get&#x27;, &#x27;http://127.0.0.1:8888?name=林三心&amp;age=23&#x27;);</span><br><span class="line">    //步骤三:发送请求</span><br><span class="line">    ajax.send();</span><br><span class="line">    //步骤四:注册事件 onreadystatechange 状态改变就会调用</span><br><span class="line">    ajax.onreadystatechange = function () &#123;</span><br><span class="line">        if (ajax.readyState == 4 &amp;&amp; ajax.status == 200) &#123;</span><br><span class="line">            //步骤五 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的</span><br><span class="line">            console.log(ajax.responseText);//输入相应的内容</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="postMessage"><a href="#postMessage" class="headerlink" title="postMessage"></a>postMessage</h3><p>场景：<a href="http://127.0.0.1:5500/index.html%E9%A1%B5%E9%9D%A2%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BA%86iframe%E6%A0%87%E7%AD%BE%E5%86%85%E5%B5%8C%E4%BA%86%E4%B8%80%E4%B8%AAhttp://127.0.0.1:5555/index.html%E7%9A%84%E9%A1%B5%E9%9D%A2">http://127.0.0.1:5500/index.html页面中使用了iframe标签内嵌了一个http://127.0.0.1:5555/index.html的页面</a></p>
+<p>虽然这两个页面存在于一个页面中，但是需要iframe标签来嵌套才行，这两个页面之间是无法进行通信的，因为他们端口号不同，根据同源策略，他们之间存在跨域问题</p>
+<p>那应该怎么办呢？使用postMessage可以使这两个页面进行通信</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// http:127.0.0.1:5500/index.html</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;iframe src=&quot;http://127.0.0.1:5555/index.html&quot; id=&quot;frame&quot;&gt;&lt;/iframe&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    document.getElementById(&#x27;frame&#x27;).onload = function () &#123;</span><br><span class="line">        this.contentWindow.postMessage(&#123; name: &#x27;林三心&#x27;, age: 23 &#125;, &#x27;http://127.0.0.1:5555&#x27;)</span><br><span class="line">        window.onmessage = function (e) &#123;</span><br><span class="line">            console.log(e.data) // 林三心今年23岁啦！！！</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// http://127.0.0.1:5555/index.html</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">        window.onmessage = function (e) &#123;</span><br><span class="line">            const &#123; data: &#123; name, age &#125;, origin &#125; = e</span><br><span class="line">            e.source.postMessage(`$&#123;name&#125;今年$&#123;age&#125;岁啦！！！`, origin)</span><br><span class="line">        &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="document-domain-amp-amp-iframe"><a href="#document-domain-amp-amp-iframe" class="headerlink" title="document.domain &amp;&amp; iframe"></a>document.domain &amp;&amp; iframe</h3><p>场景：a.sanxin.com&#x2F;index.html 与 b.sanxin.com&#x2F;index.html之间的通信</p>
+<p>其实上面这两个正常情况下是无法通信的，因为他们的域名不相同，属于跨域通信</p>
+<p>那怎么办呢？其实他们有一个共同点，那就是他们的二级域名都是sanxin.com，这使得他们可以通过document.domain &amp;&amp; iframe的方式来通信</p>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+  </entry>
+  <entry>
     <title>最全的eslint配置大全</title>
     <url>/2022/11/01/%E6%9C%80%E5%85%A8%E7%9A%84eslint%E9%85%8D%E7%BD%AE%E5%A4%A7%E5%85%A8/</url>
     <content><![CDATA[<h3 id="最全的eslint配置大全，我已经加了详细中文注释，只需要找到自己想要的配置就可以了，强烈建议收藏！"><a href="#最全的eslint配置大全，我已经加了详细中文注释，只需要找到自己想要的配置就可以了，强烈建议收藏！" class="headerlink" title="最全的eslint配置大全，我已经加了详细中文注释，只需要找到自己想要的配置就可以了，强烈建议收藏！"></a>最全的<a href="https://so.csdn.net/so/search?q=eslint&spm=1001.2101.3001.7020">eslint</a>配置大全，我已经加了详细中文注释，只需要找到自己想要的配置就可以了，强烈建议收藏！</h3><blockquote>
@@ -2779,28 +2761,22 @@ myWebsocket(&#39;ws://127.0.0.1:8000&#39;, &#123; name: &#39;林三心&#39;, age
       </tags>
   </entry>
   <entry>
-    <title>正确运行vue打包后的项目</title>
-    <url>/2022/08/08/%E6%AD%A3%E7%A1%AE%E8%BF%90%E8%A1%8Cvue%E6%89%93%E5%8C%85%E5%90%8E%E7%9A%84%E9%A1%B9%E7%9B%AE/</url>
-    <content><![CDATA[<p>这篇文章给大家分享的是有关怎么使用 webpack 打包后的 vue 项目正确运行的内容。小编觉得挺实用的，因此分享给大家做个参考，一起跟随小编过来看看吧。</p>
-<p>我们知道使用 webpack 打包 vue 项目后会生成一个 dist 文件夹，dist 文件夹下有 html 文件和其他 css、js 以及图片等，那么打包后的文件该如何正确运行呢？</p>
-<p>倘若直接打开 html 文件，会报如下错误：</p>
-<p>那么该如何运行呢？其实可以将生成的 dist 文件部署到 express<a href="https://www.yisu.com/">服务器</a>上运行。</p>
-<h2 id="（1）、安装-express-generator-生成器。"><a href="#（1）、安装-express-generator-生成器。" class="headerlink" title="（1）、安装 express-generator 生成器。"></a>（1）、安装 express-generator 生成器。</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install express-generator -g // 也可使用cnpm比较快　</span><br></pre></td></tr></table></figure>
-
-<h2 id="（2）、创建一个-express-项目。"><a href="#（2）、创建一个-express-项目。" class="headerlink" title="（2）、创建一个 express 项目。"></a>（2）、创建一个 express 项目。</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">express expressName // expressName是项目名</span><br></pre></td></tr></table></figure>
-
-<h2 id="（3）、进入项目目录，安装相关项目依赖。"><a href="#（3）、进入项目目录，安装相关项目依赖。" class="headerlink" title="（3）、进入项目目录，安装相关项目依赖。"></a>（3）、进入项目目录，安装相关项目依赖。</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd expressName</span><br><span class="line">npm install // 或cnpm install</span><br></pre></td></tr></table></figure>
-
-<h2 id="（4）、此时生成的项目目录应该是这样的："><a href="#（4）、此时生成的项目目录应该是这样的：" class="headerlink" title="（4）、此时生成的项目目录应该是这样的："></a>（4）、此时生成的项目目录应该是这样的：</h2><p><img src="https://cache.yisu.com/upload/information/20200622/114/33952.png" class="lazyload" data-srcset="https://cache.yisu.com/upload/information/20200622/114/33952.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="怎么使用webpack打包后的vue项目正确运行"></p>
-<h2 id="（5）、将-dist-文件夹下的所有文件复制到-express-项目的-publick-文件夹下面，然后运行-npm-start-来启动-express-项目。"><a href="#（5）、将-dist-文件夹下的所有文件复制到-express-项目的-publick-文件夹下面，然后运行-npm-start-来启动-express-项目。" class="headerlink" title="（5）、将 dist 文件夹下的所有文件复制到 express 项目的 publick 文件夹下面，然后运行 npm start 来启动 express 项目。"></a>（5）、将 dist 文件夹下的所有文件复制到 express 项目的 publick 文件夹下面，然后运行 npm start 来启动 express 项目。</h2><h2 id="（6）、打开浏览器，输入-localhost-3000-就可以看到效果了。例如我的是这样的："><a href="#（6）、打开浏览器，输入-localhost-3000-就可以看到效果了。例如我的是这样的：" class="headerlink" title="（6）、打开浏览器，输入 localhost:3000 就可以看到效果了。例如我的是这样的："></a>（6）、打开浏览器，输入 localhost:3000 就可以看到效果了。例如我的是这样的：</h2><p><img src="https://cache.yisu.com/upload/information/20200622/114/33954.png" class="lazyload" data-srcset="https://cache.yisu.com/upload/information/20200622/114/33954.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="怎么使用webpack打包后的vue项目正确运行">感谢各位的阅读！关于“怎么使用 webpack 打包后的 vue 项目正确运行”这篇文章就分享到这里了，希望以上内容可以对大家有一定的帮助，让大家可以学到更多知识，如果觉得文章不错，可以把它分享出去让更多的人看到吧！</p>
+    <title>删除电脑浏览记录</title>
+    <url>/2022/10/15/%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4%E7%94%B5%E8%84%91%E4%B8%8A%E6%9C%80%E8%BF%91%E6%B5%8F%E8%A7%88%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>　　我们在长时间操作电脑的过程中，系统都会记录用户浏览的历史，一天下来电脑可能产生几万条记录,这些记录有些会涉及到个人的隐私，因此许多用户就想要在关闭电脑前将浏览记录进行删除，那么怎么删除电脑最近浏览记录呢？这里小编就来教大家删除电脑上最近浏览记录操作方法。</p>
+<h3 id="具体方法"><a href="#具体方法" class="headerlink" title="具体方法"></a>具体方法</h3><ol>
+<li><p>点击查看，打开资源管理器，点击查看。</p>
+<p><img src="http://img.ujiaoshou.com/upload/images/2022/042202/1845/164889634448114632391.png" class="lazyload" data-srcset="http://img.ujiaoshou.com/upload/images/2022/042202/1845/164889634448114632391.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="怎么删除电脑最近浏览记录_如何删除电脑上最近浏览记录"></p>
+</li>
+<li><p>点击选项，展开菜单后，点击右边的选项。</p>
+<p><img src="http://img.ujiaoshou.com/upload/images/2022/042202/1845/164889634482114553095.png" class="lazyload" data-srcset="http://img.ujiaoshou.com/upload/images/2022/042202/1845/164889634482114553095.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="怎么删除电脑最近浏览记录_如何删除电脑上最近浏览记录"></p>
+</li>
+<li><p>点击清除按钮，找到清除历史记录的选项即可。</p>
+</li>
+</ol>
+<p><img src="http://img.ujiaoshou.com/upload/images/2022/042202/1845/164889634549189784482.png" class="lazyload" data-srcset="http://img.ujiaoshou.com/upload/images/2022/042202/1845/164889634549189784482.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="怎么删除电脑最近浏览记录_如何删除电脑上最近浏览记录"></p>
+<p>以上就是删除电脑上最近浏览记录的操作方法了。</p>
 ]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>vue</tag>
-        <tag>webpack</tag>
-      </tags>
   </entry>
   <entry>
     <title>添加相册</title>
@@ -2832,6 +2808,57 @@ myWebsocket(&#39;ws://127.0.0.1:8000&#39;, &#123; name: &#39;林三心&#39;, age
 ]]></content>
       <tags>
         <tag>gallery</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>正确运行vue打包后的项目</title>
+    <url>/2022/08/08/%E6%AD%A3%E7%A1%AE%E8%BF%90%E8%A1%8Cvue%E6%89%93%E5%8C%85%E5%90%8E%E7%9A%84%E9%A1%B9%E7%9B%AE/</url>
+    <content><![CDATA[<p>这篇文章给大家分享的是有关怎么使用 webpack 打包后的 vue 项目正确运行的内容。小编觉得挺实用的，因此分享给大家做个参考，一起跟随小编过来看看吧。</p>
+<p>我们知道使用 webpack 打包 vue 项目后会生成一个 dist 文件夹，dist 文件夹下有 html 文件和其他 css、js 以及图片等，那么打包后的文件该如何正确运行呢？</p>
+<p>倘若直接打开 html 文件，会报如下错误：</p>
+<p>那么该如何运行呢？其实可以将生成的 dist 文件部署到 express<a href="https://www.yisu.com/">服务器</a>上运行。</p>
+<h2 id="（1）、安装-express-generator-生成器。"><a href="#（1）、安装-express-generator-生成器。" class="headerlink" title="（1）、安装 express-generator 生成器。"></a>（1）、安装 express-generator 生成器。</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install express-generator -g // 也可使用cnpm比较快　</span><br></pre></td></tr></table></figure>
+
+<h2 id="（2）、创建一个-express-项目。"><a href="#（2）、创建一个-express-项目。" class="headerlink" title="（2）、创建一个 express 项目。"></a>（2）、创建一个 express 项目。</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">express expressName // expressName是项目名</span><br></pre></td></tr></table></figure>
+
+<h2 id="（3）、进入项目目录，安装相关项目依赖。"><a href="#（3）、进入项目目录，安装相关项目依赖。" class="headerlink" title="（3）、进入项目目录，安装相关项目依赖。"></a>（3）、进入项目目录，安装相关项目依赖。</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd expressName</span><br><span class="line">npm install // 或cnpm install</span><br></pre></td></tr></table></figure>
+
+<h2 id="（4）、此时生成的项目目录应该是这样的："><a href="#（4）、此时生成的项目目录应该是这样的：" class="headerlink" title="（4）、此时生成的项目目录应该是这样的："></a>（4）、此时生成的项目目录应该是这样的：</h2><p><img src="https://cache.yisu.com/upload/information/20200622/114/33952.png" class="lazyload" data-srcset="https://cache.yisu.com/upload/information/20200622/114/33952.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="怎么使用webpack打包后的vue项目正确运行"></p>
+<h2 id="（5）、将-dist-文件夹下的所有文件复制到-express-项目的-publick-文件夹下面，然后运行-npm-start-来启动-express-项目。"><a href="#（5）、将-dist-文件夹下的所有文件复制到-express-项目的-publick-文件夹下面，然后运行-npm-start-来启动-express-项目。" class="headerlink" title="（5）、将 dist 文件夹下的所有文件复制到 express 项目的 publick 文件夹下面，然后运行 npm start 来启动 express 项目。"></a>（5）、将 dist 文件夹下的所有文件复制到 express 项目的 publick 文件夹下面，然后运行 npm start 来启动 express 项目。</h2><h2 id="（6）、打开浏览器，输入-localhost-3000-就可以看到效果了。例如我的是这样的："><a href="#（6）、打开浏览器，输入-localhost-3000-就可以看到效果了。例如我的是这样的：" class="headerlink" title="（6）、打开浏览器，输入 localhost:3000 就可以看到效果了。例如我的是这样的："></a>（6）、打开浏览器，输入 localhost:3000 就可以看到效果了。例如我的是这样的：</h2><p><img src="https://cache.yisu.com/upload/information/20200622/114/33954.png" class="lazyload" data-srcset="https://cache.yisu.com/upload/information/20200622/114/33954.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="怎么使用webpack打包后的vue项目正确运行">感谢各位的阅读！关于“怎么使用 webpack 打包后的 vue 项目正确运行”这篇文章就分享到这里了，希望以上内容可以对大家有一定的帮助，让大家可以学到更多知识，如果觉得文章不错，可以把它分享出去让更多的人看到吧！</p>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+        <tag>webpack</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>被问到《vue2与vue3的区别》该怎么回答</title>
+    <url>/2023/03/07/%E8%A2%AB%E9%97%AE%E5%88%B0%E3%80%8Avue2%E4%B8%8Evue3%E7%9A%84%E5%8C%BA%E5%88%AB%E3%80%8B%E8%AF%A5%E6%80%8E%E4%B9%88%E5%9B%9E%E7%AD%94/</url>
+    <content><![CDATA[<h2 id="被问到-《vue2-与-vue3-的区别》应该怎么回答"><a href="#被问到-《vue2-与-vue3-的区别》应该怎么回答" class="headerlink" title="被问到 《vue2 与 vue3 的区别》应该怎么回答"></a>被问到 《vue2 与 vue3 的区别》应该怎么回答</h2><p><code>Vue</code> 内部根据功能可以被分为三个大的模块：**响应性 <code>reactivite</code>、运行时 <code>runtime</code>、编辑器 <code>compiler</code>**，以及一些小的功能点。那么要说 <code>vue2</code> 与 <code>vue3</code> 的区别，我们需要从这三个方面加小的功能点进行说起。</p>
+<p>首先先来说 **响应性 <code>reactivite</code>**：</p>
+<p><code>vue2</code> 的响应性主要依赖 <code>Object.defineProperty</code> 进行实现，但是 <code>Object.defineProperty</code> 只能监听 <strong>指定对象的指定属性的 <code>getter</code> 行为和 <code>setter</code> 行为</strong>，那么这样在某些情况下就会出现问题。</p>
+<p>什么问题呢？</p>
+<p>比如说：我们在 <code>data</code> 中声明了一个对象 <code>person</code> ，但是在后期为 <code>person</code> 增加了新的属性，那么这个新的属性就会失去响应性。想要解决这个问题其实也非常的简单，可以通过 <code>Vue.$set</code> 方法来增加 <strong>指定对象指定属性的响应性</strong>。但是这样的一种方式，在 <code>Vue</code> 的自动响应性机制中是不合理。</p>
+<p>所以在 <code>Vue3</code> 中，<code>Vue</code> 引入了反射和代理的概念，所谓反射指的是 <code>Reflect</code>，所谓代理指的是 <code>Proxy</code>。我们可以利用 <code>Proxy</code> 直接代理一个普通对象，得到一个 <code>proxy 实例</code> 的代理对象。在 <code>vue3</code> 中，这个过程通过 <code>reactive</code> 这个方法进行实现。</p>
+<p>但是 <code>proxy</code> 只能实现代理复杂数据类型，所以 <code>vue</code> 额外提供了 <code>ref</code> 方法，用来处理简单数据类型的响应性。<code>ref</code> 本质上并没有进行数据的监听，而是构建了一个 <code>RefImpl</code> 的类，通过 <code>set</code> 和 <code>get</code> 标记了 <code>value</code> 函数，以此来进行的实现。所以 <code>ref</code> 必须要通过 <code>.value</code> 进行触发，之所以要这么做本质是调用 <code>value 方法</code>。</p>
+<p>接下来是**运行时 <code>runtime</code>**：</p>
+<p>所谓的运行时，大多数时候指的是 <code>renderer 渲染器</code>，渲染器本质上是一个对象，内部主要三个方法 <code>render、hydrate、createApp</code> ，其中 <code>render</code> 主要处理渲染逻辑，<code>hydrate</code> 主要处理服务端渲染逻辑，而 <code>createApp</code> 就是创建 <code>vue</code> 实例的方法。</p>
+<p>这里咱们主要来说 <code>render 渲染函数</code>，<code>vue3</code> 中为了保证宿主环境与渲染逻辑的分离，把所有与宿主环境相关的逻辑进行了抽离，通过接口的形式进行传递。这样做的目的其实是为了解绑宿主环境与渲染逻辑，以保证 <code>vue</code> 在非浏览器端的宿主环境下可以正常渲染。</p>
+<p>再往下是 **编辑器 <code>compiler</code>**：</p>
+<p><code>vue</code> 中的 <code>compiler</code> 其实是一个 <code>DSL（特定领域下专用语言编辑器）</code> ，其目的是为了把 <code>template 模板</code> 编译成 <code>render</code> 函数。 逻辑主要是分成了三大步： <code>parse、transform 和 generate</code>。其中 <code>parse</code> 的作用是为了把 <code>template</code> 转化为 <code>AST（抽象语法树）</code>，<code>transform</code> 可以把 <code>AST（抽象语法树）</code> 转化为 <code>JavaScript AST</code>，最后由 <code>generate</code> 把 <code>JavaScript AST</code> 通过转化为 <code>render 函数</code>。转化的过程中会涉及到一些稍微复杂的概念，比如 <strong>有限自动状态机</strong> 这个就不再这里展开说了。</p>
+<p>除此之外，还有一些其他的变化。比如 <code>vue3</code> 新增的 <code>composition API</code>。 <code>composition API</code> 在 <code>vue3.0</code> 和 <code>vue3.2</code> 中会有一些不同的呈现，比如说：最初的 <code>composition API</code> 以 <code>setup</code> 函数作为入口函数， <code>setup</code> 函数必须返回两种类型的值：第一是对象，第二是函数。</p>
+<p>当 <code>setup</code> 函数返回对象时，对象中的数据或方法可以在 <code>template</code> 中被使用。当 <code>setup</code> 函数返回函数时，函数会被作为 <code>render</code> 函数。</p>
+<p>但是这种 <code>setup</code> 函数的形式并不好，因为所有的逻辑都集中在 <code>setup</code> 函数中，很容易出现一个巨大的 <code>setup</code> 函数，我们把它叫做巨石（屎山）函数。所以 <code>vue 3.2</code> 的时候，新增了一个 <code>script setup</code> 的语法糖，尝试解决这个问题。目前来看 <code>script setup</code> 的呈现还是非常不错的。</p>
+<p>除此之外还有一些小的变化，比如 <code>Fragment、Teleport、Suspense</code> 等等，这些就不去说了…</p>
+]]></content>
+      <categories>
+        <category>vue</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
       </tags>
   </entry>
   <entry>
@@ -2889,33 +2916,6 @@ myWebsocket(&#39;ws://127.0.0.1:8000&#39;, &#123; name: &#39;林三心&#39;, age
       </categories>
       <tags>
         <tag>linktree</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>被问到《vue2与vue3的区别》该怎么回答</title>
-    <url>/2023/03/07/%E8%A2%AB%E9%97%AE%E5%88%B0%E3%80%8Avue2%E4%B8%8Evue3%E7%9A%84%E5%8C%BA%E5%88%AB%E3%80%8B%E8%AF%A5%E6%80%8E%E4%B9%88%E5%9B%9E%E7%AD%94/</url>
-    <content><![CDATA[<h2 id="被问到-《vue2-与-vue3-的区别》应该怎么回答"><a href="#被问到-《vue2-与-vue3-的区别》应该怎么回答" class="headerlink" title="被问到 《vue2 与 vue3 的区别》应该怎么回答"></a>被问到 《vue2 与 vue3 的区别》应该怎么回答</h2><p><code>Vue</code> 内部根据功能可以被分为三个大的模块：**响应性 <code>reactivite</code>、运行时 <code>runtime</code>、编辑器 <code>compiler</code>**，以及一些小的功能点。那么要说 <code>vue2</code> 与 <code>vue3</code> 的区别，我们需要从这三个方面加小的功能点进行说起。</p>
-<p>首先先来说 **响应性 <code>reactivite</code>**：</p>
-<p><code>vue2</code> 的响应性主要依赖 <code>Object.defineProperty</code> 进行实现，但是 <code>Object.defineProperty</code> 只能监听 <strong>指定对象的指定属性的 <code>getter</code> 行为和 <code>setter</code> 行为</strong>，那么这样在某些情况下就会出现问题。</p>
-<p>什么问题呢？</p>
-<p>比如说：我们在 <code>data</code> 中声明了一个对象 <code>person</code> ，但是在后期为 <code>person</code> 增加了新的属性，那么这个新的属性就会失去响应性。想要解决这个问题其实也非常的简单，可以通过 <code>Vue.$set</code> 方法来增加 <strong>指定对象指定属性的响应性</strong>。但是这样的一种方式，在 <code>Vue</code> 的自动响应性机制中是不合理。</p>
-<p>所以在 <code>Vue3</code> 中，<code>Vue</code> 引入了反射和代理的概念，所谓反射指的是 <code>Reflect</code>，所谓代理指的是 <code>Proxy</code>。我们可以利用 <code>Proxy</code> 直接代理一个普通对象，得到一个 <code>proxy 实例</code> 的代理对象。在 <code>vue3</code> 中，这个过程通过 <code>reactive</code> 这个方法进行实现。</p>
-<p>但是 <code>proxy</code> 只能实现代理复杂数据类型，所以 <code>vue</code> 额外提供了 <code>ref</code> 方法，用来处理简单数据类型的响应性。<code>ref</code> 本质上并没有进行数据的监听，而是构建了一个 <code>RefImpl</code> 的类，通过 <code>set</code> 和 <code>get</code> 标记了 <code>value</code> 函数，以此来进行的实现。所以 <code>ref</code> 必须要通过 <code>.value</code> 进行触发，之所以要这么做本质是调用 <code>value 方法</code>。</p>
-<p>接下来是**运行时 <code>runtime</code>**：</p>
-<p>所谓的运行时，大多数时候指的是 <code>renderer 渲染器</code>，渲染器本质上是一个对象，内部主要三个方法 <code>render、hydrate、createApp</code> ，其中 <code>render</code> 主要处理渲染逻辑，<code>hydrate</code> 主要处理服务端渲染逻辑，而 <code>createApp</code> 就是创建 <code>vue</code> 实例的方法。</p>
-<p>这里咱们主要来说 <code>render 渲染函数</code>，<code>vue3</code> 中为了保证宿主环境与渲染逻辑的分离，把所有与宿主环境相关的逻辑进行了抽离，通过接口的形式进行传递。这样做的目的其实是为了解绑宿主环境与渲染逻辑，以保证 <code>vue</code> 在非浏览器端的宿主环境下可以正常渲染。</p>
-<p>再往下是 **编辑器 <code>compiler</code>**：</p>
-<p><code>vue</code> 中的 <code>compiler</code> 其实是一个 <code>DSL（特定领域下专用语言编辑器）</code> ，其目的是为了把 <code>template 模板</code> 编译成 <code>render</code> 函数。 逻辑主要是分成了三大步： <code>parse、transform 和 generate</code>。其中 <code>parse</code> 的作用是为了把 <code>template</code> 转化为 <code>AST（抽象语法树）</code>，<code>transform</code> 可以把 <code>AST（抽象语法树）</code> 转化为 <code>JavaScript AST</code>，最后由 <code>generate</code> 把 <code>JavaScript AST</code> 通过转化为 <code>render 函数</code>。转化的过程中会涉及到一些稍微复杂的概念，比如 <strong>有限自动状态机</strong> 这个就不再这里展开说了。</p>
-<p>除此之外，还有一些其他的变化。比如 <code>vue3</code> 新增的 <code>composition API</code>。 <code>composition API</code> 在 <code>vue3.0</code> 和 <code>vue3.2</code> 中会有一些不同的呈现，比如说：最初的 <code>composition API</code> 以 <code>setup</code> 函数作为入口函数， <code>setup</code> 函数必须返回两种类型的值：第一是对象，第二是函数。</p>
-<p>当 <code>setup</code> 函数返回对象时，对象中的数据或方法可以在 <code>template</code> 中被使用。当 <code>setup</code> 函数返回函数时，函数会被作为 <code>render</code> 函数。</p>
-<p>但是这种 <code>setup</code> 函数的形式并不好，因为所有的逻辑都集中在 <code>setup</code> 函数中，很容易出现一个巨大的 <code>setup</code> 函数，我们把它叫做巨石（屎山）函数。所以 <code>vue 3.2</code> 的时候，新增了一个 <code>script setup</code> 的语法糖，尝试解决这个问题。目前来看 <code>script setup</code> 的呈现还是非常不错的。</p>
-<p>除此之外还有一些小的变化，比如 <code>Fragment、Teleport、Suspense</code> 等等，这些就不去说了…</p>
-]]></content>
-      <categories>
-        <category>vue</category>
-      </categories>
-      <tags>
-        <tag>vue</tag>
       </tags>
   </entry>
   <entry>
@@ -3238,6 +3238,38 @@ h1,h2,h3,h4,h5,h6{
       </tags>
   </entry>
   <entry>
+    <title>hexo之站点统计——busuanzi</title>
+    <url>/2022/08/01/hexo/hexo%E4%B9%8B%E7%AB%99%E7%82%B9%E7%BB%9F%E8%AE%A1%E2%80%94%E2%80%94busuanzi/</url>
+    <content><![CDATA[<p>本片介绍的是站点信息统计之 busuanzi</p>
+<h1 id="一、站点信息"><a href="#一、站点信息" class="headerlink" title="一、站点信息"></a>一、站点信息</h1><h2 id="1-1-在-config-volantis-yml-搜索统计-显示有站点统计信息"><a href="#1-1-在-config-volantis-yml-搜索统计-显示有站点统计信息" class="headerlink" title="1.1 在_config.volantis.yml 搜索统计,显示有站点统计信息"></a>1.1 在_config.volantis.yml 搜索<code>统计</code>,显示有站点统计信息</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">visitcounter: # 站点统计访客开启入口在下面⬇</span><br><span class="line">      siteuv:</span><br><span class="line">        enable: true</span><br><span class="line">        text: &#x27;本站访客数：&#x27;</span><br><span class="line">        unit: &#x27;人&#x27;</span><br><span class="line">      sitepv:</span><br><span class="line">        enable: true</span><br><span class="line">        text: &#x27;本站总访问量：&#x27;</span><br><span class="line">        unit: &#x27;次&#x27;</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-2-接下来就是-analytics-引入-busuanzi-这里就需要配置个人的-app-id-和-app-key"><a href="#1-2-接下来就是-analytics-引入-busuanzi-这里就需要配置个人的-app-id-和-app-key" class="headerlink" title="1.2 接下来就是 analytics 引入 busuanzi,这里就需要配置个人的 app_id 和 app_key"></a>1.2 接下来就是 analytics 引入 busuanzi,这里就需要配置个人的 app_id 和 app_key</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 站点统计访客开启入口，引入busuanzi，并配置属于自己的app_id和app_key</span><br><span class="line">analytics:</span><br><span class="line">  busuanzi: volantis-static/libs/busuanzi/js/busuanzi.pure.mini.js</span><br><span class="line">  leancloud: # 请使用自己的 id &amp; key 以防止数据丢失</span><br><span class="line">    app_id: u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI</span><br><span class="line">    app_key: jfHtEKVE24j0IVCGHbvuFClp</span><br><span class="line">    custom_api_server: # 国际版一般不需要写，除非自定义了 API Server</span><br></pre></td></tr></table></figure>
+
+<h1 id="二、获取-busuanzi-的配置信息"><a href="#二、获取-busuanzi-的配置信息" class="headerlink" title="二、获取 busuanzi 的配置信息"></a>二、获取 busuanzi 的配置信息</h1><h2 id="2-1-打开-leancloud-官网，注册账号，该认证认证"><a href="#2-1-打开-leancloud-官网，注册账号，该认证认证" class="headerlink" title="2.1 打开 leancloud 官网，注册账号，该认证认证"></a>2.1 打开 leancloud 官网，注册账号，该认证认证</h2><blockquote>
+<p>leancloud 官网:<a href="https://www.leancloud.cn/">https://www.leancloud.cn/</a> ,点击免费使用，注册账号</p>
+</blockquote>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224259281.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224259281.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="注册账号"></p>
+<h2 id="2-2-登录账号注册应用"><a href="#2-2-登录账号注册应用" class="headerlink" title="2.2 登录账号注册应用"></a>2.2 登录账号注册应用</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224618543.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224618543.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="注册应用"></p>
+<h2 id="2-3-点击应用，选择应用"><a href="#2-3-点击应用，选择应用" class="headerlink" title="2.3 点击应用，选择应用"></a>2.3 点击应用，选择应用</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224734317.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224734317.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="选择应用"></p>
+<h2 id="2-4-点击设置，应用凭证，右侧就是我们想要的配置信息了"><a href="#2-4-点击设置，应用凭证，右侧就是我们想要的配置信息了" class="headerlink" title="2.4 点击设置，应用凭证，右侧就是我们想要的配置信息了"></a>2.4 点击设置，应用凭证，右侧就是我们想要的配置信息了</h2><blockquote>
+<p>复制保存我们的配置信息，填入指定位置，页面就是有相关信息展示了</p>
+</blockquote>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801225041384.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801225041384.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="获取配置信息"></p>
+<h1 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h1><blockquote>
+<p>tip: 本地运行显示数据有点夸张了，还有点延迟，但是部署之后会显示正常数据</p>
+</blockquote>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801230651942.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801230651942.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="本地运行"></p>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801225311587.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801225311587.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="部署之后"></p>
+]]></content>
+      <categories>
+        <category>Hexo系列</category>
+      </categories>
+      <tags>
+        <tag>busuanzi</tag>
+        <tag>站点统计</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>用git提交新项目到github</title>
     <url>/2022/08/11/github/%E7%94%A8git%E6%8F%90%E4%BA%A4%E6%96%B0%E9%A1%B9%E7%9B%AE%E5%88%B0github/</url>
     <content><![CDATA[<h3 id="1、（先进入项目文件夹）通过命令-git-init-把这个目录变成-git-可以管理的仓库"><a href="#1、（先进入项目文件夹）通过命令-git-init-把这个目录变成-git-可以管理的仓库" class="headerlink" title="1、（先进入项目文件夹）通过命令 git init 把这个目录变成 git 可以管理的仓库"></a>1、（先进入项目文件夹）通过命令 git init 把这个目录变成 git 可以管理的仓库</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
@@ -3528,38 +3560,6 @@ h1,h2,h3,h4,h5,h6{
       </tags>
   </entry>
   <entry>
-    <title>hexo之站点统计——busuanzi</title>
-    <url>/2022/08/01/hexo/hexo%E4%B9%8B%E7%AB%99%E7%82%B9%E7%BB%9F%E8%AE%A1%E2%80%94%E2%80%94busuanzi/</url>
-    <content><![CDATA[<p>本片介绍的是站点信息统计之 busuanzi</p>
-<h1 id="一、站点信息"><a href="#一、站点信息" class="headerlink" title="一、站点信息"></a>一、站点信息</h1><h2 id="1-1-在-config-volantis-yml-搜索统计-显示有站点统计信息"><a href="#1-1-在-config-volantis-yml-搜索统计-显示有站点统计信息" class="headerlink" title="1.1 在_config.volantis.yml 搜索统计,显示有站点统计信息"></a>1.1 在_config.volantis.yml 搜索<code>统计</code>,显示有站点统计信息</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">visitcounter: # 站点统计访客开启入口在下面⬇</span><br><span class="line">      siteuv:</span><br><span class="line">        enable: true</span><br><span class="line">        text: &#x27;本站访客数：&#x27;</span><br><span class="line">        unit: &#x27;人&#x27;</span><br><span class="line">      sitepv:</span><br><span class="line">        enable: true</span><br><span class="line">        text: &#x27;本站总访问量：&#x27;</span><br><span class="line">        unit: &#x27;次&#x27;</span><br></pre></td></tr></table></figure>
-
-<h2 id="1-2-接下来就是-analytics-引入-busuanzi-这里就需要配置个人的-app-id-和-app-key"><a href="#1-2-接下来就是-analytics-引入-busuanzi-这里就需要配置个人的-app-id-和-app-key" class="headerlink" title="1.2 接下来就是 analytics 引入 busuanzi,这里就需要配置个人的 app_id 和 app_key"></a>1.2 接下来就是 analytics 引入 busuanzi,这里就需要配置个人的 app_id 和 app_key</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 站点统计访客开启入口，引入busuanzi，并配置属于自己的app_id和app_key</span><br><span class="line">analytics:</span><br><span class="line">  busuanzi: volantis-static/libs/busuanzi/js/busuanzi.pure.mini.js</span><br><span class="line">  leancloud: # 请使用自己的 id &amp; key 以防止数据丢失</span><br><span class="line">    app_id: u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI</span><br><span class="line">    app_key: jfHtEKVE24j0IVCGHbvuFClp</span><br><span class="line">    custom_api_server: # 国际版一般不需要写，除非自定义了 API Server</span><br></pre></td></tr></table></figure>
-
-<h1 id="二、获取-busuanzi-的配置信息"><a href="#二、获取-busuanzi-的配置信息" class="headerlink" title="二、获取 busuanzi 的配置信息"></a>二、获取 busuanzi 的配置信息</h1><h2 id="2-1-打开-leancloud-官网，注册账号，该认证认证"><a href="#2-1-打开-leancloud-官网，注册账号，该认证认证" class="headerlink" title="2.1 打开 leancloud 官网，注册账号，该认证认证"></a>2.1 打开 leancloud 官网，注册账号，该认证认证</h2><blockquote>
-<p>leancloud 官网:<a href="https://www.leancloud.cn/">https://www.leancloud.cn/</a> ,点击免费使用，注册账号</p>
-</blockquote>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224259281.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224259281.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="注册账号"></p>
-<h2 id="2-2-登录账号注册应用"><a href="#2-2-登录账号注册应用" class="headerlink" title="2.2 登录账号注册应用"></a>2.2 登录账号注册应用</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224618543.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224618543.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="注册应用"></p>
-<h2 id="2-3-点击应用，选择应用"><a href="#2-3-点击应用，选择应用" class="headerlink" title="2.3 点击应用，选择应用"></a>2.3 点击应用，选择应用</h2><p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224734317.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801224734317.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="选择应用"></p>
-<h2 id="2-4-点击设置，应用凭证，右侧就是我们想要的配置信息了"><a href="#2-4-点击设置，应用凭证，右侧就是我们想要的配置信息了" class="headerlink" title="2.4 点击设置，应用凭证，右侧就是我们想要的配置信息了"></a>2.4 点击设置，应用凭证，右侧就是我们想要的配置信息了</h2><blockquote>
-<p>复制保存我们的配置信息，填入指定位置，页面就是有相关信息展示了</p>
-</blockquote>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801225041384.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801225041384.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="获取配置信息"></p>
-<h1 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h1><blockquote>
-<p>tip: 本地运行显示数据有点夸张了，还有点延迟，但是部署之后会显示正常数据</p>
-</blockquote>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801230651942.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801230651942.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="本地运行"></p>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801225311587.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/image-20220801225311587.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="部署之后"></p>
-]]></content>
-      <categories>
-        <category>Hexo系列</category>
-      </categories>
-      <tags>
-        <tag>busuanzi</tag>
-        <tag>站点统计</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexo之评论系统——giscus</title>
     <url>/2022/07/31/hexo/hexo%E4%B9%8B%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94giscus/</url>
     <content><![CDATA[<p>本篇主要讲的是 hexo 主题 volantis 的评论系统相关的 giscus</p>
@@ -3607,55 +3607,6 @@ h1,h2,h3,h4,h5,h6{
       <tags>
         <tag>评论系统</tag>
         <tag>giscus</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用github Actions自动化部署Hexo</title>
-    <url>/2022/08/16/hexo/%E4%BD%BF%E7%94%A8Github%20Actions%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2Hexo/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>使用Github Actions自动化部署之后，可以脱离本地电脑，再也不用担心源码丢失。</p>
-<h3 id="新建私密仓库"><a href="#新建私密仓库" class="headerlink" title="新建私密仓库"></a>新建私密仓库</h3><p>首先需要在GitHub上新建一个私密仓库，仓库名称随意，注意不要使用README初始化仓库。<br><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-214814@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-214814@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"><br><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-214917@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-214917@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<h3 id="生成公私秘钥对"><a href="#生成公私秘钥对" class="headerlink" title="生成公私秘钥对"></a>生成公私秘钥对</h3><p>在mac的终端中执行：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">COPY</span><br><span class="line">ssh-keygen -t rsa -C &quot;Github 的邮箱地址&quot;</span><br></pre></td></tr></table></figure>
-
-<p>之后生成的密钥默认存储在&#x2F;用户&#x2F;XXX&#x2F;.ssh&#x2F;目录下。</p>
-<h3 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h3><p>将Hexo博客的根目录复制到别的地方，显示隐藏文件夹，然后将里面的隐藏文件删除。<br><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-215630@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-215630@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"><br>之后将.ssh文件夹复制进去(这个可以不弄，我丢上去备份的)。<br><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-215727@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-215727@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"><br>再新建一个.github隐藏文件夹，里面新建一个workflows文件夹，在workflows里面新建一个自动化的配置文件hexoCI.yml<br>其内容如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 自动化名称</span><br><span class="line">name: Hexo Blog CI</span><br><span class="line"> </span><br><span class="line"># 触发条件</span><br><span class="line">on:</span><br><span class="line">  push:</span><br><span class="line">    branches:</span><br><span class="line">      - main</span><br><span class="line"> </span><br><span class="line"># 设置环境</span><br><span class="line">jobs:</span><br><span class="line">  build:</span><br><span class="line">    runs-on: ubuntu-latest</span><br><span class="line"> </span><br><span class="line">    steps:</span><br><span class="line">      # check it to your workflow can access it</span><br><span class="line">      # from: https://github.com/actions/checkout</span><br><span class="line">      - name: Checkout Repository master branch</span><br><span class="line">        uses: actions/checkout@master</span><br><span class="line"> </span><br><span class="line">      # from: https://github.com/actions/setup-node</span><br><span class="line">      - name: Setup Node.js 15.x</span><br><span class="line">        uses: actions/setup-node@master</span><br><span class="line">        with:</span><br><span class="line">          node-version: &quot;15.x&quot;</span><br><span class="line"> </span><br><span class="line">      - name: 安装Hexo</span><br><span class="line">        run: |</span><br><span class="line">          npm install hexo-cli -g</span><br><span class="line">          npm install</span><br><span class="line"> </span><br><span class="line">      - name: 设置密钥</span><br><span class="line">        env:</span><br><span class="line">          HEXO_DEPLOY_PRIVATE_KEY: $&#123;&#123; secrets.HEXO_DEPLOY_PRIVATE_KEY &#125;&#125;</span><br><span class="line">        run: |</span><br><span class="line">          mkdir -p ~/.ssh/</span><br><span class="line">          echo &quot;$HEXO_DEPLOY_PRIVATE_KEY&quot; &gt; ~/.ssh/id_rsa </span><br><span class="line">          chmod 600 ~/.ssh/id_rsa</span><br><span class="line">          ssh-keyscan github.com &gt;&gt; ~/.ssh/known_hosts  </span><br><span class="line"> </span><br><span class="line">      - name: 设置Git信息</span><br><span class="line">        run: |</span><br><span class="line">          git config --global user.name &#x27;你GitHub的用户名&#x27; </span><br><span class="line">          git config --global user.email &#x27;你GitHub的邮箱&#x27;      </span><br><span class="line"> </span><br><span class="line">      - name: Hexo三连</span><br><span class="line">        run: |</span><br><span class="line">          hexo clean</span><br><span class="line">          hexo generate </span><br><span class="line">          hexo deploy</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
-
-<p>修改博客根目录的_config.yml文件：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">   type: git</span><br><span class="line">   repo: //这里改成ssh的链接                  </span><br><span class="line">   branch: master</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-220359@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-220359@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"><br>打开node_modules文件夹，删除里面的hexo-deployer-git。<br><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-220524@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-220524@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>配置公钥：<br>在github 网站–&gt;Settings–&gt;SSH and GPG keys里，名称为HEXO_DEPLOY_PRIVATE_KEY，内容为.ssh&#x2F;id_rsa.pub里的，注意复制的时候会多一个空格，把它删掉。<br><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-220951@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-220951@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"><br>配置私钥：<br>在私有仓库的 Settings-&gt;Secrets 里，名称为HEXO_DEPLOY_PRIVATE_KEY，内容为.ssh&#x2F;id_rsa里的，注意复制的时候会多一个空格，把它删掉。<br><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-221155@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-221155@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"><br>之后在终端中cd切换至改好的hexo博客目录里，将博客推送到私有仓库。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git branch -M main</span><br><span class="line">git remote add origin git@github.com:用户名/私有仓库名.git</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
-
-<h3 id="查看效果"><a href="#查看效果" class="headerlink" title="查看效果"></a>查看效果</h3><p>点击私有仓库的Action查看，运行正常再看一下博客内容有没有问题。我在Actions运行之后发现博客里的效果等有缺失，发现是环境问题，将Node版本改为15.x后解决。<br><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-221832@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-221832@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<blockquote>
-<p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
-<p>本文永久链接是：<a href="https://goopher.tk/posts/64028.html">https://goopher.tk/posts/64028.html</a></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>github</tag>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>PicGo+typora上传图片失败报422的原因及解决方法</title>
-    <url>/2022/08/03/picgo/PicGo+typora%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%A4%B1%E8%B4%A5%E6%8A%A5422%E7%9A%84%E5%8E%9F%E5%9B%A0%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<p>picgo 用 github 作图床，使用 typora 上传图，出现 StatusCodeError: 422 的原因及解决方法</p>
-<h3 id="我在使用过程中-PicGo-出现了-StatusCodeError-422-的错误，上传图片失败。通过百度得知是以下原因造成的"><a href="#我在使用过程中-PicGo-出现了-StatusCodeError-422-的错误，上传图片失败。通过百度得知是以下原因造成的" class="headerlink" title="我在使用过程中 PicGo 出现了 StatusCodeError: 422 的错误，上传图片失败。通过百度得知是以下原因造成的"></a>我在使用过程中 PicGo 出现了 StatusCodeError: 422 的错误，上传图片失败。通过百度得知是以下原因造成的</h3><blockquote>
-<p><strong>PicGo 目前不支持在 gitbub 上上传同名文件，上传同名文件就会报错，即使是两张不同的图片。</strong></p>
-</blockquote>
-<p>解决方式也很简单，Picgo 开启上传时重命名和时间戳重命名就可以结局，或者把 github 里面已经有的同名文件删除，都可以解决这个问题。</p>
-]]></content>
-      <categories>
-        <category>PicGo</category>
-      </categories>
-      <tags>
-        <tag>PicGo</tag>
       </tags>
   </entry>
   <entry>
@@ -3710,6 +3661,59 @@ h1,h2,h3,h4,h5,h6{
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2022/07/28/study/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>个人学习</category>
+      </categories>
+      <tags>
+        <tag>个人</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用github Actions自动化部署Hexo</title>
+    <url>/2022/08/16/hexo/%E4%BD%BF%E7%94%A8Github%20Actions%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2Hexo/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>使用Github Actions自动化部署之后，可以脱离本地电脑，再也不用担心源码丢失。</p>
+<h3 id="新建私密仓库"><a href="#新建私密仓库" class="headerlink" title="新建私密仓库"></a>新建私密仓库</h3><p>首先需要在GitHub上新建一个私密仓库，仓库名称随意，注意不要使用README初始化仓库。<br><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-214814@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-214814@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"><br><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-214917@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-214917@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<h3 id="生成公私秘钥对"><a href="#生成公私秘钥对" class="headerlink" title="生成公私秘钥对"></a>生成公私秘钥对</h3><p>在mac的终端中执行：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">COPY</span><br><span class="line">ssh-keygen -t rsa -C &quot;Github 的邮箱地址&quot;</span><br></pre></td></tr></table></figure>
+
+<p>之后生成的密钥默认存储在&#x2F;用户&#x2F;XXX&#x2F;.ssh&#x2F;目录下。</p>
+<h3 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h3><p>将Hexo博客的根目录复制到别的地方，显示隐藏文件夹，然后将里面的隐藏文件删除。<br><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-215630@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-215630@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"><br>之后将.ssh文件夹复制进去(这个可以不弄，我丢上去备份的)。<br><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-215727@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-215727@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"><br>再新建一个.github隐藏文件夹，里面新建一个workflows文件夹，在workflows里面新建一个自动化的配置文件hexoCI.yml<br>其内容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 自动化名称</span><br><span class="line">name: Hexo Blog CI</span><br><span class="line"> </span><br><span class="line"># 触发条件</span><br><span class="line">on:</span><br><span class="line">  push:</span><br><span class="line">    branches:</span><br><span class="line">      - main</span><br><span class="line"> </span><br><span class="line"># 设置环境</span><br><span class="line">jobs:</span><br><span class="line">  build:</span><br><span class="line">    runs-on: ubuntu-latest</span><br><span class="line"> </span><br><span class="line">    steps:</span><br><span class="line">      # check it to your workflow can access it</span><br><span class="line">      # from: https://github.com/actions/checkout</span><br><span class="line">      - name: Checkout Repository master branch</span><br><span class="line">        uses: actions/checkout@master</span><br><span class="line"> </span><br><span class="line">      # from: https://github.com/actions/setup-node</span><br><span class="line">      - name: Setup Node.js 15.x</span><br><span class="line">        uses: actions/setup-node@master</span><br><span class="line">        with:</span><br><span class="line">          node-version: &quot;15.x&quot;</span><br><span class="line"> </span><br><span class="line">      - name: 安装Hexo</span><br><span class="line">        run: |</span><br><span class="line">          npm install hexo-cli -g</span><br><span class="line">          npm install</span><br><span class="line"> </span><br><span class="line">      - name: 设置密钥</span><br><span class="line">        env:</span><br><span class="line">          HEXO_DEPLOY_PRIVATE_KEY: $&#123;&#123; secrets.HEXO_DEPLOY_PRIVATE_KEY &#125;&#125;</span><br><span class="line">        run: |</span><br><span class="line">          mkdir -p ~/.ssh/</span><br><span class="line">          echo &quot;$HEXO_DEPLOY_PRIVATE_KEY&quot; &gt; ~/.ssh/id_rsa </span><br><span class="line">          chmod 600 ~/.ssh/id_rsa</span><br><span class="line">          ssh-keyscan github.com &gt;&gt; ~/.ssh/known_hosts  </span><br><span class="line"> </span><br><span class="line">      - name: 设置Git信息</span><br><span class="line">        run: |</span><br><span class="line">          git config --global user.name &#x27;你GitHub的用户名&#x27; </span><br><span class="line">          git config --global user.email &#x27;你GitHub的邮箱&#x27;      </span><br><span class="line"> </span><br><span class="line">      - name: Hexo三连</span><br><span class="line">        run: |</span><br><span class="line">          hexo clean</span><br><span class="line">          hexo generate </span><br><span class="line">          hexo deploy</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+
+<p>修改博客根目录的_config.yml文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">   type: git</span><br><span class="line">   repo: //这里改成ssh的链接                  </span><br><span class="line">   branch: master</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-220359@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-220359@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"><br>打开node_modules文件夹，删除里面的hexo-deployer-git。<br><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-220524@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-220524@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>配置公钥：<br>在github 网站–&gt;Settings–&gt;SSH and GPG keys里，名称为HEXO_DEPLOY_PRIVATE_KEY，内容为.ssh&#x2F;id_rsa.pub里的，注意复制的时候会多一个空格，把它删掉。<br><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-220951@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-220951@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"><br>配置私钥：<br>在私有仓库的 Settings-&gt;Secrets 里，名称为HEXO_DEPLOY_PRIVATE_KEY，内容为.ssh&#x2F;id_rsa里的，注意复制的时候会多一个空格，把它删掉。<br><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-221155@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-221155@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"><br>之后在终端中cd切换至改好的hexo博客目录里，将博客推送到私有仓库。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git branch -M main</span><br><span class="line">git remote add origin git@github.com:用户名/私有仓库名.git</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看效果"><a href="#查看效果" class="headerlink" title="查看效果"></a>查看效果</h3><p>点击私有仓库的Action查看，运行正常再看一下博客内容有没有问题。我在Actions运行之后发现博客里的效果等有缺失，发现是环境问题，将Node版本改为15.x后解决。<br><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-221832@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-221832@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<blockquote>
+<p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+<p>本文永久链接是：<a href="https://goopher.tk/posts/64028.html">https://goopher.tk/posts/64028.html</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>github</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>vscode蓝色波浪线消除办法</title>
     <url>/2022/10/02/study/vscode%E8%93%9D%E8%89%B2%E6%B3%A2%E6%B5%AA%E7%BA%BF%E6%B6%88%E9%99%A4%E5%8A%9E%E6%B3%95/</url>
     <content><![CDATA[<h2 id="vscode蓝色波浪线"><a href="#vscode蓝色波浪线" class="headerlink" title="vscode蓝色波浪线"></a>vscode蓝色波浪线</h2><p>不知道什么时候，我的vscode页面单词有蓝色波浪线了，提示：<code>Unknow word</code>，估计是版本更新之后什么配置的问题。这个蓝色波浪线不影响代码编辑和运行，就是看着碍眼，强迫症表示很难受。一直以来我都是点击修复来消除的，无意中看到一个方法，亲测有效特此记录。直接上图，按图步骤操作就行了</p>
@@ -3721,35 +3725,6 @@ h1,h2,h3,h4,h5,h6{
       </categories>
       <tags>
         <tag>vscode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>PicGo相册不能显示问题及解决办法</title>
-    <url>/2022/07/30/picgo/PicGo%E7%9B%B8%E5%86%8C%E4%B8%8D%E8%83%BD%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
-    <content><![CDATA[<p>我的PicGo图片上传成功了，但是相册区域图片不能正常显示，如下图所示</p>
-<p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/209.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/209.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><h3 id="1-0-重启应用"><a href="#1-0-重启应用" class="headerlink" title="1.0 重启应用"></a>1.0 重启应用</h3><p>退出应用，重新启动，上传的图片能正常显示</p>
-<h3 id="2-0-卸载应用，重新安装"><a href="#2-0-卸载应用，重新安装" class="headerlink" title="2.0 卸载应用，重新安装"></a>2.0 卸载应用，重新安装</h3><p>卸载重装 PicGo，不需要重新配置，之后上传的图片都能正常显示</p>
-<h3 id="3-0-打开picgo设置，找到设置Server，把端口号修改成36677"><a href="#3-0-打开picgo设置，找到设置Server，把端口号修改成36677" class="headerlink" title="3.0 打开picgo设置，找到设置Server，把端口号修改成36677"></a>3.0 打开picgo设置，找到设置Server，把端口号修改成36677</h3><p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224030434.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224030434.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-<p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224111600.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224111600.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-<h3 id="4-0-修改host文件"><a href="#4-0-修改host文件" class="headerlink" title="4.0 修改host文件"></a>4.0 修改host文件</h3><blockquote>
-<p>原因是github屏蔽掉了图片，结局办法就是修改host，我就是用的这个方法解决的</p>
-</blockquote>
-<p>host路径：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">C:\Windows\System32\drivers\etc\hosts</span><br></pre></td></tr></table></figure>
-
-<p>找到host文件，用记事本格式打开，添加代码</p>
-<figure class="highlight plaintext"><figcaption><span>GitHub Start</span></figcaption><table><tr><td class="code"><pre><span class="line">140.82.113.3      github.com</span><br><span class="line">140.82.114.20     gist.github.com</span><br><span class="line">151.101.184.133    assets-cdn.github.com</span><br><span class="line">151.101.184.133    raw.githubusercontent.com</span><br><span class="line">151.101.184.133    gist.githubusercontent.com</span><br><span class="line">151.101.184.133    cloud.githubusercontent.com</span><br><span class="line">151.101.184.133    camo.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars0.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars0.githubusercontent.com</span><br><span class="line">199.232.28.133     avatars1.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars1.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars2.githubusercontent.com</span><br><span class="line">199.232.28.133     avatars2.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars3.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars3.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars4.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars4.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars5.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars5.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars6.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars6.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars7.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars7.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars8.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars8.githubusercontent.com</span><br><span class="line"># GitHub End</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>tip: host文件修改需要管理员权限，可在桌面复制一份，用修改完的文件替换掉原来的文件即可，权限可以自己更改，搞完再改回去</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>PicGo</category>
-      </categories>
-      <tags>
-        <tag>PicGo</tag>
       </tags>
   </entry>
   <entry>
@@ -3794,53 +3769,6 @@ h1,h2,h3,h4,h5,h6{
       </categories>
       <tags>
         <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>phpMyAdmin最新下载安装教程</title>
-    <url>/2022/08/08/tutorial/phpMyAdmin%E6%9C%80%E6%96%B0%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<p>本篇文章主要为大家详细地介绍了<strong>PHPmyadmin 安装教程</strong>。</p>
-<p>PHPmyadmin 是我们在日常项目开发中常用的 MySQL 数据库管理器之一！那么如何快速下载安装好 PHPmyadmin 就是新手朋友们不可或缺的一项技能了，掌握了这个技能后无论你是需要重新搭建开发环境还是后期误删 PHPmyadmin，这些问题都能轻松解决。</p>
-<p>下面我们结合具体的图文信息为大家详细地介绍如何<strong>下载安装 PHPmyadmin</strong>以及<strong>PHPmyadmin 怎么登陆启动</strong>的方法！</p>
-<h2 id="一、下载-PHPmyadmin"><a href="#一、下载-PHPmyadmin" class="headerlink" title="一、下载 PHPmyadmin"></a><strong>一、下载 PHPmyadmin</strong></h2><p>打开 PHP 中文网中的 PHPmyadmin 工具下载链接：<a href="http://www.php.cn/xiazai/gongju/97%EF%BC%8C">http://www.php.cn/xiazai/gongju/97，</a></p>
-<p>点击本地下载，即可下载 PHPmyadmin 压缩包。</p>
-<h2 id="二、更改文件夹名及部分代码"><a href="#二、更改文件夹名及部分代码" class="headerlink" title="二、更改文件夹名及部分代码"></a><strong>二、更改文件夹名及部分代码</strong></h2><p>当我们下载了 PHPmyadmin 文件的压缩包后，将其解压到 c 盘的根目录下。并且把原先的文件夹名称改为 PHPmyadmin。</p>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005749.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005749.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="056a3d7632a8705ec09729b4d35c534.png"></p>
-<p>然后打开这个文件夹，找到 config.sample.inc.php，将其重命名为 config.inc.php。</p>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005315.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005315.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="cd60a47f5de42a9edf47c8f4e73dd8f.png"></p>
-<p>最后打开 config.inc.php 文件，找到这段代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$cfg[&#x27;blowfish_secret&#x27;] = &#x27;&#x27;</span><br></pre></td></tr></table></figure>
-
-<p>将其改为下面这么这段代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$cfg[&#x27;blowfish_secret&#x27;] = &#x27;c4ca4238a0b923820dcc509a6f75849b&#x27;;//一个长字符串密码就行</span><br></pre></td></tr></table></figure>
-
-<p>保存退出即可。</p>
-<h2 id="三、新建一个-phpmyadmin-conf-文件"><a href="#三、新建一个-phpmyadmin-conf-文件" class="headerlink" title="三、新建一个 phpmyadmin.conf 文件"></a><strong>三、</strong>新建一个 phpmyadmin.conf 文件</h2><p>首先我们要找到 PHP 环境中的 Apache 的 conf 文件夹，在里面直接新建一个 phpmyadmin.conf 文件。例如在 PHPstudy 环境下，conf 文件夹所在位置如下图：</p>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005122.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005122.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="b066f5c3fd472af38dd1c2b65e0ad1d.png"></p>
-<p>然后在这个新建的文件里，直接复制粘贴这段代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Alias /phpmyadmin &quot;c:/phpMyAdmin/&quot;</span><br><span class="line">&lt;Directory &quot;c:/phpMyAdmin/&quot;&gt;</span><br><span class="line">Options Indexes FollowSymLinks MultiViews</span><br><span class="line">AllowOverride all</span><br><span class="line">Require all granted</span><br><span class="line">php_admin_value upload_max_filesize 128M</span><br><span class="line">php_admin_value post_max_size 128M</span><br><span class="line">php_admin_value max_execution_time 360</span><br><span class="line">php_admin_value max_input_time 360</span><br><span class="line">&lt;/Directory&gt;</span><br></pre></td></tr></table></figure>
-
-<p>最后保存退出即可。</p>
-<h2 id="四、修改配置文件-httpd-conf"><a href="#四、修改配置文件-httpd-conf" class="headerlink" title="四、修改配置文件 httpd.conf"></a><strong>四、修改配置文件 httpd.conf</strong></h2><p>在 Apache 的 conf 文件夹里找到 httpd.conf 文件，打开文件，在文本末尾处加上这一段代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Include conf/phpmyadmin.conf</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005005.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005005.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="1c992fa891b68dd4aba763962da5b56.png"></p>
-<p>最后重启 Apache 即可。</p>
-<h2 id="五、登录启动-PHPmyadmin"><a href="#五、登录启动-PHPmyadmin" class="headerlink" title="五、登录启动 PHPmyadmin"></a><strong>五、登录启动 PHPmyadmin</strong></h2><p>经过上述四步后，就已经成功安装好了 PHPmyadmin，<strong>那怎样登录 PHPmyadmin？</strong>此时就可以访问这个链接地址：localhost&#x2F;phpmyadmin，或者 127.0.0.1&#x2F;phpmuadmin。<strong>注：链接里的 phpmyadmin 需小写。</strong></p>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005989.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005989.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="899675ce0dd44af512bb0763fc4c629.png"></p>
-<p>出现了 PHPmyadmin 登录界面：</p>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005543.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005543.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="827af5e216d26209744a042f4522924.png"></p>
-<p>一般初始的用户名密码都是 root，点击执行即可成功登陆启动 PHPmyadmin 的管理界面，如下图：</p>
-<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090006977.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090006977.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="1536550810326318.png"></p>
-<p>那么以上文章就是关于 PHPmyadmin 下载安装的具体过程介绍，希望对有需要的朋友有所帮助！</p>
-<p>各位也可以参考对应的视频教程【<a href="http://www.php.cn/code/28299.html">下载安装以及配置线上数据库管理工具 PHPMyAdmin</a>】，此视频解说更加直观、浅显易懂！</p>
-<p>文章来源于：<a href="https://www.php.cn/jishu/mysql/409664.html">https://www.php.cn/jishu/mysql/409664.html</a></p>
-]]></content>
-      <categories>
-        <category>破解软件</category>
-      </categories>
-      <tags>
-        <tag>phpMyAdmin</tag>
       </tags>
   </entry>
   <entry>
@@ -3915,26 +3843,6 @@ h1,h2,h3,h4,h5,h6{
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/07/28/study/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>个人学习</category>
-      </categories>
-      <tags>
-        <tag>个人</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>typora破解版安装</title>
     <url>/2022/07/30/tutorial/typora%E7%A0%B4%E8%A7%A3%E7%89%88%E5%AE%89%E8%A3%85/</url>
     <content><![CDATA[<p>typora 收费，对程序猿来说是不可能的，我只会白嫖，今天在小破站看到一个破解版的 typora 的安装，分享给大家。</p>
@@ -3950,6 +3858,98 @@ h1,h2,h3,h4,h5,h6{
       </categories>
       <tags>
         <tag>typora</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>phpMyAdmin最新下载安装教程</title>
+    <url>/2022/08/08/tutorial/phpMyAdmin%E6%9C%80%E6%96%B0%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<p>本篇文章主要为大家详细地介绍了<strong>PHPmyadmin 安装教程</strong>。</p>
+<p>PHPmyadmin 是我们在日常项目开发中常用的 MySQL 数据库管理器之一！那么如何快速下载安装好 PHPmyadmin 就是新手朋友们不可或缺的一项技能了，掌握了这个技能后无论你是需要重新搭建开发环境还是后期误删 PHPmyadmin，这些问题都能轻松解决。</p>
+<p>下面我们结合具体的图文信息为大家详细地介绍如何<strong>下载安装 PHPmyadmin</strong>以及<strong>PHPmyadmin 怎么登陆启动</strong>的方法！</p>
+<h2 id="一、下载-PHPmyadmin"><a href="#一、下载-PHPmyadmin" class="headerlink" title="一、下载 PHPmyadmin"></a><strong>一、下载 PHPmyadmin</strong></h2><p>打开 PHP 中文网中的 PHPmyadmin 工具下载链接：<a href="http://www.php.cn/xiazai/gongju/97%EF%BC%8C">http://www.php.cn/xiazai/gongju/97，</a></p>
+<p>点击本地下载，即可下载 PHPmyadmin 压缩包。</p>
+<h2 id="二、更改文件夹名及部分代码"><a href="#二、更改文件夹名及部分代码" class="headerlink" title="二、更改文件夹名及部分代码"></a><strong>二、更改文件夹名及部分代码</strong></h2><p>当我们下载了 PHPmyadmin 文件的压缩包后，将其解压到 c 盘的根目录下。并且把原先的文件夹名称改为 PHPmyadmin。</p>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005749.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005749.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="056a3d7632a8705ec09729b4d35c534.png"></p>
+<p>然后打开这个文件夹，找到 config.sample.inc.php，将其重命名为 config.inc.php。</p>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005315.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005315.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="cd60a47f5de42a9edf47c8f4e73dd8f.png"></p>
+<p>最后打开 config.inc.php 文件，找到这段代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$cfg[&#x27;blowfish_secret&#x27;] = &#x27;&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>将其改为下面这么这段代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$cfg[&#x27;blowfish_secret&#x27;] = &#x27;c4ca4238a0b923820dcc509a6f75849b&#x27;;//一个长字符串密码就行</span><br></pre></td></tr></table></figure>
+
+<p>保存退出即可。</p>
+<h2 id="三、新建一个-phpmyadmin-conf-文件"><a href="#三、新建一个-phpmyadmin-conf-文件" class="headerlink" title="三、新建一个 phpmyadmin.conf 文件"></a><strong>三、</strong>新建一个 phpmyadmin.conf 文件</h2><p>首先我们要找到 PHP 环境中的 Apache 的 conf 文件夹，在里面直接新建一个 phpmyadmin.conf 文件。例如在 PHPstudy 环境下，conf 文件夹所在位置如下图：</p>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005122.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005122.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="b066f5c3fd472af38dd1c2b65e0ad1d.png"></p>
+<p>然后在这个新建的文件里，直接复制粘贴这段代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Alias /phpmyadmin &quot;c:/phpMyAdmin/&quot;</span><br><span class="line">&lt;Directory &quot;c:/phpMyAdmin/&quot;&gt;</span><br><span class="line">Options Indexes FollowSymLinks MultiViews</span><br><span class="line">AllowOverride all</span><br><span class="line">Require all granted</span><br><span class="line">php_admin_value upload_max_filesize 128M</span><br><span class="line">php_admin_value post_max_size 128M</span><br><span class="line">php_admin_value max_execution_time 360</span><br><span class="line">php_admin_value max_input_time 360</span><br><span class="line">&lt;/Directory&gt;</span><br></pre></td></tr></table></figure>
+
+<p>最后保存退出即可。</p>
+<h2 id="四、修改配置文件-httpd-conf"><a href="#四、修改配置文件-httpd-conf" class="headerlink" title="四、修改配置文件 httpd.conf"></a><strong>四、修改配置文件 httpd.conf</strong></h2><p>在 Apache 的 conf 文件夹里找到 httpd.conf 文件，打开文件，在文本末尾处加上这一段代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Include conf/phpmyadmin.conf</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005005.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005005.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="1c992fa891b68dd4aba763962da5b56.png"></p>
+<p>最后重启 Apache 即可。</p>
+<h2 id="五、登录启动-PHPmyadmin"><a href="#五、登录启动-PHPmyadmin" class="headerlink" title="五、登录启动 PHPmyadmin"></a><strong>五、登录启动 PHPmyadmin</strong></h2><p>经过上述四步后，就已经成功安装好了 PHPmyadmin，<strong>那怎样登录 PHPmyadmin？</strong>此时就可以访问这个链接地址：localhost&#x2F;phpmyadmin，或者 127.0.0.1&#x2F;phpmuadmin。<strong>注：链接里的 phpmyadmin 需小写。</strong></p>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005989.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005989.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="899675ce0dd44af512bb0763fc4c629.png"></p>
+<p>出现了 PHPmyadmin 登录界面：</p>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005543.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090005543.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="827af5e216d26209744a042f4522924.png"></p>
+<p>一般初始的用户名密码都是 root，点击执行即可成功登陆启动 PHPmyadmin 的管理界面，如下图：</p>
+<p><img src="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090006977.png" class="lazyload" data-srcset="https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/202208090006977.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="1536550810326318.png"></p>
+<p>那么以上文章就是关于 PHPmyadmin 下载安装的具体过程介绍，希望对有需要的朋友有所帮助！</p>
+<p>各位也可以参考对应的视频教程【<a href="http://www.php.cn/code/28299.html">下载安装以及配置线上数据库管理工具 PHPMyAdmin</a>】，此视频解说更加直观、浅显易懂！</p>
+<p>文章来源于：<a href="https://www.php.cn/jishu/mysql/409664.html">https://www.php.cn/jishu/mysql/409664.html</a></p>
+]]></content>
+      <categories>
+        <category>破解软件</category>
+      </categories>
+      <tags>
+        <tag>phpMyAdmin</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PicGo+typora上传图片失败报422的原因及解决方法</title>
+    <url>/2022/08/03/picgo/PicGo+typora%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%A4%B1%E8%B4%A5%E6%8A%A5422%E7%9A%84%E5%8E%9F%E5%9B%A0%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<p>picgo 用 github 作图床，使用 typora 上传图，出现 StatusCodeError: 422 的原因及解决方法</p>
+<h3 id="我在使用过程中-PicGo-出现了-StatusCodeError-422-的错误，上传图片失败。通过百度得知是以下原因造成的"><a href="#我在使用过程中-PicGo-出现了-StatusCodeError-422-的错误，上传图片失败。通过百度得知是以下原因造成的" class="headerlink" title="我在使用过程中 PicGo 出现了 StatusCodeError: 422 的错误，上传图片失败。通过百度得知是以下原因造成的"></a>我在使用过程中 PicGo 出现了 StatusCodeError: 422 的错误，上传图片失败。通过百度得知是以下原因造成的</h3><blockquote>
+<p><strong>PicGo 目前不支持在 gitbub 上上传同名文件，上传同名文件就会报错，即使是两张不同的图片。</strong></p>
+</blockquote>
+<p>解决方式也很简单，Picgo 开启上传时重命名和时间戳重命名就可以结局，或者把 github 里面已经有的同名文件删除，都可以解决这个问题。</p>
+]]></content>
+      <categories>
+        <category>PicGo</category>
+      </categories>
+      <tags>
+        <tag>PicGo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PicGo相册不能显示问题及解决办法</title>
+    <url>/2022/07/30/picgo/PicGo%E7%9B%B8%E5%86%8C%E4%B8%8D%E8%83%BD%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
+    <content><![CDATA[<p>我的PicGo图片上传成功了，但是相册区域图片不能正常显示，如下图所示</p>
+<p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/209.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/209.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><h3 id="1-0-重启应用"><a href="#1-0-重启应用" class="headerlink" title="1.0 重启应用"></a>1.0 重启应用</h3><p>退出应用，重新启动，上传的图片能正常显示</p>
+<h3 id="2-0-卸载应用，重新安装"><a href="#2-0-卸载应用，重新安装" class="headerlink" title="2.0 卸载应用，重新安装"></a>2.0 卸载应用，重新安装</h3><p>卸载重装 PicGo，不需要重新配置，之后上传的图片都能正常显示</p>
+<h3 id="3-0-打开picgo设置，找到设置Server，把端口号修改成36677"><a href="#3-0-打开picgo设置，找到设置Server，把端口号修改成36677" class="headerlink" title="3.0 打开picgo设置，找到设置Server，把端口号修改成36677"></a>3.0 打开picgo设置，找到设置Server，把端口号修改成36677</h3><p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224030434.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224030434.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224111600.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730224111600.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<h3 id="4-0-修改host文件"><a href="#4-0-修改host文件" class="headerlink" title="4.0 修改host文件"></a>4.0 修改host文件</h3><blockquote>
+<p>原因是github屏蔽掉了图片，结局办法就是修改host，我就是用的这个方法解决的</p>
+</blockquote>
+<p>host路径：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">C:\Windows\System32\drivers\etc\hosts</span><br></pre></td></tr></table></figure>
+
+<p>找到host文件，用记事本格式打开，添加代码</p>
+<figure class="highlight plaintext"><figcaption><span>GitHub Start</span></figcaption><table><tr><td class="code"><pre><span class="line">140.82.113.3      github.com</span><br><span class="line">140.82.114.20     gist.github.com</span><br><span class="line">151.101.184.133    assets-cdn.github.com</span><br><span class="line">151.101.184.133    raw.githubusercontent.com</span><br><span class="line">151.101.184.133    gist.githubusercontent.com</span><br><span class="line">151.101.184.133    cloud.githubusercontent.com</span><br><span class="line">151.101.184.133    camo.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars0.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars0.githubusercontent.com</span><br><span class="line">199.232.28.133     avatars1.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars1.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars2.githubusercontent.com</span><br><span class="line">199.232.28.133     avatars2.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars3.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars3.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars4.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars4.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars5.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars5.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars6.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars6.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars7.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars7.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars8.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars8.githubusercontent.com</span><br><span class="line"># GitHub End</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>tip: host文件修改需要管理员权限，可在桌面复制一份，用修改完的文件替换掉原来的文件即可，权限可以自己更改，搞完再改回去</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>PicGo</category>
+      </categories>
+      <tags>
+        <tag>PicGo</tag>
       </tags>
   </entry>
 </search>
