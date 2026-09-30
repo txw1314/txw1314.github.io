@@ -15,6 +15,39 @@
       </tags>
   </entry>
   <entry>
+    <title>使用github Actions自动化部署Hexo</title>
+    <url>/2022/08/16/%E4%BD%BF%E7%94%A8Github%20Actions%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2Hexo/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>使用Github Actions自动化部署之后，可以脱离本地电脑，再也不用担心源码丢失。</p>
+<h3 id="新建私密仓库"><a href="#新建私密仓库" class="headerlink" title="新建私密仓库"></a>新建私密仓库</h3><p>首先需要在GitHub上新建一个私密仓库，仓库名称随意，注意不要使用README初始化仓库。<br><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-214814@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-214814@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"><br><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-214917@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-214917@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<h3 id="生成公私秘钥对"><a href="#生成公私秘钥对" class="headerlink" title="生成公私秘钥对"></a>生成公私秘钥对</h3><p>在mac的终端中执行：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">COPY</span><br><span class="line">ssh-keygen -t rsa -C &quot;Github 的邮箱地址&quot;</span><br></pre></td></tr></table></figure>
+
+<p>之后生成的密钥默认存储在&#x2F;用户&#x2F;XXX&#x2F;.ssh&#x2F;目录下。</p>
+<h3 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h3><p>将Hexo博客的根目录复制到别的地方，显示隐藏文件夹，然后将里面的隐藏文件删除。<br><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-215630@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-215630@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"><br>之后将.ssh文件夹复制进去(这个可以不弄，我丢上去备份的)。<br><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-215727@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-215727@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"><br>再新建一个.github隐藏文件夹，里面新建一个workflows文件夹，在workflows里面新建一个自动化的配置文件hexoCI.yml<br>其内容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 自动化名称</span><br><span class="line">name: Hexo Blog CI</span><br><span class="line"> </span><br><span class="line"># 触发条件</span><br><span class="line">on:</span><br><span class="line">  push:</span><br><span class="line">    branches:</span><br><span class="line">      - main</span><br><span class="line"> </span><br><span class="line"># 设置环境</span><br><span class="line">jobs:</span><br><span class="line">  build:</span><br><span class="line">    runs-on: ubuntu-latest</span><br><span class="line"> </span><br><span class="line">    steps:</span><br><span class="line">      # check it to your workflow can access it</span><br><span class="line">      # from: https://github.com/actions/checkout</span><br><span class="line">      - name: Checkout Repository master branch</span><br><span class="line">        uses: actions/checkout@master</span><br><span class="line"> </span><br><span class="line">      # from: https://github.com/actions/setup-node</span><br><span class="line">      - name: Setup Node.js 15.x</span><br><span class="line">        uses: actions/setup-node@master</span><br><span class="line">        with:</span><br><span class="line">          node-version: &quot;15.x&quot;</span><br><span class="line"> </span><br><span class="line">      - name: 安装Hexo</span><br><span class="line">        run: |</span><br><span class="line">          npm install hexo-cli -g</span><br><span class="line">          npm install</span><br><span class="line"> </span><br><span class="line">      - name: 设置密钥</span><br><span class="line">        env:</span><br><span class="line">          HEXO_DEPLOY_PRIVATE_KEY: $&#123;&#123; secrets.HEXO_DEPLOY_PRIVATE_KEY &#125;&#125;</span><br><span class="line">        run: |</span><br><span class="line">          mkdir -p ~/.ssh/</span><br><span class="line">          echo &quot;$HEXO_DEPLOY_PRIVATE_KEY&quot; &gt; ~/.ssh/id_rsa </span><br><span class="line">          chmod 600 ~/.ssh/id_rsa</span><br><span class="line">          ssh-keyscan github.com &gt;&gt; ~/.ssh/known_hosts  </span><br><span class="line"> </span><br><span class="line">      - name: 设置Git信息</span><br><span class="line">        run: |</span><br><span class="line">          git config --global user.name &#x27;你GitHub的用户名&#x27; </span><br><span class="line">          git config --global user.email &#x27;你GitHub的邮箱&#x27;      </span><br><span class="line"> </span><br><span class="line">      - name: Hexo三连</span><br><span class="line">        run: |</span><br><span class="line">          hexo clean</span><br><span class="line">          hexo generate </span><br><span class="line">          hexo deploy</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+
+<p>修改博客根目录的_config.yml文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">   type: git</span><br><span class="line">   repo: //这里改成ssh的链接                  </span><br><span class="line">   branch: master</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-220359@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-220359@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"><br>打开node_modules文件夹，删除里面的hexo-deployer-git。<br><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-220524@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-220524@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>配置公钥：<br>在github 网站–&gt;Settings–&gt;SSH and GPG keys里，名称为HEXO_DEPLOY_PRIVATE_KEY，内容为.ssh&#x2F;id_rsa.pub里的，注意复制的时候会多一个空格，把它删掉。<br><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-220951@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-220951@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"><br>配置私钥：<br>在私有仓库的 Settings-&gt;Secrets 里，名称为HEXO_DEPLOY_PRIVATE_KEY，内容为.ssh&#x2F;id_rsa里的，注意复制的时候会多一个空格，把它删掉。<br><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-221155@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-221155@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"><br>之后在终端中cd切换至改好的hexo博客目录里，将博客推送到私有仓库。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git branch -M main</span><br><span class="line">git remote add origin git@github.com:用户名/私有仓库名.git</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看效果"><a href="#查看效果" class="headerlink" title="查看效果"></a>查看效果</h3><p>点击私有仓库的Action查看，运行正常再看一下博客内容有没有问题。我在Actions运行之后发现博客里的效果等有缺失，发现是环境问题，将Node版本改为15.x后解决。<br><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-221832@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-221832@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<blockquote>
+<p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+<p>本文永久链接是：<a href="https://goopher.tk/posts/64028.html">https://goopher.tk/posts/64028.html</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>大合集</title>
     <url>/2022/08/08/%E5%A4%A7%E5%90%88%E9%9B%86/</url>
     <content><![CDATA[<h1 id="多种内容大收集"><a href="#多种内容大收集" class="headerlink" title="多种内容大收集"></a>多种内容大收集</h1><p>[TOC]</p>
@@ -400,36 +433,29 @@
       </tags>
   </entry>
   <entry>
-    <title>使用github Actions自动化部署Hexo</title>
-    <url>/2022/08/16/%E4%BD%BF%E7%94%A8Github%20Actions%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2Hexo/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>使用Github Actions自动化部署之后，可以脱离本地电脑，再也不用担心源码丢失。</p>
-<h3 id="新建私密仓库"><a href="#新建私密仓库" class="headerlink" title="新建私密仓库"></a>新建私密仓库</h3><p>首先需要在GitHub上新建一个私密仓库，仓库名称随意，注意不要使用README初始化仓库。<br><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-214814@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-214814@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"><br><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-214917@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-214917@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<h3 id="生成公私秘钥对"><a href="#生成公私秘钥对" class="headerlink" title="生成公私秘钥对"></a>生成公私秘钥对</h3><p>在mac的终端中执行：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">COPY</span><br><span class="line">ssh-keygen -t rsa -C &quot;Github 的邮箱地址&quot;</span><br></pre></td></tr></table></figure>
+    <title>正确运行vue打包后的项目</title>
+    <url>/2022/08/08/%E6%AD%A3%E7%A1%AE%E8%BF%90%E8%A1%8Cvue%E6%89%93%E5%8C%85%E5%90%8E%E7%9A%84%E9%A1%B9%E7%9B%AE/</url>
+    <content><![CDATA[<p>这篇文章给大家分享的是有关怎么使用webpack打包后的vue项目正确运行的内容。小编觉得挺实用的，因此分享给大家做个参考，一起跟随小编过来看看吧。</p>
+<p>　　我们知道使用webpack打包vue项目后会生成一个dist文件夹，dist文件夹下有html文件和其他css、js以及图片等，那么打包后的文件该如何正确运行呢？</p>
+<p>　　倘若直接打开html文件，会报如下错误：　　</p>
+<p>　　那么该如何运行呢？其实可以将生成的dist文件部署到express<a href="https://www.yisu.com/">服务器</a>上运行。</p>
+<h2 id="（1）、安装express-generator生成器。"><a href="#（1）、安装express-generator生成器。" class="headerlink" title="（1）、安装express-generator生成器。"></a>（1）、安装express-generator生成器。</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install express-generator -g // 也可使用cnpm比较快　</span><br></pre></td></tr></table></figure>
 
-<p>之后生成的密钥默认存储在&#x2F;用户&#x2F;XXX&#x2F;.ssh&#x2F;目录下。</p>
-<h3 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h3><p>将Hexo博客的根目录复制到别的地方，显示隐藏文件夹，然后将里面的隐藏文件删除。<br><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-215630@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-215630@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"><br>之后将.ssh文件夹复制进去(这个可以不弄，我丢上去备份的)。<br><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-215727@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-215727@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"><br>再新建一个.github隐藏文件夹，里面新建一个workflows文件夹，在workflows里面新建一个自动化的配置文件hexoCI.yml<br>其内容如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 自动化名称</span><br><span class="line">name: Hexo Blog CI</span><br><span class="line"> </span><br><span class="line"># 触发条件</span><br><span class="line">on:</span><br><span class="line">  push:</span><br><span class="line">    branches:</span><br><span class="line">      - main</span><br><span class="line"> </span><br><span class="line"># 设置环境</span><br><span class="line">jobs:</span><br><span class="line">  build:</span><br><span class="line">    runs-on: ubuntu-latest</span><br><span class="line"> </span><br><span class="line">    steps:</span><br><span class="line">      # check it to your workflow can access it</span><br><span class="line">      # from: https://github.com/actions/checkout</span><br><span class="line">      - name: Checkout Repository master branch</span><br><span class="line">        uses: actions/checkout@master</span><br><span class="line"> </span><br><span class="line">      # from: https://github.com/actions/setup-node</span><br><span class="line">      - name: Setup Node.js 15.x</span><br><span class="line">        uses: actions/setup-node@master</span><br><span class="line">        with:</span><br><span class="line">          node-version: &quot;15.x&quot;</span><br><span class="line"> </span><br><span class="line">      - name: 安装Hexo</span><br><span class="line">        run: |</span><br><span class="line">          npm install hexo-cli -g</span><br><span class="line">          npm install</span><br><span class="line"> </span><br><span class="line">      - name: 设置密钥</span><br><span class="line">        env:</span><br><span class="line">          HEXO_DEPLOY_PRIVATE_KEY: $&#123;&#123; secrets.HEXO_DEPLOY_PRIVATE_KEY &#125;&#125;</span><br><span class="line">        run: |</span><br><span class="line">          mkdir -p ~/.ssh/</span><br><span class="line">          echo &quot;$HEXO_DEPLOY_PRIVATE_KEY&quot; &gt; ~/.ssh/id_rsa </span><br><span class="line">          chmod 600 ~/.ssh/id_rsa</span><br><span class="line">          ssh-keyscan github.com &gt;&gt; ~/.ssh/known_hosts  </span><br><span class="line"> </span><br><span class="line">      - name: 设置Git信息</span><br><span class="line">        run: |</span><br><span class="line">          git config --global user.name &#x27;你GitHub的用户名&#x27; </span><br><span class="line">          git config --global user.email &#x27;你GitHub的邮箱&#x27;      </span><br><span class="line"> </span><br><span class="line">      - name: Hexo三连</span><br><span class="line">        run: |</span><br><span class="line">          hexo clean</span><br><span class="line">          hexo generate </span><br><span class="line">          hexo deploy</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+<h2 id="（2）、创建一个express项目。"><a href="#（2）、创建一个express项目。" class="headerlink" title="（2）、创建一个express项目。"></a>（2）、创建一个express项目。</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">express expressName // expressName是项目名</span><br></pre></td></tr></table></figure>
 
-<p>修改博客根目录的_config.yml文件：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">   type: git</span><br><span class="line">   repo: //这里改成ssh的链接                  </span><br><span class="line">   branch: master</span><br></pre></td></tr></table></figure>
+<h2 id="（3）、进入项目目录，安装相关项目依赖。"><a href="#（3）、进入项目目录，安装相关项目依赖。" class="headerlink" title="（3）、进入项目目录，安装相关项目依赖。"></a>（3）、进入项目目录，安装相关项目依赖。</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd expressName</span><br><span class="line">npm install // 或cnpm install</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-220359@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-220359@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"><br>打开node_modules文件夹，删除里面的hexo-deployer-git。<br><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-220524@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-220524@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>配置公钥：<br>在github 网站–&gt;Settings–&gt;SSH and GPG keys里，名称为HEXO_DEPLOY_PRIVATE_KEY，内容为.ssh&#x2F;id_rsa.pub里的，注意复制的时候会多一个空格，把它删掉。<br><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-220951@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-220951@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"><br>配置私钥：<br>在私有仓库的 Settings-&gt;Secrets 里，名称为HEXO_DEPLOY_PRIVATE_KEY，内容为.ssh&#x2F;id_rsa里的，注意复制的时候会多一个空格，把它删掉。<br><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-221155@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-221155@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"><br>之后在终端中cd切换至改好的hexo博客目录里，将博客推送到私有仓库。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git branch -M main</span><br><span class="line">git remote add origin git@github.com:用户名/私有仓库名.git</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
-
-<h3 id="查看效果"><a href="#查看效果" class="headerlink" title="查看效果"></a>查看效果</h3><p>点击私有仓库的Action查看，运行正常再看一下博客内容有没有问题。我在Actions运行之后发现博客里的效果等有缺失，发现是环境问题，将Node版本改为15.x后解决。<br><img src="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-221832@2x.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/Goopher97/tuchuang@master/img/QQ20210209-221832@2x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
-<blockquote>
-<p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
-<p>本文永久链接是：<a href="https://goopher.tk/posts/64028.html">https://goopher.tk/posts/64028.html</a></p>
-</blockquote>
+<h2 id="（4）、此时生成的项目目录应该是这样的："><a href="#（4）、此时生成的项目目录应该是这样的：" class="headerlink" title="（4）、此时生成的项目目录应该是这样的："></a>（4）、此时生成的项目目录应该是这样的：</h2><p>　　　<img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/202208090007353.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/202208090007353.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220808225834865"></p>
+<h2 id="（5）、将dist文件夹下的所有文件复制到express项目的publick文件夹下面，然后运行npm-start来启动express项目。"><a href="#（5）、将dist文件夹下的所有文件复制到express项目的publick文件夹下面，然后运行npm-start来启动express项目。" class="headerlink" title="（5）、将dist文件夹下的所有文件复制到express项目的publick文件夹下面，然后运行npm start来启动express项目。"></a>（5）、将dist文件夹下的所有文件复制到express项目的publick文件夹下面，然后运行npm start来启动express项目。</h2><h2 id="（6）、打开浏览器，输入localhost-3000就可以看到效果了。例如我的是这样的："><a href="#（6）、打开浏览器，输入localhost-3000就可以看到效果了。例如我的是这样的：" class="headerlink" title="（6）、打开浏览器，输入localhost:3000就可以看到效果了。例如我的是这样的："></a>（6）、打开浏览器，输入localhost:3000就可以看到效果了。例如我的是这样的：</h2><p>　　　　<img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/202208090007996.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/202208090007996.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220808225854668"></p>
+<p>感谢各位的阅读！关于“怎么使用webpack打包后的vue项目正确运行”这篇文章就分享到这里了，希望以上内容可以对大家有一定的帮助，让大家可以学到更多知识，如果觉得文章不错，可以把它分享出去让更多的人看到吧！</p>
 ]]></content>
       <categories>
-        <category>hexo</category>
+        <category>前端</category>
+        <category>vue</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
-        <tag>github</tag>
+        <tag>vue</tag>
+        <tag>webpack</tag>
       </tags>
   </entry>
   <entry>
@@ -465,29 +491,29 @@
       </tags>
   </entry>
   <entry>
-    <title>正确运行vue打包后的项目</title>
-    <url>/2022/08/08/%E6%AD%A3%E7%A1%AE%E8%BF%90%E8%A1%8Cvue%E6%89%93%E5%8C%85%E5%90%8E%E7%9A%84%E9%A1%B9%E7%9B%AE/</url>
-    <content><![CDATA[<p>这篇文章给大家分享的是有关怎么使用webpack打包后的vue项目正确运行的内容。小编觉得挺实用的，因此分享给大家做个参考，一起跟随小编过来看看吧。</p>
-<p>　　我们知道使用webpack打包vue项目后会生成一个dist文件夹，dist文件夹下有html文件和其他css、js以及图片等，那么打包后的文件该如何正确运行呢？</p>
-<p>　　倘若直接打开html文件，会报如下错误：　　</p>
-<p>　　那么该如何运行呢？其实可以将生成的dist文件部署到express<a href="https://www.yisu.com/">服务器</a>上运行。</p>
-<h2 id="（1）、安装express-generator生成器。"><a href="#（1）、安装express-generator生成器。" class="headerlink" title="（1）、安装express-generator生成器。"></a>（1）、安装express-generator生成器。</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install express-generator -g // 也可使用cnpm比较快　</span><br></pre></td></tr></table></figure>
+    <title>用git提交新项目到github</title>
+    <url>/2022/08/11/%E7%94%A8git%E6%8F%90%E4%BA%A4%E6%96%B0%E9%A1%B9%E7%9B%AE%E5%88%B0github/</url>
+    <content><![CDATA[<h3 id="1、（先进入项目文件夹）通过命令-git-init-把这个目录变成git可以管理的仓库"><a href="#1、（先进入项目文件夹）通过命令-git-init-把这个目录变成git可以管理的仓库" class="headerlink" title="1、（先进入项目文件夹）通过命令 git init 把这个目录变成git可以管理的仓库"></a>1、（先进入项目文件夹）通过命令 git init 把这个目录变成git可以管理的仓库</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
 
-<h2 id="（2）、创建一个express项目。"><a href="#（2）、创建一个express项目。" class="headerlink" title="（2）、创建一个express项目。"></a>（2）、创建一个express项目。</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">express expressName // expressName是项目名</span><br></pre></td></tr></table></figure>
+<h3 id="2、把文件添加到版本库中，使用命令-git-add-添加到暂存区里面去，不要忘记后面的小数点“-”，意为添加文件夹下的所有文件"><a href="#2、把文件添加到版本库中，使用命令-git-add-添加到暂存区里面去，不要忘记后面的小数点“-”，意为添加文件夹下的所有文件" class="headerlink" title="2、把文件添加到版本库中，使用命令 git add .添加到暂存区里面去，不要忘记后面的小数点“.”，意为添加文件夹下的所有文件"></a>2、把文件添加到版本库中，使用命令 git add .添加到暂存区里面去，不要忘记后面的小数点“.”，意为添加文件夹下的所有文件</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
 
-<h2 id="（3）、进入项目目录，安装相关项目依赖。"><a href="#（3）、进入项目目录，安装相关项目依赖。" class="headerlink" title="（3）、进入项目目录，安装相关项目依赖。"></a>（3）、进入项目目录，安装相关项目依赖。</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd expressName</span><br><span class="line">npm install // 或cnpm install</span><br></pre></td></tr></table></figure>
+<h3 id="3、用命令-git-commit告诉Git，把文件提交到仓库。引号内为提交说明"><a href="#3、用命令-git-commit告诉Git，把文件提交到仓库。引号内为提交说明" class="headerlink" title="3、用命令 git commit告诉Git，把文件提交到仓库。引号内为提交说明"></a>3、用命令 git commit告诉Git，把文件提交到仓库。引号内为提交说明</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git commit -m &#x27;first commit&#x27;</span><br></pre></td></tr></table></figure>
 
-<h2 id="（4）、此时生成的项目目录应该是这样的："><a href="#（4）、此时生成的项目目录应该是这样的：" class="headerlink" title="（4）、此时生成的项目目录应该是这样的："></a>（4）、此时生成的项目目录应该是这样的：</h2><p>　　　<img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/202208090007353.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/202208090007353.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220808225834865"></p>
-<h2 id="（5）、将dist文件夹下的所有文件复制到express项目的publick文件夹下面，然后运行npm-start来启动express项目。"><a href="#（5）、将dist文件夹下的所有文件复制到express项目的publick文件夹下面，然后运行npm-start来启动express项目。" class="headerlink" title="（5）、将dist文件夹下的所有文件复制到express项目的publick文件夹下面，然后运行npm start来启动express项目。"></a>（5）、将dist文件夹下的所有文件复制到express项目的publick文件夹下面，然后运行npm start来启动express项目。</h2><h2 id="（6）、打开浏览器，输入localhost-3000就可以看到效果了。例如我的是这样的："><a href="#（6）、打开浏览器，输入localhost-3000就可以看到效果了。例如我的是这样的：" class="headerlink" title="（6）、打开浏览器，输入localhost:3000就可以看到效果了。例如我的是这样的："></a>（6）、打开浏览器，输入localhost:3000就可以看到效果了。例如我的是这样的：</h2><p>　　　　<img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/202208090007996.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/202208090007996.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220808225854668"></p>
-<p>感谢各位的阅读！关于“怎么使用webpack打包后的vue项目正确运行”这篇文章就分享到这里了，希望以上内容可以对大家有一定的帮助，让大家可以学到更多知识，如果觉得文章不错，可以把它分享出去让更多的人看到吧！</p>
+<h3 id="4、关联到远程库"><a href="#4、关联到远程库" class="headerlink" title="4、关联到远程库"></a>4、关联到远程库</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git remote add origin` 你的远程库地址</span><br><span class="line"></span><br><span class="line">如：git remote add origin https://github.com/githubusername/demo.git`</span><br></pre></td></tr></table></figure>
+
+<h3 id="5、获取远程库与本地同步合并（如果远程库不为空必须做这一步，否则后面的提交会失败）"><a href="#5、获取远程库与本地同步合并（如果远程库不为空必须做这一步，否则后面的提交会失败）" class="headerlink" title="5、获取远程库与本地同步合并（如果远程库不为空必须做这一步，否则后面的提交会失败）"></a>5、获取远程库与本地同步合并（如果远程库不为空必须做这一步，否则后面的提交会失败）</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git pull --rebase origin master</span><br></pre></td></tr></table></figure>
+
+<h3 id="6、把本地库的内容推送到远程，使用-git-push命令，实际上是把当前分支master推送到远程。执行此命令后会要求输入用户名、密码，验证通过后即开始上传。"><a href="#6、把本地库的内容推送到远程，使用-git-push命令，实际上是把当前分支master推送到远程。执行此命令后会要求输入用户名、密码，验证通过后即开始上传。" class="headerlink" title="6、把本地库的内容推送到远程，使用 git push命令，实际上是把当前分支master推送到远程。执行此命令后会要求输入用户名、密码，验证通过后即开始上传。"></a>6、把本地库的内容推送到远程，使用 git push命令，实际上是把当前分支master推送到远程。执行此命令后会要求输入用户名、密码，验证通过后即开始上传。</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<h3 id="7、状态查询命令"><a href="#7、状态查询命令" class="headerlink" title="7、状态查询命令"></a>7、状态查询命令</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
-        <category>前端</category>
-        <category>vue</category>
+        <category>git</category>
+        <category>github</category>
       </categories>
       <tags>
-        <tag>vue</tag>
-        <tag>webpack</tag>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -551,164 +577,6 @@
       </categories>
       <tags>
         <tag>Electron</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>用git提交新项目到github</title>
-    <url>/2022/08/11/%E7%94%A8git%E6%8F%90%E4%BA%A4%E6%96%B0%E9%A1%B9%E7%9B%AE%E5%88%B0github/</url>
-    <content><![CDATA[<h3 id="1、（先进入项目文件夹）通过命令-git-init-把这个目录变成git可以管理的仓库"><a href="#1、（先进入项目文件夹）通过命令-git-init-把这个目录变成git可以管理的仓库" class="headerlink" title="1、（先进入项目文件夹）通过命令 git init 把这个目录变成git可以管理的仓库"></a>1、（先进入项目文件夹）通过命令 git init 把这个目录变成git可以管理的仓库</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
-
-<h3 id="2、把文件添加到版本库中，使用命令-git-add-添加到暂存区里面去，不要忘记后面的小数点“-”，意为添加文件夹下的所有文件"><a href="#2、把文件添加到版本库中，使用命令-git-add-添加到暂存区里面去，不要忘记后面的小数点“-”，意为添加文件夹下的所有文件" class="headerlink" title="2、把文件添加到版本库中，使用命令 git add .添加到暂存区里面去，不要忘记后面的小数点“.”，意为添加文件夹下的所有文件"></a>2、把文件添加到版本库中，使用命令 git add .添加到暂存区里面去，不要忘记后面的小数点“.”，意为添加文件夹下的所有文件</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
-
-<h3 id="3、用命令-git-commit告诉Git，把文件提交到仓库。引号内为提交说明"><a href="#3、用命令-git-commit告诉Git，把文件提交到仓库。引号内为提交说明" class="headerlink" title="3、用命令 git commit告诉Git，把文件提交到仓库。引号内为提交说明"></a>3、用命令 git commit告诉Git，把文件提交到仓库。引号内为提交说明</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git commit -m &#x27;first commit&#x27;</span><br></pre></td></tr></table></figure>
-
-<h3 id="4、关联到远程库"><a href="#4、关联到远程库" class="headerlink" title="4、关联到远程库"></a>4、关联到远程库</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git remote add origin` 你的远程库地址</span><br><span class="line"></span><br><span class="line">如：git remote add origin https://github.com/githubusername/demo.git`</span><br></pre></td></tr></table></figure>
-
-<h3 id="5、获取远程库与本地同步合并（如果远程库不为空必须做这一步，否则后面的提交会失败）"><a href="#5、获取远程库与本地同步合并（如果远程库不为空必须做这一步，否则后面的提交会失败）" class="headerlink" title="5、获取远程库与本地同步合并（如果远程库不为空必须做这一步，否则后面的提交会失败）"></a>5、获取远程库与本地同步合并（如果远程库不为空必须做这一步，否则后面的提交会失败）</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git pull --rebase origin master</span><br></pre></td></tr></table></figure>
-
-<h3 id="6、把本地库的内容推送到远程，使用-git-push命令，实际上是把当前分支master推送到远程。执行此命令后会要求输入用户名、密码，验证通过后即开始上传。"><a href="#6、把本地库的内容推送到远程，使用-git-push命令，实际上是把当前分支master推送到远程。执行此命令后会要求输入用户名、密码，验证通过后即开始上传。" class="headerlink" title="6、把本地库的内容推送到远程，使用 git push命令，实际上是把当前分支master推送到远程。执行此命令后会要求输入用户名、密码，验证通过后即开始上传。"></a>6、把本地库的内容推送到远程，使用 git push命令，实际上是把当前分支master推送到远程。执行此命令后会要求输入用户名、密码，验证通过后即开始上传。</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-
-<h3 id="7、状态查询命令"><a href="#7、状态查询命令" class="headerlink" title="7、状态查询命令"></a>7、状态查询命令</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>git</category>
-        <category>github</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>github克隆项目失败</title>
-    <url>/2022/07/29/github/github%E5%85%8B%E9%9A%86%E9%A1%B9%E7%9B%AE%E5%A4%B1%E8%B4%A5/</url>
-    <content><![CDATA[<h2 id="unable-to-access-‘https-github-com-用户名-仓库名-git-39-SSL-certificate-problem-self问题解决"><a href="#unable-to-access-‘https-github-com-用户名-仓库名-git-39-SSL-certificate-problem-self问题解决" class="headerlink" title="unable to access ‘https://github.com/用户名/仓库名.git/&#39;: SSL certificate problem: self问题解决"></a>unable to access ‘<a href="https://github.com/%E7%94%A8%E6%88%B7%E5%90%8D/%E4%BB%93%E5%BA%93%E5%90%8D.git/&#39;">https://github.com/用户名/仓库名.git/&#39;</a>: SSL certificate problem: self问题解决</h2><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>今天想在github上找个项目玩玩，但是发现clone不下来，百度没有找到解决方案，于是又把git重装了一遍，发现还是不能clone,而且不能push，而且是同样的错误。于是Google了一下找到解决方案</p>
-</blockquote>
-<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>Git client in Fisheye&#x2F;Crucible server perform verification on the SSL certificate and stop the process if it is unknown.</p>
-<blockquote>
-<p>大概意思是：Fisheye&#x2F;Crucible服务器不能识别git的SSL证书，所以操作停止执行。</p>
-</blockquote>
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><ul>
-<li>在git命令行输入以下命令即可</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global http.sslVerify false</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>github</category>
-      </categories>
-      <tags>
-        <tag>github</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用github建立图床,picgo和typora上传图片</title>
-    <url>/2022/07/29/github/github-img/</url>
-    <content><![CDATA[<p>建立图床必须具备什么条件 </p>
-<blockquote>
-<p>首先你需要一个github账号，如果没有的话，请先注册。<br/><br>github官网地址 <a href="https://github.com/">github.com</a><br>PicGo下载地址 <a href="https://molunerfinn.com/PicGo/">PicGo</a>  </p>
-</blockquote>
-<ul>
-<li>一个github账号</li>
-<li>一个公开的仓库</li>
-<li>PicGo 上传图片</li>
-<li>Typora 上传图片</li>
-</ul>
-<h1 id="一、新建仓库"><a href="#一、新建仓库" class="headerlink" title="一、新建仓库"></a>一、新建仓库</h1><h2 id="1-1-创建一个新仓库，用于存放图片。"><a href="#1-1-创建一个新仓库，用于存放图片。" class="headerlink" title="1.1 创建一个新仓库，用于存放图片。"></a>1.1 创建一个新仓库，用于存放图片。</h2><p>填写仓库名称和描述，且仓库必须是public的，否则存储的图片不能正常访问。<img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/200.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/200.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="新建仓库"></p>
-<h2 id="1-2-生成一个token，用于picGo访问github"><a href="#1-2-生成一个token，用于picGo访问github" class="headerlink" title="1.2 生成一个token，用于picGo访问github"></a>1.2 生成一个token，用于picGo访问github</h2><p>选择左侧菜单的Developer settings</p>
-<p>之后选择左侧Personal access tokens，再点击Generate new token<br><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/204.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/204.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="生产token的位置"></p>
-<p>填写Note，勾选repo.<br><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/205.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/205.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><br>注意，生成的token只会在这里显示一次，所以记得单独保存下来哦。<br><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/206.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/206.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><br>至此，Github的配置完成。</p>
-<h1 id="二、下载picGo，并进行配置"><a href="#二、下载picGo，并进行配置" class="headerlink" title="二、下载picGo，并进行配置"></a>二、下载picGo，并进行配置</h1><h2 id="2-1-下载"><a href="#2-1-下载" class="headerlink" title="2.1 下载"></a>2.1 下载</h2><p>访问picGo下载地址，选择 picGo-Setup-XXX.exe下载软件安装包即可。</p>
-<p>如果安装成功，picGo不能正常使用，则可以用兼容模式启动,或者重启电脑。【此问题因电脑而异,重启电脑能解决百分之九十九的问题。】</p>
-<h2 id="2-2-配置"><a href="#2-2-配置" class="headerlink" title="2.2 配置"></a>2.2 配置</h2><p>仓库名：[github用户名]&#x2F;[第一步新建的仓库名称]</p>
-<p>分支：默认master，从2020.10.01开始，github的默认分支名变更为main</p>
-<p>设定token：第一步创建的token</p>
-<p>指定存储路径：可填可不填，如果填写了，图片就会存储在img文件夹下</p>
-<p>设定自定义域名： <code>https://cdn.jsdelivr.net/gh/[github用户名]/[仓库名]@main</code>,注意，此处的分支一定要填写@main，否则默认使用master分支。而现在github创建的默认分支名为main，如果不指定，则会出现图片不能上传的情况。我的是: <code>https://cdn.jsdelivr.net/gh/txw1314/blog-img@main</code><br><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/207.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/207.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="配置picGo"></p>
-<h2 id="2-3-插件安装"><a href="#2-3-插件安装" class="headerlink" title="2.3 插件安装"></a>2.3 插件安装</h2><p>点击插件设置右边的图标，进入插件网页，选择表格中的插件名称复制到input输入框,选择插件安装，可显示更多内容<br><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/208.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/208.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="安装插件"></p>
-<p>至此，github+picGo的配置完成，可以在上传区进行图片上传了。</p>
-<p>补充几点</p>
-<blockquote>
-<ol>
-<li>原本github的自定义域名应该是： <code>https://raw.githubusercontent.com/[username]/[仓库名]</code><br>但是使用这种方式访问图片巨慢，所以建议使用jsdelivr作为cdn加速。改变域名即可，不需要任何其他配置。<code>https://cdn.jsdelivr.net/gh/txw1314/blog-img@main</code></li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="2">
-<li>配置完成，可能出现不能上传的情况，请大家耐心检查，也许某一步的配置出现了问题，实在不行就重启电脑，毕竟重启电脑能解决99%的问题。</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="3">
-<li>不止可以用github作为图床，还可以使用国内的码云(gitee)。当然也有收费的七牛、阿里云等等。在安装插件之后会有诸多选项。</li>
-</ol>
-</blockquote>
-<h1 id="三、上传图片"><a href="#三、上传图片" class="headerlink" title="三、上传图片"></a>三、上传图片</h1><p>上面配置完成，下面我们就可以上传图片了。</p>
-<h2 id="3-1-上传图片"><a href="#3-1-上传图片" class="headerlink" title="3.1 上传图片"></a>3.1 上传图片</h2><p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730230508076.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730230508076.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="上传图片"></p>
-<h2 id="3-2-上传图片完成"><a href="#3-2-上传图片完成" class="headerlink" title="3.2 上传图片完成"></a>3.2 上传图片完成</h2><p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730230548376.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730230548376.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="上传图片完成"></p>
-<p>picGo监听端口设置</p>
-<p>选择“PicGo设置”–&gt;“设置server”</p>
-<blockquote>
-<p>如果监听端口不是36677，则需要修改为36677。否则会出现picGo能正常上传 图片，而typora上传图片失败的情况。<br>如果picGO不能正常上传图片，建议重启电脑，我就是重启了之后就能正常上传图片了，只是图片不会显示缩略图</p>
-</blockquote>
-<h1 id="四-、使用Typora上传图片"><a href="#四-、使用Typora上传图片" class="headerlink" title="四 、使用Typora上传图片"></a>四 、使用Typora上传图片</h1><h2 id="4-1-点击Typora文件—偏好设置"><a href="#4-1-点击Typora文件—偏好设置" class="headerlink" title="4.1 点击Typora文件—偏好设置"></a>4.1 点击Typora文件—偏好设置</h2><p>如下图所示，选择图像，勾选右侧选项，上传服务，选择picgo路径，即可配置完成</p>
-<p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730231031969.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730231031969.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220730231031969"></p>
-<h2 id="4-2-我们也可以点击验证图片上传选项试一下"><a href="#4-2-我们也可以点击验证图片上传选项试一下" class="headerlink" title="4.2 我们也可以点击验证图片上传选项试一下"></a>4.2 我们也可以点击验证图片上传选项试一下</h2><p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730231355986.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730231355986.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220730231355986"></p>
-<h2 id="4-3-验证成功"><a href="#4-3-验证成功" class="headerlink" title="4.3 验证成功"></a>4.3 验证成功</h2><p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730232927677.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730232927677.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220730232927677"></p>
-<h2 id="4-4-我的验证失败了，虽然失败了，但是不影响我上传图片，嗯，问题不大，哈哈哈"><a href="#4-4-我的验证失败了，虽然失败了，但是不影响我上传图片，嗯，问题不大，哈哈哈" class="headerlink" title="4.4 我的验证失败了，虽然失败了，但是不影响我上传图片，嗯，问题不大，哈哈哈"></a>4.4 我的验证失败了，虽然失败了，但是不影响我上传图片，嗯，问题不大，哈哈哈</h2><p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730231402492.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730231402492.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220730231402492"></p>
-<p>然后就是在Typora复制文件图片，右键上传图片，稍等一下就会自动完成</p>
-<blockquote>
-<p>tip: 在Typora粘贴图片的时候，个人建议使用Snipaste这个软件，非常方便！</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>github</category>
-      </categories>
-      <tags>
-        <tag>github</tag>
-        <tag>picgo</tag>
-        <tag>typora</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>github推送代码失败，提示August13</title>
-    <url>/2022/10/02/github/github%E6%8E%A8%E9%80%81%E4%BB%A3%E7%A0%81%E5%A4%B1%E8%B4%A5%EF%BC%8C%E6%8F%90%E7%A4%BAAugust13/</url>
-    <content><![CDATA[<p>解决 remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.</p>
-<h5 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Logon failed, use ctrl+c to cancel basic credential prompt.</span><br><span class="line">remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.</span><br><span class="line">remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.</span><br><span class="line">fatal: Authentication failed for &#x27;https://github.com/dream-code-kangli/online-learning.git/&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>意思是自从 21 年 8 月 13 后不再支持用户名密码的方式验证了，需要创建个人访问令牌(personal access token)。</p>
-</blockquote>
-<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>在 GitHub 上生成令牌，应用于所需的仓库中</p>
-<h3 id="1、点击-settings"><a href="#1、点击-settings" class="headerlink" title="1、点击 settings"></a>1、点击 settings</h3><p><img src="https://img-blog.csdnimg.cn/bfa6e2fca5f2405aacfeb5e35e08faae.png#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/bfa6e2fca5f2405aacfeb5e35e08faae.png#pic_center" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
-<h3 id="2、点击右侧的-Developer-settings"><a href="#2、点击右侧的-Developer-settings" class="headerlink" title="2、点击右侧的 Developer settings"></a>2、点击右侧的 Developer settings</h3><p><img src="https://img-blog.csdnimg.cn/6302aea973bd4c75bceac6af73865020.png#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/6302aea973bd4c75bceac6af73865020.png#pic_center" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
-<h3 id="3、点击-Personal-access-tokens-个人访问令牌"><a href="#3、点击-Personal-access-tokens-个人访问令牌" class="headerlink" title="3、点击 Personal access tokens(个人访问令牌)"></a>3、点击 Personal access tokens(个人访问令牌)</h3><p><img src="https://img-blog.csdnimg.cn/d99833c67b1f4c6f87c3b7d58586cdc6.png#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/d99833c67b1f4c6f87c3b7d58586cdc6.png#pic_center" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
-<h3 id="4、点击-Generate-new-token"><a href="#4、点击-Generate-new-token" class="headerlink" title="4、点击 Generate new token"></a>4、点击 Generate new token</h3><p><img src="https://img-blog.csdnimg.cn/6dbaf67511904ffe8a8375299ae338ed.png#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/6dbaf67511904ffe8a8375299ae338ed.png#pic_center" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
-<h3 id="5、设置-token-信息"><a href="#5、设置-token-信息" class="headerlink" title="5、设置 token 信息"></a>5、设置 token 信息</h3><p><img src="https://img-blog.csdnimg.cn/31bfbbbf974542b0bef14f272783e499.png#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/31bfbbbf974542b0bef14f272783e499.png#pic_center" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
-<p>根据所需过期时间，建议设置成永远，以免麻烦，建议所有选项都选上</p>
-<p>点击 Generate token 生成令牌</p>
-<h3 id="6、得到生成的令牌"><a href="#6、得到生成的令牌" class="headerlink" title="6、得到生成的令牌"></a>6、得到生成的令牌</h3><p><img src="https://img-blog.csdnimg.cn/3e42a4e2f4cf4e08bc7716606e05f319.png#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/3e42a4e2f4cf4e08bc7716606e05f319.png#pic_center" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
-<h3 id="7、应用令牌"><a href="#7、应用令牌" class="headerlink" title="7、应用令牌"></a>7、应用令牌</h3><p>将生成的令牌拷贝下来，记得保存，下次你就看不到了。</p>
-<p>修改现有的 url</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git remote set-url origin  https://&lt;your_token&gt;@github.com/&lt;USERNAME&gt;/&lt;REPO&gt;.git</span><br><span class="line"></span><br><span class="line">eg: git remote set-url origin http://ghp_tP3EgFiUWqeHL16Dmy1vkswpZVUUnO4RkQZ 2@github.com/txw1314/valinilla.git</span><br></pre></td></tr></table></figure>
-
-<p>将<your_token>换成你自己得到的令牌。<USERNAME>是你自己github的用户名，<REPO>是你的项目名称</p>
-<blockquote>
-<p>tip:&lt;&gt;不用带上，直接写自己的令牌和仓库名称就行了</p>
-</blockquote>
-<p>然后再次执行 pull push 操作，输入你的gitbub用户名，密码是生成的令牌，大功告成。</p>
-<style>
-h1,h2,h3,h4,h5,h6{
-    text-align:center;
-    list-style: none;
-}
-</style>
-
-]]></content>
-      <categories>
-        <category>github</category>
-      </categories>
-      <tags>
-        <tag>github</tag>
       </tags>
   </entry>
   <entry>
@@ -863,6 +731,184 @@ h1,h2,h3,h4,h5,h6{
       <tags>
         <tag>写真</tag>
         <tag>美女</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>fairy-004</title>
+    <url>/2022/08/12/fairy/fairy-004/</url>
+    <content><![CDATA[<style>
+    #l_main {
+      width: calc(100% - 1 * 0px);
+      padding-left: 0px;
+      float: left;
+      -webkit-box-ordinal-group: 2;
+      -moz-box-ordinal-group: 2;
+      -ms-flex-order: 2;
+      -webkit-order: 2;
+      order: 2;
+    }
+    #l_side {
+  
+        display: none;
+    }
+    
+    #post-body {
+        display:flex;
+        flex-wrap: wrap;
+    }
+    #post-body p {
+        width: 48%;
+        margin: 5px;
+    }
+</style>
+
+<h1 id="写真丨我全部的心思和悸动都归你"><a href="#写真丨我全部的心思和悸动都归你" class="headerlink" title="写真丨我全部的心思和悸动都归你"></a>写真丨我全部的心思和悸动都归你</h1><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/fairy/202208/%E5%B2%81%E5%B2%81%E5%B0%8F%E5%A1%94202208120124258.jpg" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/fairy/202208/%E5%B2%81%E5%B2%81%E5%B0%8F%E5%A1%94202208120124258.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/fairy/202208/%E5%B2%81%E5%B2%81%E5%B0%8F%E5%A1%94202208120124260.jpg" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/fairy/202208/%E5%B2%81%E5%B2%81%E5%B0%8F%E5%A1%94202208120124260.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="微信图片_20220812012129"></p>
+<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/fairy/202208/%E5%B2%81%E5%B2%81%E5%B0%8F%E5%A1%94202208120124261.jpg" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/fairy/202208/%E5%B2%81%E5%B2%81%E5%B0%8F%E5%A1%94202208120124261.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="微信图片_20220812012132"></p>
+<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/fairy/202208/%E5%B2%81%E5%B2%81%E5%B0%8F%E5%A1%94202208120124262.jpg" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/fairy/202208/%E5%B2%81%E5%B2%81%E5%B0%8F%E5%A1%94202208120124262.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="微信图片_20220812012135"></p>
+<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/fairy/202208/%E5%B2%81%E5%B2%81%E5%B0%8F%E5%A1%94202208120124263.jpg" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/fairy/202208/%E5%B2%81%E5%B2%81%E5%B0%8F%E5%A1%94202208120124263.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="微信图片_20220812012152"></p>
+<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/fairy/202208/%E5%B2%81%E5%B2%81%E5%B0%8F%E5%A1%94202208120124264.jpg" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/fairy/202208/%E5%B2%81%E5%B2%81%E5%B0%8F%E5%A1%94202208120124264.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="微信图片_20220812012158"></p>
+<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/fairy/202208/%E5%B2%81%E5%B2%81%E5%B0%8F%E5%A1%94202208120124265.jpg" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/fairy/202208/%E5%B2%81%E5%B2%81%E5%B0%8F%E5%A1%94202208120124265.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="微信图片_20220812012201"></p>
+<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/fairy/202208/%E5%B2%81%E5%B2%81%E5%B0%8F%E5%A1%94202208120124266.jpg" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/fairy/202208/%E5%B2%81%E5%B2%81%E5%B0%8F%E5%A1%94202208120124266.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="微信图片_20220812012204"></p>
+]]></content>
+      <categories>
+        <category>写真</category>
+      </categories>
+      <tags>
+        <tag>写真</tag>
+        <tag>美女</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用github建立图床,picgo和typora上传图片</title>
+    <url>/2022/07/29/github/github-img/</url>
+    <content><![CDATA[<p>建立图床必须具备什么条件 </p>
+<blockquote>
+<p>首先你需要一个github账号，如果没有的话，请先注册。<br/><br>github官网地址 <a href="https://github.com/">github.com</a><br>PicGo下载地址 <a href="https://molunerfinn.com/PicGo/">PicGo</a>  </p>
+</blockquote>
+<ul>
+<li>一个github账号</li>
+<li>一个公开的仓库</li>
+<li>PicGo 上传图片</li>
+<li>Typora 上传图片</li>
+</ul>
+<h1 id="一、新建仓库"><a href="#一、新建仓库" class="headerlink" title="一、新建仓库"></a>一、新建仓库</h1><h2 id="1-1-创建一个新仓库，用于存放图片。"><a href="#1-1-创建一个新仓库，用于存放图片。" class="headerlink" title="1.1 创建一个新仓库，用于存放图片。"></a>1.1 创建一个新仓库，用于存放图片。</h2><p>填写仓库名称和描述，且仓库必须是public的，否则存储的图片不能正常访问。<img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/200.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/200.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="新建仓库"></p>
+<h2 id="1-2-生成一个token，用于picGo访问github"><a href="#1-2-生成一个token，用于picGo访问github" class="headerlink" title="1.2 生成一个token，用于picGo访问github"></a>1.2 生成一个token，用于picGo访问github</h2><p>选择左侧菜单的Developer settings</p>
+<p>之后选择左侧Personal access tokens，再点击Generate new token<br><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/204.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/204.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="生产token的位置"></p>
+<p>填写Note，勾选repo.<br><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/205.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/205.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><br>注意，生成的token只会在这里显示一次，所以记得单独保存下来哦。<br><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/206.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/206.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><br>至此，Github的配置完成。</p>
+<h1 id="二、下载picGo，并进行配置"><a href="#二、下载picGo，并进行配置" class="headerlink" title="二、下载picGo，并进行配置"></a>二、下载picGo，并进行配置</h1><h2 id="2-1-下载"><a href="#2-1-下载" class="headerlink" title="2.1 下载"></a>2.1 下载</h2><p>访问picGo下载地址，选择 picGo-Setup-XXX.exe下载软件安装包即可。</p>
+<p>如果安装成功，picGo不能正常使用，则可以用兼容模式启动,或者重启电脑。【此问题因电脑而异,重启电脑能解决百分之九十九的问题。】</p>
+<h2 id="2-2-配置"><a href="#2-2-配置" class="headerlink" title="2.2 配置"></a>2.2 配置</h2><p>仓库名：[github用户名]&#x2F;[第一步新建的仓库名称]</p>
+<p>分支：默认master，从2020.10.01开始，github的默认分支名变更为main</p>
+<p>设定token：第一步创建的token</p>
+<p>指定存储路径：可填可不填，如果填写了，图片就会存储在img文件夹下</p>
+<p>设定自定义域名： <code>https://cdn.jsdelivr.net/gh/[github用户名]/[仓库名]@main</code>,注意，此处的分支一定要填写@main，否则默认使用master分支。而现在github创建的默认分支名为main，如果不指定，则会出现图片不能上传的情况。我的是: <code>https://cdn.jsdelivr.net/gh/txw1314/blog-img@main</code><br><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/207.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/207.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="配置picGo"></p>
+<h2 id="2-3-插件安装"><a href="#2-3-插件安装" class="headerlink" title="2.3 插件安装"></a>2.3 插件安装</h2><p>点击插件设置右边的图标，进入插件网页，选择表格中的插件名称复制到input输入框,选择插件安装，可显示更多内容<br><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/208.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/208.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="安装插件"></p>
+<p>至此，github+picGo的配置完成，可以在上传区进行图片上传了。</p>
+<p>补充几点</p>
+<blockquote>
+<ol>
+<li>原本github的自定义域名应该是： <code>https://raw.githubusercontent.com/[username]/[仓库名]</code><br>但是使用这种方式访问图片巨慢，所以建议使用jsdelivr作为cdn加速。改变域名即可，不需要任何其他配置。<code>https://cdn.jsdelivr.net/gh/txw1314/blog-img@main</code></li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li>配置完成，可能出现不能上传的情况，请大家耐心检查，也许某一步的配置出现了问题，实在不行就重启电脑，毕竟重启电脑能解决99%的问题。</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li>不止可以用github作为图床，还可以使用国内的码云(gitee)。当然也有收费的七牛、阿里云等等。在安装插件之后会有诸多选项。</li>
+</ol>
+</blockquote>
+<h1 id="三、上传图片"><a href="#三、上传图片" class="headerlink" title="三、上传图片"></a>三、上传图片</h1><p>上面配置完成，下面我们就可以上传图片了。</p>
+<h2 id="3-1-上传图片"><a href="#3-1-上传图片" class="headerlink" title="3.1 上传图片"></a>3.1 上传图片</h2><p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730230508076.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730230508076.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="上传图片"></p>
+<h2 id="3-2-上传图片完成"><a href="#3-2-上传图片完成" class="headerlink" title="3.2 上传图片完成"></a>3.2 上传图片完成</h2><p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730230548376.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730230548376.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="上传图片完成"></p>
+<p>picGo监听端口设置</p>
+<p>选择“PicGo设置”–&gt;“设置server”</p>
+<blockquote>
+<p>如果监听端口不是36677，则需要修改为36677。否则会出现picGo能正常上传 图片，而typora上传图片失败的情况。<br>如果picGO不能正常上传图片，建议重启电脑，我就是重启了之后就能正常上传图片了，只是图片不会显示缩略图</p>
+</blockquote>
+<h1 id="四-、使用Typora上传图片"><a href="#四-、使用Typora上传图片" class="headerlink" title="四 、使用Typora上传图片"></a>四 、使用Typora上传图片</h1><h2 id="4-1-点击Typora文件—偏好设置"><a href="#4-1-点击Typora文件—偏好设置" class="headerlink" title="4.1 点击Typora文件—偏好设置"></a>4.1 点击Typora文件—偏好设置</h2><p>如下图所示，选择图像，勾选右侧选项，上传服务，选择picgo路径，即可配置完成</p>
+<p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730231031969.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730231031969.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220730231031969"></p>
+<h2 id="4-2-我们也可以点击验证图片上传选项试一下"><a href="#4-2-我们也可以点击验证图片上传选项试一下" class="headerlink" title="4.2 我们也可以点击验证图片上传选项试一下"></a>4.2 我们也可以点击验证图片上传选项试一下</h2><p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730231355986.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730231355986.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220730231355986"></p>
+<h2 id="4-3-验证成功"><a href="#4-3-验证成功" class="headerlink" title="4.3 验证成功"></a>4.3 验证成功</h2><p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730232927677.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730232927677.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220730232927677"></p>
+<h2 id="4-4-我的验证失败了，虽然失败了，但是不影响我上传图片，嗯，问题不大，哈哈哈"><a href="#4-4-我的验证失败了，虽然失败了，但是不影响我上传图片，嗯，问题不大，哈哈哈" class="headerlink" title="4.4 我的验证失败了，虽然失败了，但是不影响我上传图片，嗯，问题不大，哈哈哈"></a>4.4 我的验证失败了，虽然失败了，但是不影响我上传图片，嗯，问题不大，哈哈哈</h2><p><img src="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730231402492.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220730231402492.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220730231402492"></p>
+<p>然后就是在Typora复制文件图片，右键上传图片，稍等一下就会自动完成</p>
+<blockquote>
+<p>tip: 在Typora粘贴图片的时候，个人建议使用Snipaste这个软件，非常方便！</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>github</category>
+      </categories>
+      <tags>
+        <tag>github</tag>
+        <tag>picgo</tag>
+        <tag>typora</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>github推送代码失败，提示August13</title>
+    <url>/2022/10/02/github/github%E6%8E%A8%E9%80%81%E4%BB%A3%E7%A0%81%E5%A4%B1%E8%B4%A5%EF%BC%8C%E6%8F%90%E7%A4%BAAugust13/</url>
+    <content><![CDATA[<p>解决 remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.</p>
+<h5 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Logon failed, use ctrl+c to cancel basic credential prompt.</span><br><span class="line">remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.</span><br><span class="line">remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.</span><br><span class="line">fatal: Authentication failed for &#x27;https://github.com/dream-code-kangli/online-learning.git/&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>意思是自从 21 年 8 月 13 后不再支持用户名密码的方式验证了，需要创建个人访问令牌(personal access token)。</p>
+</blockquote>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>在 GitHub 上生成令牌，应用于所需的仓库中</p>
+<h3 id="1、点击-settings"><a href="#1、点击-settings" class="headerlink" title="1、点击 settings"></a>1、点击 settings</h3><p><img src="https://img-blog.csdnimg.cn/bfa6e2fca5f2405aacfeb5e35e08faae.png#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/bfa6e2fca5f2405aacfeb5e35e08faae.png#pic_center" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h3 id="2、点击右侧的-Developer-settings"><a href="#2、点击右侧的-Developer-settings" class="headerlink" title="2、点击右侧的 Developer settings"></a>2、点击右侧的 Developer settings</h3><p><img src="https://img-blog.csdnimg.cn/6302aea973bd4c75bceac6af73865020.png#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/6302aea973bd4c75bceac6af73865020.png#pic_center" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h3 id="3、点击-Personal-access-tokens-个人访问令牌"><a href="#3、点击-Personal-access-tokens-个人访问令牌" class="headerlink" title="3、点击 Personal access tokens(个人访问令牌)"></a>3、点击 Personal access tokens(个人访问令牌)</h3><p><img src="https://img-blog.csdnimg.cn/d99833c67b1f4c6f87c3b7d58586cdc6.png#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/d99833c67b1f4c6f87c3b7d58586cdc6.png#pic_center" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h3 id="4、点击-Generate-new-token"><a href="#4、点击-Generate-new-token" class="headerlink" title="4、点击 Generate new token"></a>4、点击 Generate new token</h3><p><img src="https://img-blog.csdnimg.cn/6dbaf67511904ffe8a8375299ae338ed.png#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/6dbaf67511904ffe8a8375299ae338ed.png#pic_center" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h3 id="5、设置-token-信息"><a href="#5、设置-token-信息" class="headerlink" title="5、设置 token 信息"></a>5、设置 token 信息</h3><p><img src="https://img-blog.csdnimg.cn/31bfbbbf974542b0bef14f272783e499.png#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/31bfbbbf974542b0bef14f272783e499.png#pic_center" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<p>根据所需过期时间，建议设置成永远，以免麻烦，建议所有选项都选上</p>
+<p>点击 Generate token 生成令牌</p>
+<h3 id="6、得到生成的令牌"><a href="#6、得到生成的令牌" class="headerlink" title="6、得到生成的令牌"></a>6、得到生成的令牌</h3><p><img src="https://img-blog.csdnimg.cn/3e42a4e2f4cf4e08bc7716606e05f319.png#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/3e42a4e2f4cf4e08bc7716606e05f319.png#pic_center" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h3 id="7、应用令牌"><a href="#7、应用令牌" class="headerlink" title="7、应用令牌"></a>7、应用令牌</h3><p>将生成的令牌拷贝下来，记得保存，下次你就看不到了。</p>
+<p>修改现有的 url</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git remote set-url origin  https://&lt;your_token&gt;@github.com/&lt;USERNAME&gt;/&lt;REPO&gt;.git</span><br><span class="line"></span><br><span class="line">eg: git remote set-url origin http://ghp_tP3EgFiUWqeHL16Dmy1vkswpZVUUnO4RkQZ 2@github.com/txw1314/valinilla.git</span><br></pre></td></tr></table></figure>
+
+<p>将<your_token>换成你自己得到的令牌。<USERNAME>是你自己github的用户名，<REPO>是你的项目名称</p>
+<blockquote>
+<p>tip:&lt;&gt;不用带上，直接写自己的令牌和仓库名称就行了</p>
+</blockquote>
+<p>然后再次执行 pull push 操作，输入你的gitbub用户名，密码是生成的令牌，大功告成。</p>
+<style>
+h1,h2,h3,h4,h5,h6{
+    text-align:center;
+    list-style: none;
+}
+</style>
+
+]]></content>
+      <categories>
+        <category>github</category>
+      </categories>
+      <tags>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>github克隆项目失败</title>
+    <url>/2022/07/29/github/github%E5%85%8B%E9%9A%86%E9%A1%B9%E7%9B%AE%E5%A4%B1%E8%B4%A5/</url>
+    <content><![CDATA[<h2 id="unable-to-access-‘https-github-com-用户名-仓库名-git-39-SSL-certificate-problem-self问题解决"><a href="#unable-to-access-‘https-github-com-用户名-仓库名-git-39-SSL-certificate-problem-self问题解决" class="headerlink" title="unable to access ‘https://github.com/用户名/仓库名.git/&#39;: SSL certificate problem: self问题解决"></a>unable to access ‘<a href="https://github.com/%E7%94%A8%E6%88%B7%E5%90%8D/%E4%BB%93%E5%BA%93%E5%90%8D.git/&#39;">https://github.com/用户名/仓库名.git/&#39;</a>: SSL certificate problem: self问题解决</h2><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>今天想在github上找个项目玩玩，但是发现clone不下来，百度没有找到解决方案，于是又把git重装了一遍，发现还是不能clone,而且不能push，而且是同样的错误。于是Google了一下找到解决方案</p>
+</blockquote>
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>Git client in Fisheye&#x2F;Crucible server perform verification on the SSL certificate and stop the process if it is unknown.</p>
+<blockquote>
+<p>大概意思是：Fisheye&#x2F;Crucible服务器不能识别git的SSL证书，所以操作停止执行。</p>
+</blockquote>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><ul>
+<li>在git命令行输入以下命令即可</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global http.sslVerify false</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>github</category>
+      </categories>
+      <tags>
+        <tag>github</tag>
       </tags>
   </entry>
   <entry>
@@ -1132,49 +1178,33 @@ h1,h2,h3,h4,h5,h6{
       </tags>
   </entry>
   <entry>
-    <title>fairy-004</title>
-    <url>/2022/08/12/fairy/fairy-004/</url>
-    <content><![CDATA[<style>
-    #l_main {
-      width: calc(100% - 1 * 0px);
-      padding-left: 0px;
-      float: left;
-      -webkit-box-ordinal-group: 2;
-      -moz-box-ordinal-group: 2;
-      -ms-flex-order: 2;
-      -webkit-order: 2;
-      order: 2;
-    }
-    #l_side {
-  
-        display: none;
-    }
-    
-    #post-body {
-        display:flex;
-        flex-wrap: wrap;
-    }
-    #post-body p {
-        width: 48%;
-        margin: 5px;
-    }
-</style>
-
-<h1 id="写真丨我全部的心思和悸动都归你"><a href="#写真丨我全部的心思和悸动都归你" class="headerlink" title="写真丨我全部的心思和悸动都归你"></a>写真丨我全部的心思和悸动都归你</h1><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/fairy/202208/%E5%B2%81%E5%B2%81%E5%B0%8F%E5%A1%94202208120124258.jpg" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/fairy/202208/%E5%B2%81%E5%B2%81%E5%B0%8F%E5%A1%94202208120124258.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/fairy/202208/%E5%B2%81%E5%B2%81%E5%B0%8F%E5%A1%94202208120124260.jpg" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/fairy/202208/%E5%B2%81%E5%B2%81%E5%B0%8F%E5%A1%94202208120124260.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="微信图片_20220812012129"></p>
-<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/fairy/202208/%E5%B2%81%E5%B2%81%E5%B0%8F%E5%A1%94202208120124261.jpg" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/fairy/202208/%E5%B2%81%E5%B2%81%E5%B0%8F%E5%A1%94202208120124261.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="微信图片_20220812012132"></p>
-<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/fairy/202208/%E5%B2%81%E5%B2%81%E5%B0%8F%E5%A1%94202208120124262.jpg" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/fairy/202208/%E5%B2%81%E5%B2%81%E5%B0%8F%E5%A1%94202208120124262.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="微信图片_20220812012135"></p>
-<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/fairy/202208/%E5%B2%81%E5%B2%81%E5%B0%8F%E5%A1%94202208120124263.jpg" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/fairy/202208/%E5%B2%81%E5%B2%81%E5%B0%8F%E5%A1%94202208120124263.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="微信图片_20220812012152"></p>
-<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/fairy/202208/%E5%B2%81%E5%B2%81%E5%B0%8F%E5%A1%94202208120124264.jpg" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/fairy/202208/%E5%B2%81%E5%B2%81%E5%B0%8F%E5%A1%94202208120124264.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="微信图片_20220812012158"></p>
-<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/fairy/202208/%E5%B2%81%E5%B2%81%E5%B0%8F%E5%A1%94202208120124265.jpg" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/fairy/202208/%E5%B2%81%E5%B2%81%E5%B0%8F%E5%A1%94202208120124265.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="微信图片_20220812012201"></p>
-<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/fairy/202208/%E5%B2%81%E5%B2%81%E5%B0%8F%E5%A1%94202208120124266.jpg" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/fairy/202208/%E5%B2%81%E5%B2%81%E5%B0%8F%E5%A1%94202208120124266.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="微信图片_20220812012204"></p>
+    <title>hexo之站点统计——busuanzi</title>
+    <url>/2022/08/01/hexo/hexo%E4%B9%8B%E7%AB%99%E7%82%B9%E7%BB%9F%E8%AE%A1%E2%80%94%E2%80%94busuanzi/</url>
+    <content><![CDATA[<p>本片介绍的是站点信息统计之busuanzi</p>
+<h1 id="一、站点信息"><a href="#一、站点信息" class="headerlink" title="一、站点信息"></a>一、站点信息</h1><h2 id="1-1-在-config-volantis-yml搜索统计-显示有站点统计信息"><a href="#1-1-在-config-volantis-yml搜索统计-显示有站点统计信息" class="headerlink" title="1.1 在_config.volantis.yml搜索统计,显示有站点统计信息"></a>1.1 在_config.volantis.yml搜索<code>统计</code>,显示有站点统计信息</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">visitcounter: # 站点统计访客开启入口在下面⬇</span><br><span class="line">      siteuv:</span><br><span class="line">        enable: true</span><br><span class="line">        text: &#x27;本站访客数：&#x27;</span><br><span class="line">        unit: &#x27;人&#x27;</span><br><span class="line">      sitepv:</span><br><span class="line">        enable: true</span><br><span class="line">        text: &#x27;本站总访问量：&#x27;</span><br><span class="line">        unit: &#x27;次&#x27;</span><br></pre></td></tr></table></figure>
+<h2 id="1-2-接下来就是analytics引入busuanzi-这里就需要配置个人的app-id和app-key"><a href="#1-2-接下来就是analytics引入busuanzi-这里就需要配置个人的app-id和app-key" class="headerlink" title="1.2 接下来就是analytics引入busuanzi,这里就需要配置个人的app_id和app_key"></a>1.2 接下来就是analytics引入busuanzi,这里就需要配置个人的app_id和app_key</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 站点统计访客开启入口，引入busuanzi，并配置属于自己的app_id和app_key</span><br><span class="line">analytics:</span><br><span class="line">  busuanzi: volantis-static/libs/busuanzi/js/busuanzi.pure.mini.js </span><br><span class="line">  leancloud: # 请使用自己的 id &amp; key 以防止数据丢失</span><br><span class="line">    app_id: u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI</span><br><span class="line">    app_key: jfHtEKVE24j0IVCGHbvuFClp</span><br><span class="line">    custom_api_server: # 国际版一般不需要写，除非自定义了 API Server</span><br></pre></td></tr></table></figure>
+<h1 id="二、获取busuanzi的配置信息"><a href="#二、获取busuanzi的配置信息" class="headerlink" title="二、获取busuanzi的配置信息"></a>二、获取busuanzi的配置信息</h1><h2 id="2-1-打开leancloud官网，注册账号，该认证认证"><a href="#2-1-打开leancloud官网，注册账号，该认证认证" class="headerlink" title="2.1 打开leancloud官网，注册账号，该认证认证"></a>2.1 打开leancloud官网，注册账号，该认证认证</h2><blockquote>
+<p>leancloud官网:<a href="https://www.leancloud.cn/">https://www.leancloud.cn/</a> ,点击免费使用，注册账号</p>
+</blockquote>
+<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801224259281.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801224259281.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="注册账号"></p>
+<h2 id="2-2-登录账号注册应用"><a href="#2-2-登录账号注册应用" class="headerlink" title="2.2 登录账号注册应用"></a>2.2 登录账号注册应用</h2><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801224618543.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801224618543.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="注册应用"></p>
+<h2 id="2-3-点击应用，选择应用"><a href="#2-3-点击应用，选择应用" class="headerlink" title="2.3 点击应用，选择应用"></a>2.3 点击应用，选择应用</h2><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801224734317.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801224734317.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="选择应用"></p>
+<h2 id="2-4-点击设置，应用凭证，右侧就是我们想要的配置信息了"><a href="#2-4-点击设置，应用凭证，右侧就是我们想要的配置信息了" class="headerlink" title="2.4 点击设置，应用凭证，右侧就是我们想要的配置信息了"></a>2.4 点击设置，应用凭证，右侧就是我们想要的配置信息了</h2><blockquote>
+<p>复制保存我们的配置信息，填入指定位置，页面就是有相关信息展示了</p>
+</blockquote>
+<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801225041384.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801225041384.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="获取配置信息"></p>
+<h1 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h1><blockquote>
+<p>tip: 本地运行显示数据有点夸张了，还有点延迟，但是部署之后会显示正常数据</p>
+</blockquote>
+<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801230651942.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801230651942.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="本地运行"></p>
+<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801225311587.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801225311587.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="部署之后"></p>
 ]]></content>
       <categories>
-        <category>写真</category>
+        <category>Hexo系列</category>
       </categories>
       <tags>
-        <tag>写真</tag>
-        <tag>美女</tag>
+        <tag>busuanzi</tag>
+        <tag>站点统计</tag>
       </tags>
   </entry>
   <entry>
@@ -1223,36 +1253,6 @@ h1,h2,h3,h4,h5,h6{
       <tags>
         <tag>评论系统</tag>
         <tag>giscus</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo之站点统计——busuanzi</title>
-    <url>/2022/08/01/hexo/hexo%E4%B9%8B%E7%AB%99%E7%82%B9%E7%BB%9F%E8%AE%A1%E2%80%94%E2%80%94busuanzi/</url>
-    <content><![CDATA[<p>本片介绍的是站点信息统计之busuanzi</p>
-<h1 id="一、站点信息"><a href="#一、站点信息" class="headerlink" title="一、站点信息"></a>一、站点信息</h1><h2 id="1-1-在-config-volantis-yml搜索统计-显示有站点统计信息"><a href="#1-1-在-config-volantis-yml搜索统计-显示有站点统计信息" class="headerlink" title="1.1 在_config.volantis.yml搜索统计,显示有站点统计信息"></a>1.1 在_config.volantis.yml搜索<code>统计</code>,显示有站点统计信息</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">visitcounter: # 站点统计访客开启入口在下面⬇</span><br><span class="line">      siteuv:</span><br><span class="line">        enable: true</span><br><span class="line">        text: &#x27;本站访客数：&#x27;</span><br><span class="line">        unit: &#x27;人&#x27;</span><br><span class="line">      sitepv:</span><br><span class="line">        enable: true</span><br><span class="line">        text: &#x27;本站总访问量：&#x27;</span><br><span class="line">        unit: &#x27;次&#x27;</span><br></pre></td></tr></table></figure>
-<h2 id="1-2-接下来就是analytics引入busuanzi-这里就需要配置个人的app-id和app-key"><a href="#1-2-接下来就是analytics引入busuanzi-这里就需要配置个人的app-id和app-key" class="headerlink" title="1.2 接下来就是analytics引入busuanzi,这里就需要配置个人的app_id和app_key"></a>1.2 接下来就是analytics引入busuanzi,这里就需要配置个人的app_id和app_key</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 站点统计访客开启入口，引入busuanzi，并配置属于自己的app_id和app_key</span><br><span class="line">analytics:</span><br><span class="line">  busuanzi: volantis-static/libs/busuanzi/js/busuanzi.pure.mini.js </span><br><span class="line">  leancloud: # 请使用自己的 id &amp; key 以防止数据丢失</span><br><span class="line">    app_id: u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI</span><br><span class="line">    app_key: jfHtEKVE24j0IVCGHbvuFClp</span><br><span class="line">    custom_api_server: # 国际版一般不需要写，除非自定义了 API Server</span><br></pre></td></tr></table></figure>
-<h1 id="二、获取busuanzi的配置信息"><a href="#二、获取busuanzi的配置信息" class="headerlink" title="二、获取busuanzi的配置信息"></a>二、获取busuanzi的配置信息</h1><h2 id="2-1-打开leancloud官网，注册账号，该认证认证"><a href="#2-1-打开leancloud官网，注册账号，该认证认证" class="headerlink" title="2.1 打开leancloud官网，注册账号，该认证认证"></a>2.1 打开leancloud官网，注册账号，该认证认证</h2><blockquote>
-<p>leancloud官网:<a href="https://www.leancloud.cn/">https://www.leancloud.cn/</a> ,点击免费使用，注册账号</p>
-</blockquote>
-<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801224259281.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801224259281.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="注册账号"></p>
-<h2 id="2-2-登录账号注册应用"><a href="#2-2-登录账号注册应用" class="headerlink" title="2.2 登录账号注册应用"></a>2.2 登录账号注册应用</h2><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801224618543.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801224618543.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="注册应用"></p>
-<h2 id="2-3-点击应用，选择应用"><a href="#2-3-点击应用，选择应用" class="headerlink" title="2.3 点击应用，选择应用"></a>2.3 点击应用，选择应用</h2><p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801224734317.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801224734317.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="选择应用"></p>
-<h2 id="2-4-点击设置，应用凭证，右侧就是我们想要的配置信息了"><a href="#2-4-点击设置，应用凭证，右侧就是我们想要的配置信息了" class="headerlink" title="2.4 点击设置，应用凭证，右侧就是我们想要的配置信息了"></a>2.4 点击设置，应用凭证，右侧就是我们想要的配置信息了</h2><blockquote>
-<p>复制保存我们的配置信息，填入指定位置，页面就是有相关信息展示了</p>
-</blockquote>
-<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801225041384.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801225041384.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="获取配置信息"></p>
-<h1 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h1><blockquote>
-<p>tip: 本地运行显示数据有点夸张了，还有点延迟，但是部署之后会显示正常数据</p>
-</blockquote>
-<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801230651942.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801230651942.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="本地运行"></p>
-<p><img src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801225311587.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/image-20220801225311587.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="部署之后"></p>
-]]></content>
-      <categories>
-        <category>Hexo系列</category>
-      </categories>
-      <tags>
-        <tag>busuanzi</tag>
-        <tag>站点统计</tag>
       </tags>
   </entry>
   <entry>
