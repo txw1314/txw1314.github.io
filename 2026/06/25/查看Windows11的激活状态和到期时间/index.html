@@ -1872,8 +1872,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   volantis.GLOBAL_CONFIG ={
     debug: false,
     cdn: {"js":{"app":"/js/app.2094e03b.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.80d861b1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.85946653.js"},"css":{"style":"/css/style.0589b462.css"}},
-    default: {"avatar":"https://gcore.jsdelivr.net/gh/txw1314/blog-img@main//img/202409051512726.jpg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1790800738227),
+    default: {"avatar":"https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/20261001161008219.jpg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
+    lastupdate: new Date(1791290167783),
     sidebar: {
       for_page: ["blogger","category","webinfo","donate","lastupdate","repos"],
       for_post: ["toc"],
@@ -2283,7 +2283,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   /******************************************************************************/
   //图像加载出错时的处理
   function errorImgAvatar(img) {
-    img.src = "https://gcore.jsdelivr.net/gh/txw1314/blog-img@main//img/202409051512726.jpg";
+    img.src = "https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/20261001161008219.jpg";
     img.onerror = null;
   }
   function errorImgCover(img) {
@@ -2306,7 +2306,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin begin-->
     
     <!-- Custom Files bodyBegin end-->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header always floatable show"  >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header always floatable "  >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2414,6 +2414,23 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                     active-action="action-gallery"
                   >
                   <i class='fa-solid fa-camera-retro fa-fw'></i>相册
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/like/" title="喜欢"
+                  
+                  
+                  
+                    active-action="action-like"
+                  >
+                  <i class='fa-solid fa-camera-retro fa-fw'></i>喜欢
                 </a>
                 
               </li>
@@ -2555,6 +2572,23 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
               <li>
                 <a class="menuitem flat-box faa-parent animated-hover"
+                href="/like/" title="喜欢"
+                  
+                  
+                  
+                    active-action="action-like"
+                  >
+                  <i class='fa-solid fa-camera-retro fa-fw'></i>喜欢
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
                 href="/about/" title="关于"
                   
                   
@@ -2595,7 +2629,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper post dock' style="display: none;">
+      <div id="half" class='cover-wrapper post dock' style="display: ;">
         
   <div id="parallax-window"></div>
 
@@ -2676,9 +2710,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
   
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
+    <div class='headimg-div'>
+      <a class='headimg-a'>
+        <img itemprop="image" class='headimg' src='https://cdn.svipaigc.com/bizi/2025/08/20250822165010-68a89fc218c22-scaled.jpg'/>
+      </a>
+    </div>
   
   <div class="article-meta" id="top">
     
@@ -2709,7 +2745,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
 <div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
   <a itemprop="url" class='author' href="/" rel="nofollow">
-    <img itemprop="image" src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main//img/202409051512726.jpg" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main//img/202409051512726.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <img itemprop="image" src="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/20261001161008219.jpg" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/txw1314/blog-img@main/img/20261001161008219.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
     <p itemprop="name">VanillaYiYi</p>
   </a>
 </div>
@@ -2814,14 +2850,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
        <!-- 参考资料、相关资料等 -->
       
        <!-- 相关文章 -->
-      
-        
-  <div class="related_posts">
-    <section class='header'>
-      <i class="fa-solid fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
-    </section>
-    <section class='body'>
-      <div class="vlts-rps"><a class="item" href="\2026\06\25\Win11KMS命令激活\" title="Win11KMS命令激活" rel="bookmark "><img src="https://img2024.cnblogs.com/blog/699074/202508/699074-20250809112532501-1035887589.png" class="lazyload" data-srcset="https://img2024.cnblogs.com/blog/699074/202508/699074-20250809112532501-1035887589.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><span class="title">Win11KMS命令激活</span><span class="excerpt">Win11KMS命令激活</span></a><a class="item" href="\2026\06\25\如何更新NodeJs到最新版本\" title="如何更新NodeJs到最新版本？" rel="bookmark "><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/840e5817fe2740ba8a5055bffb624a04~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp" class="lazyload" data-srcset="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/840e5817fe2740ba8a5055bffb624a04~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><span class="title">如何更新NodeJs到最新版本？</span><span class="excerpt">如何更新NodeJs到最新版本？</span></a></div></section></div>
       
       <!-- 版权声明组件 -->
       
@@ -2960,18 +2988,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   
 
-
-  <article class="post white-box floatable" id="comments">
-    <span hidden>
-      <meta itemprop="discussionUrl" content="/2026/06/25/%E6%9F%A5%E7%9C%8BWindows11%E7%9A%84%E6%BF%80%E6%B4%BB%E7%8A%B6%E6%80%81%E5%92%8C%E5%88%B0%E6%9C%9F%E6%97%B6%E9%97%B4/index.html#comments">
-    </span>
-    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
-    
-
-    <div id="layoutHelper-comments"></div>
-
-  </article>
-
+  
 
 
 
@@ -3074,14 +3091,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     // header
     var l_header=document.getElementById("l_header");
     
-    l_header.classList.add("show");
+    l_header.classList.remove("show");
     
     
       // cover
       var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
       var scroll_down=document.getElementById('scroll-down');
-      cover_wrapper.id="none";
-      cover_wrapper.style.display="none";
+      cover_wrapper.id="half";
+      cover_wrapper.style.display="";
       scroll_down.style.display="none";
     
   
@@ -4049,55 +4066,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-      <script>
-  volantis.layoutHelper("comments",`<div id="giscus_container"></div>`)
-
-  volantis.giscus = {};
-
-  function check_giscus() {
-    if (volantis.dark.mode === "dark") {
-      volantis.giscus.Theme = 'dark';
-    } else {
-      volantis.giscus.Theme = 'light';
-    }
-
-    return document.getElementById("giscus_container");
-  }
-
-  function pjax_giscus() {
-    const HEAD = check_giscus();
-    if (!HEAD) return;
-    let cfg = Object.assign({"theme":{"light":"light","dark":"dark"},"repo":"txw1314/comment-giscus","repo-id":"R_kgDOHvE8vw","category":"Comments","category-id":"DIC_kwDOHvE8v84CQgFl","mapping":"title","reactions-enabled":"1","emit-metadata":"0","position":"top","loading":"lazy","crossorigin":"anonymous","lang":"zh-CN"},pdata.commentConfig)
-    const script = document.createElement('script');
-    script.setAttribute('src', 'https://giscus.app/client.js');
-    Object.keys(cfg).forEach(k=>{
-      if (k != "theme") {
-        script.setAttribute('data-'+k, cfg[k]);
-      }
-    })
-    script.setAttribute('data-theme', volantis.giscus.Theme);
-    script.setAttribute('crossorigin', "anonymous");
-    HEAD.appendChild(script);
-  }
-
-  function dark_giscus() {
-    const HEAD = check_giscus();
-    if (!HEAD) return;
-
-    const message = {
-      setConfig: {
-        theme: volantis.giscus.Theme
-      }
-    };
-    const giscusIframe = document.querySelector('iframe.giscus-frame');
-    giscusIframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-  }
-  pjax_giscus();
-  volantis.pjax.push(pjax_giscus);
-  volantis.dark.push(dark_giscus);
-</script>
-
-    
 
 
 
@@ -4399,7 +4367,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/bg.jpg","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://jsd.cdn.zzko.cn/gh/txw1314/blog-img@main/img/bg.jpg","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4628,7 +4596,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"VanillaYiYi","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"VanillaYiYi","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"希望在这里分享我的经验与生活！"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"VanillaYiYi"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/软件/","name":"软件"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2026/06/25/查看Windows11的激活状态和到期时间/","name":"查看Windows11的激活状态和到期时间"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"VanillaYiYi","url":"http://example.com/","keywords":"VanillaYiYi,博客,分享","description":"希望在这里分享我的经验与生活！","author":{"@type":"Person","name":"VanillaYiYi","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"希望在这里分享我的经验与生活！"},"publisher":{"@type":"Organization","name":"VanillaYiYi","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"查看Windows11的激活状态和到期时间","description":"查看Windows11的激活状态和到期时间","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2026/06/25/%E6%9F%A5%E7%9C%8BWindows11%E7%9A%84%E6%BF%80%E6%B4%BB%E7%8A%B6%E6%80%81%E5%92%8C%E5%88%B0%E6%9C%9F%E6%97%B6%E9%97%B4/"},"author":{"@type":"Person","name":"VanillaYiYi","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"VanillaYiYi","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2026/06/25/%E6%9F%A5%E7%9C%8BWindows11%E7%9A%84%E6%BF%80%E6%B4%BB%E7%8A%B6%E6%80%81%E5%92%8C%E5%88%B0%E6%9C%9F%E6%97%B6%E9%97%B4/","wordCount":0,"datePublished":"2026-06-25T06:03:56.000Z","dateModified":"2026-06-25T06:03:56.000Z","articleSection":"软件","keywords":"window","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"VanillaYiYi","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"VanillaYiYi","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"希望在这里分享我的经验与生活！"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"VanillaYiYi"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/软件/","name":"软件"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2026/06/25/查看Windows11的激活状态和到期时间/","name":"查看Windows11的激活状态和到期时间"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"VanillaYiYi","url":"http://example.com/","keywords":"VanillaYiYi,博客,分享","description":"希望在这里分享我的经验与生活！","author":{"@type":"Person","name":"VanillaYiYi","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"希望在这里分享我的经验与生活！"},"publisher":{"@type":"Organization","name":"VanillaYiYi","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"查看Windows11的激活状态和到期时间","description":"查看Windows11的激活状态和到期时间","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2026/06/25/%E6%9F%A5%E7%9C%8BWindows11%E7%9A%84%E6%BF%80%E6%B4%BB%E7%8A%B6%E6%80%81%E5%92%8C%E5%88%B0%E6%9C%9F%E6%97%B6%E9%97%B4/"},"author":{"@type":"Person","name":"VanillaYiYi","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"VanillaYiYi","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2026/06/25/%E6%9F%A5%E7%9C%8BWindows11%E7%9A%84%E6%BF%80%E6%B4%BB%E7%8A%B6%E6%80%81%E5%92%8C%E5%88%B0%E6%9C%9F%E6%97%B6%E9%97%B4/","wordCount":0,"datePublished":"2026-06-25T06:03:56.000Z","dateModified":"2026-06-25T06:03:56.000Z","articleSection":"软件","keywords":"window","image":{"@type":"ImageObject","url":"https://cdn.svipaigc.com/bizi/2025/08/20250822165010-68a89fc218c22-scaled.jpg","width":1024,"height":768}}]</script>
 
 
 
